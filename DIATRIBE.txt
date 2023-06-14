@@ -92,7 +92,9 @@ https://jakubkowalski.tech/Publications/Kowalski2014EmbeddingACard.pdf
 not like an adults hanging out card game. Jamaican-style involves much more calculation to play well in my experience,
 and (this is crucial) is enjoyable to play poorly, though moreso to play thoughtfully. everyone i've met with nostalgia 
 for boneyard or even score (which people get fired up on behalf of in the South especially) has conceded that 
-jamaican-style is way more conducive to social recreation. It gets people more emotionally invested, too!  
+jamaican-style is way more conducive to social recreation. it gets people more emotionally invested, too! Purely from 
+a math standpoint, it's wildly natural, as 28=7*2*2. O 
+
 
 
 HIDDEN INFORMATION
