@@ -98,32 +98,47 @@ a math standpoint, it's wildly natural, as 28=7*2*2. O
 
 
 HIDDEN INFORMATION
-     98
 X    AGRAM
+	 HEARTS
+	 98
+	 PAIRS
+	 SPADES/BRIDGE
+	 WAR
+	 CRAZY EIGHTS
+	 SIX LOVE
+	 
   	 APPLES TO APPLES
-   	 CATAN
+   	 CANDY CRUSH
+	 CATAN
    	 CLUE
    	 COUP
      CRIBBAGE
      DOMINOS
-     DND
      GO FISH
-   	 HEARTS
-     MAHJONG
+   	 MAHJONG
    	 MAGIC/POKEMON
    	 MAO
    	 MILLES BORNE
      MONOPOLY
-     PAIRS
+	 NETGAME
      PANDEMIC
    	 POKER
      RUMMY
    	 SCOPA
    	 SCRABBLE
-   	 SPADES/BRIDGE
+	 SNAKE
+	 SOLITAIRE
    	 TICKET TO RIDE
    	 TIPPEN
    	 TRAX
    	 UNO
+	 WORDLE
    	 WEREWOLF
-     WAR
+	 SOKOBAN
+     SUDOKU
+     JIGSAW/POLYFIT (ISOMORPHIC)
+     NONOGRAMS
+     MOSAIC
+     MINESWEEPER
+	 SORT
+     GALAXIES
