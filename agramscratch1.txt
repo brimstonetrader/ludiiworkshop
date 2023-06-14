@@ -1,0 +1,255 @@
+		(game "Agram"
+			(players 2)
+			(equipment {
+				(board (rectangle 3 1))
+				(piece "Square" Each)
+				(hand Shared size:35)
+				(hand Each size:6)
+			})
+			(rules 
+			
+				(start {
+					(place {"Square1"} (handSite Shared)    state:0 value:0)
+					(place {"Square1"} (handSite Shared)  state:0 value:1)
+					(place {"Square1"} (handSite Shared)  state:0 value:2)
+					(place {"Square1"} (handSite Shared)  state:0 value:3)
+					(place {"Square1"} (handSite Shared)  state:0 value:4)
+					(place {"Square1"} (handSite Shared)  state:0 value:5)
+					(place {"Square1"} (handSite Shared)  state:0 value:6)
+					(place {"Square1"} (handSite Shared)  state:0 value:7)
+					(place {"Square1"} (handSite Shared)  state:0 value:8)
+					(place {"Square1"} (handSite Shared)  state:1 value:0)
+					(place {"Square1"} (handSite Shared) state:1 value:1)
+					(place {"Square1"} (handSite Shared) state:1 value:2)
+					(place {"Square1"} (handSite Shared) state:1 value:3)
+					(place {"Square1"} (handSite Shared) state:1 value:4)
+					(place {"Square1"} (handSite Shared) state:1 value:5)
+					(place {"Square1"} (handSite Shared) state:1 value:6)
+					(place {"Square1"} (handSite Shared) state:1 value:7)
+					(place {"Square1"} (handSite Shared) state:1 value:8)
+					(place {"Square2"} (handSite Shared) state:2 value:0)
+					(place {"Square2"} (handSite Shared) state:2 value:1)
+					(place {"Square2"} (handSite Shared) state:2 value:2)
+					(place {"Square2"} (handSite Shared) state:2 value:3)
+					(place {"Square2"} (handSite Shared) state:2 value:4)
+					(place {"Square2"} (handSite Shared) state:2 value:5)
+					(place {"Square2"} (handSite Shared) state:2 value:6)
+					(place {"Square2"} (handSite Shared) state:2 value:7)
+					(place {"Square2"} (handSite Shared) state:2 value:8)
+					(place {"Square2"} (handSite Shared) state:3 value:0)
+					(place {"Square2"} (handSite Shared) state:3 value:1)
+					(place {"Square2"} (handSite Shared) state:3 value:2)
+					(place {"Square2"} (handSite Shared) state:3 value:3)
+					(place {"Square2"} (handSite Shared) state:3 value:4)
+					(place {"Square2"} (handSite Shared) state:3 value:5)
+					(place {"Square2"} (handSite Shared) state:3 value:6)
+					(place {"Square2"} (handSite Shared) state:3 value:7)
+					(forEach Value min:0 max:5 (set Hidden at:(handSite P2 (value)) to:P1))
+					(forEach Value min:0 max:5 (set Hidden at:(handSite P1 (value)) to:P2))
+					(set Hidden What (sites Hand P1) to:P2)
+					(set Hidden What (sites Hand P2) to:P1)
+					(set Hidden What (sites Hand Shared) to:Each)
+				}      )
+				
+				phases:{
+				(phase "Deal"
+					(play
+						(fromTo (from (handSite Shared    0)) 
+						              (to (handSite P1    0)) (then
+	                    (fromTo (from (handSite Shared    6)) 
+						              (to (handSite P2    0)) (then
+						(fromTo (from (handSite Shared    1)) 
+						              (to (handSite P1    1)) (then
+	                    (fromTo (from (handSite Shared    7)) 
+						              (to (handSite P2    1)) (then
+						(fromTo (from (handSite Shared    2)) 
+						              (to (handSite P1    2)) (then
+	                    (fromTo (from (handSite Shared    8)) 
+						              (to (handSite P2    2)) (then
+						(fromTo (from (handSite Shared    3)) 
+						              (to (handSite P1    3)) (then
+	                    (fromTo (from (handSite Shared    9)) 
+						              (to (handSite P2    3)) (then
+						(fromTo (from (handSite Shared    4)) 
+						              (to (handSite P1    4)) (then
+	                    (fromTo (from (handSite Shared    10)) 
+						              (to (handSite P2    4)))))))))))))))))))))
+					) (nextPhase "Lead")
+				)
+				
+				
+				(phase "Lead" 
+					(play 
+						(if (= (id P1) (mover))
+						
+							(move  
+								(from (sites Hand Mover))
+								(to (sites Top))
+								(then (do (set Score Mover (+ (* (state at:(to)) 9) (value Piece at:(to))))))
+							)
+							(move  
+								(from (sites Hand Mover))
+								(to (sites Bottom))
+								(then (do (set Score Mover (+ (* (state at:(to)) 9) (value Piece at:(to))))))
+							))
+					)
+					            (end { 
+				(if ("HandEmpty" P2) (result P1 Win))
+            })
+					(nextPhase "Lead")
+				)
+			
+				}
+			)
+		)
+		
+		//------------------------------------------------------------------------------
+		
+		(metadata 
+			
+        (info
+            {
+            (description "Agram is a trick-taking card game popular in Niger and Mali.")
+            (rules "Players are dealt six cards at the beginning, and then must play six tricks, following the suit of the lead if possible. The overall winner is the winner of the final trick.")
+            (id "1536")
+            (source "<a href=\"https://www.pagat.com/last/agram.html" target=\"_blank\" class=\"style1\" style=\"color: #0000EE\" />BGG</a>")
+            (version "1.3.11")
+            (classification "card/trick")
+            (author "Sogradi Djabate")
+            (publisher "<a href=\"https://www.pagat.com/last/agram.html" target=\"_blank\" class=\"style1\" style=\"color: #0000EE\" />Gigamic</a> (used with permission)")
+            (credit "Noah Morris")
+            (date "????")
+            }
+        )
+			
+			(graphics {
+				(piece Foreground state:0 image:"Heart" fillColour:(colour Red)    edgeColour:(colour Red)   scale:1)
+				(piece Foreground state:1 image:"Cross" fillColour:(colour Red)    edgeColour:(colour Red)   scale:1)
+				(piece Foreground state:2 image:"Star"  fillColour:(colour Yellow) edgeColour:(colour Yellow) scale:1)
+				(piece Foreground state:3 image:"Moon"  fillColour:(colour Yellow) edgeColour:(colour Yellow) scale:1)
+				(piece Foreground value:0 image:"9"     fillColour:(colour Hidden) edgeColour:(colour Blue) scale:0.4)
+				(piece Foreground value:1 image:"8"     fillColour:(colour Hidden) edgeColour:(colour Blue) scale:0.4)
+				(piece Foreground value:2 image:"7"     fillColour:(colour Hidden) edgeColour:(colour Blue) scale:0.4)
+				(piece Foreground value:3 image:"6"     fillColour:(colour Hidden) edgeColour:(colour Blue) scale:0.4)
+				(piece Foreground value:4 image:"5"     fillColour:(colour Hidden) edgeColour:(colour Blue) scale:0.4)
+				(piece Foreground value:5 image:"4"     fillColour:(colour Hidden) edgeColour:(colour Blue) scale:0.4)
+				(piece Foreground value:6 image:"3"     fillColour:(colour Hidden) edgeColour:(colour Blue) scale:0.4)
+				(piece Foreground value:7 image:"2"     fillColour:(colour Hidden) edgeColour:(colour Blue) scale:0.4)
+				(piece Foreground value:8 image:"A"     fillColour:(colour Hidden) edgeColour:(colour Blue) scale:0.4)
+				(show Edges Hidden)
+				(show Symbol "Square" (sites Board) fillColour:(colour 185 130 85) edgeColour:(colour 225 182 130)) 
+				(board Placement scale:0.8)
+				(board Background image:"square.svg" fillColour:(colour 185 130 85) edgeColour:(colour 185 130 85) scale:1.45)
+			})
+			
+			(ai
+				"Quarto_ai"
+			)
+		)
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+				(game "Agram"
+			(players 2)
+			(equipment {
+				(board (rectangle 2 1) use:Vertex)
+				(piece "Square" Each)
+				(hand Each size:6)
+			})
+			(rules 
+			
+				(start {
+					(place "Square1" (handSite P1   ) state:(value Random (range 0 3)) value:(value Random (range 0 8)))
+					(place "Square1" (handSite P1  1) state:(value Random (range 0 3)) value:(value Random (range 0 8)))
+					(place "Square1" (handSite P1  2) state:(value Random (range 0 3)) value:(value Random (range 0 8)))
+					(place "Square1" (handSite P1  3) state:(value Random (range 0 3)) value:(value Random (range 0 8)))
+					(place "Square1" (handSite P1  4) state:(value Random (range 0 3)) value:(value Random (range 0 8)))
+					(place "Square1" (handSite P1  5) state:(value Random (range 0 3)) value:(value Random (range 0 8)))
+					(place "Square2" (handSite P2   ) state:(value Random (range 0 3)) value:(value Random (range 0 8)))
+					(place "Square2" (handSite P2  1) state:(value Random (range 0 3)) value:(value Random (range 0 8)))
+					(place "Square2" (handSite P2  2) state:(value Random (range 0 3)) value:(value Random (range 0 8)))
+					(place "Square2" (handSite P2  3) state:(value Random (range 0 3)) value:(value Random (range 0 8)))
+					(place "Square2" (handSite P2  4) state:(value Random (range 0 3)) value:(value Random (range 0 8)))
+					(place "Square2" (handSite P2  5) state:(value Random (range 0 3)) value:(value Random (range 0 8)))
+					(forEach Value min:0 max:5 (set Hidden at:(handSite P1 (value)) to:P2))
+					(forEach Value min:0 max:5 (set Hidden at:(handSite P2 (value)) to:P1))
+					(set Hidden What (sites Hand P1) to:P2)
+					(set Hidden What (sites Hand P2) to:P1)
+				}      )
+				
+				phases:{
+				(phase "Lead" 
+					(play 
+						(if (= (id P1) (mover))
+						
+							(move  
+								(from (sites Hand Mover))
+								(to (sites Top))
+								(then (do (set Score Mover (+ (* (state at:(to)) 9) (value Piece at:(to))))))
+							)
+							(move  
+								(from (sites Hand Mover))
+								(to (sites Bottom))
+								(then (do (set Score Mover (+ (* (state at:(to)) 9) (value Piece at:(to))))))
+							)) 
+					) (nextPhase (is Mover P2) "Lead")
+							)			
+				
+				}
+			)
+		)
+		
+		
+		//------------------------------------------------------------------------------
+		
+		(metadata 
+			
+        (info
+            {
+            (description "Agram is a trick-taking card game popular in Niger and Mali.")
+            (rules "Players are dealt six cards at the beginning, and then must play six tricks, following the suit of the lead if possible. The overall winner is the winner of the final trick.")
+            (id "1536")
+            (source "<a href=\"https://www.pagat.com/last/agram.html" target=\"_blank\" class=\"style1\" style=\"color: #0000EE\" />BGG</a>")
+            (version "1.3.11")
+            (classification "card/trick")
+            (author "Sogradi Djabate")
+            (publisher "<a href=\"https://www.pagat.com/last/agram.html" target=\"_blank\" class=\"style1\" style=\"color: #0000EE\" />Gigamic</a> (used with permission)")
+            (credit "Noah Morris")
+            (date "????")
+            }
+        )
+			
+			(graphics {
+				(piece Foreground state:0 image:"Heart" fillColour:(colour Red)    edgeColour:(colour Red)   scale:1)
+				(piece Foreground state:1 image:"Cross" fillColour:(colour Red)    edgeColour:(colour Red)   scale:1)
+				(piece Foreground state:2 image:"Star"  fillColour:(colour Yellow) edgeColour:(colour Yellow) scale:1)
+				(piece Foreground state:3 image:"Moon"  fillColour:(colour Yellow) edgeColour:(colour Yellow) scale:1)
+				(piece Foreground value:0 image:"9"     fillColour:(colour Hidden) edgeColour:(colour Blue) scale:0.4)
+				(piece Foreground value:1 image:"8"     fillColour:(colour Hidden) edgeColour:(colour Blue) scale:0.4)
+				(piece Foreground value:2 image:"7"     fillColour:(colour Hidden) edgeColour:(colour Blue) scale:0.4)
+				(piece Foreground value:3 image:"6"     fillColour:(colour Hidden) edgeColour:(colour Blue) scale:0.4)
+				(piece Foreground value:4 image:"5"     fillColour:(colour Hidden) edgeColour:(colour Blue) scale:0.4)
+				(piece Foreground value:5 image:"4"     fillColour:(colour Hidden) edgeColour:(colour Blue) scale:0.4)
+				(piece Foreground value:6 image:"3"     fillColour:(colour Hidden) edgeColour:(colour Blue) scale:0.4)
+				(piece Foreground value:7 image:"2"     fillColour:(colour Hidden) edgeColour:(colour Blue) scale:0.4)
+				(piece Foreground value:8 image:"A"     fillColour:(colour Hidden) edgeColour:(colour Blue) scale:0.4)
+				(show Edges Hidden)
+				(show Symbol "Square" (sites Board) fillColour:(colour 185 130 85) edgeColour:(colour 225 182 130)) 
+				(board Placement scale:0.8)
+				(board Background image:"square.svg" fillColour:(colour 185 130 85) edgeColour:(colour 185 130 85) scale:1.45)
+			})
+			
+			(ai
+				"Quarto_ai"
+			)
+		)

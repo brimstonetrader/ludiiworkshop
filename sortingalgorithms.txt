@@ -1,0 +1,10 @@
+mergeSort :: [Integer] -> [Integer]
+mergeSort      [] = []
+mergeSort    x:[] = x:[]
+mergeSort  x:y:[] = case (x>y) of
+  False -> y:x:[]
+  True  -> x:y:[]  
+mergeSort list    = do
+  set (a, b)      = splitAt ((length(list)) `div` 2) list
+  mergeSort a ++ mergeSort b
+  

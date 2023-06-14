@@ -1,0 +1,368 @@
+
+
+
+(define "IncScore"
+
+    (if (and ("OOF")                             (is Pattern {F        F L L F L       F L L F        F}))
+	      (do ((set "OOF" false) 
+		       (set "PHasScored" true) 
+			   (addScore Mover 5)     
+			   (forEach Group Orthogonal if:(is #1 (who at:(to)))
+                 (if (is Pattern {F        F L L F L       F L L F        F})
+                   (remove (sites)))))))
+		
+			(if (and {(= (var "LFL") 1) (and {(= (var "PHasScored") 0)     (is Pattern {F       L F               F            L  F})})})
+	       (do (set Var "LFL" 0) 
+		  	   (set Var "PHasScored" 1) 
+			   (addScore Mover 3)     
+			   (forEach Group Orthogonal if:(is Mover (who at:(to)))
+                 (if (is Pattern {F          L F          F       L F})
+                   (remove (sites))))))
+	(if (and ("FLF") (and (not "PHasScored")     (is Pattern {F        F               F              F})))
+	      (do ((set "FFF" false) 
+		  	   (set "PHasScored" true) 
+			   (addScore Mover 3)     
+			   (forEach Group Orthogonal if:(is #1 (who at:(to)))
+                 (if (is Pattern {F        F L L F L       F L L F        F})
+                   (remove (sites)))))))
+
+		  
+	(if (and ("FLF") (and (not "PHasScored")     (is Pattern {F        F             L F              F}))) 
+	      (do ((set "FLF" false) (set "PHasScored" true) (addScore Mover 2))))
+
+	(if (and ("LFL") (and (not "PHasScored")     (is Pattern {F      L F               F            L F})))
+	      (do ((set "LFL" false) (set "PHasScored" true) (addScore Mover 2))))
+
+	(if (and ("LRL") (and (not "PHasScored")     (is Pattern {F      L F             R F            L F})))
+	      (do ((set "LRL" false) (set "PHasScored" true) (addScore Mover 2))))
+
+	(if (and ("LFR") (and (not "PHasScored") (or (is Pattern {F      L F               F            R F})
+	                                             (is Pattern {F      R F               F            L F})))) 
+	      (do ((set "LFR" false) (set "PHasScored" true) (addScore Mover 2))))
+
+	(if (and ("OFF") (and (not "PHasScored")     (is Pattern {F        F L L F L       F              F))) 
+	      (do ((set "OFF" false) (set "PHasScored" true) (addScore Mover 2))))
+
+
+	(if (and ("FFL") (and (not "PHasScored") (or (is Pattern {F        F               F            R F})
+	                                             (is Pattern {F        F               F            L F})))) 
+	      (do ((set "FFL" false) (set "PHasScored" true) (addScore Mover 1))))
+
+	(if (and ("FLL") (and (not "PHasScored") (or (is Pattern {F        F             R F            R F})
+	                                             (is Pattern {F        F             L F            L F})))) 
+	      (do ((set "FLL" false) (set "PHasScored" true) (addScore Mover 1))))
+
+	(if (and ("FLR") (and (not "PHasScored") (or (is Pattern {F        F             L F            R F})
+	                                             (is Pattern {F        F             R F            L F})))) 
+	      (do ((set "FLR" false) (set "PHasScored" true) (addScore Mover 1))))
+
+	(if (and ("FOF") (and (not "PHasScored") (or (is Pattern {F        F               F L L F L      F})
+	                                             (is Pattern {F        F               F L L F R      F})))) 
+	      (do ((set "FOF" false) (set "PHasScored" true) (addScore Mover 1))))
+
+	(if (and ("LOF") (and (not "PHasScored") (or (is Pattern {F      L F               F L L F L      F})
+	                                             (is Pattern {F      R F               F L L F R      F})))) 
+	      (do ((set "LOF" false) (set "PHasScored" true) (addScore Mover 1)))))
+
+
+//------------------------------------------------------------------------------
+
+(game "Oswald" 
+    (players 2) 
+    (equipment { 
+        (board (square 8)) 
+        (hand Each size:18)
+        (piece "Marker" Each ("StepToEmpty"))
+    }) 
+	
+    (rules 
+	
+	    (start (do (set Score Each 0))
+	
+        (do (set "FFL" true))
+		(do (set "FLL" true))
+		(do (set "FLR" true))
+		(do (set "FOF" true))
+		(do (set "LOF" true))
+
+		(do (set "FLF" true))
+		(do (set "LFL" true))
+		(do (set "LRL" true))
+		(do (set "LFR" true))
+		(do (set "OFF" true))
+		
+		(do (set "FFF" true))
+		
+		(do (set "OOF" true))
+		
+		(do (set "PHasScored" false)))
+		
+        (play	
+   		    (do (set "PHasScored" false)
+		    (or   (move Add (to (sites Empty)))
+				  (forEach Piece))
+		    (if   (> (max (sizes Group Mover)) 4)
+			      ("IncScore")))) 
+        (end
+            (if (> (Score Mover) 12) (result Mover Win)) 
+        )
+    )
+)
+
+
+//------------------------------------------------------------------------------
+
+(metadata 
+    
+    (info
+        {
+        (description "Pentomino tiling puzzles and games are popular in recreational mathematics.")
+        (aliases {"Golomb's Game"})
+        (rules "Two players have a collection of dominoes which they place on the grid in turn, covering up squares. One player places tiles vertically, while the other places them horizontally. The first player who cannot move loses.")
+        (id "1664")
+        (source "<a href=\"https://en.wikipedia.org/wiki/Pentomino\" target=\"_blank\" class=\"style1\" style=\"color: #0000EE\" />Wikipedia</a>")
+        (version "1.3.11")
+        (classification "board/space/blocking")
+        (credit "Fabio Barbero")
+        }
+    )
+    
+    (graphics {
+        (piece Colour "FFFF" fillColour:(colour 221 187 153))
+        (piece Colour "FFFL" fillColour:(colour 238 170 170))
+        (piece Colour "FFLF" fillColour:(colour 204 204 136))
+        (piece Colour "FFLL" fillColour:(colour 170 238 170))
+        (piece Colour "FFLR" fillColour:(colour 187 221 153))
+        (piece Colour "FFOF" fillColour:(colour 153 221 187))
+        (piece Colour "FLFL" fillColour:(colour 136 204 204))
+        (piece Colour "FLFR" fillColour:(colour 153 187 221))
+        (piece Colour "FLRL" fillColour:(colour 170 170 238))
+        (piece Colour "FLOF" fillColour:(colour 187 153 221))
+        (piece Colour "FOFF" fillColour:(colour 204 136 204))
+        (piece Colour "FOOF" fillColour:(colour 221 153 187))
+    }) 
+    (ai
+        "Pentomino_ai"
+    )
+)
+
+(define "VariableSet"
+	(do (and {
+        (set Var "FFL" True)
+		(set Var "FLL" True)
+		(set Var "FLR" True)
+		(set Var "FOF" True)
+		(set Var "LOF" True)
+
+		(set Var "FLF" True)
+		(set Var "LFL" True)
+		(set Var "LRL" True)
+		(set Var "LFR" True)
+		(set Var "OFF" True)
+		
+		(set Var "FFF" True)
+		
+		(set Var "OOF" True)
+    }))
+)
+
+
+(define "IncScore"
+
+    (if (and (var "OOF")                             (is Pattern {F        F L L F L       F L L F        F}))
+	      (do ((set Var "OOF" False) 
+		       (set Var "PHasScored" True) 
+			   (addScore Mover 5)     
+			   (forEach Group Orthogonal if:(is #1 (who at:(to)))
+                 (if (is Pattern {F        F L L F L       F L L F        F})
+                   (remove (sites)))))))
+		
+		
+	(if (and (var "FLF") (and (not (var "PHasScored"))     (is Pattern {F        F               F              F})))
+	      (do ((set Var "FFF" False) 
+		  	   (set Var "PHasScored" True) 
+			   (addScore Mover 3)     
+			   (forEach Group Orthogonal if:(is #1 (who at:(to)))
+                 (if (is Pattern {F        F L L F L       F L L F        F})
+                   (remove (sites)))))))
+
+		  
+	(if (and (var "FLF") (and (not (var "PHasScored"))     (is Pattern {F        F             L F              F}))) 
+	      (do ((set Var "FLF" False) (set Var "PHasScored" True) (addScore Mover 2))))
+
+	(if (and (var "LFL") (and (not (var "PHasScored"))     (is Pattern {F      L F               F            L F})))
+	      (do ((set Var "LFL" False) (set Var "PHasScored" True) (addScore Mover 2))))
+
+	(if (and (var "LRL") (and (not (var "PHasScored"))     (is Pattern {F      L F             R F            L F})))
+	      (do ((set Var "LRL" False) (set Var "PHasScored" True) (addScore Mover 2))))
+
+	(if (and (var "LFR") (and (not (var "PHasScored")) (or (is Pattern {F      L F               F            R F})
+	                                             (is Pattern {F      R F               F            L F})))) 
+	      (do ((set Var "LFR" False) (set Var "PHasScored" True) (addScore Mover 2))))
+
+	(if (and (var "OFF") (and (not (var "PHasScored"))     (is Pattern {F        F L L F L       F              F}))) 
+	      (do ((set Var "OFF" False) (set Var "PHasScored" True) (addScore Mover 2))))
+
+
+	(if (and (var "FFL") (and (not (var "PHasScored")) (or (is Pattern {F        F               F            R F})
+	                                             (is Pattern {F        F               F            L F})))) 
+	      (do ((set Var "FFL" False) (set Var "PHasScored" True) (addScore Mover 1))))
+
+	(if (and (var "FLL") (and (not (var "PHasScored")) (or (is Pattern {F        F             R F            R F})
+	                                             (is Pattern {F        F             L F            L F})))) 
+	      (do ((set Var "FLL" False) (set Var "PHasScored" True) (addScore Mover 1))))
+
+	(if (and (var "FLR") (and (not (var "PHasScored")) (or (is Pattern {F        F             L F            R F})
+	                                             (is Pattern {F        F             R F            L F})))) 
+	      (do ((set Var "FLR" False) (set Var "PHasScored" True) (addScore Mover 1))))
+
+	(if (and (var "FOF") (and (not (var "PHasScored")) (or (is Pattern {F        F               F L L F L      F})
+	                                             (is Pattern {F        F               F L L F R      F})))) 
+	      (do ((set Var "FOF" False) (set Var "PHasScored" True) (addScore Mover 1))))
+
+	(if (and (var "LOF") (and (not (var "PHasScored")) (or (is Pattern {F      L F               F L L F L      F})
+	                                             (is Pattern {F      R F               F L L F R      F})))) 
+	      (do ((set Var "LOF" False) (set Var "PHasScored" True) (addScore Mover 1)))))
+
+
+//------------------------------------------------------------------------------
+
+(game "Oswald" 
+    (players 2) 
+    (equipment { 
+        (board (square 8)) 
+        (hand Each size:18)
+        (piece "Marker" Each ("StepToEmpty"))
+		("VariableSet")
+    }) 
+	
+    (rules 
+
+		
+		
+        (play	
+   		    (set Var "PHasScored" False)
+		    (or   (move Add (to (sites Empty)))
+				  (forEach Piece))
+		    (if   (> (max (sizes Group Mover)) 4)
+			      "IncScore")
+		) 
+        
+		(end
+            (if (> (score Mover) 12) 
+			    (result Mover Win))
+	    )))
+
+//------------------------------------------------------------------------------
+
+(metadata 
+    
+    (info
+        {
+        (description "The rules, as summarized above, are very simple, but the strategy is complicated enough to fill a book, Scarne on Teeko, by Scarne (1955).")
+        (rules "Players take turn laying their eight circles upon the board, then enter a phase of movement, the sum goal being either a line of four or a 2x2 block.")
+        (id "602")
+        (source "https://en.wikipedia.org/wiki/Teeko")
+        (version "1.3.11")
+        (classification "board/space/line")
+        (author "John Scarne")
+        (credit "Noah Morris")
+        }
+    )
+    (ai
+        "Teeko_ai"
+    )
+)
+
+
+
+(define "FromHand" 
+    (from (sites Occupied by:Mover container:(mover))) 
+)
+
+
+//------------------------------------------------------------------------------
+
+(game "Oswald" 
+    (players 2) 
+    (equipment { 
+        (board (square 8)) 
+        (hand Each size:18)
+        (piece "Marker" Each ("StepToEmpty"))
+    }) 
+    (rules 
+        (start { 
+            (place "Marker" "Hand" count:18)
+        })
+        
+        phases:{
+        (phase "Placement"
+            (play (move ("FromHand") (to (sites Empty))))
+            (nextPhase ("HandEmpty" P2) "Movement")
+        )
+        
+        ("PhaseMovePiece" "Movement")
+        }
+        
+		(end 
+            (if 
+                (or {
+                    (is Pattern {F R F R F})
+                    (is Line 4)
+                })
+                (result Mover Win)
+            )
+        ) 
+    )
+)
+
+
+(define "ProductBiggestGroups"
+    (* 
+        (max (sizes Group #1))
+        (max (difference (sizes Group #1) (max (sizes Group #1))))
+    )		
+)
+
+//------------------------------------------------------------------------------
+
+(game "Product" 
+    (players 2) 
+    (equipment { 
+        (board (hex 5))
+        (piece "Marker" Each) 
+    }) 
+    (rules 
+        (play (move Add (to (sites Empty)))) 
+        
+        (end
+            (if (is Full)
+                (byScore {
+                    (score P1 ("ProductBiggestGroups" P1))
+                    (score P2 ("ProductBiggestGroups" P2))
+                })
+            )
+        )
+    )
+)
+
+//------------------------------------------------------------------------------
+
+(metadata 
+    
+    (info
+        {
+        (description "The rules, as summarized above, are very simple, but the strategy is complicated enough to fill a book, Scarne on Teeko, by Scarne (1955).")
+        (rules "Players take turn laying their eight circles upon the board, then enter a phase of movement, the sum goal being either a line of four or a 2x2 block.")
+        (id "602")
+        (source "https://en.wikipedia.org/wiki/Teeko")
+        (version "1.3.11")
+        (classification "board/space/line")
+        (author "John Scarne")
+        (credit "Noah Morris")
+        }
+    )
+    (ai
+        "Teeko_ai"
+    )
+)

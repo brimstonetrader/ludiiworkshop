@@ -1,0 +1,145 @@
+;; Coup
+;;
+;; 
+
+(game
+ (setup 
+  (create players 4)
+  (create teams (0) (1) (2) (3))
+  (repeat 3 (create deck (game iloc STOCK) (deck 
+   (INFLUENCE (AMBASSADOR, ASSASSIN, CAPTAIN, CONTESSA, DUKE)))))) 
+
+ (do (
+
+  (shuffle (game iloc STOCK))
+  
+  (all player 'P (do ( 
+   (set ('P sto HUNDREDMILLIONDOLLARS) 2)
+   (repeat 2
+    (move (top (game iloc STOCK))
+     (top ('P iloc HAND))))
+   
+	 
+	 (set ('P sto ALIVE) 1)
+	 (set ('P sto FOREIGNAID) 1)
+	 (set ('P sto LIED) 0)
+	 (set ('P sto WON) 0))))
+
+  (put points 'BASIC
+   (((INFLUENCE (AMBASSADOR)) 1)
+   (( INFLUENCE   (CONTESSA)) 1)
+   (( INFLUENCE       (DUKE)) 1)
+   (( INFLUENCE   (ASSASSIN)) 1)
+   (( INFLUENCE    (CAPTAIN)) 1)))
+
+  (put points 'STEALABLE
+   (((INFLUENCE (AMBASSADOR)) 0)
+   (( INFLUENCE   (CONTESSA)) 1)
+   (( INFLUENCE       (DUKE)) 1)
+   (( INFLUENCE   (ASSASSIN)) 1)
+   (( INFLUENCE    (CAPTAIN)) 0)))
+
+  (put points 'ASSASSINATABLE
+   (((INFLUENCE (AMBASSADOR)) 1)
+   (( INFLUENCE   (CONTESSA)) 0)
+   (( INFLUENCE       (DUKE)) 1)
+   (( INFLUENCE   (ASSASSIN)) 1)
+   (( INFLUENCE    (CAPTAIN)) 1)))
+   
+  (move (top (game iloc STOCK)) (top (game vloc DISCARD)))))
+ 
+ (stage player
+ 
+  ;; The game ends when there is one survivor.
+ 
+  (end (any player 'P 
+    (== ('P sto WON) 1)))
+
+  (choice (
+  
+   ;; Block Foreign Aid
+   
+    (do (
+     ((== (size (filter ((current player) iloc HAND) 'H (== (cardatt INFLUENCE 'H) DUKE))) 0)
+      (inc ((current player) sto LIED) 1))
+     ((>= (size (filter ((current player) iloc HAND) 'H (== (cardatt INFLUENCE 'H) DUKE))) 1)
+      (dec ((current player) sto LIED) 1))
+     (all player 'P (do (    
+      (dec ('P sto FOREIGNAID) 1))))))
+  	 
+    ;; Small loop pass
+  
+    (do ((turn pass)))
+      	
+    ;; Accuse 	
+    
+    (do ((let (other player) 'P (do (
+     ((== ('P sto LIED) 1) 
+  	  (any ('P iloc HAND) 'C 
+      (move 'C (top (game vloc DISCARD)))))
+     ((== ('P sto LIED) 0) 
+   	  (any ((current player) iloc HAND) 'C 
+      (move 'C (top (game vloc DISCARD))))))))))
+
+    ;; Win (if you're the last one left)
+     
+     ((== (sum         ((current player) iloc HAND)   using 'BASIC) 
+          (sum (union (all player 'P ('P iloc HAND))) using 'BASIC)) 
+      (do ( 
+       (inc ((current player) sto WON) 1))))))
+  
+   ;; The Big Choice (what gift could be a work of art?)
+       
+   (choice (
+     
+    ;; Income
+  	
+    (inc ((current player) sto HUNDREDMILLIONDOLLARS) 1)	
+  
+    ;; Foreign Aid
+    
+    (do (  
+     ((== ((current player) sto FOREIGNAID) 0)
+      (inc ((current player) sto LIED) 1))
+     ((>= ((current player) sto FOREIGNAID) 1)
+      (dec ((current player) sto LIED) 1))	 
+     (inc ((current player) sto HUNDREDMILLIONDOLLARS) 2)))
+  	
+    ;; Standard Coup 
+  
+    (do ( 
+     ((> ((current player) sto HUNDREDMILLIONDOLLARS) 6) 
+      (do (
+       (any player 'P 
+        (any ('P iloc HAND) 'C
+         (move 'C (bottom (game vloc DISCARD)))))
+  	   (dec ((current player) sto HUNDREDMILLIONDOLLARS) 7))))))
+  
+    ;; Ambassador swap (Draw two cards (four total now in hand) then discard any two)
+  		  
+    (do (
+     ((== (size (filter ((current player) iloc HAND) 'H (== (cardatt INFLUENCE 'H) AMBASSADOR))) 0)
+      (inc ((current player) sto LIED) 1))
+     ((>= (size (filter ((current player) iloc HAND) 'H (== (cardatt INFLUENCE 'H) AMBASSADOR))) 1)
+      (dec ((current player) sto LIED) 1))
+     (repeat 2
+      (move (top (game iloc STOCK))
+       (top ((current player) iloc HAND))))
+     (repeat 2
+      (any ((current player) iloc HAND) 'C 
+       (move 'C (top (game vloc DISCARD)))))))
+  					 
+    ;; Duke tax (Take $300,000,000)
+        
+    (do (
+     ((== (size (filter ((current player) iloc HAND) 'H (== (cardatt INFLUENCE 'H) DUKE))) 0)
+      (inc ((current player) sto LIED) 1))
+     ((>= (size (filter ((current player) iloc HAND) 'H (== (cardatt INFLUENCE 'H) DUKE))) 1)
+       (dec ((current player) sto LIED) 1))
+     (inc ((current player) sto HUNDREDMILLIONDOLLARS) 3))))))
+ 
+ ;; Player with the smallest hand size wins
+ (scoring max ((current player) sto WON)))
+
+
+

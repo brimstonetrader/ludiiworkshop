@@ -1,0 +1,186 @@
+(define "Coprime"
+   (if (=        #1  5) 26        
+	 (if (=      #1 10) 27       		   
+	  (if (=     #1 15) 29      		   
+	   (if (=    #1 20) 31     		   
+	    (if (=   #1  7) 32    		   
+	     (if (=  #1 14) 33   		   
+	      (if (= #1 21) 34 (var "Dummx"))))))))
+)
+
+//------------------------------------------------------------------------------
+
+
+(game "Agram"
+    (players 2)
+    (equipment {
+        (board (rectangle 1 2) use:Edge)	
+        (piece "Heart" Each)
+        (piece "Diamond" Each)
+		(piece "Star" Each)
+		(piece "Moon" Each)
+		(hand Each size:6)
+		(hand Shared size:36)
+        (regions P1 (sites Top))
+		(regions P2 (sites Bottom))
+    })
+    (rules 
+        (start {
+            (place "Heart1"   (handSite Shared 35))
+            (place "Heart1"   (handSite Shared 1)          value:1)
+            (place "Heart1"   (handSite Shared 2)          value:2)
+            (place "Heart1"   (handSite Shared 3)          value:3)
+            (place "Heart1"   (handSite Shared 4)          value:4)
+            (place "Heart1"   (handSite Shared 5)          value:5)
+            (place "Heart1"   (handSite Shared 6)          value:6)
+            (place "Heart1"   (handSite Shared 7)          value:7)
+            (place "Heart1"   (handSite Shared 8)          value:8)
+            (place "Diamond1" (handSite Shared 9)  state:1) 
+            (place "Diamond1" (handSite Shared 10) state:1 value:1)
+            (place "Diamond1" (handSite Shared 11) state:1 value:2)
+            (place "Diamond1" (handSite Shared 12) state:1 value:3)
+            (place "Diamond1" (handSite Shared 13) state:1 value:4)
+            (place "Diamond1" (handSite Shared 14) state:1 value:5)
+            (place "Diamond1" (handSite Shared 15) state:1 value:6)
+            (place "Diamond1" (handSite Shared 16) state:1 value:7)
+            (place "Star2"    (handSite Shared 17) state:2)
+            (place "Star2"    (handSite Shared 18) state:2 value:1)
+            (place "Star2"    (handSite Shared 19) state:2 value:2)
+            (place "Star2"    (handSite Shared 20) state:2 value:3)
+            (place "Star2"    (handSite Shared 21) state:2 value:4)
+            (place "Star2"    (handSite Shared 22) state:2 value:5)
+            (place "Star2"    (handSite Shared 23) state:2 value:6)
+            (place "Star2"    (handSite Shared 24) state:2 value:7)
+            (place "Star2"    (handSite Shared 25) state:2 value:8)
+            (place "Moon2"    (handSite Shared 26) state:3)
+            (place "Moon2"    (handSite Shared 27) state:3 value:1)
+            (place "Moon2"    (handSite Shared 28) state:3 value:2)
+            (place "Moon2"    (handSite Shared 29) state:3 value:3)
+            (place "Moon2"    (handSite Shared 30) state:3 value:4)
+            (place "Moon2"    (handSite Shared 31) state:3 value:5)
+            (place "Moon2"    (handSite Shared 32) state:3 value:6)
+            (place "Moon2"    (handSite Shared 33) state:3 value:7)
+            (place "Moon2"    (handSite Shared 34) state:3 value:8)})
+			(do (set Var "Zer"  ("Coprime" (value Random (range 2 24)))
+			(do (set Var "Init" ("Coprime" (value Random (range 2 24)))
+			(do (set Var "Offset"  (value Random (range 0 34))
+			(do (set Var "One"     (+ (% (* (var "Zer") (var "Init")) 35) 1)
+			(do (set Var "Two"     (+ (% (* (var "One") (var "Init")) 35) 1)
+			(do (set Var "Thr"     (+ (% (* (var "Two") (var "Init")) 35) 1)
+			(do (set Var "Fou"     (+ (% (* (var "Thr") (var "Init")) 35) 1)
+			(do (set Var "Fiv"     (+ (% (* (var "Fou") (var "Init")) 35) 1)
+			(do (set Var "Six"     (+ (% (* (var "Fiv") (var "Init")) 35) 1)
+			(do (set Var "Sev"     (+ (% (* (var "Six") (var "Init")) 35) 1)
+			(do (set Var "Eig"     (+ (% (* (var "Sev") (var "Init")) 35) 1)
+			(do (set Var "Nin"     (+ (% (* (var "Eig") (var "Init")) 35) 1)
+			(do (set Var "Ten"     (+ (% (* (var "Nin") (var "Init")) 35) 1)
+			(do (set Var "Ele"     (+ (% (* (var "Ten") (var "Init")) 35) 1)))))))))))))))))))))))))))))
+		
+			
+			
+			
+        phases:{
+
+		
+        (phase "Select" 
+            (play
+                
+					(fromTo (from (handSite Shared (% (+ (var "Offset") (var "Zer")) 35)) (to (handSite P1)) 	
+					(fromTo (from (handSite Shared (% (+ (var "Offset") (var "One")) 35)) (to (handSite P2)) 	
+					(fromTo (from (handSite Shared (% (+ (var "Offset") (var "Two")) 35)) (to (handSite P2)) 	
+					(fromTo (from (handSite Shared (% (+ (var "Offset") (var "Thr")) 35)) (to (handSite P1)) 	
+					(fromTo (from (handSite Shared (% (+ (var "Offset") (var "Fou")) 35)) (to (handSite P1)) 	
+					(fromTo (from (handSite Shared (% (+ (var "Offset") (var "Fiv")) 35)) (to (handSite P2)) 	
+					(fromTo (from (handSite Shared (% (+ (var "Offset") (var "Six")) 35)) (to (handSite P2)) 	
+					(fromTo (from (handSite Shared (% (+ (var "Offset") (var "Sev")) 35)) (to (handSite P1)) 	
+					(fromTo (from (handSite Shared (% (+ (var "Offset") (var "Eig")) 35)) (to (handSite P2)) 	
+					(fromTo (from (handSite Shared (% (+ (var "Offset") (var "Nin")) 35)) (to (handSite P2)) 	
+					(fromTo (from (handSite Shared (% (+ (var "Offset") (var "Ten")) 35)) (to (handSite P1)) 	
+					(fromTo (from (handSite Shared (% (+ (var "Offset") (var "Ele")) 35)) (to (handSite P1))))))))))))))))))))))))))			
+                (move Select 
+                    (from 
+                        Cell
+                        (difference 
+                            (sites Hand Shared) 
+                            (sites Empty 1)
+                        )
+                    )
+                )
+            )
+            (nextPhase "Place")
+        )
+        (phase "Place" 
+            (play
+                (move 
+                    (from Cell (last From))
+                    (to (sites Empty))
+                    (then (moveAgain))
+                )
+            )
+            (end { 
+                // Shape line (what)
+                (if (is Line 4 All whats:{(id "Moon" P1) (id "Moon" P2)}) (result Mover Win))
+                (if (is Line 4 All whats:{(id "Star" P1) (id "Star" P2)}) (result Mover Win))
+                
+                // Colour line (who)
+                (if (is Line 4 All P1) (result Mover Win))
+                (if (is Line 4 All P2) (result Mover Win))
+                
+                // State line (state)
+                (if (is Line 4 All whats:{(id "Moon" P1) (id "Moon" P2) (id "Star" P1) (id "Star" P2)} if:(= 0 (state at:(to)))) (result Mover Win))
+                (if (is Line 4 All whats:{(id "Moon" P1) (id "Moon" P2) (id "Star" P1) (id "Star" P2)} if:(= 1 (state at:(to)))) (result Mover Win))
+                
+                // Value line (value)
+                (if (is Line 4 All whats:{(id "Moon" P1) (id "Moon" P2) (id "Star" P1) (id "Star" P2)} if:(= 0 (value Piece at:(to)))) (result Mover Win))
+                (if (is Line 4 All whats:{(id "Moon" P1) (id "Moon" P2) (id "Star" P1) (id "Star" P2)} if:(= 1 (value Piece at:(to)))) (result Mover Win))
+            })
+            (nextPhase "Select")
+        )
+        }
+    )
+)
+
+//------------------------------------------------------------------------------
+
+(metadata 
+    
+    (info
+        {
+        (description "Quarto has a 4Ã—4 board and 16 pieces. Each piece has four dichotomous attributes â€“ color, height, shape, and consistency â€“ so each piece is either black or white, tall or short, Star or round, and hollow or solid.")
+        (rules "Each piece has four dichotomous attributes â€“ color, height, shape, and consistency â€“ so each piece is either black or white, tall or short, Star or round, and hollow or solid. The object is to place the fourth piece in a row in which all four pieces have at least one attribute in common. The twist is that your opponent gets to choose the piece you place on the board each turn.")
+        (id "1536")
+        (source "<a href=\"https://boardgamegeek.com/boardgame/681/quarto\" target=\"_blank\" class=\"style1\" style=\"color: #0000EE\" />BGG</a>")
+        (version "1.3.11")
+        (classification "board/space/line")
+        (author "Blaise Muller")
+        (publisher "<a href=\"https://www.gigamic.com/\" target=\"_blank\" class=\"style1\" style=\"color: #0000EE\" />Gigamic</a> (used with permission)")
+        (credit "Eric Piette")
+        (date "1991")
+        }
+    )
+    
+    (graphics {
+        (piece Scale "Moon" 0.7)
+        (piece Scale "Star" 0.7)
+        (piece Foreground state:0 image:"Heart"fillColour:(colour Red)   edgeColour:(colour Red)      scale:1.5)
+        (piece Foreground state:1 image:"Diamond" fillColour:(colour Red)   edgeColour:(colour Red)      scale:1.5)
+        (piece Foreground state:2 image:"Star" fillColour:(colour Black) edgeColour:(colour Black) scale:1.5)
+        (piece Foreground state:3 image:"Moon" fillColour:(colour Black) edgeColour:(colour Black) scale:1.5)
+        (piece Foreground value:0 image:"9"    fillColour:(colour Hidden) edgeColour:(colour White) scale:1)
+        (piece Foreground value:1 image:"8"    fillColour:(colour Hidden) edgeColour:(colour White) scale:1)
+        (piece Foreground value:2 image:"7"    fillColour:(colour Hidden) edgeColour:(colour White) scale:1)
+        (piece Foreground value:3 image:"6"    fillColour:(colour Hidden) edgeColour:(colour White) scale:1)
+        (piece Foreground value:4 image:"5"    fillColour:(colour Hidden) edgeColour:(colour White) scale:1)
+        (piece Foreground value:5 image:"4"    fillColour:(colour Hidden) edgeColour:(colour White) scale:1)
+        (piece Foreground value:6 image:"3"    fillColour:(colour Hidden) edgeColour:(colour White) scale:1)
+        (piece Foreground value:7 image:"2"    fillColour:(colour Hidden) edgeColour:(colour White) scale:1)
+        (piece Foreground value:8 image:"A"    fillColour:(colour Hidden) edgeColour:(colour White) scale:1)
+        
+        (show Edges Hidden)
+        (board Background image:"Square.svg" fillColour:(colour 185 130 85) edgeColour:(colour 185 130 85) scale:1.45)
+    })
+    
+    (ai
+        "Quarto_ai"
+    )
+)

@@ -1,0 +1,353 @@
+			(forEach Player (set Hidden at:(coord "C1") to:Player))
+			(forEach Player (set Hidden at:(coord "D1") to:Player))
+			(forEach Player (set Hidden at:(coord "E1") to:Player))			
+
+		//------------------------------------------------------------------------------
+
+	(game "Agram"
+			(players 2)
+			(equipment {
+				(board (rectangle 1 4) use:Cell)
+				(piece "Square" Each)
+				(hand Each size:6)
+				(map "Deck" {1..35} {1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1})
+			})
+			(rules 
+			
+				(start {
+				    
+					(place "Square1" coord:"C1" state:0 value:0)
+					(place "Square1" coord:"C1" state:0 value:1)
+					(place "Square1" coord:"C1" state:0 value:2)
+					(place "Square1" coord:"C1" state:0 value:3)
+					(place "Square1" coord:"C1" state:0 value:4)
+					(place "Square1" coord:"C1" state:0 value:5)
+					(place "Square1" coord:"C1" state:0 value:6)
+					(place "Square1" coord:"C1" state:0 value:7)
+					(place "Square1" coord:"C1" state:0 value:8)
+					(place "Square1" coord:"C1" state:1 value:0)
+					(place "Square1" coord:"C1" state:1 value:1)
+					(place "Square1" coord:"C1" state:1 value:2)
+					(place "Square1" coord:"C1" state:1 value:3)
+					(place "Square1" coord:"C1" state:1 value:4)
+					(place "Square1" coord:"C1" state:1 value:5)
+					(place "Square1" coord:"C1" state:1 value:6)
+					(place "Square1" coord:"C1" state:1 value:7)
+					(place "Square1" coord:"C1" state:1 value:8)
+					(place "Square2" coord:"C1" state:2 value:0)
+					(place "Square2" coord:"C1" state:2 value:1)
+					(place "Square2" coord:"C1" state:2 value:2)
+					(place "Square2" coord:"C1" state:2 value:3)
+					(place "Square2" coord:"C1" state:2 value:4)
+					(place "Square2" coord:"C1" state:2 value:5)
+					(place "Square2" coord:"C1" state:2 value:6)
+					(place "Square2" coord:"C1" state:2 value:7)
+					(place "Square2" coord:"C1" state:2 value:8)
+					(place "Square2" coord:"C1" state:3 value:0)
+					(place "Square2" coord:"C1" state:3 value:1)
+					(place "Square2" coord:"C1" state:3 value:2)
+					(place "Square2" coord:"C1" state:3 value:3)
+					(place "Square2" coord:"C1" state:3 value:4)
+					(place "Square2" coord:"C1" state:3 value:5)
+					(place "Square2" coord:"C1" state:3 value:6)
+					(place "Square2" coord:"C1" state:3 value:7)					
+					(forEach Value min:0 max:5 (set Hidden at:(handSite P1 (value)) to:P2))
+					(forEach Value min:0 max:5 (set Hidden at:(handSite P2 (value)) to:P1))
+					(forEach Player (set Hidden at:(coord "C1") to:Player))
+					(forEach Player (set Hidden at:(coord "D1") to:Player))
+					(forEach Player (set Hidden at:(coord "E1") to:Player))
+					(set Hidden What (sites Hand P1) to:P2)
+					(set Hidden What (sites Hand P2) to:P1)
+				}      )
+				
+				phases:{
+				(phase "Deal"
+				    (play 
+					(seq {(apply (forEach Level (coord "C1") FromTop
+									(if (= 1 (value Random (range 0 1)))
+									(fromTo
+										(from (coord "C1") level:(level))
+										(to (coord "D1"))
+									)
+									(fromTo
+										(from (coord "C1") level:(level))
+										(to (coord "E1"))
+									)
+									))) 
+						 (apply (forEach Level (coord "D1") FromTop
+									(if (= 1 (value Random (range 0 1)))
+									(fromTo
+										(from (coord "D1") level:(level))
+										(to (coord "C1"))
+									)
+									(fromTo
+										(from (coord "D1") level:(level))
+										(to (coord "E1"))
+									)
+									)))
+						(apply (forEach Level (coord "E1") FromTop
+									(if (= 1 (value Random (range 0 1)))
+									(fromTo
+										(from (coord "E1") level:(level))
+										(to (coord "D1"))
+									)
+									(fromTo
+										(from (coord "E1") level:(level))
+										(to (coord "C1"))
+									)
+									)))
+						(apply (forEach Level (coord "D1") FromTop
+									(fromTo
+										(from (coord "C1") level:(level))
+										(to (coord "C1"))
+									)))
+				    				})) (nextPhase (is Mover P2) "Lead")
+				
+				)
+				(phase "Lead" 
+					(play 
+						(if (= (id P1) (mover))
+						
+							(move  
+								(from (sites Hand Mover))
+								(to (coord "A1"))
+								(then (do (set Score Mover (+ (* (state at:(to)) 9) (value Piece at:(to))))))
+							)
+							(move  
+								(from (sites Hand Mover))
+								(to (coord "B1"))
+								(then (do (set Score Mover (+ (* (state at:(to)) 9) (value Piece at:(to))))))
+							)) 
+						
+					) (nextPhase (is Mover P2) "Lead")
+							)			
+				
+				}
+			)
+		)
+		
+		//------------------------------------------------------------------------------
+
+(metadata 
+    
+    (info
+        {
+        (description "Quarto has a 4Ã—4 board and 16 pieces. Each piece has four dichotomous attributes â€“ color, height, shape, and consistency â€“ so each piece is either black or white, tall or short, square or round, and hollow or solid.")
+        (rules "Each piece has four dichotomous attributes â€“ color, height, shape, and consistency â€“ so each piece is either black or white, tall or short, square or round, and hollow or solid. The object is to place the fourth piece in a row in which all four pieces have at least one attribute in common. The twist is that your opponent gets to choose the piece you place on the board each turn.")
+        (id "1536")
+        (source "<a href=\"https://boardgamegeek.com/boardgame/681/quarto\" target=\"_blank\" class=\"style1\" style=\"color: #0000EE\" />BGG</a>")
+        (version "1.3.11")
+        (classification "board/space/line")
+        (author "Blaise Muller")
+        (publisher "<a href=\"https://www.gigamic.com/\" target=\"_blank\" class=\"style1\" style=\"color: #0000EE\" />Gigamic</a> (used with permission)")
+        (credit "Eric Piette")
+        (date "1991")
+        }
+    )
+    
+			(graphics {
+				(piece Foreground state:0 image:"Heart" fillColour:(colour Red)    edgeColour:(colour Red)   scale:1)
+				(piece Foreground state:1 image:"Cross" fillColour:(colour Red)    edgeColour:(colour Red)   scale:1)
+				(piece Foreground state:2 image:"Star"  fillColour:(colour Yellow) edgeColour:(colour Yellow) scale:1)
+				(piece Foreground state:3 image:"Moon"  fillColour:(colour Yellow) edgeColour:(colour Yellow) scale:1)
+				(piece Foreground value:0 image:"9"     fillColour:(colour Hidden) edgeColour:(colour Blue) scale:0.4)
+				(piece Foreground value:1 image:"8"     fillColour:(colour Hidden) edgeColour:(colour Blue) scale:0.4)
+				(piece Foreground value:2 image:"7"     fillColour:(colour Hidden) edgeColour:(colour Blue) scale:0.4)
+				(piece Foreground value:3 image:"6"     fillColour:(colour Hidden) edgeColour:(colour Blue) scale:0.4)
+				(piece Foreground value:4 image:"5"     fillColour:(colour Hidden) edgeColour:(colour Blue) scale:0.4)
+				(piece Foreground value:5 image:"4"     fillColour:(colour Hidden) edgeColour:(colour Blue) scale:0.4)
+				(piece Foreground value:6 image:"3"     fillColour:(colour Hidden) edgeColour:(colour Blue) scale:0.4)
+				(piece Foreground value:7 image:"2"     fillColour:(colour Hidden) edgeColour:(colour Blue) scale:0.4)
+				(piece Foreground value:8 image:"A"     fillColour:(colour Hidden) edgeColour:(colour Blue) scale:0.4)
+				(show Edges Hidden)
+				(show Symbol "Hexagon" (sites Board) fillColour:(colour 185 130 85) edgeColour:(colour 225 182 130)) 
+				(board Placement scale:0.8)
+				(board Background image:"square.svg" fillColour:(colour 185 130 85) edgeColour:(colour 185 130 85) scale:1.45)
+			})
+    
+    (ai
+        "Quarto_ai"
+    )
+)
+
+
+
+(game "Agram"
+	(players 2)
+	(equipment {
+		(board (rectangle 1 5) use:Vertex)
+		(piece "Square" Each)
+		(hand Each size:6)
+	})
+	(rules 
+	
+		(start {
+			(place "Square1" coord:"C1" state:0 value:0)
+			(place "Square1" coord:"C1" state:0 value:1)
+			(place "Square1" coord:"C1" state:0 value:2)
+			(place "Square1" coord:"C1" state:0 value:3)
+			(place "Square1" coord:"C1" state:0 value:4)
+			(place "Square1" coord:"C1" state:0 value:5)
+			(place "Square1" coord:"C1" state:0 value:6)
+			(place "Square1" coord:"C1" state:0 value:7)
+			(place "Square1" coord:"C1" state:0 value:8)
+			(place "Square1" coord:"C1" state:1 value:0)
+			(place "Square1" coord:"C1" state:1 value:1)
+			(place "Square1" coord:"C1" state:1 value:2)
+			(place "Square1" coord:"C1" state:1 value:3)
+			(place "Square1" coord:"C1" state:1 value:4)
+			(place "Square1" coord:"C1" state:1 value:5)
+			(place "Square1" coord:"C1" state:1 value:6)
+			(place "Square1" coord:"C1" state:1 value:7)
+			(place "Square1" coord:"C1" state:1 value:8)
+			(place "Square2" coord:"C1" state:2 value:0)
+			(place "Square2" coord:"C1" state:2 value:1)
+			(place "Square2" coord:"C1" state:2 value:2)
+			(place "Square2" coord:"C1" state:2 value:3)
+			(place "Square2" coord:"C1" state:2 value:4)
+			(place "Square2" coord:"C1" state:2 value:5)
+			(place "Square2" coord:"C1" state:2 value:6)
+			(place "Square2" coord:"C1" state:2 value:7)
+			(place "Square2" coord:"C1" state:2 value:8)
+			(place "Square2" coord:"C1" state:3 value:0)
+			(place "Square2" coord:"C1" state:3 value:1)
+			(place "Square2" coord:"C1" state:3 value:2)
+			(place "Square2" coord:"C1" state:3 value:3)
+			(place "Square2" coord:"C1" state:3 value:4)
+			(place "Square2" coord:"C1" state:3 value:5)
+			(place "Square2" coord:"C1" state:3 value:6)
+			(place "Square2" coord:"C1" state:3 value:7)
+			(forEach Player (set Hidden State at:(coord "C1") to:Player))
+			(forEach Player (set Hidden at:(coord "D1") to:Player))
+			(forEach Player (set Hidden at:(coord "E1") to:Player))			
+			(forEach Value min:0 max:5 (set Hidden at:(handSite P1 (value)) to:P2))
+			(forEach Value min:0 max:5 (set Hidden at:(handSite P2 (value)) to:P1))
+			(set Hidden What (sites Hand P1) to:P2)
+			(set Hidden What (sites Hand P2) to:P1)
+		}      )
+		
+		phases:{
+		(phase "DealA"
+		    (play
+			(move Pass (then 
+			     (if (= (value Random (range 0 1)) 1)
+			         (fromTo
+				    		  (from (coord:"C1"))
+				    		  (to   (coord:"D1"))
+				    		  )
+			         (fromTo
+				    		  (from (coord:"C1"))
+				    		  (to   (coord:"E1"))
+				    		  )	 )))) (nextPhase (is Empty (coord "C1")) "DealB")
+		)
+		(phase "DealB"
+		    (play
+			(move Pass (then 
+			     (if (= (value Random (range 0 2)) 1)
+			         (fromTo
+				    		  (from (coord:"D1"))
+				    		  (to   (coord:"C1"))
+				    		  )
+			         (fromTo
+				    		  (from (coord:"D1"))
+				    		  (to   (coord:"E1"))
+				    		  )	 )))) (nextPhase (is Empty (coord "D1")) "DealC")
+		)	         
+		(phase "DealC"
+		    (play
+			(move Pass (then 
+			     (if (= (value Random (range 0 1)) 1)
+			         (fromTo
+				    		  (from (coord:"E1"))
+				    		  (to   (coord:"C1"))
+				    		  )
+			         (fromTo
+				    		  (from (coord:"E1"))
+				    		  (to   (coord:"D1"))
+				    		  )	 )))) (nextPhase (is Empty (coord "E1")) "DealD")
+		)
+		(phase "DealD"
+		    (play
+			(move Pass (then 
+			     (fromTo
+				    		  (from (coord:"D1"))
+				    		  (to   (coord:"C1"))
+				    		  )))) (nextPhase (is Empty (coord "D1")) "DealE")
+		)
+
+		(phase "DealE"
+		    (play
+			(move Pass (then 
+			     (fromTo
+				    		  (from (coord:"C1"))
+				    		  (to   (handSite Mover))
+				    		  )))) (nextPhase (is Empty (coord "C1")) "Lead")
+		)			
+		
+		
+		
+		
+		(phase "Lead" 
+			(play 
+				(if (= (id P1) (mover))
+				
+					(move  
+						(from (sites Hand Mover))
+						(to (coord "A1"))
+						(then (do (set Score Mover (+ (* (state at:(to)) 9) (value Piece at:(to))))))
+					)
+					(move  
+						(from (sites Hand Mover))
+						(to (coord "B1"))
+						(then (do (set Score Mover (+ (* (state at:(to)) 9) (value Piece at:(to))))))
+					)) 
+			) (nextPhase (is Mover P2) "Lead")
+					)			
+		
+		}
+	)
+)
+
+//------------------------------------------------------------------------------
+
+(metadata 
+    
+    (info
+        {
+        (description "Quarto has a 4Ã—4 board and 16 pieces. Each piece has four dichotomous attributes â€“ color, height, shape, and consistency â€“ so each piece is either black or white, tall or short, square or round, and hollow or solid.")
+        (rules "Each piece has four dichotomous attributes â€“ color, height, shape, and consistency â€“ so each piece is either black or white, tall or short, square or round, and hollow or solid. The object is to place the fourth piece in a row in which all four pieces have at least one attribute in common. The twist is that your opponent gets to choose the piece you place on the board each turn.")
+        (id "1536")
+        (source "<a href=\"https://boardgamegeek.com/boardgame/681/quarto\" target=\"_blank\" class=\"style1\" style=\"color: #0000EE\" />BGG</a>")
+        (version "1.3.11")
+        (classification "board/space/line")
+        (author "Blaise Muller")
+        (publisher "<a href=\"https://www.gigamic.com/\" target=\"_blank\" class=\"style1\" style=\"color: #0000EE\" />Gigamic</a> (used with permission)")
+        (credit "Eric Piette")
+        (date "1991")
+        }
+    )
+    
+			(graphics {
+				(piece Foreground state:0 image:"Heart" fillColour:(colour Red)    edgeColour:(colour Red)   scale:1)
+				(piece Foreground state:1 image:"Cross" fillColour:(colour Red)    edgeColour:(colour Red)   scale:1)
+				(piece Foreground state:2 image:"Star"  fillColour:(colour Yellow) edgeColour:(colour Yellow) scale:1)
+				(piece Foreground state:3 image:"Moon"  fillColour:(colour Yellow) edgeColour:(colour Yellow) scale:1)
+				(piece Foreground value:0 image:"9"     fillColour:(colour Hidden) edgeColour:(colour Blue) scale:0.4)
+				(piece Foreground value:1 image:"8"     fillColour:(colour Hidden) edgeColour:(colour Blue) scale:0.4)
+				(piece Foreground value:2 image:"7"     fillColour:(colour Hidden) edgeColour:(colour Blue) scale:0.4)
+				(piece Foreground value:3 image:"6"     fillColour:(colour Hidden) edgeColour:(colour Blue) scale:0.4)
+				(piece Foreground value:4 image:"5"     fillColour:(colour Hidden) edgeColour:(colour Blue) scale:0.4)
+				(piece Foreground value:5 image:"4"     fillColour:(colour Hidden) edgeColour:(colour Blue) scale:0.4)
+				(piece Foreground value:6 image:"3"     fillColour:(colour Hidden) edgeColour:(colour Blue) scale:0.4)
+				(piece Foreground value:7 image:"2"     fillColour:(colour Hidden) edgeColour:(colour Blue) scale:0.4)
+				(piece Foreground value:8 image:"A"     fillColour:(colour Hidden) edgeColour:(colour Blue) scale:0.4)
+				(show Edges Hidden)
+				(show Symbol "Hexagon" (sites Board) fillColour:(colour 185 130 85) edgeColour:(colour 225 182 130)) 
+				(board Placement scale:0.8)
+				(board Background image:"square.svg" fillColour:(colour 185 130 85) edgeColour:(colour 185 130 85) scale:1.45)
+			})
+    
+    (ai
+        "Quarto_ai"
+    )
+)

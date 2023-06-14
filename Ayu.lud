@@ -1,0 +1,89 @@
+	(define "DistanceFromNearestNeighbor"
+		(min
+			(results
+				from:#1
+				to:(intersection (sites LineOfSight at:(from)) (sites Occupied by:Mover))
+				(count Steps Orthogonal (from) (to))
+			)
+		)
+	)
+	
+	(define "AyuMovement"
+		(move Step Orthogonal
+			(to if:(and 
+				(is Empty (to)) 
+				(> ("DistanceFromNearestNeighbor" (from)) 
+				("DistanceFromNearestNeighbor" (to))))))
+	)
+	
+	(define "GroupSwap"
+		(move (from (sites Occupied by:Mover))
+			(to if:(is Empty (to)))))
+				
+	
+	//------------------------------------------------------------------------------
+	
+	(game "Ayu" 
+		(players 2) 
+		
+		(equipment { 
+			(board (square 11)) 
+			(piece "Disc" Each (or {"GroupSwap" "AyuMovement"}))})
+		
+		(rules 
+			(start { 
+				(place "Disc1" {"A2"  "C2"  "E2"  "G2"  "I2"  "K2" 
+								"A4"  "C4"  "E4"  "G4"  "I4"  "K4"
+								"A6"  "C6"  "E6"  "G6"  "I6"  "K6"
+								"A8"  "C8"  "E8"  "G8"  "I8"  "K8"
+								"A10" "C10" "E10" "G10" "I10" "K10"})
+				(place "Disc2" {   "B1"  "D1"  "F1"  "H1"  "J1"   
+								"B3"  "D3"  "F3"  "H3"  "J3"  
+								"B5"  "D5"  "F5"  "H5"  "J5"  
+								"B7"  "D7"  "F7"  "H7"  "J7"  
+								"B9"  "D9"  "F9"  "H9"   "J9" 
+								"B11" "D11" "F11" "H11"  "J11"})})
+			
+			(play (forEach Piece))
+			
+			(end 
+				(if 
+					(or {
+						(> 2 (count Groups Adjacent if:(= (id Next) (who at:(to)))))
+						(no Moves Mover)
+					})
+					(result Mover Win)
+				)
+			) 
+		)
+	)
+
+//------------------------------------------------------------------------------
+
+(metadata 
+    
+    (info
+        {
+        (description "Lines of Action was invented by Claude Soucie in 1969. It is played on an 8x8 board with twelve pieces per player.")
+        (rules "A player wins by connecting all of one's pieces into a contiguous body so that they are connected orthogonally or diagonally. Players alternate moves. Pieces move orthogonally or diagonally. A piece moves exactly as many spaces as there are pieces (belonging to both the player and their opponent) on the line in which it is moving. A piece may jump over the player's own pieces, but not over one belonging to the opponent. A piece can capture piece belonging to the opponent by landing on it.")
+        (source "<a href=\"https://en.wikipedia.org/wiki/Lines_of_Action\" target=\"_blank\" class=\"style1\" style=\"color: #0000EE\" />Wikipedia</a>")
+        (id "394")
+        (version "1.3.11")
+        (classification "board/space/group")
+        (author "Claude Soucie")
+        (credit "Eric Piette")
+        (date "1988")
+        }
+    )
+    
+    (graphics {
+        (board Style Chess)
+        (player Colour P1 (colour VeryDarkGrey))
+        (player Colour P2 (colour White))
+    })
+    
+    (ai 
+        "Lines of Action_ai"
+    )
+    
+)
