@@ -1,0 +1,127 @@
+
+    Here are the broad categories of card game (an "X" means an example has been created in CardStock):
+
+    
+
+    X    ADDING       	(like cribbage)
+
+      	 DECK-BUILDING	(like magic, likely out of our scope this summer)
+
+    X    TRICK-TAKING 	(like spades. the primordial category, equivalent to abstracts like amazons hackenbush or clobber)
+
+    X    COLLECTING   	(like war or ers)
+
+    X    COMPARING    	(like poker)
+
+    X    DRAW-DISCARD 	(like rummy)
+
+   	 MATCHING     	(like my personal favorite, dominos. a domino ludeme exists
+
+   	   		   	and has been implemented for the     
+
+   					   "boneyard" ruleset, but not Jamaican style which is my preference.* Implementing this, and perhaps
+
+   					   generalizing this Ludeme, is one of the first things I plan to do.)
+
+   	 RACING       	(rare. best eg i could find "milles borne")
+
+    X    SHEDDING     	(like uno)
+
+   	 SOCIAL DEDUCTION (like mafia)
+
+
+
+
+
+  sixlove
+  score
+  
+I tried to begin on six love last week, but got intimidated very quick and decided I needed to work my way up to it. Regardless, this will be a game I implement involving multi-player hidden information.
+
+X teeko
+I catchup
+X hexade
+I ayu
+I ordo
+  gekitai
+  aries
+  gounki
+
+These are abstract strategy games that will take effort to implement that I have been using to learn the ropes.
+
+  oswald
+  entropy
+
+These games are also abstract strategy, but involve hierarchical scoring like poker. I believe that getting this mechanic down will be important to implementing such games. Entropy could also get me using the RNGs creatively.
+
+  minesweeper
+  nonogram
+  sudoku
+  galaxies
+
+These games are what I would declare n-ary selection puzzles. Despite them being touted in most Ludii ephemera, they're pretty lacking. I think implementing decent algorithms that generate random puzzles (for like one of these I'm not spending more than 2 days on this) would be cool esp. since I did something similar in "Combinatorics of Square Grid Regions"
+
+
+
+
+tetris
+
+This game involves being dealt a random one of seven cards. I think if 2048 can exist here I could make tetris without it taking too long. I think this is probably beyond my scope here but I'd also be very down to go at it.
+
+file:///C:/Users/night/Downloads/LudiiGameLogicGuide.pdf
+file:///C:/Users/night/Downloads/LudiiUserGuide.pdf
+file:///C:/Users/night/Downloads/COG2021-2.pdf
+file:///C:/Users/night/Downloads/ECAI2020.pdf
+file:///C:/Users/night/Downloads/ACG2019.pdf
+C:\Users\night\Downloads\CardStock.png
+file:///C:/Users/night/Downloads/CARDSTOCK1.pdf
+
+
+cardstockexamples.pdf
+
+http://mark.goadrich.com/articles/issue-2-1-09-recycled.pdf AND 
+
+A Card Game Description Language
+Jose M. Font1, Tobias Mahlmann2, Daniel Manrique1, and Julian Togelius2
+1 Departamento de Inteligencia Artificial, Universidad Politcnica de Madrid. Campus
+de Montegancedo, 28660, Boadilla del Monte, Spain
+
+https://jakubkowalski.tech/Publications/Kowalski2014EmbeddingACard.pdf 
+
+*boneyard sucks man there's no strategy to it feels like uno. Great if you're playing with a small child but 
+not like an adults hanging out card game. Jamaican-style involves much more calculation to play well in my experience,
+and (this is crucial) is enjoyable to play poorly, though moreso to play thoughtfully. everyone i've met with nostalgia 
+for boneyard or even score (which people get fired up on behalf of in the South especially) has conceded that 
+jamaican-style is way more conducive to social recreation. It gets people more emotionally invested, too!  
+
+
+HIDDEN INFORMATION
+     98
+X    AGRAM
+  	 APPLES TO APPLES
+   	 CATAN
+   	 CLUE
+   	 COUP
+     CRIBBAGE
+     DOMINOS
+     DND
+     GO FISH
+   	 HEARTS
+     MAHJONG
+   	 MAGIC/POKEMON
+   	 MAO
+   	 MILLES BORNE
+     MONOPOLY
+     PAIRS
+     PANDEMIC
+   	 POKER
+     RUMMY
+   	 SCOPA
+   	 SCRABBLE
+   	 SPADES/BRIDGE
+   	 TICKET TO RIDE
+   	 TIPPEN
+   	 TRAX
+   	 UNO
+   	 WEREWOLF
+     WAR
