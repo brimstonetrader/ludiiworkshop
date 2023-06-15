@@ -1,94 +1,111 @@
-(game "Shuffle"
-	(players 2)
-	(equipment {
-		(board (rectangle 1 3) use:Vertex largeStack:True)
-		(piece "Disc1"  P1)
-		(piece "Disc2"  P1)
-		(piece "Disc3"  P1)
-		(piece "Disc4"  P1)
-		(piece "Disc5"  P1)
-		(piece "Disc6"  P1)
-		(piece "Disc7"  P1)
-		(piece "Disc8"  P1)
-		(piece "Disc9"  P1)
-		(piece "Disc10" P1)
-		(piece "Disc11" P1)
-		(piece "Disc12" P1)
-		(piece "Disc13" P1)
-		(piece "Star1"   P1)
-		(piece "Star2"   P1)
-		(piece "Star3"   P1)
-		(piece "Star4"   P1)
-		(piece "Star5"   P1)
-		(piece "Star6"   P1)
-		(piece "Star7"   P1)
-		(map "Entry" {(pair 1 "A1") (pair 2 "B1") (pair 3 "C1")})
-		(hand Each size:6)
-	})
-	(rules 
-	
-		(start {
-			(place Stack items:{"Disc1"	    "Disc2"	    "Disc3"	    "Disc4"
-			                    "Disc5"	    "Disc6"	    "Disc7"	    "Disc8"
-			                    "Disc9"	    "Disc10"	"Disc11"	"Disc12"
-			                    "Disc13"	"Star1" 	"Star2" 	"Star3" 
-			                    "Star4" 	"Star5" 	"Star6" 	"Star7"   	} (mapEntry 1))
-			
-			
-			
-			
-		}      )
-		
-		phases:{
-		(phase "DealA"
-		    (play
-				(forEach Level (coord:A1)
-                                    (fromTo
-                                        (from (last To) level:(level))
-                                        (to (if (= (value Random (range 0 1)) 0)
-                                                ((coord:"B1") level:(topLevel at:(coord:"B1")))
-                                                ((coord:"C1") level:(topLevel at:(coord:"C1")))
-                                            )
-                                        )
-                                    )
-                      )
-                )
-                    
-			(nextPhase (is Empty (coord "C1")) "DealA")
-		)
-		
-		}
-	)
+(game "Shuffle" 
+    (players 1) 
+    (equipment { 
+        (board (rectangle 1 3) largeStack:True) 
+        (piece "Square1" P1)
+        (piece "Square2" P1)
+        (piece "Square3" P1)
+        (piece "Square4" P1)
+        (piece "Square5" P1)
+        (piece "Square6" P1)
+        (piece "Square7" P1)
+        (piece "Square8" P1)
+        (piece "Square9" P1)
+        (piece "Square10" P1)
+        (piece "Square11" P1)
+        (piece "Square12" P1)
+        (piece "Square13" P1)
+        (piece "Square14" P1)
+        (piece "Square15" P1)
+        (piece "Square16" P1)
+        (piece "Square17" P1)
+        (piece "Square18" P1)
+        (piece "Square19" P1)
+        (piece "Square20" P1)
+        (piece "Square21" P1)
+        (piece "Square22" P1)
+        (piece "Square23" P1)
+        (piece "Square24" P1)
+        (piece "Square25" P1)
+        (piece "Square26" P1)
+        (piece "Square27" P1)
+        (piece "Square28" P1)
+        (piece "Square29" P1)
+        (piece "Square30" P1)
+        (piece "Square31" P1)
+        (piece "Square32" P1)
+        (piece "Square33" P1)
+        (piece "Square34" P1)
+        (piece "Square35" P1)
+    }) 
+    (rules
+        (start {
+        (place Stack items:{"Square1"  "Square2"  "Square3"  "Square4"  "Square5" 		                    
+							"Square6"  "Square7"  "Square8"  "Square9"  "Square10"		                    
+							"Square11" "Square12" "Square13" "Square14" "Square15"		                    
+							"Square16" "Square17" "Square18" "Square19" "Square20"
+		                    "Square21" "Square22" "Square23" "Square24" "Square25"		           
+							"Square26" "Square27" "Square28" "Square29"	"Square30"		  
+							"Square31" "Square32" "Square33" "Square34" "Square35"} 0)
+        }) 
+        (play (move Pass ))
+        
+        (end {
+            (if 
+                (is Empty (coord "C1"))
+                (result P1 Win) 
+            )
+            (if 
+                (= (count Moves) 127) 
+                (result P1 Loss) 
+            )
+        })
+    )
 )
 
-//------------------------------------------------------------------------------
 
-(metadata 
-    
-    (info
-        {
-        (description "Quarto has a 4Ã—4 board and 16 pieces. Each piece has four dichotomous attributes â€“ color, height, shape, and consistency â€“ so each piece is either black or white, tall or short, Star or round, and hollow or solid.")
-        (rules "Each piece has four dichotomous attributes â€“ color, height, shape, and consistency â€“ so each piece is either black or white, tall or short, Star or round, and hollow or solid. The object is to place the fourth piece in a row in which all four pieces have at least one attribute in common. The twist is that your opponent gets to choose the piece you place on the board each turn.")
-        (id "1536")
-        (source "<a href=\"https://boardgamegeek.com/boardgame/681/quarto\" target=\"_blank\" class=\"style1\" style=\"color: #0000EE\" />BGG</a>")
-        (version "1.3.11")
-        (classification "board/space/line")
-        (author "Blaise Muller")
-        (publisher "<a href=\"https://www.gigamic.com/\" target=\"_blank\" class=\"style1\" style=\"color: #0000EE\" />Gigamic</a> (used with permission)")
-        (credit "Eric Piette")
-        (date "1991")
-        }
-    )
-    
-    (graphics {
-        (piece Scale "Moon1" 0.7)
-        (piece Scale "Star1" 0.7)
-        
-        (show Edges Hidden)
-        (board Background image:"Square.svg" fillColour:(colour 185 130 85) edgeColour:(colour 185 130 85) scale:1.45)
-    })
-    
-    (ai
-        "Quarto_ai"
-    )
+
+(metadata    
+	(graphics {
+		(piece Foreground "Square1"  image:"0"  fillColour:(colour Hidden) edgeColour:(colour Red)    scale:1)
+		(piece Foreground "Square2"  image:"1"  fillColour:(colour Hidden) edgeColour:(colour Yellow) scale:1)
+		(piece Foreground "Square3"  image:"2"  fillColour:(colour Hidden) edgeColour:(colour Blue)  scale:1)
+		(piece Foreground "Square4"  image:"3"  fillColour:(colour Hidden) edgeColour:(colour Black)  scale:1)
+		(piece Foreground "Square5"  image:"4"  fillColour:(colour Hidden) edgeColour:(colour Red)    scale:1)
+		(piece Foreground "Square6"  image:"5"  fillColour:(colour Hidden) edgeColour:(colour Yellow) scale:1)
+		(piece Foreground "Square7"  image:"6"  fillColour:(colour Hidden) edgeColour:(colour Blue)  scale:1)
+		(piece Foreground "Square8"  image:"7"  fillColour:(colour Hidden) edgeColour:(colour Black)  scale:1)
+		(piece Foreground "Square9"  image:"8"  fillColour:(colour Hidden) edgeColour:(colour Red)    scale:1)
+		(piece Foreground "Square10" image:"0"  fillColour:(colour Hidden) edgeColour:(colour Yellow) scale:1)
+		(piece Foreground "Square11" image:"1"  fillColour:(colour Hidden) edgeColour:(colour Blue)  scale:1)
+		(piece Foreground "Square12" image:"2"  fillColour:(colour Hidden) edgeColour:(colour Black)  scale:1)
+		(piece Foreground "Square13" image:"3"  fillColour:(colour Hidden) edgeColour:(colour Red)    scale:1)
+		(piece Foreground "Square14" image:"4"  fillColour:(colour Hidden) edgeColour:(colour Yellow) scale:1)
+		(piece Foreground "Square15" image:"5"  fillColour:(colour Hidden) edgeColour:(colour Blue)  scale:1)
+		(piece Foreground "Square16" image:"6"  fillColour:(colour Hidden) edgeColour:(colour Black)  scale:1)
+		(piece Foreground "Square17" image:"7"  fillColour:(colour Hidden) edgeColour:(colour Red)    scale:1)
+		(piece Foreground "Square18" image:"8"  fillColour:(colour Hidden) edgeColour:(colour Yellow) scale:1)
+		(piece Foreground "Square19" image:"0"  fillColour:(colour Hidden) edgeColour:(colour Blue)  scale:1)
+		(piece Foreground "Square20" image:"1"  fillColour:(colour Hidden) edgeColour:(colour Black)  scale:1)
+		(piece Foreground "Square21" image:"2"  fillColour:(colour Hidden) edgeColour:(colour Red)    scale:1)
+		(piece Foreground "Square22" image:"3"  fillColour:(colour Hidden) edgeColour:(colour Yellow) scale:1)
+		(piece Foreground "Square23" image:"4"  fillColour:(colour Hidden) edgeColour:(colour Blue)  scale:1)
+		(piece Foreground "Square24" image:"5"  fillColour:(colour Hidden) edgeColour:(colour Black)  scale:1)
+		(piece Foreground "Square25" image:"6"  fillColour:(colour Hidden) edgeColour:(colour Red)    scale:1)
+		(piece Foreground "Square26" image:"7"  fillColour:(colour Hidden) edgeColour:(colour Yellow) scale:1)
+		(piece Foreground "Square27" image:"8"  fillColour:(colour Hidden) edgeColour:(colour Blue)  scale:1)
+		(piece Foreground "Square28" image:"0"  fillColour:(colour Hidden) edgeColour:(colour Black)  scale:1)
+		(piece Foreground "Square29" image:"1"  fillColour:(colour Hidden) edgeColour:(colour Red)    scale:1)
+		(piece Foreground "Square30" image:"2"  fillColour:(colour Hidden) edgeColour:(colour Yellow) scale:1)
+		(piece Foreground "Square31" image:"3"  fillColour:(colour Hidden) edgeColour:(colour Blue)  scale:1)
+		(piece Foreground "Square32" image:"4"  fillColour:(colour Hidden) edgeColour:(colour Black)  scale:1)
+		(piece Foreground "Square33" image:"5"  fillColour:(colour Hidden) edgeColour:(colour Red)    scale:1)
+		(piece Foreground "Square34" image:"6"  fillColour:(colour Hidden) edgeColour:(colour Yellow) scale:1)
+		(piece Foreground "Square35" image:"7"  fillColour:(colour Hidden) edgeColour:(colour Blue)  scale:1)
+		(show Edges Hidden)                                                  
+		(show Symbol "Hexagon" (sites Board) fillColour:(colour 185 130 85) edgeColour:(colour 225 182 130)) 
+		(board Placement scale:0.8)
+        (stackType None)
+		(board Background image:"square.svg" fillColour:(colour 185 130 85) edgeColour:(colour 185 130 85) scale:1.45)
+	})
 )
