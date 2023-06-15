@@ -1,0 +1,171 @@
+(define "Generator"
+	(+ (toInt (forEach Value min:1 max:(#1) (if (> (mapEntry "Permutebase") (value)) 1 0))))
+)
+
+
+(define "Switch"
+	(and {
+		(if (and {(> (score P1) (score P2)) (> (score P1) (score P4)) (> (score P1) (score P3))})
+			(set NextPlayer (player 1)))
+		(if (and (> (score P2) (score P3)) (> (score P2) (score P4)))
+			(set NextPlayer (player 2)))
+		(if (> (score P3) (score P4))
+					(set NextPlayer (player 3))
+					(set NextPlayer (player 4)))})
+)
+
+//------------------------------------------------------------------------------
+
+(game "Agram"
+	(players 4)
+	(equipment {
+		(board (rectangle 4 1) use:Vertex)
+		(piece "Square" Each)
+		(hand Each size:6)
+		(map "Entry" {(pair P1 "B4") (pair P2 "A3") (pair P3 "A2") (pair P4 "B1")})
+		(map "Permutebase" {1..35} {(value Random (range 1 35)) (value Random (range 1 34)) (value Random (range 1 33)) (value Random (range 1 32)) (value Random (range 1 31))
+		                            (value Random (range 1 30)) (value Random (range 1 29)) (value Random (range 1 28)) (value Random (range 1 27)) (value Random (range 1 26))
+									(value Random (range 1 25)) (value Random (range 1 24)) (value Random (range 1 23)) (value Random (range 1 22)) (value Random (range 1 21))
+									(value Random (range 1 20)) (value Random (range 1 19)) (value Random (range 1 18)) (value Random (range 1 17)) (value Random (range 1 16))
+									(value Random (range 1 15)) (value Random (range 1 14)) (value Random (range 1 13)) (value Random (range 1 12)) (value Random (range 1 11))
+									(value Random (range 1 10)) (value Random (range 1  9)) (value Random (range 1  8)) (value Random (range 1  7)) (value Random (range 1  6))
+									(value Random (range 1  5)) (value Random (range 1  4)) (value Random (range 1  3)) (value Random (range 1  2)) (value Random (range 1  1))})
+		(map "PermuteCoeff" {1..35} {            0   ("Generator" 1)  ("Generator" 2)  ("Generator" 3)  ("Generator" 4)
+		                            ("Generator" 5)  ("Generator" 6)  ("Generator" 7)  ("Generator" 8)  ("Generator" 9)
+									("Generator" 10) ("Generator" 11) ("Generator" 12) ("Generator" 13) ("Generator" 14)
+		                            ("Generator" 15) ("Generator" 16) ("Generator" 17) ("Generator" 18) ("Generator" 19)
+									("Generator" 20) ("Generator" 21) ("Generator" 22) ("Generator" 23) ("Generator" 24)
+		                            ("Generator" 25) ("Generator" 26) ("Generator" 27) ("Generator" 28) ("Generator" 29)
+									("Generator" 30) ("Generator" 31) ("Generator" 32) ("Generator" 33) ("Generator" 34)})							
+	})
+	(rules 
+	
+		(start {
+			(place "Square1" (handSite P1   ) state:3 value:(*    (value Random (range 0 1)) 4))
+			(place "Square1" (handSite P1  1) state:2 value:(*    (value Random (range 0 1)) 4))
+			(place "Square1" (handSite P1  2) state:1 value:(*    (value Random (range 0 1)) 4))
+			(place "Square1" (handSite P1  3) state:0 value:(*    (value Random (range 0 1)) 4))
+			(place "Square1" (handSite P1  4) state:3 value:(*    (value Random (range 0 1)) 4))
+			(place "Square1" (handSite P1  5) state:2 value:(*    (value Random (range 0 1)) 4))
+			(place "Square2" (handSite P2   ) state:1 value:(+ (* (value Random (range 0 1)) 4) 1))
+			(place "Square2" (handSite P2  1) state:0 value:(+ (* (value Random (range 0 1)) 4) 1))
+			(place "Square2" (handSite P2  2) state:3 value:(+ (* (value Random (range 0 1)) 4) 1))
+			(place "Square2" (handSite P2  3) state:2 value:(+ (* (value Random (range 0 1)) 4) 1))
+			(place "Square2" (handSite P2  4) state:1 value:(+ (* (value Random (range 0 1)) 4) 1))
+			(place "Square2" (handSite P2  5) state:0 value:(+ (* (value Random (range 0 1)) 4) 1))
+			(place "Square3" (handSite P3   ) state:3 value:(+ (* (value Random (range 0 1)) 4) 2))
+			(place "Square3" (handSite P3  1) state:2 value:(+ (* (value Random (range 0 1)) 4) 2))
+			(place "Square3" (handSite P3  2) state:1 value:(+ (* (value Random (range 0 1)) 4) 2))
+			(place "Square3" (handSite P3  3) state:0 value:(+ (* (value Random (range 0 1)) 4) 2))
+			(place "Square3" (handSite P3  4) state:3 value:(+ (* (value Random (range 0 1)) 4) 2))
+			(place "Square3" (handSite P3  5) state:2 value:(+ (* (value Random (range 0 1)) 4) 2))
+			(place "Square4" (handSite P4   ) state:1 value:(+ (* (value Random (range 0 1)) 4) 3))
+			(place "Square4" (handSite P4  1) state:0 value:(+ (* (value Random (range 0 1)) 4) 3))
+			(place "Square4" (handSite P4  2) state:3 value:(+ (* (value Random (range 0 1)) 4) 3))
+			(place "Square4" (handSite P4  3) state:2 value:(+ (* (value Random (range 0 1)) 4) 3))
+			(place "Square4" (handSite P4  4) state:1 value:(+ (* (value Random (range 0 1)) 4) 3))
+			(place "Square4" (handSite P4  5) state:0 value:(+ (* (value Random (range 0 1)) 4) 3))			
+			(forEach Player (set Hidden State (sites Hand Player) to:Enemy))
+			(forEach Player (set Hidden Value (sites Hand Player) to:Enemy))	
+		}      )
+		
+		phases:{
+		(phase "Lead" 
+			(play 
+				(move  
+					(from (sites Hand Mover))
+					(to (mapEntry (mover)))
+					(then (and {(set Var (state at:(mapEntry (mover)))) 
+					            (set Score Mover (+ (value Piece at:(mapEntry (mover))) 1)) 
+					            (set Hidden Value at:(mapEntry (mover)) False to:Enemy)
+					            (set Hidden State at:(mapEntry (mover)) False to:Enemy)})))
+			) (nextPhase "Follow")
+		)			
+		(phase "Follow" 
+			(play 
+				(priority {
+						(move
+							(from (sites Hand Mover))
+							(to (mapEntry (mover)) if:(= (state at:(from)) (var)))
+							(then (and {(set Score Mover (+ (value Piece at:(mapEntry (mover))) 1)) 
+							            (set Hidden Value at:(mapEntry (mover)) False to:Enemy)
+							            (set Hidden State at:(mapEntry (mover)) False to:Enemy)})))
+						(move  
+							(from (sites Hand Mover))
+							(to (mapEntry (mover)))
+							(then (and {(set Score Mover 0) 
+							            (set Hidden Value at:(mapEntry (mover)) False to:Enemy) 
+							            (set Hidden State at:(mapEntry (mover)) False to:Enemy)})))})
+			) (nextPhase (= (% (count Moves) 3) 2) "Last")
+		)
+		
+		(phase "Last" 
+			(play 
+				(priority {
+						(move
+							(from (sites Hand Mover))
+							(to (mapEntry (mover)) if:(= (state at:(from)) (var)))
+							(then (and {(set Score Mover (+ (value Piece at:(mapEntry (mover))) 1)) 
+							            (set Hidden Value at:(mapEntry (mover)) False to:Enemy)
+							            (set Hidden State at:(mapEntry (mover)) False to:Enemy)
+										("Switch")})))
+						(move  
+							(from (sites Hand Mover))
+							(to (mapEntry (mover)))
+							(then (and {(set Score Mover 0)
+							            (set Hidden Value at:(mapEntry (mover)) False to:Enemy)
+							            (set Hidden State at:(mapEntry (mover)) False to:Enemy)
+										("Switch")})))})
+			) (end {(if (all Sites (sites Hand Mover) if:(= 0 (count Cell at:(site)))) (result Next Win))}) 
+			  (nextPhase "Lead"))
+
+			  }
+	))
+		
+	
+	
+	//------------------------------------------------------------------------------
+	
+(metadata 
+    
+    (info
+        {
+        (description "Agram is a trick-taking card game popular in Niger and Mali.")
+		(rules "Players are dealt six cards at the beginning, and then must play six tricks, 
+		following the suit of the lead if possible. The biggest number wins, if it follows 
+		suit. The overall winner is the winner of the final trick.")
+        (id "1536")
+        (source "<a href=\"https://www.pagat.com/last/agram.html\" target=\"_blank\" class=\"style1\" style=\"color: #0000EE\" />Pagat</a>")
+        (version "1.3.11")
+        (classification "experimental")
+        (author "Unknown")
+        (publisher "<a href=\"https://www.pagat.com/last/agram.html\" target=\"_blank\" class=\"style1\" style=\"color: #0000EE\" />Pagat</a> (used without permission)")
+        (credit "Noah Morris")
+        (date "2023")
+        }
+    )
+    
+			(graphics {
+				(piece Foreground state:0 image:"Heart" fillColour:(colour Red)    edgeColour:(colour Red)   scale:1)
+				(piece Foreground state:1 image:"Cross" fillColour:(colour Red)    edgeColour:(colour Red)   scale:1)
+				(piece Foreground state:2 image:"Star"  fillColour:(colour Yellow) edgeColour:(colour Yellow) scale:1)
+				(piece Foreground state:3 image:"Moon"  fillColour:(colour Yellow) edgeColour:(colour Yellow) scale:1)
+				(piece Foreground value:0 image:"3"     fillColour:(colour Hidden) edgeColour:(colour Blue) scale:0.4)
+				(piece Foreground value:1 image:"4"     fillColour:(colour Hidden) edgeColour:(colour Blue) scale:0.4)
+				(piece Foreground value:2 image:"5"     fillColour:(colour Hidden) edgeColour:(colour Blue) scale:0.4)
+				(piece Foreground value:3 image:"6"     fillColour:(colour Hidden) edgeColour:(colour Blue) scale:0.4)
+				(piece Foreground value:4 image:"7"     fillColour:(colour Hidden) edgeColour:(colour Blue) scale:0.4)
+				(piece Foreground value:5 image:"8"     fillColour:(colour Hidden) edgeColour:(colour Blue) scale:0.4)
+				(piece Foreground value:6 image:"9"     fillColour:(colour Hidden) edgeColour:(colour Blue) scale:0.4)
+				(piece Foreground value:7 image:"X"     fillColour:(colour Hidden) edgeColour:(colour Blue) scale:0.4)
+				(piece Foreground value:8 image:"A"     fillColour:(colour Hidden) edgeColour:(colour Blue) scale:0.4)
+				(show Edges Hidden)
+				(show Symbol "Hexagon" (sites Board) fillColour:(colour 185 130 85) edgeColour:(colour 225 182 130)) 
+				(board Placement scale:0.8)
+				(board Background image:"square.svg" fillColour:(colour 185 130 85) edgeColour:(colour 185 130 85) scale:1.45)
+			})
+    
+    (ai
+        "Agram_ai"
+    )
+)
