@@ -3,41 +3,54 @@
 //------------------------------------------------------------------------------
 
 (game "Ordo" 
-    (players 2) 
-    (equipment { 
-        (board (rectangle 8 10)) 
-        (piece "Marker" Each                
-			(move Step
-                Adjacent
-                    (to 
-                        if:(and {(or {(is Empty (to)) ("IsEnemyAt" (to))})
-								 (< 0 (count Sites in:(sites Around (to) Own Adjacent)))                
-								 (> 2 (count Groups Adjacent if:(= (who at:(to)) Mover)))}))))
-								
+	(players 2) 
+	(equipment { 
+		(board (rectangle 8 10)) 
+		(piece "Marker" Each
+			(if (= (mover) (prev))
+				(or (move Pass (then (set Var 2)))
+					(move Slide	(directions {N S})
+						(between if:(or (= (between) (from)) (is In (between) (sites Empty))))
+						(to 
+							if:(and {(or {(is Empty (to)) ("IsEnemyAt" (to))})                
+									(> 2 (count Groups Adjacent if:(= (who at:(to)) Mover)))
+									(is Related Adjacent (to) (last To))}))))
+				(or 
+					(move Slide	(directions {N S})
+							(to 
+								if:(and {(or {(is Empty (to)) ("IsEnemyAt" (to))})
+										(< 0 (count Sites in:(sites Around (to) Own Adjacent)))                
+										(> 2 (count Groups Adjacent if:(= (who at:(to)) Mover)))}))
+							(then (set NextPlayer (player (mover)))))
+					(move Step
+						Adjacent
+							(to 
+								if:(and {(or {(is Empty (to)) ("IsEnemyAt" (to))})
+										(< 0 (count Sites in:(sites Around (to) Own Adjacent)))                
+										(> 2 (count Groups Adjacent if:(= (who at:(to)) Mover)))}))))))
 		(regions P1 (sites Top))
-        (regions P2 (sites Bottom))})
+		(regions P2 (sites Bottom))})
 		
-    (rules 
-        (meta (no Suicide))
-        (start { 
-            (place "Marker1" {"A2" "A3" "B2" "B3" "C1" "C2" "D1" "D2" "E2" "E3" "F2" "F3" "G1" "G2" "H1" "H2" "I2" "I3" "J2" "J3"})
-            (place "Marker2" {"A6" "A7" "B6" "B7" "C7" "C8" "D7" "D8" "E6" "E7" "F6" "F7" "G7" "G8" "H7" "H8" "I6" "I7" "J6" "J7"})
-        })
-        (play (forEach Piece))
-				  
-
-        
-        (end 
-            (if 
-                (or {
-                    ("ReachedTarget") 
-                    (no Moves Next)
-                    (> 1 (count Groups Adjacent if:(= (id Next) (who at:(to)))))					
-                })
-                (result Mover Win)
-            )
-        ) 
-    )
+	(rules 
+		(meta (no Suicide))
+		(start { 
+			(place "Marker1" {"A2" "A3" "B2" "B3" "C1" "C2" "D1" "D2" "E2" "E3" "F2" "F3" "G1" "G2" "H1" "H2" "I2" "I3" "J2" "J3"})
+			(place "Marker2" {"A6" "A7" "B6" "B7" "C7" "C8" "D7" "D8" "E6" "E7" "F6" "F7" "G7" "G8" "H7" "H8" "I6" "I7" "J6" "J7"})
+		})
+		(play (forEach Piece))
+		
+		(end {
+				(if (= (var) 2) (result Next Win))
+				(if 
+					(or {
+						("ReachedTarget") 
+						(no Moves Next)
+						(> 1 (count Groups Adjacent if:(= (id Next) (who at:(to)))))					
+					})
+					(result Mover Win)
+				)}
+		) 
+	)
 )
 
 

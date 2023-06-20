@@ -1,0 +1,42 @@
+EQUIPMENT: CONTAINER [board 
+					  hand  
+
+					  ]
+					  
+
+					  
+		   COMPONENT [--die polytope
+					  piece
+					  --card
+					  tile
+					  STACK 
+					  --ARBIT (aka P0 aka "Nature")
+					  		--homo stack synonym (deck) --wo replacement (arbit Deck (piece, {{distinction}}, pointmap or {pointmap} or {outcome space (list of functions)}, {amount (default 1 of each)}))
+																			(although in pointmap it'll be considered
+																			 a single list.)
+											like (arbit Deck (Rectangle, {{"2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q","K","A"}, 
+																	{"of Spades", "of Hearts", "of Diamonds", "of Clubs"}}
+																   {(pointMap "Tricks" (by 1))
+																	(pointMap "Hearts" {(if "of Hearts" 1), (if and "Q" "of Spades" 13)})}
+																	))
+																	
+													Creates the proper amount of pieces with one of each attribute. 
+													distinction, ultimately, should get winnowed down to integers and be the index. comes pre-shuffled and hidden.
+													
+												(keep a list of all and current)
+																	
+					  		--number array (die)  --w  replacement (arbit Die int [{faces (list of ints or strings)}] [{pdf (list of floats)}])					  
+					  ]
+					  
+					  
+					  the possible distinctions can be associated in graphics to images, color, and amount of images (arranged strategically up to 50).
+					  this is a new integer storage location, a new level for the king in the chart.
+					  
+					  strings and lists as def up top!
+					  
+					  
+		   FUNCTIONS [=,!=,<,>,<=,>=,and,or,not,if,xor,toBool,all,can,is
+					  +,-,*,\,%,^,abs,if,
+					  max,min,roll
+					  difference, intersection, union, results, discard, draw, permute, partition
+					 ]

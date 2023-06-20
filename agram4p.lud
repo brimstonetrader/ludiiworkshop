@@ -13,6 +13,7 @@
 	(players 4) 
 	(equipment { 
 		(board (rectangle 1 5) largeStack:True) 
+		(piece "Square"   Shared)
 		(piece "Square1"   Shared)
 		(piece "Square2"   Shared)
 		(piece "Square3"   Shared)
@@ -61,7 +62,7 @@
 									"Square16" "Square17" "Square18" "Square19" "Square20"
 									"Square21" "Square22" "Square23" "Square24" "Square25"		           
 									"Square26" "Square27" "Square28" "Square29"	"Square30"		  
-									"Square31" "Square32" "Square33" "Square34" "Square35"} (coord:"A1"))
+									"Square31" "Square32" "Square33" "Square34" "Square35" 	
 				}) 
 				phases:{
 				
@@ -113,49 +114,41 @@
 		
 		(metadata    
 			(graphics {
-				(piece Foreground "Square1"  image:"0"  fillColour:(colour Hidden) edgeColour:(colour Red)    scale:1)
-				(piece Foreground "Square2"  image:"0"  fillColour:(colour Hidden) edgeColour:(colour Yellow) scale:1)
-				(piece Foreground "Square3"  image:"0"  fillColour:(colour Hidden) edgeColour:(colour Blue)  scale:1)
-				(piece Foreground "Square4"  image:"0"  fillColour:(colour Hidden) edgeColour:(colour Black)  scale:1)
-				
-				(piece Foreground "Square5"  image:"1"  fillColour:(colour Hidden) edgeColour:(colour Red)    scale:1)
-				(piece Foreground "Square6"  image:"1"  fillColour:(colour Hidden) edgeColour:(colour Yellow) scale:1)
-				(piece Foreground "Square7"  image:"1"  fillColour:(colour Hidden) edgeColour:(colour Blue)  scale:1)
-				(piece Foreground "Square8"  image:"1"  fillColour:(colour Hidden) edgeColour:(colour Black)  scale:1)
-				
-				(piece Foreground "Square9"  image:"2"  fillColour:(colour Hidden) edgeColour:(colour Red)    scale:1)
-				(piece Foreground "Square10" image:"2"  fillColour:(colour Hidden) edgeColour:(colour Yellow) scale:1)
-				(piece Foreground "Square11" image:"2"  fillColour:(colour Hidden) edgeColour:(colour Blue)  scale:1)
-				(piece Foreground "Square12" image:"2"  fillColour:(colour Hidden) edgeColour:(colour Black)  scale:1)
-				
-				(piece Foreground "Square13" image:"3"  fillColour:(colour Hidden) edgeColour:(colour Red)    scale:1)
-				(piece Foreground "Square14" image:"3"  fillColour:(colour Hidden) edgeColour:(colour Yellow) scale:1)
-				(piece Foreground "Square15" image:"3"  fillColour:(colour Hidden) edgeColour:(colour Blue)  scale:1)
-				(piece Foreground "Square16" image:"3"  fillColour:(colour Hidden) edgeColour:(colour Black)  scale:1)
-				
-				(piece Foreground "Square17" image:"4"  fillColour:(colour Hidden) edgeColour:(colour Red)    scale:1)
-				(piece Foreground "Square18" image:"4"  fillColour:(colour Hidden) edgeColour:(colour Yellow) scale:1)
-				(piece Foreground "Square19" image:"4"  fillColour:(colour Hidden) edgeColour:(colour Blue)  scale:1)
-				(piece Foreground "Square20" image:"4"  fillColour:(colour Hidden) edgeColour:(colour Black)  scale:1)
-				
-				(piece Foreground "Square21" image:"5"  fillColour:(colour Hidden) edgeColour:(colour Red)    scale:1)
-				(piece Foreground "Square22" image:"5"  fillColour:(colour Hidden) edgeColour:(colour Yellow) scale:1)
-				(piece Foreground "Square23" image:"5"  fillColour:(colour Hidden) edgeColour:(colour Blue)  scale:1)
-				(piece Foreground "Square24" image:"5"  fillColour:(colour Hidden) edgeColour:(colour Black)  scale:1)
-				
-				(piece Foreground "Square25" image:"6"  fillColour:(colour Hidden) edgeColour:(colour Red)    scale:1)
-				(piece Foreground "Square26" image:"6"  fillColour:(colour Hidden) edgeColour:(colour Yellow) scale:1)
-				(piece Foreground "Square27" image:"6"  fillColour:(colour Hidden) edgeColour:(colour Blue)  scale:1)
-				(piece Foreground "Square28" image:"6"  fillColour:(colour Hidden) edgeColour:(colour Black)  scale:1)
-				
-				(piece Foreground "Square29" image:"7"  fillColour:(colour Hidden) edgeColour:(colour Red)    scale:1)
-				(piece Foreground "Square30" image:"7"  fillColour:(colour Hidden) edgeColour:(colour Yellow) scale:1)
-				(piece Foreground "Square31" image:"7"  fillColour:(colour Hidden) edgeColour:(colour Blue)  scale:1)
-				(piece Foreground "Square32" image:"7"  fillColour:(colour Hidden) edgeColour:(colour Black)  scale:1)
-				
-				(piece Foreground "Square33" image:"8"  fillColour:(colour Hidden) edgeColour:(colour Red)    scale:1)
-				(piece Foreground "Square34" image:"8"  fillColour:(colour Hidden) edgeColour:(colour Yellow) scale:1)
-				(piece Foreground "Square35" image:"8"  fillColour:(colour Hidden) edgeColour:(colour Blue)  scale:1)
+				(piece Foreground "Square1"  image:"0"  fillColour:(colour Hidden) edgeColour:(colour Red)    scale:0.6)
+				(piece Foreground "Square2"  image:"0"  fillColour:(colour Hidden) edgeColour:(colour Yellow) scale:0.6)
+				(piece Foreground "Square3"  image:"0"  fillColour:(colour Hidden) edgeColour:(colour Blue)   scale:0.6)
+				(piece Foreground "Square4"  image:"0"  fillColour:(colour Hidden) edgeColour:(colour Black)  scale:0.6)
+				(piece Foreground "Square5"  image:"1"  fillColour:(colour Hidden) edgeColour:(colour Red)    scale:0.6)
+				(piece Foreground "Square6"  image:"1"  fillColour:(colour Hidden) edgeColour:(colour Yellow) scale:0.6)
+				(piece Foreground "Square7"  image:"1"  fillColour:(colour Hidden) edgeColour:(colour Blue)   scale:0.6)
+				(piece Foreground "Square8"  image:"1"  fillColour:(colour Hidden) edgeColour:(colour Black)  scale:0.6)
+				(piece Foreground "Square9"  image:"2"  fillColour:(colour Hidden) edgeColour:(colour Red)    scale:0.6)
+				(piece Foreground "Square10" image:"2"  fillColour:(colour Hidden) edgeColour:(colour Yellow) scale:0.6)
+				(piece Foreground "Square11" image:"2"  fillColour:(colour Hidden) edgeColour:(colour Blue)   scale:0.6)
+				(piece Foreground "Square12" image:"2"  fillColour:(colour Hidden) edgeColour:(colour Black)  scale:0.6)
+				(piece Foreground "Square13" image:"3"  fillColour:(colour Hidden) edgeColour:(colour Red)    scale:0.6)
+				(piece Foreground "Square14" image:"3"  fillColour:(colour Hidden) edgeColour:(colour Yellow) scale:0.6)
+				(piece Foreground "Square15" image:"3"  fillColour:(colour Hidden) edgeColour:(colour Blue)   scale:0.6)
+				(piece Foreground "Square16" image:"3"  fillColour:(colour Hidden) edgeColour:(colour Black)  scale:0.6)
+				(piece Foreground "Square17" image:"4"  fillColour:(colour Hidden) edgeColour:(colour Red)    scale:0.6)
+				(piece Foreground "Square18" image:"4"  fillColour:(colour Hidden) edgeColour:(colour Yellow) scale:0.6)
+				(piece Foreground "Square19" image:"4"  fillColour:(colour Hidden) edgeColour:(colour Blue)   scale:0.6)
+				(piece Foreground "Square20" image:"4"  fillColour:(colour Hidden) edgeColour:(colour Black)  scale:0.6)
+				(piece Foreground "Square21" image:"5"  fillColour:(colour Hidden) edgeColour:(colour Red)    scale:0.6)
+				(piece Foreground "Square22" image:"5"  fillColour:(colour Hidden) edgeColour:(colour Yellow) scale:0.6)
+				(piece Foreground "Square23" image:"5"  fillColour:(colour Hidden) edgeColour:(colour Blue)   scale:0.6)
+				(piece Foreground "Square24" image:"5"  fillColour:(colour Hidden) edgeColour:(colour Black)  scale:0.6)
+				(piece Foreground "Square25" image:"6"  fillColour:(colour Hidden) edgeColour:(colour Red)    scale:0.6)
+				(piece Foreground "Square26" image:"6"  fillColour:(colour Hidden) edgeColour:(colour Yellow) scale:0.6)
+				(piece Foreground "Square27" image:"6"  fillColour:(colour Hidden) edgeColour:(colour Blue)   scale:0.6)
+				(piece Foreground "Square28" image:"6"  fillColour:(colour Hidden) edgeColour:(colour Black)  scale:0.6)
+				(piece Foreground "Square29" image:"7"  fillColour:(colour Hidden) edgeColour:(colour Red)    scale:0.6)
+				(piece Foreground "Square30" image:"7"  fillColour:(colour Hidden) edgeColour:(colour Yellow) scale:0.6)
+				(piece Foreground "Square31" image:"7"  fillColour:(colour Hidden) edgeColour:(colour Blue)   scale:0.6)
+				(piece Foreground "Square32" image:"7"  fillColour:(colour Hidden) edgeColour:(colour Black)  scale:0.6)
+				(piece Foreground "Square33" image:"8"  fillColour:(colour Hidden) edgeColour:(colour Red)    scale:0.6)
+				(piece Foreground "Square34" image:"8"  fillColour:(colour Hidden) edgeColour:(colour Yellow) scale:0.6)
+				(piece Foreground "Square35" image:"8"  fillColour:(colour Hidden) edgeColour:(colour Blue)   scale:0.6)
 				(show Edges Hidden)                                                  
 				(show Symbol "Hexagon" (sites Board) fillColour:(colour 185 130 85) edgeColour:(colour 225 182 130)) 
 				(board Placement scale:0.8)
