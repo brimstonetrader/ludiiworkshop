@@ -5,20 +5,20 @@ EQUIPMENT: CONTAINER [board
 					  
 
 					  
-		   COMPONENT [--die polytope
+		   COMPONENT [--polytope
 					  piece
 					  --card
 					  tile
 					  STACK 
-					  --ARBIT (aka P0 aka "Nature")
+					  --ARBIT
 					  		--homo stack synonym (deck) --wo replacement (arbit Deck (piece, {{distinction}}, pointmap or {pointmap} or {outcome space (list of functions)}, {amount (default 1 of each)}))
 																			(although in pointmap it'll be considered
 																			 a single list.)
 											like (arbit Deck (Rectangle, {{"2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q","K","A"}, 
 																	{"of Spades", "of Hearts", "of Diamonds", "of Clubs"}}
-																   {(pointMap "Tricks" (by 1))
-																	(pointMap "Hearts" {(if "of Hearts" 1), (if and "Q" "of Spades" 13)})}
-																	))
+																    {(pointMap "Tricks" (by 0))
+																	 (pointMap "Hearts" {(if "of Hearts" 1), (if and "Q" "of Spades" 13)})}
+															 ))
 																	
 													Creates the proper amount of pieces with one of each attribute. 
 													distinction, ultimately, should get winnowed down to integers and be the index. comes pre-shuffled and hidden.
