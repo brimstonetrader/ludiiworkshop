@@ -1,0 +1,132 @@
+
+
+
+(define "SimpSwitch"
+    (if (and {(< (what at:(mapEntry "Init" P1)) (what at:(mapEntry "Init" P2))) 
+                  (< (what at:(mapEntry "Init" P1)) (what at:(mapEntry "Init" P3))) 
+                  (< (what at:(mapEntry "Init" P1)) (what at:(mapEntry "Init" P4)))})
+                (set NextPlayer (player 1))
+                (if (and (< (mapEntry "Init" P2) (mapEntry "Init" P3)) 
+                         (< (mapEntry "Init" P2) (mapEntry "Init" P4)))
+                            (set NextPlayer (player 2)) 
+                            (if (< (mapEntry "Init" P3) (mapEntry "Init" P4))
+                                (set NextPlayer (player 3))  
+                                (set NextPlayer (player 4))))) 
+)
+
+//------------------------------------------------------------------------------>
+(game "Pairs" 
+    (players 4) 
+    (equipment { 
+        (board (rectangle 8 5) largeStack:True) 
+        (piece "Square"   Shared)
+        (piece "Square1"   Shared)
+        (piece "Square2"   Shared)
+        (piece "Square3"   Shared)
+        (piece "Square4"   Shared)
+        (piece "Square5"   Shared)
+        (piece "Square6"   Shared)
+        (piece "Square7"   Shared)
+        (piece "Square8"   Shared)
+        (piece "Square9"   Shared)
+        (piece "Square10"  Shared)
+        (hand Each size:10) 
+        (map "Loc" {(pair P1 "B1") (pair P2 "C1") (pair P3 "D1") (pair P4 "E1")})
+        (map "Pen" {(pair P1 "A2") (pair P2 "A3") (pair P3 "A4") (pair P4 "A5")})
+        (map "Init"  {(pair P1 "B1") (pair P2 "C1") (pair P3 "D1") (pair P4 "E1")})
+        (map "Won" {(pair P1 "A1") (pair P1 "A1")})        
+        (regions P1 (sites {"B1" "B2" "B3" "B4" "B5" "B6" "B7" "B8"}))
+        (regions P2 (sites {"C1" "C2" "C3" "C4" "C5" "C6" "C7" "C8"}))
+        (regions P3 (sites {"D1" "D2" "D3" "D4" "D5" "D6" "D7" "D8"}))
+        (regions P4 (sites {"E1" "E2" "E3" "E4" "E5" "E6" "E7" "E8"}))
+        })   
+                
+            
+            
+            (rules
+                (start {
+                (place Stack items:{"Square1"  "Square2"  "Square2"  "Square3"  "Square3"  "Square3"  
+                                    "Square4"  "Square4"  "Square4"  "Square4"  "Square5"  "Square5"  "Square5"            
+                                    "Square5"  "Square5"  "Square6"  "Square6"  "Square6"  "Square6"  "Square6"            
+                                    "Square6"  "Square7"  "Square7"  "Square7"  "Square7"  "Square7"  "Square7"            
+                                    "Square7"  "Square8"  "Square8"  "Square8"  "Square8"  "Square8"  "Square8"            
+                                    "Square8"  "Square8"  "Square9"  "Square9"  "Square9"  "Square9"  "Square9"            
+                                    "Square9"  "Square9"  "Square9"  "Square9"  "Square10" "Square10" "Square10"            
+                                    "Square10" "Square10" "Square10" "Square10" "Square10" "Square10" "Square10"           "Square"
+                                              } (coord:"A1"))
+                (place "Square" (sites {"A6" "A7" "A8"}))
+                }) 
+                phases:{
+                    
+                
+                (phase "Discard"
+                    (play (move Pass 
+                             (then (forEach Value min:1 max:5 
+                                 (remove (coord:"A1") 
+                                     level:(value Random (range 1 (- 56 (+ (value) 1))))) 
+                             (then (forEach Player 
+                                 (fromTo (from (coord:"A1") level:(value Random (range 1 (- (topLevel at:(coord:"A1")) 1)))) 
+                                               (to  (mapEntry "Init" Player)))))))))
+                (nextPhase "HitorMiss"))                
+                
+                
+                (phase "Deal"
+                    (play (move Pass 
+                                (then "SimpSwitch")))
+                (nextPhase (= (count Moves) 2) "HitorMiss"))
+                
+                (phase "HitorMiss" 
+                    (play (or (move Select (from (intersection (sites Mover) (sites Empty))) 
+                                                          (then (fromTo 
+                                                                        (from (coord:"A1") level:(value Random (range 1 (- (topLevel at:(from)) 1)))) 
+                                                                        (to  (from)))))
+                                  (move (from (difference (sites) (union (sites Empty) (sites {"A1"}))))
+                                              (to (mapEntry "Pen" Mover))                                               
+                                              (then (set Var "Missed" 1))))
+                            
+                       ) (nextPhase (= (var "Missed") 1) "Follow")
+                )                
+
+                (phase "Follow" 
+                    (play 
+                            (priority {
+                                (move
+                                    (from (sites Hand Mover) )
+                                    (to (mapEntry "Loc" (mover)) if:(= (% (what at:(from) level:(topLevel at:(from))) 4) (var))) (then
+                                    (set Score Mover (+ (/ (what at:(mapEntry "Loc" Mover) level:(topLevel at:(mapEntry "Loc" Mover))) 4) 1))))                                    
+                                (move  
+                                    (from (sites Hand Mover))
+                                    (to (mapEntry "Loc" (mover)))
+                                    (then (set Score Mover 0 (then (if (= (% (what at:(from) level:(topLevel at:(from))) 4) 2) (set Var "HeartsBroken" 1))))))})                            
+                    ) (nextPhase (= (% (count Moves) 5) 0) "Discard")
+                )
+                
+            }
+        )
+    )
+        
+        
+        
+        (metadata    
+            (graphics {
+                (piece Foreground "Square1"  image:"1"  fillColour:(colour Hidden) edgeColour:(colour Black) scale:0.6)
+                (piece Foreground "Square2"  image:"2"  fillColour:(colour Hidden) edgeColour:(colour Black) scale:0.6)
+                (piece Foreground "Square3"  image:"3"  fillColour:(colour Hidden) edgeColour:(colour Black) scale:0.6)
+                (piece Foreground "Square4"  image:"4"  fillColour:(colour Hidden) edgeColour:(colour Black) scale:0.6)
+                (piece Foreground "Square5"  image:"5"  fillColour:(colour Hidden) edgeColour:(colour Black) scale:0.6)
+                (piece Foreground "Square6"  image:"6"  fillColour:(colour Hidden) edgeColour:(colour Black) scale:0.6)
+                (piece Foreground "Square7"  image:"7"  fillColour:(colour Hidden) edgeColour:(colour Black) scale:0.6)
+                (piece Foreground "Square8"  image:"8"  fillColour:(colour Hidden) edgeColour:(colour Black) scale:0.6)
+                (piece Foreground "Square9"  image:"9"  fillColour:(colour Hidden) edgeColour:(colour Black) scale:0.6)
+                (piece Foreground "Square10" image:"X"  fillColour:(colour Hidden) edgeColour:(colour Black) scale:0.6)
+                (show Edges Hidden)                                                  
+                (show Symbol "Hexagon" (sites Board) fillColour:(colour 185 130 85) edgeColour:(colour 225 182 130)) 
+                (board Placement scale:0.8)
+                (stackType None)
+                (board Background image:"square.svg" fillColour:(colour 185 130 85) edgeColour:(colour 185 130 85) scale:1.45)
+            })
+        )
+
+
+
+
