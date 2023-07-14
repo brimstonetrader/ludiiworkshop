@@ -675,7 +675,14 @@
 
 
 
-
+                                         (byScore {(score P2 (- (+ (count Stack at:(mapEntry "Loc" P1) if:(= 2 (% (what at:(mapEntry "Loc" P1) level:(level)) 4)))
+                                                                         (* 13 (count Stack at:(mapEntry "Loc" P1) if:(= 44 (what at:(mapEntry "Loc" P1) level:(level))))))))
+                                                   (score P2 (- (+ (count Stack at:(mapEntry "Loc" P2) if:(= 2 (% (what at:(mapEntry "Loc" P2) level:(level)) 4)))
+                                                                         (* 13 (count Stack at:(mapEntry "Loc" P2) if:(= 44 (what at:(mapEntry "Loc" P2) level:(level))))))))
+												   (score P3 (- (+ (count Stack at:(mapEntry "Loc" P3) if:(= 2 (% (what at:(mapEntry "Loc" P3) level:(level)) 4)))
+                                                                         (* 13 (count Stack at:(mapEntry "Loc" P3) if:(= 44 (what at:(mapEntry "Loc" P3) level:(level))))))))
+                                                   (score P4 (- (+ (count Stack at:(mapEntry "Loc" P4) if:(= 2 (% (what at:(mapEntry "Loc" P4) level:(level)) 4)))
+                                                                         (* 13 (count Stack at:(mapEntry "Loc" P4) if:(= 44 (what at:(mapEntry "Loc" P4) level:(level))))))))}))})
 
 
 
@@ -7186,10 +7193,10 @@ Ties go to the last player to make a placement."))
             (place "Disc2" (handSite Shared 5) value:1)
             (place "Disc2" (handSite Shared 6) state:1)
             (place "Disc2" (handSite Shared 7) state:1 value:1)
-            (place "Square1" (handSite Shared 8))
-            (place "Square1" (handSite Shared 9) value:1)
-            (place "Square1" (handSite Shared 10) state:1)
-            (place "Square1" (handSite Shared 11) state:1 value:1)
+Red)               (place "Square1" (handSite Shared 8))
+Red)               (place "Square1" (handSite Shared 9) value:1)
+Yellow)            (place "Square1" (handSite Shared 10) state:1)
+Yellow)            (place "Square1" (handSite Shared 11) state:1 value:1)
             (place "Square2" (handSite Shared 12))
             (place "Square2" (handSite Shared 13) value:1)
             (place "Square2" (handSite Shared 14) state:1)

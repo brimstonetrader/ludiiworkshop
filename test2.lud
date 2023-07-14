@@ -1,0 +1,41 @@
+(game "Nil"
+    (players 2)
+    (equipment {
+        (board (rectangle 2 1))
+        (piece "Square" Each)
+        (hand Each size:2)
+        (map "Entry" {(pair P1 "A2") (pair P2 "A1")})
+    })
+    (rules 
+       
+         (start {
+            (place "Square1" (handSite P1))
+            (place "Square2" (handSite P2))
+            (place "Square1" (handSite P2 1))
+            (place "Square2" (handSite P1 1))
+            (set Hidden (sites Hand P1) to:P2)
+            (set Hidden (sites Hand P2) to:P1)        
+            (set Hidden (sites {1}) to:P2)
+            (set Hidden (sites {0}) to:P1)              
+        }      ) 
+         (play
+            (move  
+                (from (sites Hand Mover))
+                (to (mapEntry Mover))
+				(then (if (= (count Moves) 2) (set Hidden (sites {1}) False to:P2)))))
+         (end {(if (and (= (count Moves) 2) ( = (what at:(coord:"A1")) (what at:(coord:"A2")))) (result P2 Win)) 
+		       (if (and (= (count Moves) 2) (!= (what at:(coord:"A1")) (what at:(coord:"A2")))) (result P1 Win))}) 
+    )
+           
+               
+)
+                
+            
+            
+            //------------------------------------------------------------------------------
+            
+        (metadata 
+            (ai
+                "Nil_ai"
+            )
+        )

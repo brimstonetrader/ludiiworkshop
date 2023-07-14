@@ -29,7 +29,7 @@
 		(end 
             (if 
                 (or {
-                    (is Pattern {F R F R F R F})
+                    (is Pattern {F R F R F})
                     (is Line 4)
                 })
                 (result Mover Win)

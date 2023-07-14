@@ -108,13 +108,15 @@
 				(phase "Deal"
 					(play (move Pass (then  (set Var "HeartsBroken" 0 (then
 							(forEach Value min:1 max:13 (fromTo (from (coord:"A1") level:(value Random (range 1 (- 66 (+ (value) (* 13 (count Moves))))))) 
-																(to  (handSite Mover (- (value) 1))) 
-															   )))))))
-					(nextPhase (= (count Moves) 4) "Pass"))
+																(to  (handSite Mover (- (value) 1)))))))))
+					) (nextPhase (= (count Moves) 4) "Pass")
+				)
 				
 				(phase "Pass"
-					(play (move (from (sites Hand Mover)) (to (handSite Next (+ 13 (/ (- (count Moves) 4) 4))))))
-					(nextPhase (= (count Moves) 16) "Lead")
+					(play 
+						(move (from (sites Hand Mover)) 
+							  (to   (handSite Next (+ 13 (/ (- (count Moves) 4) 4)))))
+					) (nextPhase (= (count Moves) 16) "Lead")
 				)
 										
 				(phase "Lead" 
@@ -135,8 +137,7 @@
 									(from (sites Hand Mover))
 									(to (mapEntry "Loc" (mover)))
 									(then (and {(set Var (% (what at:(mapEntry "Loc" Mover) level:(topLevel at:(mapEntry "Loc" Mover))) 4)) 
-													(set Score Mover (+ (/ (what at:(mapEntry "Loc" Mover) level:(topLevel at:(mapEntry "Loc" Mover))) 4) 1))}))))
-							
+													(set Score Mover (+ (/ (what at:(mapEntry "Loc" Mover) level:(topLevel at:(mapEntry "Loc" Mover))) 4) 1))}))))							
 					   ) (nextPhase "Follow")
 				)                
 
@@ -144,7 +145,7 @@
 					(play 
 							(priority {
 								(move
-									(from (sites Hand Mover) )
+									(from (sites Hand Mover))
 									(to (mapEntry "Loc" (mover)) if:(= (% (what at:(from) level:(topLevel at:(from))) 4) (var))) (then
 									(set Score Mover (+ (/ (what at:(mapEntry "Loc" Mover) level:(topLevel at:(mapEntry "Loc" Mover))) 4) 1))))                                    
 								(move  
@@ -158,10 +159,10 @@
 					(play (move Pass (then "Switch")))
 					(end {(if ("HandEmpty" Next) 
 						(byScore {(score P1 ("Tally" P1))
-										  (score P2 ("Tally" P2))
-										  (score P3 ("Tally" P3))
-										  (score P4 ("Tally" P4))}))})
-					(nextPhase "Lead")
+								  (score P2 ("Tally" P2))
+								  (score P3 ("Tally" P3))
+								  (score P4 ("Tally" P4))}))}
+					) (nextPhase "Lead")
 				)
 			}
 		)

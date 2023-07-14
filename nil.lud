@@ -1,0 +1,59 @@
+     (game "Nil"
+         (players 2)
+         (equipment {
+             (board (rectangle 2 2) use:Vertex)
+             (piece "Square" Each)
+             (hand Each size:1)
+			 (regions P1 (sites {0 2}))
+			 (regions P2 (sites {1 3}))
+         })
+         (rules 
+            
+              (start {
+                 (place "Square1" (handSite P1))
+                 (place "Square2" (handSite P2))
+                 (set Hidden (sites Hand P1) to:P2)       
+                 (set Hidden (sites      P1) to:P2)
+                 (set Hidden (sites Hand P2) to:P1)       
+                 (set Hidden (sites      P2) to:P1)       
+              }      )
+                phases:{
+             (phase "Lead" 
+                 (play 
+                     (move 
+                         (from (sites Hand Mover))
+                         (to   (sites      Mover)))
+                 ) (nextPhase "Follow")
+             )      
+                (phase "Follow" 
+                    (play 
+                    (priority
+                     (move  
+                     (from (sites Hand Mover))
+                     (to (sites {1 3}))) (pass)))
+                     (end {((if (and ("HandEmpty" Each) 
+					                 (or (and (is Empty 0) (is Empty 1)) 
+					                     (and (is Empty 2) (is Empty 3)))) (result P2 Win))
+                            (if (and ("HandEmpty" Each) 
+							         (or (and (is Empty 0) (is Empty 3)) 
+						                 (and (is Empty 1) (is Empty 2)))) (result P1 Win)))}) 
+                    (nextPhase "Lead")
+                )
+                
+                    }
+            ))
+                
+            
+            
+            //------------------------------------------------------------------------------
+            
+        (metadata 
+            
+
+            
+            (ai
+                "Nil_ai"
+            )
+        )
+
+

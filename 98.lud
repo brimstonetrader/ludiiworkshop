@@ -1,0 +1,108 @@
+(game "98"
+    (players 4)
+    (equipment {
+        (board (rectangle 4 1) use:Vertex)
+        (piece "Square" Each)
+        (hand Each size:4)
+        (map "Loc" {(pair P1 3) (pair P2 2) (pair P3 1) (pair P4 0)})
+    })
+    (rules 
+    
+        (start {
+            (place "Square1" (handSite P1   ) state:(value Random (range 0 12)))
+            (place "Square1" (handSite P1  1) state:(value Random (range 0 12)))
+            (place "Square1" (handSite P1  2) state:(value Random (range 0 12)))
+            (place "Square1" (handSite P1  3) state:(value Random (range 0 12)))
+            (place "Square2" (handSite P2   ) state:(value Random (range 0 12)))
+            (place "Square2" (handSite P2  1) state:(value Random (range 0 12)))
+            (place "Square2" (handSite P2  2) state:(value Random (range 0 12)))
+            (place "Square2" (handSite P2  3) state:(value Random (range 0 12)))
+            (place "Square3" (handSite P3   ) state:(value Random (range 0 12)))
+            (place "Square3" (handSite P3  1) state:(value Random (range 0 12)))
+            (place "Square3" (handSite P3  2) state:(value Random (range 0 12)))
+            (place "Square3" (handSite P3  3) state:(value Random (range 0 12)))
+            (place "Square4" (handSite P4   ) state:(value Random (range 0 12)))
+            (place "Square4" (handSite P4  1) state:(value Random (range 0 12)))
+            (place "Square4" (handSite P4  2) state:(value Random (range 0 12)))
+            (place "Square4" (handSite P4  3) state:(value Random (range 0 12)))
+            (set Hidden State (sites Hand P1) to:P2)
+            (set Hidden State (sites Hand P1) to:P3)
+            (set Hidden State (sites Hand P1) to:P4)
+            (set Hidden State (sites Hand P2) to:P1)
+            (set Hidden State (sites Hand P2) to:P3)
+            (set Hidden State (sites Hand P2) to:P4)
+            (set Hidden State (sites Hand P3) to:P1)
+            (set Hidden State (sites Hand P3) to:P2)
+            (set Hidden State (sites Hand P3) to:P4)
+            (set Hidden State (sites Hand P4) to:P1)            
+            (set Hidden State (sites Hand P4) to:P2)            
+            (set Hidden State (sites Hand P4) to:P3)            
+        }      )
+        
+         (play
+             (move  
+              (from (sites Hand Mover))
+              (to (mapEntry "Loc" (mover)))
+              (then (set Hidden Value at:(mapEntry "Loc" (mover)) False to:All
+              (then (if  (= (state at:(mapEntry "Loc" Mover)) 10) 
+                            (addScore P1 (- 10)) 
+                            (if  (= (state at:(mapEntry "Loc" Mover)) 0) 
+                                 (set Score P1 98)
+                                 (if  (< (state at:(mapEntry "Loc" Mover)) 10) 
+                                      (addScore P1 (state at:(mapEntry "Loc" Mover)))
+                                  ))))))) 
+
+          ) (end {(if (> (score P1) 98) (result Mover Loss))})
+   )
+)
+        
+          
+    
+    
+    //------------------------------------------------------------------------------
+    
+(metadata 
+    
+    (info
+        {
+        (description "Agram is a trick-taking card game popular in Niger and Mali.")
+        (rules "Players are dealt six cards at the beginning, and then must play six tricks, following the suit of the lead if possible. The biggest number wins, if it follows suit. The overall winner is the winner of the final trick.")
+        (id "1536")
+        (source "<a href=\"https://www.pagat.com/last/agram.html\" target=\"_blank\" class=\"style1\" style=\"color: #0000EE\" />Pagat</a>")
+        (version "1.3.11")
+        (classification "board/space/line")
+        (author "Blaise Muller")
+        (publisher "<a href=\"https://www.pagat.com/last/agram.html\" target=\"_blank\" class=\"style1\" style=\"color: #0000EE\" />Pagat</a> (used without permission)")
+        (credit "Noah Morris")
+        (date "2023")
+        }
+    )
+    
+            (graphics {
+                (player Colour P2 (colour Blue))
+                (piece Foreground state:0  image:"9" fillColour:(colour Hidden) edgeColour:(colour Black) scale:0.4 offsetX:-0.4)
+                (piece Foreground state:0  image:"8" fillColour:(colour Hidden) edgeColour:(colour Black) scale:0.4 offsetX:0.4)
+                (piece Foreground state:1  image:"1" fillColour:(colour Hidden) edgeColour:(colour Black) scale:0.4)
+                (piece Foreground state:2  image:"2" fillColour:(colour Hidden) edgeColour:(colour Black) scale:0.4)
+                (piece Foreground state:3  image:"3" fillColour:(colour Hidden) edgeColour:(colour Black) scale:0.4)
+                (piece Foreground state:4  image:"4" fillColour:(colour Hidden) edgeColour:(colour Black) scale:0.4)
+                (piece Foreground state:5  image:"5" fillColour:(colour Hidden) edgeColour:(colour Black) scale:0.4)
+                (piece Foreground state:6  image:"6" fillColour:(colour Hidden) edgeColour:(colour Black) scale:0.4)
+                (piece Foreground state:7  image:"7" fillColour:(colour Hidden) edgeColour:(colour Black) scale:0.4)
+                (piece Foreground state:8  image:"8" fillColour:(colour Hidden) edgeColour:(colour Black) scale:0.4)
+                (piece Foreground state:9  image:"9" fillColour:(colour Hidden) edgeColour:(colour Black) scale:0.4)
+                (piece Foreground state:10 image:"1" fillColour:(colour Hidden) edgeColour:(colour Black) scale:0.4 offsetX:-0.4)
+                (piece Foreground state:10 image:"0" fillColour:(colour Hidden) edgeColour:(colour Black) scale:0.4 offsetX:0.4)
+                (piece Foreground state:11 image:"0"    fillColour:(colour Hidden) edgeColour:(colour Black) scale:0.4)
+                (piece Foreground state:12 image:"0"    fillColour:(colour Hidden) edgeColour:(colour Black) scale:0.4)
+                (show Edges Hidden)
+                (show Symbol "Hexagon" (sites Board) fillColour:(colour 185 130 85) edgeColour:(colour 225 182 130)) 
+                (board Placement scale:0.8)
+                (board Background image:"square.svg" fillColour:(colour 185 130 85) edgeColour:(colour 185 130 85) scale:1.45)
+            })
+    
+    (ai
+        "Agram_ai"
+    )
+)
+
