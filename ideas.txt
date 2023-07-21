@@ -1,0 +1,117 @@
+ACAB.lhs
+basesandsystems.lhs
+bellman.lhs
+datastructures.lhs
+fairdivision.lhs
+floats.lhs
+fsmt.lhs
+gausscircle.lhs
+grids.lhs
+groups.lhs
+knightstour.lhs
+knots.lhs
+markovchains.lhs
+matrices.lhs
+mnk.lhs
+navierstokes.lhs
+nim.lhs
+no3inline.lhs
+oeis.lhs
+ominos.lhs
+primes.lhs
+quantum.lhs
+rng.lhs
+selfavoidingwalks.lhs
+surreals.lhs
+tilings.lhs
+ulamspiral.lhs
+
+---------------------
+
+LUDII
+
+I OSWALD
+
+X TEEKO
+X CATCHUP
+X HEXADE
+I AYU
+I GRUNDY'S GAME
+
+X AGRAM
+X HEARTS
+X 98
+I PAIRS
+  UNO
+  COUP
+  BOTTLE IMP
+  WAR
+  BLACKJACK
+  MINESWEEPER
+  
+  WRITE REFLECTIVE PAPER
+     
+  
+  
+  
+  
+  
+  
+  
+  ENTROPY
+  POKER
+  SOLITAIRE
+  SPADES
+  SIX LOVE
+  THE GAME (2015)
+  SCRABBLE / WORDLE
+  TICKET TO RIDE
+  WEREWOLF
+  MAHJONG
+  PANDEMIC
+  MAO
+  
+  NONOGRAM
+  SORTS
+  SAME GAME
+  INERTIA
+  CANDY CRUSH
+  TETRIS / DR MARIO
+  POLYFIT
+  SIX LOVE
+  SNAKE
+  A ROBUSTER CELLULAR AUTOMATON (WITH A LOT OF OPTIONS)
+  PEG SOLITAIRE
+  SUDOKU
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  MOSAIC
+  RANGE
+  TATAMIBARI
+  SUDOKU
+  GALAXIES
+  YAJILIN
+  NURIKABE
+  SHINRO
+  SLANT
+  TRACKS
+  BRIDGES
+  JIGSAW
+  PEARL
+  SIGNPOST
+
+  GEKITAI
+  ARIES
+  GOUNKI
+I ORDO  
+  SCORE
+
+
+  SOKOBAN

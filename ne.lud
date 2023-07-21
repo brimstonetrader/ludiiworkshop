@@ -92,7 +92,7 @@
                 (piece Foreground state:7  image:"7" fillColour:(colour Hidden) edgeColour:(colour Black) scale:0.4)
                 (piece Foreground state:8  image:"8" fillColour:(colour Hidden) edgeColour:(colour Black) scale:0.4)
                 (piece Foreground state:9  image:"9" fillColour:(colour Hidden) edgeColour:(colour Black) scale:0.4)
-                (piece Foreground state:10 image:"1" fillColour:(colour Hidden) edgeColour:(colour Black) scale:0.4 offsetX:-0.4)
+                ( Foreground state:10 image:"1" fillColour:(colour Hidden) edgeColour:(colour Black) scale:0.4 offsetX:-0.4)
                 (piece Foreground state:10 image:"0" fillColour:(colour Hidden) edgeColour:(colour Black) scale:0.4 offsetX:0.4)
                 (piece Foreground state:11 image:"0"    fillColour:(colour Hidden) edgeColour:(colour Black) scale:0.4)
                 (piece Foreground state:12 image:"0"    fillColour:(colour Hidden) edgeColour:(colour Black) scale:0.4)

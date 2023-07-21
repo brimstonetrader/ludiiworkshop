@@ -7,7 +7,10 @@
             (apply (remove (between)))
         )
         (to if:(and 
-                (or (= 2 (count Steps Cell All (last To) (to))) (= 3 (count Steps Cell All (last To) (to)))) 
+                (or {(= 2 (count Steps Cell All (last To) (to))) 
+                      (= 3 (count Steps Cell All (last To) (to)))
+                      (= 4 (count Steps Cell All (last To) (to)))
+                      (= 5 (count Steps Cell All (last To) (to)))}) 
         (is Mover (who at:(to)))))
     )
 )
@@ -17,7 +20,7 @@
 (game "Hexade" 
     (players 2) 
     (equipment { 
-        (board (tri 8)) 
+        (board (hex 8)) 
         (piece "Marker" Each) 
     }) 
     (rules 
@@ -27,7 +30,9 @@
             (if 
                 (or {
                     (is Pattern {F R F R F R F R F})
-					(is Pattern {F R R F F R R F F})
+                    (is Pattern {F R R F F R R F F})
+                    (is Pattern {F F R R F F R R F})
+                    (is Pattern {F F F F F})
                 })
                 (result Mover Win)
             )
@@ -55,3 +60,4 @@
         "Hexade_ai"
     )
 )
+

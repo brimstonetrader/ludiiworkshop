@@ -32,7 +32,7 @@
 (game "Pairs" 
     (players 4) 
     (equipment { 
-        (board (rectangle 1 5) largeStack:True) 
+        (board (rectangle 11 5)) 
         (piece "Square"   Shared)
         (piece "Square1"   Shared)
         (piece "Square2"   Shared)
@@ -53,7 +53,7 @@
             
             (rules
                 (start {
-                (place Stack items:{"Square1"  
+                (place Random (sites {0..54}) {"Square1"  
                                     "Square2"  "Square2"  
                                     "Square3"  "Square3"  "Square3"  
                                     "Square4"  "Square4"  "Square4"  "Square4"  
@@ -63,53 +63,47 @@
                                     "Square8"  "Square8"  "Square8"  "Square8"  "Square8"  "Square8"  "Square8"  "Square8"  
                                     "Square9"  "Square9"  "Square9"  "Square9"  "Square9"  "Square9"  "Square9"  "Square9"  "Square9"  
                                     "Square10" "Square10" "Square10" "Square10" "Square10" "Square10" "Square10" "Square10" "Square10" "Square10"           
-                                    "Square"   "Square"   "Square"   "Square"   "Square"   
-                                              } (coord:"A1"))
+                                   
+                                              } )
                 }) 
                 phases:{
                     
                 
                 (phase "Discard"
                     (play (move Pass 
-                             (then (forEach Value min:1 max:5 
-                                 (remove (coord:"A1") 
-                                     level:(value Random (range 1 52))) 
+                             (then (forEach Value min:1 max:2
+                                 (remove (sites Random (difference (sites Board) (sites Empty)))) 
                              (then (forEach Player 
-                                 (fromTo (from (coord:"A1") level:(value Random (range 1 (- 34 (id Player))))) 
-                                         (to  (handSite Player 0))
-                                         (then  ("UpdateRolodex" Player (what at:(to)))))))))))
-                (nextPhase "Deal"))                
+                                 (fromTo (from (sites Random (difference (sites Board) (sites Empty)))) 
+                                               (to  (handSite Player 0))
+                                               (then  ("UpdateRolodex" Player (what at:(to))))) (then "SimpSwitch")))))))
+                (nextPhase "HitorMiss"))                
                 
-                
-                (phase "Deal"
-                    (play (move Pass 
-                                (then "SimpSwitch")))
-                (nextPhase  "HitorMiss"))
-                
+                               
 
                 (phase "HitorMiss" 
                     (play 
                             (or {
                                 (move Select (from (coord:"A1")) (then (fromTo
                                     (from (coord:"A1") level:(value Random (range 1 (- 33 (count Turns)))))
-                                    (to (min (intersection (sites Hand Mover) (sites Empty))))
+                                    (to (intersection (sites Hand Mover) (sites Empty)))
                                     (then ("UpdateRolodex" Player (what at:(to)))))))
                                 (move Select (from (coord:"B1")) (then
                                     (addScore Mover (min (union {(values Remembered "P1Cards")
-									                          (values Remembered "P2Cards")
-															  (values Remembered "P3Cards")
-															  (values Remembered "P4Cards")})) 
-											(then (forget Value All 
-											(then (set Var 1)))))))})                            
+                                                              (values Remembered "P2Cards")
+                                                              (values Remembered "P3Cards")
+                                                              (values Remembered "P4Cards")})) 
+                                            (then (forget Value All 
+                                            (then (set Var 1)))))))})                            
                     ) (nextPhase (= (var) 1) "Discard")
                 )
-				
+                
                 (phase "Discard" 
                     (play 
                       (move Pass (then (set Var 0 (then  
-						(forEach Player 
-						  (forEach Value min:0 max:7 
-						    (remove (handSite Player (value)))))))))                            
+                        (forEach Player 
+                          (forEach Value min:0 max:7 
+                            (remove (handSite Player (value)))))))))                            
                     ) (end {(if (< (score Prev) (- 7)) (result Prev Loss))}) (nextPhase "Discard")
                 )
                 

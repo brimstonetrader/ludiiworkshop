@@ -1,0 +1,233 @@
+\documentclass{article}
+\usepackage{graphicx} % Required for inserting images
+\usepackage{multirow}
+
+\title{Hiding Information From The AIs}
+\author{Noah Morris}
+\date{July 21, 2023}
+
+\usepackage{amsmath}
+\usepackage{listings}
+\usepackage{color}
+\usepackage{setspace}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usepackage{graphicx}
+
+\linespread{1.2}
+\parindent=2em
+\parskip=8pt
+
+\lstset{frame=tb,
+  language=Python,
+  aboveskip=3mm,
+  belowskip=3mm,
+  showstringspaces=false,
+  columns=flexible,
+  basicstyle={\small\ttfamily},
+  numbers=none,
+  numberstyle=\tiny\color{gray},
+  keywordstyle=\color{blue},
+  commentstyle=\color{dkgreen},
+  stringstyle=\color{mauve},
+  breaklines=true,
+  breakatwhitespace=true,
+  tabsize=3
+}
+
+
+
+\begin{document}
+
+\maketitle
+
+\definecolor{dkgreen}{rgb}{0,0.5,0.2}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0,0.6,0.3}
+
+\section{Introduction}
+
+\hspace{6mm} John Conway defined a Combinatoric Game as one which, among other things, has only two players, no hidden information, and nothing random. Games like this, often also called ``Abstract Strategy Games", have been played for thousands of years on every continent on the planet: some of the most popular are Chess, Go, Mancala, Othello, Checkers, and Tic-Tac-Toe, but there are thousands of examples. 
+
+For me, my friends, and most humans throughout recorded history, our options in times of leisure have been to stay inside and play a game, or go outside and play a sport. These both accomplish the same function, allowing people to attempt to make a series of strategic moves, demonstrating their mental superiority to someone they know, having what is commonly referred to as ``fun". While it is true, in the arbitrary case of Basketball, that one's demonstrated superiority is of a confluence of mental and physical prowess, the ultimate effect of both, fostering coordination, strategy, and rivalry built on respect, is clear. 
+
+Traditional sports and abstract strategy games both, in the modern era, make celebrities of those who excel at them. Any American will tell you Wilt Chamberlain and Bobby Fischer were intelligent men worthy of your respect, because they have both demonstrated themselves masters of a discipline that the American and all of their neighbors have spent a good deal of time thinking about and doing. For the same reasons, the average South Korean will praise the greatest at-bat in KBO history, Park Yong-taik, and Lee Sedol. Sedol was one of the greatest Go players of all time, winning the second-most International Titles in the game's history, 18. He was the world-class master that Google sought out, in 2016, to play against their AI that they called "AlphaGo". AlphaGo uses a Monte-Carlo Tree Search algorithm, making a Tree of all possible ways that a game can play out, selecting some arbitrary amount of options, and exploring those that look ``promising", evaluating game positions via how likely they are to result in a win. 
+
+This AI (which had many Go-specific additional methods far beyond the scope of this project) won 4/5 games against Sedol, marking, like Deep Blue in 1997, a fundamental change in the cultural understanding of the game. Suddenly, ten years ahead of schedule, humans were not and would likely never again be the greatest Go players in the world. This was strongly evident to Sedol, who said, in a 2019 statement marking his early retirement, that, ``With the debut of AI in Go games, I've realized that I'm not at the top even if I become the number one through frantic efforts ... If I become the number one, there is an entity that cannot be defeated." 
+
+Sedol's somber tone might encourage the reader to become an A.I. Millenarianist, steadfast in the belief that in the not-too-distant future there will exist no problem that a human can solve faster than an algorithm, and that, as soon as that day comes, all remaining humans will be reduced to obsolete souvenirs, not one of which could cite a good reason for their own continued existence. This sentiment, as one might guess, is incorrect on a few levels. For one, it is my firm belief that one does need to be the greatest at a discipline to enjoy or gain something from it, and that the existence of calculators does not mean that people shouldn't kn
+
+
+Abstract Strategy Games are complex, but complex in a way that computers are well-equipped for solving: there still exist countless tasks, such as determining if one is about to be caught in an infinite loop, creativity, and socializing, that all current AIs are incapable of. From a failing attempt of an AI to accomplish any of the three, we see the same root problem: the AI cannot adequately assess what it doesn't know, not making a reasonable assumption based on a sufficient amount of evidence. The problem that I solved this summer had a similar theme.
+
+Let us return to the aforementioned situation, a time of leisure, and suppose we find ourselves in the company of $\geq 2$ other people, and that there is rain. The odds are slim that the Game chosen will be Combinatoric: likely, there will be randomly drawn cards, hidden from view of the other players. The effect of this is variable: among humans, there exists a sentiment that games of chance or hiding are less difficult to play well than more ``pure" abstract strategy games: where in the latter one's win is a pure show of force, some unknowable portion of the credit in one's win in the former is thought to be due only to fate. Regardless of whether this sentiment is true, the converse 
+
+With this in mind, I have spent the summer working within a General Game System called Ludii. A General Game System needs two components: a syntax through which one can describe the components and rules of an arbitrary game, and an AI that compiles the game description and engages in dynamic, intelligent play. The most common algorithm for this purpose is that mentioned above, Monte Carlo Tree Search. For a reasonable AI performance, it is sufficient to provide a ruleset. However, a shortcoming of Ludii's implementation (in fact, a shortcoming that exists in all Ludii AI algorithms), is an inability to play Games that are not Combinatoric. All Ludii AIs take in a 
+
+\section{Math}
+
+The man credited for modern-day Game Theory, John Forbes Nash, demonstrated that an equilibrium exists for any finite game (which can be represented as a grid of numbers, or matrix, that approaches a “steady state” on sufficiently many iterations like with a Markov Chain).
+This means, basically, that any game humans play has an unbeatable strategy for the first, second, xor nth player, or always draws.
+In games with random elements, the equilibrium is                                           called a mixed strategy. This is a probability                                              distribution that chooses between pure strategies                                         randomly. 
+
+
+\section{In Search of An Honest UCT Search}
+\subsection{The Game of Nil and The Monty Hall Problem}
+
+The first essential issue that I faced this summer was that information could not really be hidden in Ludii. Syntactically, there is a robust suite of aspects of an in-game situation that can be "set Hidden", but doing so did not impact what the AIs were able to see in any way. This is because, on setting something invisible to a particular player, one passed the "context", which is essentially the board position, through a function called "InformationContext" which removed the necessary information. This method, on occurance, only updated the GUI, meaning that the AIs were free to cheat. Reading through the source code makes this clear, but I used a couple of tools to verify this as I tested potential solutions. 
+
+The Monty Hall Problem is a classic, counterintuitive probability puzzle from the '70s, which is as follows. At outset, there exist three doors, behind two of which lie goats (worthless), and one, a car (good). The protagonist (person A) chooses a door, gaining some affinity for it in the process, and then the host (person B) opens one of the two remaining doors, revealing the goat. Thus, of the three doors, one is totally out of the running, one is the current choice, and one remains a possibility. Person B is about to ask if you want to switch.
+
+\begin{tabular}{ |p{2cm}||p{3.5cm}|p{3.5cm}|  }
+ \hline
+ \multicolumn{3}{|c|}{Monty Hall Problem} \\
+ \hline
+     &A chose Car ($P(\frac{1}{3})$) &A Chose Goat ($P(\frac{2}{3})$)\\
+ \hline
+ Car &Choice &Switch\\
+ Goat&Out    &Out\\
+ Goat&Switch &Choice\\
+ \hline
+\end{tabular}
+
+This means that there is a 2 in 3 probability that switching will get you the car. The Ludii implementation, as a one-player game, attempts to set what is behind the doors hidden: one would expect that a reasonable AI would approach a 2/3 win rate. However, I have found that all existing Ludii AIs won 100\% of the time. A similar, more brute test, that I called ``The Game Of Nil", is in the attached Github repository of finished Ludii games. It, too, showed that the Ludii AIs all cheat. 
+
+\subsection{An Example Shell Method}
+
+To remedy this, for any given AI, there probably exist many solutions, but the one that I found was to make a shell method in the ``LudiiExampleAI" package, which passes a context through the InformationContext method, filtering out the specified information and doing nothing otherwise. The below method does this for the standard ``UCT" implementation, which allows for stochastic games. 
+
+\begin{lstlisting}
+
+package mcts;
+
+import game.Game;
+import other.AI;
+import other.context.Context;
+import other.context.InformationContext;
+import other.move.Move;
+
+import search.mcts.MCTS;
+
+//  Thank you to Victor Putrich, who did this in https://github.com/schererl/FinalYearProject/tree/main/src.
+
+public class MCTSStoHI extends AI
+{
+	
+	protected int player = -1;
+	private MCTS UCT_Ludii;
+	public MCTSStoHI()
+	{
+		this.friendlyName = "MCTSStoHI";
+	}
+	
+	@Override
+	public Move selectAction
+	(
+		final Game game,
+		final Context context, 
+		final double maxSeconds, 
+		final int maxIterations, 
+		final int maxDepth
+	)
+	{
+		Move selectedMove=UCT_Ludii.selectAction(game, new InformationContext(context,player), maxSeconds, maxIterations, maxDepth);
+		return selectedMove;
+	}
+	
+	@Override
+	public void initAI(final Game game, final int playerID)
+	{
+		this.player = playerID;
+		UCT_Ludii = MCTS.createUCT();
+		UCT_Ludii.initAI(game, playerID);
+	}
+	
+	@Override
+	public boolean supportsGame(final Game game)
+	{
+		if (!game.isAlternatingMoveGame())
+			return false;
+		
+		return true;
+	}
+}
+
+\end{lstlisting}
+
+With this AI, I have found occasional losses in games like The Monty Hall Problem and The Game of Nil, and competitive play with the normal UCT in perfect-information games like Hex. The below chart shows 20 instances of the Monty Hall Problem, with this AI, Ludii AI, and Random.
+
+\begin{tikzpicture}
+\begin{axis}[
+    title={Temperature dependence of CuSO\(_4\cdot\)5H\(_2\)O solubility},
+    xlabel={Temperature [\textcelsius]},
+    ylabel={Solubility [g per 100 g water]},
+    xmin=0, xmax=100,
+    ymin=0, ymax=120,
+    xtick={0,20,40,60,80,100},
+    ytick={0,20,40,60,80,100,120},
+    legend pos=north west,
+    ymajorgrids=true,
+    grid style=dashed,
+]
+
+\addplot[
+    color=blue,
+    mark=square,
+    ]
+    coordinates {
+    (0,23.1)(10,27.5)(20,32)(30,37.8)(40,44.6)(60,61.8)(80,83.8)(100,114)
+    };
+    \legend{CuSO\(_4\cdot\)5H\(_2\)O}
+    
+\end{axis}
+\end{tikzpicture}
+
+
+\section{Experimental Modifications}
+\subsection{Deal}
+\subsection{AI}
+
+
+\subsection{Stack}
+
+\section{How to Shuffle in Ludii}
+
+Ludii, when I began work, had no card games. There existed a Deck and Card ``Ludeme", but it had never been used, and I could not get anything workable out of the examples in the Language Reference. Thus, I had to get creative with what I had. 
+
+Ludii's selection of game equipment is as follows: one has card
+
+
+I have written two trick-taking games in Ludii: Agram, and Hearts. Agram was the first game I wrote, because its ruleset is very simple.  
+
+sdfhi
+\section{Games}
+\subsection{Agram}
+\subsection{Hearts}
+\subsection{Bottle Imp}
+\subsection{98}
+\subsection{Coup}
+
+I have owned a copy of Coup since I was 15 or so, and for about as long it has been my favorite card game. I first encountered it at \underline{Arkansas Governor's School}, a state-funded summer learning opportunity for high school juniors set up by Governor Clinton in the '70s. It belongs to the ``social deduction" category, which means that one is allowed to lie, but punished if found out.
+I wrote Coup, not in Ludii, but in ReCYCLE, a General Game System designed particularly for card games. It was the first game of the social deduction category for the system: the deck has only fifteen cards. 
+
+\subsection{BlackJack}
+\subsection{Uno}
+\subsection{War}
+\section{Non-Card}
+
+Also, to get into the rhythm of Ludii's syntax, I implemented a few standard abstract strategy games: Catchup, Oswald, Teeko, Grundy's Game, and Hexade.
+
+\section{Further Work}
+
+I plan to continue working in Ludii over the next year.
+
+\subsection{AI Enhancement}
+\subsection{Deduction Puzzles}
+\subsection{Stacks and Decks}
+\subsection{Games on the Horizon}
+
+\section{Sources}
+
+https://en.yna.co.kr/view/AEN20191127004800315
+
+\end{document}

@@ -1,12 +1,3 @@
-(define "ArrayMin"
-  if (= (size Array #1) 1) 
-        (arrayValue #1 index:1) 
-		(if (> (arrayValue #1 index:2) (arrayValue #1 index:1))
-        ("ArrayMin" (difference #1 (array (arrayValue #1 index:1))))
-		("ArrayMin" (difference #1 (array (arrayValue #1 index:2)))))
-)
-
-
 (game "98"
     (players 4)
     (equipment {
@@ -55,14 +46,11 @@
               (then (set Hidden State at:(mapEntry "Loc" (mover)) False to:All (then (set Var 0
               (then (add (piece "Square") (to (last From)) (then (set State at:(last From) (value Random (range 1 13)) (then (set Hidden State at:(last From) to:Enemy
               (then (if  (= (state at:(mapEntry "Loc" Mover)) 10) 
-                            (and {(addScore P1 (- 10)) (addScore P2 (- 10)) (addScore P3 (- 10)) (addScore P4 (- 10))})
+                            (addScore P1 (- 10)) 
                             (if  (= (state at:(mapEntry "Loc" Mover)) 13) 
-                                 (and {(set Score P1 98) (set Score P2 98) (set Score P3 98) (set Score P4 98)})
+                                 (set Score P1 98)
                                  (if  (< (state at:(mapEntry "Loc" Mover)) 10) 
-                                      (and {(addScore P1 (state at:(mapEntry "Loc" Mover))) 
-                                              (addScore P2 (state at:(mapEntry "Loc" Mover))) 
-                                              (addScore P3 (state at:(mapEntry "Loc" Mover))) 
-                                              (addScore P4 (state at:(mapEntry "Loc" Mover)))}) 
+                                      (addScore P1 (state at:(mapEntry "Loc" Mover)))
                                   ))))))))))))))))
         )     (end (if (and (= (var) 0) (> (score P1) 98)) (result Mover Loss)))
    )
@@ -77,14 +65,14 @@
     
     (info
         {
-        (description "98 is an adding card game popular in Arizona.")
-        (rules "Players are dealt four cards at the beginning, then must play one per turn, keeping a tally of the sum of all played cards. A ten reduces the total by ten, a 98 sets the total to 98, and all others add the displayed amount. The loser is the first to bring the total above 98.")
+        (description "Agram is a trick-taking card game popular in Niger and Mali.")
+        (rules "Players are dealt six cards at the beginning, and then must play six tricks, following the suit of the lead if possible. The biggest number wins, if it follows suit. The overall winner is the winner of the final trick.")
         (id "1536")
-        (source "<a href=\"https://www.pagat.com/adders/98.html\" target=\"_blank\" class=\"style1\" style=\"color: #0000EE\" />Pagat</a>")
+        (source "<a href=\"https://www.pagat.com/last/agram.html\" target=\"_blank\" class=\"style1\" style=\"color: #0000EE\" />Pagat</a>")
         (version "1.3.11")
-        (classification "board/experimental")
-        (author "Anita Hollister")
-        (publisher "<a href=\"https://www.pagat.com/adders/98.html\" target=\"_blank\" class=\"style1\" style=\"color: #0000EE\" />Pagat</a> (used without permission)")
+        (classification "board/space/line")
+        (author "Blaise Muller")
+        (publisher "<a href=\"https://www.pagat.com/last/agram.html\" target=\"_blank\" class=\"style1\" style=\"color: #0000EE\" />Pagat</a> (used without permission)")
         (credit "Noah Morris")
         (date "2023")
         }
@@ -117,7 +105,6 @@
         "Agram_ai"
     )
 )
-
 
 
 

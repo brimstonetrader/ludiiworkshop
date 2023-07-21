@@ -1,0 +1,66 @@
+(move Hop Orthogonal
+  (from if:(= 5 (what at:(from))))
+  (between if:("IsEnemyAt" (between))
+              (apply (remove (between))))
+  (to if:(is Empty (to)))
+)
+
+
+(game "Phutball" 
+    (players 2) 
+    (equipment { 
+        (board (rectangle 19 15)) 
+        (piece "Disc5" Shared)
+        (piece "Dot" Neutral)
+        (hand Each size:1)
+    }) 
+    (rules 
+        (start { 
+            (place "Disc5" 142)
+            (place "Dot0" {285 286})
+        })
+        
+        (play (or 
+            (move (from (sites Hand Mover)) (to (intersection (sites Board) (sites Empty))) copy:True)
+            (move Hop Orthogonal
+  (from if:(= 5 (what at:(from))))
+  (between if:(not (is Empty (between)))
+              (apply (remove (between))))
+  (to if:(is Empty (to))))
+)
+
+            //479 of language refernece
+        )
+        
+        (end ("BlockWin"))
+    )
+)
+
+//------------------------------------------------------------------------------
+
+(metadata 
+    
+(info
+{
+(description "Invented in 1988 by Walter Zamkauskas and first published in the Argentine magzine El Acertijo in December 1992.")
+(rules "Played on a 10x10 board. Each player has four Amazons (chess queens), with other pieces used as arrows. Two things happen on a turn: an amazon moves like a Chess queen, but cannot cross or enter a space occupied by another amazon or arrow. Then, it shoots an arrow to any space on the board that is along the path of a queen's move from that place. The last player able to make a move wins.")
+(source "<a href=\"https://en.wikipedia.org/wiki/Game_of_the_Amazons\" target=\"_blank\" class=\"style1\" style=\"color: #0000EE\" />Wikipedia</a>")
+(id "79")
+(version "1.3.10")
+(classification "board/space/blocking")
+(author "Walter Zamkauskas")
+(credit "Eric Piette")
+(origin "This game is from Argentina, on 1988.")
+}
+)
+    
+    (graphics {
+        (piece Scale "Dot" 0.333)
+        (board Style Go)
+    })
+    
+    (ai 
+        "Amazons_ai"
+    )
+    
+)
