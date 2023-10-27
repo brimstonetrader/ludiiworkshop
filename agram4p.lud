@@ -9,10 +9,10 @@
 )
 
 (define "SetHiddenEach"
-   (set Hidden (sites Hand P1) to:P2)   (set Hidden (sites Hand P1) to:P3)   (set Hidden (sites Hand P1) to:P4)
-   (set Hidden (sites Hand P2) to:P1)   (set Hidden (sites Hand P2) to:P3)   (set Hidden (sites Hand P2) to:P4)
-   (set Hidden (sites Hand P3) to:P1)   (set Hidden (sites Hand P3) to:P2)   (set Hidden (sites Hand P3) to:P4)
-   (set Hidden (sites Hand P4) to:P1)   (set Hidden (sites Hand P4) to:P2)   (set Hidden (sites Hand P4) to:P3)         
+   (set Hidden What (sites Hand P1) to:P2)   (set Hidden What (sites Hand P1) to:P3)   (set Hidden What (sites Hand P1) to:P4)
+   (set Hidden What (sites Hand P2) to:P1)   (set Hidden What (sites Hand P2) to:P3)   (set Hidden What (sites Hand P2) to:P4)
+   (set Hidden What (sites Hand P3) to:P1)   (set Hidden What (sites Hand P3) to:P2)   (set Hidden What (sites Hand P3) to:P4)
+   (set Hidden What (sites Hand P4) to:P1)   (set Hidden What (sites Hand P4) to:P2)   (set Hidden What (sites Hand P4) to:P3)         
 )
 
 // https://www.ludii.games/forums/showthread.php?tid=1109&pid=4114#pid4114
@@ -21,10 +21,10 @@
     (players 4) 
     (equipment { 
         (board (rectangle 1 16) ) 
-        (piece "Square"   Shared)        (piece "Square1"   Shared)        (piece "Square2"   Shared)
-        (piece "Square3"   Shared)      (piece "Square4"   Shared)        (piece "Square5"   Shared)
-        (piece "Square6"   Shared)      (piece "Square7"   Shared)        (piece "Square8"   Shared)
-        (piece "Square9"   Shared)      (piece "Square10"  Shared)       (piece "Square11"  Shared)
+        (piece "Square1"   Shared)       (piece "Square2"   Shared)
+        (piece "Square3"   Shared)     (piece "Square4"   Shared)       (piece "Square5"   Shared)
+        (piece "Square6"   Shared)     (piece "Square7"   Shared)       (piece "Square8"   Shared)
+        (piece "Square9"   Shared)     (piece "Square10"  Shared)       (piece "Square11"  Shared)
         (piece "Square12"  Shared)     (piece "Square13"  Shared)       (piece "Square14"  Shared)
         (piece "Square15"  Shared)     (piece "Square16"  Shared)       (piece "Square17"  Shared)
         (piece "Square18"  Shared)     (piece "Square19"  Shared)       (piece "Square20"  Shared)
@@ -48,7 +48,7 @@
                                "Square21" "Square22" "Square23" "Square24" "Square25"                   
                                "Square26" "Square27" "Square28" "Square29" "Square30"          
                                "Square31" "Square32" "Square33" "Square34" "Square35"})
-                (forEach Player (set Hidden (sites (union (array {1..5}) (array {10..15}))) to:Player))
+                (forEach Player (set Hidden What (sites (union (array {1..5}) (array {10..15}))) to:Player))
                 "SetHiddenEach"
                 }) 
                 phases:{
@@ -128,10 +128,12 @@
                 (piece Foreground "Square34" image:"8"  fillColour:(colour Hidden) edgeColour:(colour Yellow) scale:0.7)
                 (piece Foreground "Square35" image:"8"  fillColour:(colour Hidden) edgeColour:(colour Blue)   scale:0.7)
                 (show Edges Hidden)                                                  
+                (hiddenImage "Null")
                 (show Symbol "Hexagon" (sites Board) fillColour:(colour 185 130 85) edgeColour:(colour 225 182 130)) 
                 (board Placement scale:5)
                 (stackType None)
                 (board Background image:"square.svg" fillColour:(colour 185 130 85) edgeColour:(colour 185 130 85) scale:1.45)
             })
         )
+
 

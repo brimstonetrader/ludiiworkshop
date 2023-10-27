@@ -1,0 +1,264 @@
+from collections import deque
+
+class UnionFind:
+    def __init__(self, elements):
+        self.keyset = elements
+        self.parent = {x: x for x in elements}
+        self.height = {x: 1 for x in elements}
+
+    def find(self, x):
+        if x not in self.parent:
+            return x
+        if self.parent[x] == x:
+            return x
+        self.parent[x] = self.find(self.parent[x])  # Path compression
+        return self.parent[x]
+
+    def union(self, a, b):
+        root_a = self.find(a)
+        root_b = self.find(b)
+        if root_a != root_b:
+            if self.height[root_a] < self.height[root_b]:
+                self.parent[root_a] = root_b
+            elif self.height[root_a] > self.height[root_b]:
+                self.parent[root_b] = root_a
+            else:
+                self.parent[root_b] = root_a
+                self.height[root_a] += 1
+
+
+    def connected(self, a, b):
+        return self.find(a) == self.find(b)
+
+import random
+
+def instPercolationChallenge(n):
+    grid = ([1] * (n * n)) + [1,1] 
+    uf = UnionFind(range(n*n+2))
+    for t in list(range(n)):
+        uf.union(t, n*n)
+    for b in list(range(n * (n - 1), n * n)):
+        uf.union(b, n*n+1)
+    percolator(uf, n, grid, random.randint(0,n))
+
+def percolator(uf, n, grid, pos):
+    curr = pos
+    while not uf.connected(n*n, n*n+1):
+        ns = findNeighbors(pos, n, grid)
+        fh, *sh = grid[:pos], *grid[pos + 1:]
+        grid = fh + [0] + sh
+        for nb in ns:
+            if grid[nb] == 0:
+                uf.union(nb, pos)
+        bs = blocked(0, grid)
+        if bs:
+            b = bs[random.randint(0,len(bs)-1)]
+            pos = b
+        else:
+            print("No path found.")
+        curr = pos
+    for cell in findShortestPath(uf, pos, grid, n):
+        grid[cell] = 2
+    print(putToGUI(rect(n, grid)))
+    print(f"Percentage Opened: {grid.count(1)/(n*n)}")
+
+def findShortestPath(uf, lastNode, grid, n):
+    lastSet = {n*n,n*n+1}
+    for key in uf.keyset:
+        if uf.connected(key, lastNode):
+            lastSet.add(key)                     
+    visited = dict((node, False) for node in lastSet)
+    parent = dict()
+    queue = deque()
+    queue.append(n*n) 
+    goal = n*n+1
+    visited[n*n] = True
+    while queue: 
+        current = queue.popleft()
+        if current == goal:
+            path = [goal]                
+            while goal != n*n:
+                path.append(parent[goal])
+                goal = parent[goal]
+            return path            
+        if current > n*(n-1):
+            queue.append(n*n+1)
+            visited[n*n+1] = True
+            parent[n*n+1] = current 
+        for next in findNeighbors(current, n, grid)+[n*n,n*n+1]:
+            if grid[next] == 0:
+                if not visited[next]:
+                    queue.append(next)
+                    visited[next] = True
+                    parent[next] = current 
+    return parent
+
+def putToGUI(grid):
+    output = ""
+    for gs in grid:
+        for g in gs:
+            if g == 0: 
+                output += ' '
+            elif g == 2:
+                output += 'X'
+            else:
+                output += '.'
+        output += '\n'
+    return output
+
+def blocked(i, grid):
+    bs = []
+    for g in grid:
+        if g == 1:
+            bs.append(i)
+    return bs
+
+def findNeighbors(pos, n, grid):
+    top = [pos - n] if pos > n - 1     and pos < n * n else []
+    lft = [pos - 1] if pos % n > 0     and pos < n * n else []
+    rit = [pos + 1] if pos % n < n - 1 and pos < n * n else []
+    btm = [pos + n] if pos + n < n * n and pos < n * n else []
+    return top + lft + rit + btm
+
+def rect(n, xss):
+    if not xss:
+        return []
+    yss, zss = xss[:n], xss[n:]
+    return [yss] + rect(n, zss)
+
+
+
+from collections import deque
+
+class UnionFind:
+    def __init__(self, elements):
+        self.parent = {x: x for x in elements}
+        self.height = {x: 1 for x in elements}
+        self.keyset = elements
+
+    def find(self, x):
+        if x not in self.parent:
+            return x
+        if self.parent[x] == x:
+            return x
+        self.parent[x] = self.find(self.parent[x])  # Path compression
+        return self.parent[x]
+
+    def union(self, a, b):
+        root_a = self.find(a)
+        root_b = self.find(b)
+        if root_a != root_b:
+            if self.height[root_a] < self.height[root_b]:
+                self.parent[root_a] = root_b
+            elif self.height[root_a] > self.height[root_b]:
+                self.parent[root_b] = root_a
+            else:
+                self.parent[root_b] = root_a
+                self.height[root_a] += 1
+
+
+    def connected(self, a, b):
+        return self.find(a) == self.find(b)
+
+import random
+
+def instPercolationChallenge(n):
+    grid = ([1] * (n * n)) + [0,0] 
+    uf = UnionFind(range(n*n+2))
+    for t in list(range(n)):
+        uf.union(t, n*n)
+    for b in list(range(n * (n - 1), n * n)):
+        uf.union(b, n*n+1)
+    percolator(uf, n, grid, random.randint(0,n))
+
+def percolator(uf, n, grid, pos):
+    curr = pos
+    while not uf.connected(n*n, n*n+1):
+        ns = findNeighbors(pos, n, grid)
+        fh, *sh = grid[:pos], *grid[pos + 1:]
+        grid = fh + [0] + sh
+        for nb in ns:
+            if grid[nb] == 0:
+                uf.union(nb, pos)
+        bs = blocked(0, grid)
+        if bs:
+            b = bs[random.randint(0,len(bs)-1)]
+            pos = b
+        else:
+            print("No path found.")
+        curr = pos
+    lenpath = 0
+    for cell in findShortestPath(uf, uf.find(pos), grid, n):
+        grid[cell] = 2
+        lenpath += 1
+    print(putToGUI(rect(n, grid), n))
+    print(f"Percentage Opened: {grid.count(1)/(n*n)}")
+    print(f"Length of Shortest Path: {grid.count(2)-2}")
+
+def findShortestPath(uf, lastNode, grid, n):
+    lastSet = {n*n,n*n+1}
+    for key in uf.keyset:
+        if uf.connected(key, lastNode):
+            lastSet.add(key)                     
+    visited = dict((node, False) for node in uf.keyset)
+    parent = dict()
+    queue = deque()
+    queue.append(n*n) 
+    goal = n*n+1
+    visited[n*n] = True
+    while queue: 
+        current = queue.popleft()
+        if current == goal:
+            path = [goal]                
+            while goal != n*n:
+                path.append(parent[goal])
+                goal = parent[goal]
+            return path            
+        if current > n*(n-1) and current != n*n:
+            queue.append(n*n+1)
+            visited[n*n+1] = True
+            parent[n*n+1] = current 
+        for next in findNeighbors(current, n, grid):
+            if grid[next] == 0:
+                if not visited[next]:
+                    queue.append(next)
+                    visited[next] = True
+                    parent[next] = current 
+ #                   print(f"Adding {next} to the queue with parent {current}")
+    return parent
+
+def putToGUI(grid, n):
+    output = ""
+    grid.pop()
+    for gs in grid:
+        for g in gs:
+            if g == 0: 
+                output += ' '
+            elif g == 2:
+                output += 'X'
+            else:
+                output += '.'
+        output += '\n'
+    return output
+
+def blocked(i, grid):
+    bs = []
+    for g in grid:
+        if g == 1:
+            bs.append(i)
+    return bs
+
+def findNeighbors(pos, n, grid):
+    top = [pos - n] if pos > n - 1     and pos < n * n else []
+    lft = [pos - 1] if pos % n > 0     and pos < n * n else []
+    rit = [pos + 1] if pos % n < n - 1 and pos < n * n else []
+    btm = [pos + n] if pos + n < n * n and pos < n * n else []
+    if pos == n*n:
+        return list(range(n))
+    return top + lft + rit + btm
+
+def rect(n, xss):
+    if not xss:
+        return []
+    yss, zss = xss[:n], xss[n:]
+    return [yss] + rect(n, zss)

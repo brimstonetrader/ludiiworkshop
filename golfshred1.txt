@@ -1,11 +1,3 @@
-(define "ArrayMin"
-  if (= (size Array #1) 1) 
-        (arrayValue #1 index:1) 
-        (if (> (arrayValue #1 index:2) (arrayValue #1 index:1))
-        ("ArrayMin" (difference #1 (array (arrayValue #1 index:1))))
-        ("ArrayMin" (difference #1 (array (arrayValue #1 index:2)))))
-)
-
 (define "SetHiddenEach"  
    (set Hidden What #1 to:P2)  (set Hidden What #1 to:P3)  (set Hidden What #1 to:P4)
    (set Hidden What #2 to:P1)  (set Hidden What #2 to:P3)  (set Hidden  What #2 to:P4)
@@ -13,12 +5,17 @@
    (set Hidden What #4 to:P1)  (set Hidden What #4 to:P2)  (set Hidden What #4 to:P3)              
 )
 
-//-----------------------------------------------------------------------------------------------------------------
+(define "Tally"
+    (if (or (= (% #1 13) 11) (= (% #1 13) 12)) 10 (% #1 13))
 
-(game "98"
-    (players 4)
-    (equipment {
-        (board (rectangle 40 1))
+)
+
+//------------------------------------------------------------------------------
+
+(game "Golf" 
+    (players 3) 
+    (equipment { 
+        (board (rectangle 1 44)) 
         (piece "Square1"   Shared)
         (piece "Square2"   Shared)
         (piece "Square3"   Shared)
@@ -71,13 +68,17 @@
         (piece "Square50"  Shared)
         (piece "Square51"  Shared)
         (piece "Square52"  Shared)
-        (hand Each size:4)
-        (map "Loc" {(pair P1 3) (pair P2 2) (pair P3 1) (pair P4 0)})
-    })
-    (rules 
-    
-        (start {
-                (place Random (sites (array {4..55})) 
+        (piece "Square53"  Shared)
+        (piece "Square54"  Shared)
+        (hand Each size:5) 
+         (map "Stock" {(pair P1 48) (pair P2 53) (pair P3 58)})
+          })   
+                
+            
+            
+            (rules
+                (start {
+                (place Random (sites (union {(array {4..47}) (array {49..52}) (array {54..57})})) 
                                             {"Square1"  "Square2"  "Square3"  "Square4"  "Square5" 
                                              "Square6"  "Square7"  "Square8"  "Square9"  "Square10"
                                              "Square11" "Square12" "Square13" "Square14" "Square15"
@@ -88,54 +89,37 @@
                                              "Square36" "Square37" "Square38" "Square39" "Square40"
                                              "Square41" "Square42" "Square43" "Square44" "Square45" 
                                              "Square46" "Square47" "Square48" "Square49" "Square50"
-                                             "Square51" "Square52"})                  
-               (forEach Player (set Hidden What (sites (array {4..39})) to:Player))
-               ("SetHiddenEach" (sites {40..43}) (sites {44..47}) (sites {48..51}) (sites {52..55}))
-        }      )
+                                             "Square51" "Square52"})                                                                                      
+                (place "Square53" 1)
+                (place "Square54" 0)
+                (forEach Player (set Hidden What (sites (array {4..43})) to:Player))
+                (set Hidden What (sites {54..57}) to:P1)  (set Hidden What (sites {49..52}) to:P1) 
+                (set Hidden What (sites {44..47}) to:P2)  (set Hidden What (sites {54..57}) to:P2) 
+                (set Hidden What (sites {44..47}) to:P3)  (set Hidden What (sites {49..52}) to:P3) 
+                })
+
+                    (play
+                        (priority 
+                            (if (= (mover) (prev))  
+                                 (move Select (from (sites Hand Mover))
+                                 (then (remove (last From) 
+                                 (then (set Hidden What (sites (array {(+ 4 (/ (count Turns) 2))})) False to:Mover
+                                 (then (fromTo (from (+ 4 (/ (count Turns) 2))) (to (mapEntry "Stock" Mover))))))))))
+                        )
+                    )
+                    (end {(if  (< 40 (count Turns)) 
+                            (byScore {(score P1 (+ {("Tally" (what at:44)) ("Tally" (what at:45)) ("Tally" (what at:46)) ("Tally" (what at:47))}))
+                                              (score P2 (+ {("Tally" (what at:49)) ("Tally" (what at:50)) ("Tally" (what at:51)) ("Tally" (what at:52))}))
+                                              (score P3 (+ {("Tally" (what at:54)) ("Tally" (what at:55)) ("Tally" (what at:56)) ("Tally" (what at:57))}))} misere:True))}
+                    )
+                )
+            
+        )
+    
         
-         (play (if (> (score P1) 98) (move Pass (then (set Var 1)))
-             (move  
-              (from (sites Hand Mover))
-              (to (mapEntry "Loc" (mover)))
-              (then (set Hidden What at:(mapEntry "Loc" (mover)) False to:All (then (set Var 0
-              (then (set Hidden What (sites (array {(+ 4 (count Turns))})) False to:Mover
-              (then (fromTo (from (+ 4 (count Turns))) (to (last From))
-             (then (if  (= (% (what at:(mapEntry "Loc" Mover)) 13) 10) 
-                            (and {(addScore P1 (- 10)) (addScore P2 (- 10)) (addScore P3 (- 10)) (addScore P4 (- 10))})
-                            (if  (= (% (what at:(mapEntry "Loc" Mover)) 13) 0) 
-                                 (and {(set Score P1 98) (set Score P2 98) (set Score P3 98) (set Score P4 98)})
-                                 (if  (< (% (what at:(mapEntry "Loc" Mover)) 13) 10) 
-                                      (and {(addScore P1 (% (what at:(mapEntry "Loc" Mover)) 13)) 
-                                                (addScore P2 (% (what at:(mapEntry "Loc" Mover)) 13)) 
-                                                (addScore P3 (% (what at:(mapEntry "Loc" Mover)) 13)) 
-                                                (addScore P4 (% (what at:(mapEntry "Loc" Mover)) 13))}) 
-                                  ))))))))))))))
-        )     (end (if (and (= (var) 0) (> (score P1) 98)) (result Mover Loss)))
-   )
-)
+//------------------------------------------------------------------------------        
         
-          
-    
-    
-    //------------------------------------------------------------------------------
-    
-(metadata 
-    
-    (info
-        {
-        (description "98 is an adding card game popular in Arizona.")
-        (rules "Players are dealt four cards at the beginning, then must play one per turn, keeping a tally of the sum of all played cards. A ten reduces the total by ten, a 98 sets the total to 98, and all others add the displayed amount. The loser is the first to bring the total above 98.")
-        (id "1536")
-        (source "<a href=\"https://www.pagat.com/adders/98.html\" target=\"_blank\" class=\"style1\" style=\"color: #0000EE\" />Pagat</a>")
-        (version "1.3.11")
-        (classification "board/experimental")
-        (author "Anita Hollister")
-        (publisher "<a href=\"https://www.pagat.com/adders/98.html\" target=\"_blank\" class=\"style1\" style=\"color: #0000EE\" />Pagat</a> (used without permission)")
-        (credit "Noah Morris")
-        (date "2023")
-        }
-    )
-    
+        (metadata    
             (graphics {
                 (piece Foreground "Square1"  image:"A"  fillColour:(colour Hidden) edgeColour:(colour Black)   scale:0.6)
                 (piece Foreground "Square2"  image:"2"  fillColour:(colour Hidden) edgeColour:(colour Black) scale:0.6)
@@ -198,17 +182,18 @@
                 (piece Foreground "Square54"              fillColour:(colour Hidden) edgeColour:(colour Black) scale:0.6)
                 (show Edges Hidden)                                                  
                 (show Symbol "Hexagon" (sites Board) fillColour:(colour 185 130 85) edgeColour:(colour 225 182 130)) 
-                (board Placement scale:12.5 offsetY:0.5) //35
+                (board Placement scale:27.5 offsetX:-0.5) //35
                 (stackType None)
                 (hiddenImage "Null")
-                (board Background image:"square.svg" fillColour:(colour 185 130 85) edgeColour:(colour 185 130 85) scale:1.5)
+                (board Background image:"square.svg" fillColour:(colour 185 130 85) edgeColour:(colour 185 130 85) scale:1.45)
             })
+        )
 
-    
-    (ai
-        "98_ai"
-    )
-)
+
+
+
+
+
 
 
 

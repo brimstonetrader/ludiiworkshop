@@ -8,18 +8,53 @@
     }) 
     (rules 
         (start { 
-            (place "Disc5" 142)
+            (place "Disc" 142)
             (place "Dot0" {285 286})
         })
         
         (play (or 
-            (move (from (sites Hand Mover)) (to (intersection (sites Board) (sites Empty))) copy:True)
-            (move (from (sites Board) if:(= 5 (what at:(from)))) (to (sites Around (from)))))
+            (move (from (sites Hand Mover)) 
+			      (to (intersection (sites Board) (sites Empty))) copy:True)
+            (move (from (sites Board) if:(= 5 (what at:(from)))) 
+			      (to (sites Around (from))))
+			  )
         )
-        
         (end ("BlockWin"))
     )
 )
+
+(define "HopSequence" ("HopCapture" (from #1) #2 
+                                         (then ("ReplayIfCanMove" ("HopCapture" (from (last To)) Orthogonal))))
+)
+
+//------------------------------------------------------------------------------
+
+(game "Phutball" 
+    (players 2) 
+    (equipment { 
+        (board (rectangle 19 15)) 
+        (piece "Disc" Shared)
+        (piece "Dot" Each)
+        (hand Each size:2)
+    }) 
+    (rules 
+        (start { 
+            (place "Disc" 142)
+            (forEach Player (place "Dot2" (handSite Player 1)))
+        })
+       (play 
+                (if "SameTurn"
+                    (or
+                        ("HopSequence" (last To) Orthogonal)
+                        (move Pass)
+                    )
+                    (forEach Piece "Disc" ("HopSequence" (from) Orthogonal)) 
+                )
+            )
+        (end (if (> (count Moves) 11) (result Mover Win)))
+    )
+)
+
 
 //------------------------------------------------------------------------------
 

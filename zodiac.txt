@@ -1,0 +1,42 @@
+1 	1,1 	jiǎzǐ  (甲子) 	Wood   Rat 	  1984 	73 	0712-0901 	4681 	February 2
+2 	2,2 	yǐchǒu (乙丑) 	Wood   Ox 	  1985 	74 	0712-0902 	4682 	February 20
+3 	3,3 	bǐngyín (丙寅) 	Fire   Tiger 	1986 	75 	0712-0903 	4683 	February 9
+4 	4,4 	dīngmǎo (丁卯) 	Fire   Rabbit 	1987 	76 	0712-0904 	4684 	January 29
+5 	5,5 	wùchén (戊辰) 	Earth  Dragon 	1988 	77 	0712-0905 	4685 	February 17
+6 	6,6 	jǐsì   (己巳) 	Earth  Snake 	1989 	78 	0712-0906 	4686 	February 6
+7 	7,7 	gēngwǔ (庚午) 	Golden Horse 	1990 	79 	0712-0907 	4687 	January 27
+8 	8,8 	xīnwèi (辛未) 	Golden Goat 	1991 	80 	0712-0908 	4688 	February 15
+9 	9,9 	rénshēn (壬申) 	Water  Monkey 	1992 	81 	0712-0909 	4689 	February 4
+10 	10,10 	guǐyǒu (癸酉) 	Water  Rooster 	1993 	82 	0712-0910 	4690 	January 23
+11 	1,11 	jiǎxū  (甲戌) 	Wood   Dog   	1994 	83 	0712-0911 	4691 	February 9
+12 	2,12 	yǐhài  (乙亥) 	Wood   Pig 	  1995 	84 	0712-0912 	4692 	January 31 
+
+
+鼠, 子 | Rat     | zǐ   
+牛, 丑 | Ox      | chǒu 
+虎, 寅 | Tiger   | yín
+兔, 卯 | Rabbit  | mǎo
+龙, 辰 | Dragon  | chén 
+蛇, 巳 | Snake   | sì   
+马, 午 | Horse   | wǔ 
+羊, 未 | Goat    | wèi  
+猴, 申 | Monkey  | shēn
+鸡, 酉 | Rooster | yǒu 
+狗, 戌 | Dog     | xū  
+猪, 亥 | Pig     | hài  
+
+
+
+
+1 	Rat 	鼠, shǔ (子) 	Yang 	1st 	Water
+2 	Ox   	牛, niú (丑) 	Yin 	2nd 	Earth
+3 	Tiger 	虎, hǔ (寅) 	Yang 	3rd 	Wood
+4 	Rabbit 	兔, tù (卯) 	Yin 	4th 	Wood
+5 	Dragon 	龙/龍, lóng (辰) 	Yang 	1st 	Earth
+6 	Snake 	蛇, shé (巳) 	Yin 	2nd 	Fire
+7 	Horse 	马/馬, mǎ (午) 	Yang 	3rd 	Fire
+8 	Goat 	羊, yáng (未) 	Yin 	4th 	Earth
+9 	Monkey 	猴, hóu (申) 	Yang 	1st 	Metal
+10 	Rooster	鸡/雞, jī (酉) 	Yin 	2nd 	Metal
+11 	Dog 	狗, gǒu (戌) 	Yang 	3rd 	Earth
+12 	Pig 	猪/豬, zhū (亥) 	Yin 	4th 	Water

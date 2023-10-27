@@ -1,0 +1,20 @@
+A "deterministic" game has no hidden information or randomness. Sudoku is out for the first reason, Yahtzee for the last. A "General Game System" is the union of a programming language through which parameters and goals may be specified, and a standardized, dynamic AI capable of engaging in intelligent play in any situation described to it in its "Game Description Language". Most General Game AIs use a fairly simple Monte-Carlo Tree Search to determine moves. 
+
+Ludii is a powerful open-source general game system that was released in 2020. Its embedded syntax allows the user to specify information that should be hidden, and to generate random numbers. Despite this, none of the over 1500 games implemented for it involve cards. The issue is that, although the command "set Hidden" is valid in Ludii, it does not update the game from the AI's perspective, only the GUI. This method for AI play of games of hidden information is "clairvoyant". 
+
+The method presented in this paper acts on a Ludii game's context, essentially filling in all gaps in knowledge with possible outcomes before a move is chosen. With this, we can get intelligent, non-clairvoyant play of games of hidden information from the Ludii AIs. I've implemented a medley of card games in Ludii, such as Hearts, Golf, 98, and more that are available in the github repository. 
+
+
+
+
+
+The first public implementation of this idea, Zillions of Games, was released around twenty-five years ago. It was only capable of deterministic games, which it played using "Monte Carlo Tree Search".
+
+https://www.zillions-of-games.com/supportedFAQ.html
+
+I have broadened the capabilities of the Ludii GGS and GDL, allowing for description and AI play of games with hidden information and stochastic elements. 
+
+Before I began work, there were very few games with either, and in all of them the AI was given full access to information that was intended to be hidden. This occured in 
+
+
+I have removed this, allowing for play that was not "clairvoyant". 

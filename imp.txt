@@ -59,13 +59,13 @@
           (play
             (move  
               (from  (sites Hand Mover))
-              (to    (mapEntry "Loc" (mover)))
-              (then  (and {(set Var (mapEntry "Suit" (what at:(mapEntry "Loc" Mover) level:(topLevel at:(mapEntry "Loc" Mover))))) 
-                           (if (= (var "ImpPlayer") (mover)) 
-                               (add (piece "Square38") (to (mapEntry "Loc" Mover))))
-                           (if (= (count Turns) 1) (set Var "ImpPrice" 19))                                       
-                           //(addScore Mover (mapEntry "Worth" (what at:(mapEntry "Loc" Mover) level:(topLevel at:(mapEntry "Loc" Mover)))))
-						   }))))
+              (to     (mapEntry "Loc" (mover)))
+              (then  (and {(set Var             (mapEntry "Suit"    (what at:(mapEntry "Loc" Mover) level:(topLevel at:(mapEntry "Loc" Mover))))) 
+                               (if (= (var "ImpPlayer") (mover)) 
+                                  (add (piece "Square38") (to (mapEntry "Loc" Mover))))
+                               (if (= (count Turns) 1) (set Var "ImpPrice" 19))
+                                       
+                               (addScore Mover (mapEntry "Worth" (what at:(mapEntry "Loc" Mover) level:(topLevel at:(mapEntry "Loc" Mover)))))}))))
            (nextPhase "Follow"))
 
         (phase "Follow"
@@ -73,20 +73,18 @@
             (move  
               (from (sites Hand Mover))
               (to (mapEntry "Loc" (mover)) if:(= (mapEntry "Suit" (what at:(from) level:(topLevel at:(from)))) (var)))
-              (then (and {(set Var (mapEntry "Suit"    (what at:(mapEntry "Loc" Mover) level:(topLevel at:(mapEntry "Loc" Mover))))) 
-                          (addScore Mover (mapEntry "Worth" (what at:(mapEntry "Loc" Mover) level:(topLevel at:(mapEntry "Loc" Mover)))))
-						 }))))
-						 
-          (end {(if (> (score P1) 98) (result Mover Loss))})
-          (nextPhase (= (% (count Moves) 5) 1) "Trick"))   
+              (then  (and {(set Var             (mapEntry "Suit"    (what at:(mapEntry "Loc" Mover) level:(topLevel at:(mapEntry "Loc" Mover))))) 
+                               (addScore Mover (mapEntry "Worth" (what at:(mapEntry "Loc" Mover) level:(topLevel at:(mapEntry "Loc" Mover)))))}))))
+           (end {(if (> (score P1) 98) (result Mover Loss))})
+           (nextPhase (= (% (count Moves) 5) 1) "Trick"))   
 
         (phase "Trick"
           (play
             (move Pass   
               (then (if (and {(> (what at:0 level:(topLevel at:0)) (var "ImpPrice"))
-                              (> (what at:1 level:(topLevel at:1)) (var "ImpPrice"))
-                              (> (what at:2 level:(topLevel at:2)) (var "ImpPrice"))
-                              (> (what at:3 level:(topLevel at:3)) (var "ImpPrice"))})
+                                  (> (what at:1 level:(topLevel at:1)) (var "ImpPrice"))
+                                  (> (what at:2 level:(topLevel at:2)) (var "ImpPrice"))
+                                  (> (what at:3 level:(topLevel at:3)) (var "ImpPrice"))})
                        (and {(set Var             (mapEntry "Suit"    (what at:(mapEntry "Loc" Mover) level:(topLevel at:(mapEntry "Loc" Mover))))) 
                                (addScore Mover (mapEntry "Worth" (what at:(mapEntry "Loc" Mover) level:(topLevel at:(mapEntry "Loc" Mover)))))
                                (if (> (what at:0 level:(topLevel at:0)) (what at:1 level:(topLevel at:1))) 
@@ -104,10 +102,7 @@
                                    (if (> (what at:1 level:(topLevel at:1)) (what at:4 level:(topLevel at:4)))
                                       (set NextPlayer (player 2))
                                       (set NextPlayer (player 4)))))
-                               })
-					 ()
-							   
-							   ))))
+                               })))))
            (end {(if (> (score P1) 98) (result Mover Loss))})
            (nextPhase "Lead"))
 

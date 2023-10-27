@@ -8,23 +8,46 @@
 )
 
 (define "SetHiddenEach"  
-   (set Hidden #1 to:P2)  (set Hidden #1 to:P3)  (set Hidden #1 to:P4)
-   (set Hidden #2 to:P1)  (set Hidden #2 to:P3)  (set Hidden #2 to:P4)
-   (set Hidden #3 to:P1)  (set Hidden #3 to:P2)  (set Hidden #3 to:P4)
-   (set Hidden #4 to:P1)  (set Hidden #4 to:P2)  (set Hidden #4 to:P3)              
+   (set Hidden What #1 to:P2)  (set Hidden What #1 to:P3)  (set Hidden What #1 to:P4)
+   (set Hidden What #2 to:P1)  (set Hidden What #2 to:P3)  (set Hidden  What #2 to:P4)
+   (set Hidden What #3 to:P1)  (set Hidden What #3 to:P2)  (set Hidden What #3 to:P4)
+   (set Hidden What #4 to:P1)  (set Hidden What #4 to:P2)  (set Hidden What #4 to:P3)              
 )
 
 (define "Switch"
     (and {
         (if (and {(> (score P1) (score P2)) (> (score P1) (score P4)) (> (score P1) (score P3))})
-                (forEach Player (fromTo (from (mapEntry "Loc" Player)) (to (mapEntry "Won" P1)) (then (set NextPlayer (player 1))))) 
+               (forEach Player 
+                    (if (or (= (% (what at:(mapEntry "Loc" Player) level:(topLevel at:(mapEntry "Loc" Player)))  4) 1)
+                               (= (what at:(mapEntry "Loc" Player) level:(topLevel at:(mapEntry "Loc" Player))) 44))
+                        (fromTo (from (mapEntry "Loc" Player)) 
+                                (to (mapEntry "Won" P1)) 
+                                (then (set NextPlayer (player 1))))
+                        (remove (mapEntry "Loc" Player) (then (set NextPlayer (player 1)))))) 
                 (if (and (> (score P2) (score P3)) (> (score P2) (score P4)))
-                    (forEach Player (fromTo (from (mapEntry "Loc" Player)) (to (mapEntry "Won" P2)) (then (set NextPlayer (player 2))))) 
-                    (if (> (score P3) (score P4))
-                        (forEach Player (fromTo (from (mapEntry "Loc" Player)) (to (mapEntry "Won" P3)) (then (set NextPlayer (player 3)))))  
-                        (forEach Player (fromTo (from (mapEntry "Loc" Player)) (to (mapEntry "Won" P4)) (then (set NextPlayer (player 4))))) 
-            )))
-      })
+                    (forEach Player 
+                         (if (or (= (% (what at:(mapEntry "Loc" Player) level:(topLevel at:(mapEntry "Loc" Player)))  4) 1)
+                                 (= (what at:(mapEntry "Loc" Player) level:(topLevel at:(mapEntry "Loc" Player))) 44))
+                             (fromTo (from (mapEntry "Loc" Player)) 
+                                     (to (mapEntry "Won" P2)) 
+                                     (then (set NextPlayer (player 2))))
+                             (remove (mapEntry "Loc" Player) (then (set NextPlayer (player 2))))))                     
+                   (if (> (score P3) (score P4))
+                       (forEach Player 
+                           (if (or (= (% (what at:(mapEntry "Loc" Player) level:(topLevel at:(mapEntry "Loc" Player)))  4) 1)
+                                   (= (what at:(mapEntry "Loc" Player) level:(topLevel at:(mapEntry "Loc" Player))) 44))
+                               (fromTo (from (mapEntry "Loc" Player)) 
+                                       (to (mapEntry "Won" P3)) 
+                                       (then (set NextPlayer (player 3))))
+                               (remove (mapEntry "Loc" Player) (then (set NextPlayer (player 3))))))
+                       (forEach Player 
+                           (if (or (= (% (what at:(mapEntry "Loc" Player) level:(topLevel at:(mapEntry "Loc" Player)))  4) 1)
+                                   (= (what at:(mapEntry "Loc" Player) level:(topLevel at:(mapEntry "Loc" Player))) 44))
+                               (fromTo (from (mapEntry "Loc" Player)) 
+                                       (to (mapEntry "Won" P4)) 
+                                       (then (set NextPlayer (player 4))))
+                               (remove (mapEntry "Loc" Player) (then (set NextPlayer (player 4)))))))))})
+      
 )
 
 //------------------------------------------------------------------------------
@@ -114,8 +137,8 @@
                     (play 
                         (move (from (sites Hand Mover)) 
                               (to   (handSite Next (+ 13 (% (/ (+ (count Moves) 1) 4) 3)))) 
-                              (then (forEach Player (if (!= (id Player) (id Next)) (if (= (count Moves) 12) (set Hidden at:21 to:Player )
-                                        (set Hidden at:(handSite Next (+ 13 (/ (count Moves) 4))) to:Player (then (set Var "HeartsBroken" 0 
+                              (then (forEach Player (if (!= (id Player) (id Next)) (if (= (count Moves) 12) (set Hidden What at:21 to:Player )
+                                        (set Hidden What (sites (array {(handSite Next (+ 13 (/ (count Moves) 4)))})) to:Player (then (set Var "HeartsBroken" 0 
                               )))))))) 
                     ) (nextPhase (= (count Moves) 12) "Lead")
                 )
@@ -246,4 +269,6 @@
                 (board Background image:"square.svg" fillColour:(colour 185 130 85) edgeColour:(colour 185 130 85) scale:1.45)
             })
         )
+
+
 

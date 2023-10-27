@@ -1,0 +1,374 @@
+package mcts;
+
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Random;
+import java.util.concurrent.ThreadLocalRandom;
+
+import game.Game;
+import game.equipment.container.Container;
+import game.types.board.SiteType;
+import main.collections.FastArrayList;
+import other.AI;
+import other.RankUtils;
+import other.context.Context;
+import other.context.InformationContext;
+import other.move.Move;
+import other.state.container.ContainerState;
+
+/**
+ * A simple example implementation of a standard UCT approach.
+ * 
+ * @author Dennis Soemers
+ */
+public class MCTSStoHIWOR extends AI
+{
+	
+	//-------------------------------------------------------------------------
+	
+	/** Our player index */
+	protected int player = -1;
+	private int numCards = 52;
+	
+	//-------------------------------------------------------------------------
+	
+	/**
+	 * Constructor
+	 */
+	public MCTSStoHIWOR()
+	{
+		this.friendlyName = "MCTSStoHIWOR";
+	}
+	
+	//-------------------------------------------------------------------------
+
+	@Override
+	public Move selectAction
+	(
+		final Game game,
+		final Context context, 
+		final double maxSeconds, 
+		final int maxIterations, 
+		final int maxDepth
+	)
+	{
+		// Start out by creating a new root node (no tree reuse in this example)
+		final InformationContext ic = new InformationContext(context,player);
+		
+		final Node root = new Node(null, null, ic, context);
+		
+		// We'll respect any limitations on max seconds and max iterations (don't care about max depth)
+		final long stopTime = (maxSeconds > 0.0) ? System.currentTimeMillis() + (long) (maxSeconds * 1000L) : Long.MAX_VALUE;
+		final int maxIts = (maxIterations >= 0) ? maxIterations : Integer.MAX_VALUE;
+				
+		int numIterations = 0;
+		
+		// Our main loop through MCTS iterations
+		while 
+		(
+			numIterations < maxIts && 					// Respect iteration limit
+			System.currentTimeMillis() < stopTime && 	// Respect time limit
+			!wantsInterrupt								// Respect GUI user clicking the pause button
+		)
+		{
+			// Start in root node
+			Node current = root;
+			
+			// Traverse tree
+			while (true)
+			{
+				if (current.iContext.trial().over())
+				{
+					// We've reached a terminal state
+					break;
+				}
+				
+				current = select(game, player, numCards, current);
+				
+				if (current.visitCount == 0)
+				{
+					// We've expanded a new node, time for playout!
+					break;
+				}
+			}
+		//	System.out.println(95);
+			InformationContext contextEnd = generateDeterminizedContext(current.iContext.game(), player, numCards, current.iContext);;
+			
+			if (!contextEnd.trial().over())
+			{
+				// Run a playout if we don't already have a terminal game state in node
+				game.playout
+				(
+					contextEnd, 
+					null, 
+					-1.0, 
+					null, 
+					0, 
+					-1, 
+					ThreadLocalRandom.current()
+				);
+			}
+			
+			// This computes utilities for all players at the of the playout,
+			// which will all be values in [-1.0, 1.0]
+			final double[] utilities = RankUtils.utilities(contextEnd);
+			
+			// Backpropagate utilities through the tree
+			while (current != null)
+			{
+				current.visitCount += 1;
+				for (int p = 1; p <= game.players().count(); ++p)
+				{
+					current.scoreSums[p] += utilities[p];
+				}
+				current = current.parent;
+			}
+			
+			// Increment iteration count
+			++numIterations;
+		}
+		
+		// Return the move we wish to play
+		return finalMoveSelection(root, game, player, numCards);
+	}
+	
+	/**
+	 * Selects child of the given "current" node according to UCB1 equation.
+	 * This method also implements the "Expansion" phase of MCTS, and creates
+	 * a new node if the given current node has unexpanded moves.
+	 * 
+	 * @param current
+	 * @return Selected node (if it has 0 visits, it will be a newly-expanded node).
+	 */
+	public static Node select(final Game game, int player, int numCards, final Node current)
+	{
+		if (!current.unexpandedMoves.isEmpty())
+		{
+			// randomly select an unexpanded move
+			final Move move = current.unexpandedMoves.remove(
+					ThreadLocalRandom.current().nextInt(current.unexpandedMoves.size()));
+			
+			// create a copy of context
+		//	System.out.println(153);
+			final Context context = generateDeterminizedContext(current.iContext.game(), player, numCards, current.iContext);
+			
+			// apply the move
+			current.iContext.game().apply(current.iContext, move);
+			
+			// create new node and return it
+			return new Node(current, move, current.iContext, context);
+		}
+		
+		// use UCB1 equation to select from all children, with random tie-breaking
+		Node bestChild = current.children.get(0);
+        double bestValue = Double.NEGATIVE_INFINITY;
+        final double twoParentLog = 2.0 * Math.log(Math.max(1, current.visitCount));
+        int numBestFound = 0;
+        
+        final int numChildren = current.children.size();
+        final int mover = current.iContext.state().mover();
+
+        for (int i = 0; i < numChildren; ++i) 
+        {
+        	final Node child = current.children.get(i);
+        	final double exploit = child.scoreSums[mover] / child.visitCount;
+        	final double explore = Math.sqrt(twoParentLog / child.visitCount);
+        
+            final double ucb1Value = exploit + explore;
+            
+            if (ucb1Value > bestValue)
+            {
+                bestValue = ucb1Value;
+                bestChild = child;
+                numBestFound = 1;
+            }
+            else if 
+            (
+            	ucb1Value == bestValue && 
+            	ThreadLocalRandom.current().nextInt() % ++numBestFound == 0
+            )
+            {
+            	// this case implements random tie-breaking
+            	bestChild = child;
+            }
+        }
+        
+        return bestChild;
+	}
+	
+	// This method makes feasible assumptions for all hidden things.
+	public static InformationContext generateDeterminizedContext(Game game, int player, int numCards, InformationContext iContext) {
+		if (game.hiddenInformation() && player >= 1 && player <= iContext.game().players().count())
+		{
+			for (int cid = 0; cid < iContext.state().containerStates().length; cid++)
+			{
+				final ContainerState cs = iContext.state().containerStates()[cid];
+				final Container container = iContext.containers()[cid];
+				HashSet<Integer> informationSet = initInformationSet(numCards);
+				if (iContext.game().isCellGame())
+				{
+					for (int cellId = iContext.sitesFrom()[cid]; cellId < iContext.sitesFrom()[cid]
+							+ container.topology().cells().size(); cellId++)
+					{
+						if (!cs.isEmpty(cellId, SiteType.Vertex)) {
+							if (!cs.isHiddenWhat(player, cellId, 0, SiteType.Vertex)) {
+								informationSet.remove(cs.whatVertex(cellId));
+			//					System.out.println(cs.whatVertex(cellId));
+							}
+						}
+					}
+					for (int cellId = iContext.sitesFrom()[cid]; cellId < iContext.sitesFrom()[cid]
+							+ container.topology().cells().size(); cellId++)
+					{
+						if (!cs.isEmpty(cellId, SiteType.Vertex)) {
+							if (cs.isHiddenWhat(player, cellId, 0, SiteType.Vertex)) {
+								Integer[] is = informationSet.toArray(new Integer[informationSet.size()]);
+						        Random rndm = new Random();
+						        if (is.length > 0) {
+						        	int rndmWhat = rndm.nextInt(is.length);
+						        	cs.setSite(iContext.state(), cellId, cs.whoVertex(cellId), is[rndmWhat], cs.countVertex(cellId), cs.stateVertex(cellId), cs.rotationVertex(cellId), cs.valueVertex(cellId), SiteType.Vertex);			
+						        	informationSet.remove(is[rndmWhat]); 
+				//					System.out.println(is[rndmWhat]);
+						        }
+							} 
+						}
+					}
+				}
+			} 
+		} return iContext;
+	}
+	
+	// This set contains all cards which have an unknown location. 
+	public static HashSet<Integer> initInformationSet(int numCards) {
+		HashSet<Integer> informationSet = new HashSet<Integer>();		
+		for (int i=1;i<1+numCards;i++) {
+			informationSet.add(i);
+		} return informationSet;
+	}
+
+	
+	/**
+	 * Selects the move we wish to play using the "Robust Child" strategy
+	 * (meaning that we play the move leading to the child of the root node
+	 * with the highest visit count).
+	 * 
+	 * @param rootNode
+	 * @return
+	 */
+	public static Move finalMoveSelection(final Node rootNode, Game game, int player, int numCards)
+	{
+		rootNode.iContext = rootNode.iContext;
+		Node bestChild = rootNode.children.get(0);
+        int bestVisitCount = Integer.MIN_VALUE;
+        int numBestFound = 0;
+        
+        final int numChildren = rootNode.children.size();
+
+        for (int i = 0; i < numChildren; ++i) 
+        {
+        	final Node child = rootNode.children.get(i);
+        	final int visitCount = child.visitCount;
+       // 	System.out.println(child.toString());
+        	System.out.println(visitCount);
+            
+            if (visitCount > bestVisitCount)
+            {
+                bestVisitCount = visitCount;
+                bestChild = child;
+                numBestFound = 1;
+            }
+            else if 
+            (
+            	visitCount == bestVisitCount && 
+            	ThreadLocalRandom.current().nextInt() % ++numBestFound == 0
+            )
+            {
+            	// this case implements random tie-breaking
+            	bestChild = child;
+            }
+        }
+        
+        return bestChild.moveFromParent;
+	}
+	
+	@Override
+	public void initAI(final Game game, final int playerID)
+	{
+		this.player = playerID;
+	}
+	
+	@Override
+	public boolean supportsGame(final Game game)
+	{
+	//	if (game.isStochasticGame())
+	//		return false;
+		
+	//	if (!game.isAlternatingMoveGame())
+	//		return false;
+		
+		return true;
+	}
+	
+	//-------------------------------------------------------------------------
+	
+	/**
+	 * Inner class for nodes used by example UCT
+	 * 
+	 * @author Dennis Soemers
+	 */
+	private static class Node
+	{
+		/** Our parent node */
+		private final Node parent;
+		
+		/** The move that led from parent to this node */
+		private final Move moveFromParent;
+		
+		/** This objects contains the game state for this node */
+		private InformationContext iContext;
+		
+		/** Visit count for this node */
+		private int visitCount = 0;
+		
+		/** For every player, sum of utilities / scores backpropagated through this node */
+		private final double[] scoreSums;
+		
+		/** Child nodes */
+		private final List<Node> children = new ArrayList<Node>();
+		
+		/** List of moves for which we did not yet create a child node */
+		private final FastArrayList<Move> unexpandedMoves;
+
+		private Context context;
+		
+		/**
+		 * Constructor
+		 * 
+		 * @param parent
+		 * @param moveFromParent
+		 * @param context 
+		 * @param context
+		 */
+		public Node(final Node parent, final Move moveFromParent, final InformationContext iContext, Context context)
+		{
+			this.parent = parent;
+			this.moveFromParent = moveFromParent;
+			this.iContext = iContext;
+			this.context = context;
+			final Game game = iContext.game();
+			scoreSums = new double[game.players().count() + 1];
+			
+			// For simplicity, we just take ALL legal moves. 
+			// This means we do not support simultaneous-move games.
+			unexpandedMoves = new FastArrayList<Move>(game.moves(iContext).moves());
+			
+			if (parent != null)
+				parent.children.add(this);
+		}
+		
+	}
+	
+	//-------------------------------------------------------------------------
+
+}

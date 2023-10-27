@@ -35,6 +35,18 @@
         (end ("BlockWin"))
     )
 )
+(define "HopOrthogonalSequencCapture"
+  (move Hop Orthogonal   
+    (between if:("IsEnemyAt" (between))
+      (apply (remove (between) #1)))
+    (to if:(is Empty (to))) (then 
+    (if (can Move (hop 
+      (from (last To)) Orthogonal
+      (between if:(and (not (is In (between) (sites ToClear))) 
+                                          ("IsEnemyAt" (between))))
+      (to if:(is Empty (to)))))
+    (moveAgain))))
+)
 
 //------------------------------------------------------------------------------
 
