@@ -1,0 +1,2077 @@
+HAROLD V RANDOM 98
+
+
+		Warming up...
+		Finished warming up!
+		=====================================================
+		Completed 1 games.
+
+		Agent 1 (Harold the AI)
+		Winning score (between 0 and 1) : N=1, mean=0.666667 (+/-0).
+		P1: N=0, mean=0 (+/-0).
+		P2: N=0, mean=0 (+/-0).
+		P3: N=0, mean=0 (+/-0).
+		P4: N=1, mean=0.666667 (+/-0).
+		Game Durations: N=1, mean=6 (+/-0).
+		P1: N=0, mean=0 (+/-0).
+		P2: N=0, mean=0 (+/-0).
+		P3: N=0, mean=0 (+/-0).
+		P4: N=1, mean=6 (+/-0).
+
+		Agent 2 (Random)
+		Winning score (between 0 and 1) : N=1, mean=0.666667 (+/-0).
+		P1: N=0, mean=0 (+/-0).
+		P2: N=0, mean=0 (+/-0).
+		P3: N=1, mean=0.666667 (+/-0).
+		P4: N=0, mean=0 (+/-0).
+		Game Durations: N=1, mean=6 (+/-0).
+		P1: N=0, mean=0 (+/-0).
+		P2: N=0, mean=0 (+/-0).
+		P3: N=1, mean=6 (+/-0).
+		P4: N=0, mean=0 (+/-0).
+
+		Agent 3 (Random)
+		Winning score (between 0 and 1) : N=1, mean=0 (+/-0).
+		P1: N=0, mean=0 (+/-0).
+		P2: N=1, mean=0 (+/-0).
+		P3: N=0, mean=0 (+/-0).
+		P4: N=0, mean=0 (+/-0).
+		Game Durations: N=1, mean=6 (+/-0).
+		P1: N=0, mean=0 (+/-0).
+		P2: N=1, mean=6 (+/-0).
+		P3: N=0, mean=0 (+/-0).
+		P4: N=0, mean=0 (+/-0).
+
+		Agent 4 (Random)
+		Winning score (between 0 and 1) : N=1, mean=0.666667 (+/-0).
+		P1: N=1, mean=0.666667 (+/-0).
+		P2: N=0, mean=0 (+/-0).
+		P3: N=0, mean=0 (+/-0).
+		P4: N=0, mean=0 (+/-0).
+		Game Durations: N=1, mean=6 (+/-0).
+		P1: N=1, mean=6 (+/-0).
+		P2: N=0, mean=0 (+/-0).
+		P3: N=0, mean=0 (+/-0).
+		P4: N=0, mean=0 (+/-0).
+		=====================================================
+		=====================================================
+		Completed 2 games.
+
+		Agent 1 (Harold the AI)
+		Winning score (between 0 and 1) : N=2, mean=0.75 (+/-0.16333).
+		P1: N=0, mean=0 (+/-0).
+		P2: N=0, mean=0 (+/-0).
+		P3: N=1, mean=0.833333 (+/-0).
+		P4: N=1, mean=0.666667 (+/-0).
+		Game Durations: N=2, mean=21 (+/-29.3994).
+		P1: N=0, mean=0 (+/-0).
+		P2: N=0, mean=0 (+/-0).
+		P3: N=1, mean=36 (+/-0).
+		P4: N=1, mean=6 (+/-0).
+
+		Agent 2 (Random)
+		Winning score (between 0 and 1) : N=2, mean=0.5 (+/-0.32666).
+		P1: N=0, mean=0 (+/-0).
+		P2: N=0, mean=0 (+/-0).
+		P3: N=1, mean=0.666667 (+/-0).
+		P4: N=1, mean=0.333333 (+/-0).
+		Game Durations: N=2, mean=21 (+/-29.3994).
+		P1: N=0, mean=0 (+/-0).
+		P2: N=0, mean=0 (+/-0).
+		P3: N=1, mean=6 (+/-0).
+		P4: N=1, mean=36 (+/-0).
+
+		Agent 3 (Random)
+		Winning score (between 0 and 1) : N=2, mean=0 (+/-0).
+		P1: N=0, mean=0 (+/-0).
+		P2: N=2, mean=0 (+/-0).
+		P3: N=0, mean=0 (+/-0).
+		P4: N=0, mean=0 (+/-0).
+		Game Durations: N=2, mean=21 (+/-29.3994).
+		P1: N=0, mean=0 (+/-0).
+		P2: N=2, mean=21 (+/-29.3994).
+		P3: N=0, mean=0 (+/-0).
+		P4: N=0, mean=0 (+/-0).
+
+		Agent 4 (Random)
+		Winning score (between 0 and 1) : N=2, mean=0.75 (+/-0.16333).
+		P1: N=2, mean=0.75 (+/-0.16333).
+		P2: N=0, mean=0 (+/-0).
+		P3: N=0, mean=0 (+/-0).
+		P4: N=0, mean=0 (+/-0).
+		Game Durations: N=2, mean=21 (+/-29.3994).
+		P1: N=2, mean=21 (+/-29.3994).
+		P2: N=0, mean=0 (+/-0).
+		P3: N=0, mean=0 (+/-0).
+		P4: N=0, mean=0 (+/-0).
+		=====================================================
+		=====================================================
+		Completed 3 games.
+
+		Agent 1 (Harold the AI)
+		Winning score (between 0 and 1) : N=3, mean=0.722222 (+/-0.108887).
+		P1: N=1, mean=0.666667 (+/-0).
+		P2: N=0, mean=0 (+/-0).
+		P3: N=1, mean=0.833333 (+/-0).
+		P4: N=1, mean=0.666667 (+/-0).
+		Game Durations: N=3, mean=17.666667 (+/-18.187659).
+		P1: N=1, mean=11 (+/-0).
+		P2: N=0, mean=0 (+/-0).
+		P3: N=1, mean=36 (+/-0).
+		P4: N=1, mean=6 (+/-0).
+
+		Agent 2 (Random)
+		Winning score (between 0 and 1) : N=3, mean=0.333333 (+/-0.377194).
+		P1: N=0, mean=0 (+/-0).
+		P2: N=0, mean=0 (+/-0).
+		P3: N=2, mean=0.333333 (+/-0.65332).
+		P4: N=1, mean=0.333333 (+/-0).
+		Game Durations: N=3, mean=17.666667 (+/-18.187659).
+		P1: N=0, mean=0 (+/-0).
+		P2: N=0, mean=0 (+/-0).
+		P3: N=2, mean=8.5 (+/-4.8999).
+		P4: N=1, mean=36 (+/-0).
+
+		Agent 3 (Random)
+		Winning score (between 0 and 1) : N=3, mean=0.222222 (+/-0.435547).
+		P1: N=0, mean=0 (+/-0).
+		P2: N=2, mean=0 (+/-0).
+		P3: N=0, mean=0 (+/-0).
+		P4: N=1, mean=0.666667 (+/-0).
+		Game Durations: N=3, mean=17.666667 (+/-18.187659).
+		P1: N=0, mean=0 (+/-0).
+		P2: N=2, mean=21 (+/-29.3994).
+		P3: N=0, mean=0 (+/-0).
+		P4: N=1, mean=11 (+/-0).
+
+		Agent 4 (Random)
+		Winning score (between 0 and 1) : N=3, mean=0.722222 (+/-0.108887).
+		P1: N=2, mean=0.75 (+/-0.16333).
+		P2: N=1, mean=0.666667 (+/-0).
+		P3: N=0, mean=0 (+/-0).
+		P4: N=0, mean=0 (+/-0).
+		Game Durations: N=3, mean=17.666667 (+/-18.187659).
+		P1: N=2, mean=21 (+/-29.3994).
+		P2: N=1, mean=11 (+/-0).
+		P3: N=0, mean=0 (+/-0).
+		P4: N=0, mean=0 (+/-0).
+		=====================================================
+		=====================================================
+		Completed 4 games.
+
+		Agent 1 (Harold the AI)
+		Winning score (between 0 and 1) : N=4, mean=0.708333 (+/-0.081665).
+		P1: N=1, mean=0.666667 (+/-0).
+		P2: N=0, mean=0 (+/-0).
+		P3: N=1, mean=0.833333 (+/-0).
+		P4: N=2, mean=0.666667 (+/-0).
+		Game Durations: N=4, mean=17 (+/-12.926824).
+		P1: N=1, mean=11 (+/-0).
+		P2: N=0, mean=0 (+/-0).
+		P3: N=1, mean=36 (+/-0).
+		P4: N=2, mean=10.5 (+/-8.81982).
+
+		Agent 2 (Random)
+		Winning score (between 0 and 1) : N=4, mean=0.416667 (+/-0.312753).
+		P1: N=0, mean=0 (+/-0).
+		P2: N=1, mean=0.666667 (+/-0).
+		P3: N=2, mean=0.333333 (+/-0.65332).
+		P4: N=1, mean=0.333333 (+/-0).
+		Game Durations: N=4, mean=17 (+/-12.926824).
+		P1: N=0, mean=0 (+/-0).
+		P2: N=1, mean=15 (+/-0).
+		P3: N=2, mean=8.5 (+/-4.8999).
+		P4: N=1, mean=36 (+/-0).
+
+		Agent 3 (Random)
+		Winning score (between 0 and 1) : N=4, mean=0.333333 (+/-0.377194).
+		P1: N=1, mean=0.666667 (+/-0).
+		P2: N=2, mean=0 (+/-0).
+		P3: N=0, mean=0 (+/-0).
+		P4: N=1, mean=0.666667 (+/-0).
+		Game Durations: N=4, mean=17 (+/-12.926824).
+		P1: N=1, mean=15 (+/-0).
+		P2: N=2, mean=21 (+/-29.3994).
+		P3: N=0, mean=0 (+/-0).
+		P4: N=1, mean=11 (+/-0).
+
+		Agent 4 (Random)
+		Winning score (between 0 and 1) : N=4, mean=0.541667 (+/-0.362161).
+		P1: N=2, mean=0.75 (+/-0.16333).
+		P2: N=1, mean=0.666667 (+/-0).
+		P3: N=1, mean=0 (+/-0).
+		P4: N=0, mean=0 (+/-0).
+		Game Durations: N=4, mean=17 (+/-12.926824).
+		P1: N=2, mean=21 (+/-29.3994).
+		P2: N=1, mean=11 (+/-0).
+		P3: N=1, mean=15 (+/-0).
+		P4: N=0, mean=0 (+/-0).
+		=====================================================
+		=====================================================
+		Completed 5 games.
+
+		Agent 1 (Harold the AI)
+		Winning score (between 0 and 1) : N=5, mean=0.7 (+/-0.065332).
+		P1: N=2, mean=0.666667 (+/-0).
+		P2: N=0, mean=0 (+/-0).
+		P3: N=1, mean=0.833333 (+/-0).
+		P4: N=2, mean=0.666667 (+/-0).
+		Game Durations: N=5, mean=17.6 (+/-10.081894).
+		P1: N=2, mean=15.5 (+/-8.81982).
+		P2: N=0, mean=0 (+/-0).
+		P3: N=1, mean=36 (+/-0).
+		P4: N=2, mean=10.5 (+/-8.81982).
+
+		Agent 2 (Random)
+		Winning score (between 0 and 1) : N=5, mean=0.466667 (+/-0.261328).
+		P1: N=0, mean=0 (+/-0).
+		P2: N=2, mean=0.666667 (+/-0).
+		P3: N=2, mean=0.333333 (+/-0.65332).
+		P4: N=1, mean=0.333333 (+/-0).
+		Game Durations: N=5, mean=17.6 (+/-10.081894).
+		P1: N=0, mean=0 (+/-0).
+		P2: N=2, mean=17.5 (+/-4.8999).
+		P3: N=2, mean=8.5 (+/-4.8999).
+		P4: N=1, mean=36 (+/-0).
+
+		Agent 3 (Random)
+		Winning score (between 0 and 1) : N=5, mean=0.4 (+/-0.32006).
+		P1: N=1, mean=0.666667 (+/-0).
+		P2: N=2, mean=0 (+/-0).
+		P3: N=1, mean=0.666667 (+/-0).
+		P4: N=1, mean=0.666667 (+/-0).
+		Game Durations: N=5, mean=17.6 (+/-10.081894).
+		P1: N=1, mean=15 (+/-0).
+		P2: N=2, mean=21 (+/-29.3994).
+		P3: N=1, mean=20 (+/-0).
+		P4: N=1, mean=11 (+/-0).
+
+		Agent 4 (Random)
+		Winning score (between 0 and 1) : N=5, mean=0.433333 (+/-0.351824).
+		P1: N=2, mean=0.75 (+/-0.16333).
+		P2: N=1, mean=0.666667 (+/-0).
+		P3: N=1, mean=0 (+/-0).
+		P4: N=1, mean=0 (+/-0).
+		Game Durations: N=5, mean=17.6 (+/-10.081894).
+		P1: N=2, mean=21 (+/-29.3994).
+		P2: N=1, mean=11 (+/-0).
+		P3: N=1, mean=15 (+/-0).
+		P4: N=1, mean=20 (+/-0).
+		=====================================================
+		=====================================================
+		Completed 10 games.
+
+		Agent 1 (Harold the AI)
+		Winning score (between 0 and 1) : N=10, mean=0.683333 (+/-0.032666).
+		P1: N=3, mean=0.666667 (+/-0).
+		P2: N=2, mean=0.666667 (+/-0).
+		P3: N=1, mean=0.833333 (+/-0).
+		P4: N=4, mean=0.666667 (+/-0).
+		Game Durations: N=10, mean=16.7 (+/-5.62804).
+		P1: N=3, mean=17 (+/-5.87988).
+		P2: N=2, mean=10 (+/-3.91992).
+		P3: N=1, mean=36 (+/-0).
+		P4: N=4, mean=15 (+/-8.120639).
+
+		Agent 2 (Random)
+		Winning score (between 0 and 1) : N=10, mean=0.366667 (+/-0.205447).
+		P1: N=1, mean=0 (+/-0).
+		P2: N=3, mean=0.444444 (+/-0.435547).
+		P3: N=4, mean=0.5 (+/-0.32666).
+		P4: N=2, mean=0.166667 (+/-0.32666).
+		Game Durations: N=10, mean=16.7 (+/-5.62804).
+		P1: N=1, mean=13 (+/-0).
+		P2: N=3, mean=20.333333 (+/-6.232276).
+		P3: N=4, mean=9.25 (+/-2.698654).
+		P4: N=2, mean=28 (+/-15.67968).
+
+		Agent 3 (Random)
+		Winning score (between 0 and 1) : N=10, mean=0.466667 (+/-0.199593).
+		P1: N=2, mean=0.666667 (+/-0).
+		P2: N=3, mean=0.222222 (+/-0.435547).
+		P3: N=3, mean=0.666667 (+/-0).
+		P4: N=2, mean=0.333333 (+/-0.65332).
+		Game Durations: N=10, mean=16.7 (+/-5.62804).
+		P1: N=2, mean=13.5 (+/-2.93994).
+		P2: N=3, mean=18.333333 (+/-17.760213).
+		P3: N=3, mean=22 (+/-3.91992).
+		P4: N=2, mean=9.5 (+/-2.93994).
+
+		Agent 4 (Random)
+		Winning score (between 0 and 1) : N=10, mean=0.483333 (+/-0.209164).
+		P1: N=4, mean=0.708333 (+/-0.081665).
+		P2: N=2, mean=0.666667 (+/-0).
+		P3: N=2, mean=0.333333 (+/-0.65332).
+		P4: N=2, mean=0 (+/-0).
+		Game Durations: N=10, mean=16.7 (+/-5.62804).
+		P1: N=4, mean=19 (+/-14.1787).
+		P2: N=2, mean=15.5 (+/-8.81982).
+		P3: N=2, mean=14 (+/-1.95996).
+		P4: N=2, mean=16 (+/-7.83984).
+		=====================================================
+		=====================================================
+		Completed 20 games.
+
+		Agent 1 (Harold the AI)
+		Winning score (between 0 and 1) : N=20, mean=0.575 (+/-0.109821).
+		P1: N=5, mean=0.666667 (+/-0).
+		P2: N=5, mean=0.4 (+/-0.32006).
+		P3: N=5, mean=0.566667 (+/-0.284776).
+		P4: N=5, mean=0.666667 (+/-0).
+		Game Durations: N=20, mean=15.6 (+/-3.82701).
+		P1: N=5, mean=13.2 (+/-5.5919).
+		P2: N=5, mean=11.8 (+/-3.302983).
+		P3: N=5, mean=21.2 (+/-11.880009).
+		P4: N=5, mean=16.2 (+/-6.715545).
+
+		Agent 2 (Random)
+		Winning score (between 0 and 1) : N=20, mean=0.416667 (+/-0.1412).
+		P1: N=4, mean=0.5 (+/-0.32666).
+		P2: N=4, mean=0.333333 (+/-0.377194).
+		P3: N=6, mean=0.444444 (+/-0.275464).
+		P4: N=6, mean=0.388889 (+/-0.262234).
+		Game Durations: N=20, mean=15.6 (+/-3.82701).
+		P1: N=4, mean=12.75 (+/-5.330166).
+		P2: N=4, mean=23.75 (+/-8.016492).
+		P3: N=6, mean=10.833333 (+/-4.394761).
+		P4: N=6, mean=16.833333 (+/-8.50446).
+
+		Agent 3 (Random)
+		Winning score (between 0 and 1) : N=20, mean=0.466667 (+/-0.137369).
+		P1: N=5, mean=0.4 (+/-0.32006).
+		P2: N=6, mean=0.444444 (+/-0.275464).
+		P3: N=4, mean=0.666667 (+/-0).
+		P4: N=5, mean=0.4 (+/-0.32006).
+		Game Durations: N=20, mean=15.6 (+/-3.82701).
+		P1: N=5, mean=15 (+/-4.157703).
+		P2: N=6, mean=12.833333 (+/-9.295759).
+		P3: N=4, mean=19 (+/-6.500452).
+		P4: N=5, mean=16.8 (+/-9.305167).
+
+		Agent 4 (Random)
+		Winning score (between 0 and 1) : N=20, mean=0.541667 (+/-0.122855).
+		P1: N=6, mean=0.694444 (+/-0.054443).
+		P2: N=5, mean=0.666667 (+/-0).
+		P3: N=5, mean=0.4 (+/-0.32006).
+		P4: N=4, mean=0.333333 (+/-0.377194).
+		Game Durations: N=20, mean=15.6 (+/-3.82701).
+		P1: N=6, mean=20 (+/-10.900855).
+		P2: N=5, mean=16.2 (+/-5.012289).
+		P3: N=5, mean=13 (+/-3.337692).
+		P4: N=4, mean=11.5 (+/-6.014448).
+		=====================================================
+		=====================================================
+		Completed 30 games.
+
+		Agent 1 (Harold the AI)
+		Winning score (between 0 and 1) : N=30, mean=0.605556 (+/-0.089265).
+		P1: N=8, mean=0.6875 (+/-0.040832).
+		P2: N=6, mean=0.444444 (+/-0.275464).
+		P3: N=7, mean=0.619048 (+/-0.210427).
+		P4: N=9, mean=0.62963 (+/-0.161301).
+		Game Durations: N=30, mean=18.866667 (+/-3.983313).
+		P1: N=8, mean=15.75 (+/-6.592141).
+		P2: N=6, mean=14 (+/-5.085835).
+		P3: N=7, mean=24.428571 (+/-9.359239).
+		P4: N=9, mean=20.555556 (+/-8.449774).
+
+		Agent 2 (Random)
+		Winning score (between 0 and 1) : N=30, mean=0.383333 (+/-0.118402).
+		P1: N=7, mean=0.452381 (+/-0.254175).
+		P2: N=8, mean=0.333333 (+/-0.246932).
+		P3: N=8, mean=0.416667 (+/-0.239091).
+		P4: N=7, mean=0.333333 (+/-0.246932).
+		Game Durations: N=30, mean=18.866667 (+/-3.983313).
+		P1: N=7, mean=22.428571 (+/-10.245649).
+		P2: N=8, mean=23.5 (+/-7.909529).
+		P3: N=8, mean=11.5 (+/-3.374483).
+		P4: N=7, mean=18.428571 (+/-7.838173).
+
+		Agent 3 (Random)
+		Winning score (between 0 and 1) : N=30, mean=0.472222 (+/-0.108605).
+		P1: N=7, mean=0.428571 (+/-0.234879).
+		P2: N=9, mean=0.444444 (+/-0.217773).
+		P3: N=7, mean=0.690476 (+/-0.046666).
+		P4: N=7, mean=0.333333 (+/-0.246932).
+		Game Durations: N=30, mean=18.866667 (+/-3.983313).
+		P1: N=7, mean=17.142857 (+/-7.351294).
+		P2: N=9, mean=18.222222 (+/-9.295631).
+		P3: N=7, mean=21.428571 (+/-6.760572).
+		P4: N=7, mean=18.857143 (+/-8.62243).
+
+		Agent 4 (Random)
+		Winning score (between 0 and 1) : N=30, mean=0.538889 (+/-0.102325).
+		P1: N=8, mean=0.6875 (+/-0.040832).
+		P2: N=7, mean=0.571429 (+/-0.186663).
+		P3: N=8, mean=0.479167 (+/-0.226296).
+		P4: N=7, mean=0.404762 (+/-0.283856).
+		Game Durations: N=30, mean=18.866667 (+/-3.983313).
+		P1: N=8, mean=20.375 (+/-8.347825).
+		P2: N=7, mean=18.571429 (+/-7.038947).
+		P3: N=8, mean=19.125 (+/-9.344285).
+		P4: N=7, mean=17.142857 (+/-8.131091).
+		=====================================================
+		=====================================================
+		Completed 40 games.
+
+		Agent 1 (Harold the AI)
+		Winning score (between 0 and 1) : N=40, mean=0.616667 (+/-0.069394).
+		P1: N=10, mean=0.7 (+/-0.043555).
+		P2: N=10, mean=0.5 (+/-0.175574).
+		P3: N=10, mean=0.633333 (+/-0.144454).
+		P4: N=10, mean=0.633333 (+/-0.144454).
+		Game Durations: N=40, mean=19.175 (+/-3.341296).
+		P1: N=10, mean=18 (+/-7.408776).
+		P2: N=10, mean=16 (+/-4.897722).
+		P3: N=10, mean=22.8 (+/-6.718722).
+		P4: N=10, mean=19.9 (+/-7.666147).
+
+		Agent 2 (Random)
+		Winning score (between 0 and 1) : N=40, mean=0.4 (+/-0.101832).
+		P1: N=9, mean=0.518519 (+/-0.213959).
+		P2: N=10, mean=0.333333 (+/-0.217773).
+		P3: N=10, mean=0.466667 (+/-0.199593).
+		P4: N=11, mean=0.30303 (+/-0.185929).
+		Game Durations: N=40, mean=19.175 (+/-3.341296).
+		P1: N=9, mean=23.444444 (+/-8.101636).
+		P2: N=10, mean=22.3 (+/-6.513899).
+		P3: N=10, mean=11.6 (+/-2.910025).
+		P4: N=11, mean=19.727273 (+/-6.665388).
+
+		Agent 3 (Random)
+		Winning score (between 0 and 1) : N=40, mean=0.470833 (+/-0.094217).
+		P1: N=9, mean=0.481481 (+/-0.192058).
+		P2: N=10, mean=0.4 (+/-0.213373).
+		P3: N=10, mean=0.683333 (+/-0.032666).
+		P4: N=11, mean=0.333333 (+/-0.196983).
+		Game Durations: N=40, mean=19.175 (+/-3.341296).
+		P1: N=9, mean=16.666667 (+/-5.657917).
+		P2: N=10, mean=20.6 (+/-9.53131).
+		P3: N=10, mean=19.6 (+/-5.11262).
+		P4: N=11, mean=19.545455 (+/-6.23369).
+
+		Agent 4 (Random)
+		Winning score (between 0 and 1) : N=40, mean=0.5125 (+/-0.096015).
+		P1: N=12, mean=0.625 (+/-0.114613).
+		P2: N=10, mean=0.466667 (+/-0.199593).
+		P3: N=10, mean=0.55 (+/-0.201072).
+		P4: N=8, mean=0.354167 (+/-0.265075).
+		Game Durations: N=40, mean=19.175 (+/-3.341296).
+		P1: N=12, mean=18.833333 (+/-5.864186).
+		P2: N=10, mean=17.8 (+/-5.10928).
+		P3: N=10, mean=22.7 (+/-8.847844).
+		P4: N=8, mean=17 (+/-7.047295).
+		=====================================================
+		=====================================================
+		Completed 50 games.
+
+		Agent 1 (Harold the AI)
+		Winning score (between 0 and 1) : N=50, mean=0.606667 (+/-0.066495).
+		P1: N=12, mean=0.694444 (+/-0.036706).
+		P2: N=12, mean=0.472222 (+/-0.169801).
+		P3: N=13, mean=0.653846 (+/-0.11377).
+		P4: N=13, mean=0.602564 (+/-0.150417).
+		Game Durations: N=50, mean=19.76 (+/-3.044381).
+		P1: N=12, mean=19.25 (+/-6.3653).
+		P2: N=12, mean=14.833333 (+/-4.334754).
+		P3: N=13, mean=23.846154 (+/-6.248768).
+		P4: N=13, mean=20.692308 (+/-6.592177).
+
+		Agent 2 (Random)
+		Winning score (between 0 and 1) : N=50, mean=0.423333 (+/-0.089622).
+		P1: N=12, mean=0.444444 (+/-0.198347).
+		P2: N=12, mean=0.388889 (+/-0.194228).
+		P3: N=13, mean=0.525641 (+/-0.164773).
+		P4: N=13, mean=0.333333 (+/-0.165411).
+		Game Durations: N=50, mean=19.76 (+/-3.044381).
+		P1: N=12, mean=22.416667 (+/-6.591405).
+		P2: N=12, mean=21.833333 (+/-5.479361).
+		P3: N=13, mean=14.230769 (+/-4.570478).
+		P4: N=13, mean=20.923077 (+/-6.994802).
+
+		Agent 3 (Random)
+		Winning score (between 0 and 1) : N=50, mean=0.49 (+/-0.080509).
+		P1: N=12, mean=0.527778 (+/-0.14955).
+		P2: N=14, mean=0.404762 (+/-0.170235).
+		P3: N=12, mean=0.680556 (+/-0.027222).
+		P4: N=12, mean=0.361111 (+/-0.187881).
+		Game Durations: N=50, mean=19.76 (+/-3.044381).
+		P1: N=12, mean=15.333333 (+/-4.509156).
+		P2: N=14, mean=23.785714 (+/-7.674347).
+		P3: N=12, mean=19.416667 (+/-4.929261).
+		P4: N=12, mean=19.833333 (+/-5.718459).
+
+		Agent 4 (Random)
+		Winning score (between 0 and 1) : N=50, mean=0.48 (+/-0.090315).
+		P1: N=14, mean=0.595238 (+/-0.135745).
+		P2: N=12, mean=0.5 (+/-0.170593).
+		P3: N=12, mean=0.513889 (+/-0.190552).
+		P4: N=12, mean=0.291667 (+/-0.205519).
+		Game Durations: N=50, mean=19.76 (+/-3.044381).
+		P1: N=14, mean=21.714286 (+/-6.416885).
+		P2: N=12, mean=17.916667 (+/-4.923353).
+		P3: N=12, mean=21.666667 (+/-7.596002).
+		P4: N=12, mean=17.416667 (+/-5.23282).
+		=====================================================
+		=====================================================
+		Completed 60 games.
+
+		Agent 1 (Harold the AI)
+		Winning score (between 0 and 1) : N=60, mean=0.613889 (+/-0.060389).
+		P1: N=16, mean=0.708333 (+/-0.036522).
+		P2: N=15, mean=0.466667 (+/-0.153548).
+		P3: N=13, mean=0.653846 (+/-0.11377).
+		P4: N=16, mean=0.625 (+/-0.124745).
+		Game Durations: N=60, mean=20.066667 (+/-2.803282).
+		P1: N=16, mean=21.125 (+/-6.003461).
+		P2: N=15, mean=16.133333 (+/-3.776684).
+		P3: N=13, mean=23.846154 (+/-6.248768).
+		P4: N=16, mean=19.625 (+/-5.914824).
+
+		Agent 2 (Random)
+		Winning score (between 0 and 1) : N=60, mean=0.413889 (+/-0.081616).
+		P1: N=13, mean=0.410256 (+/-0.194368).
+		P2: N=15, mean=0.355556 (+/-0.174219).
+		P3: N=16, mean=0.53125 (+/-0.137362).
+		P4: N=16, mean=0.354167 (+/-0.151686).
+		Game Durations: N=60, mean=20.066667 (+/-2.803282).
+		P1: N=13, mean=21.384615 (+/-6.391726).
+		P2: N=15, mean=20.4 (+/-5.254949).
+		P3: N=16, mean=17.25 (+/-5.315131).
+		P4: N=16, mean=21.5 (+/-5.830675).
+
+		Agent 3 (Random)
+		Winning score (between 0 and 1) : N=60, mean=0.5 (+/-0.071584).
+		P1: N=14, mean=0.547619 (+/-0.130073).
+		P2: N=16, mean=0.416667 (+/-0.152052).
+		P3: N=16, mean=0.614583 (+/-0.092963).
+		P4: N=14, mean=0.416667 (+/-0.177108).
+		Game Durations: N=60, mean=20.066667 (+/-2.803282).
+		P1: N=14, mean=15.142857 (+/-4.184811).
+		P2: N=16, mean=23.375 (+/-7.014163).
+		P3: N=16, mean=19.4375 (+/-4.188268).
+		P4: N=14, mean=21.928571 (+/-5.94224).
+
+		Agent 4 (Random)
+		Winning score (between 0 and 1) : N=60, mean=0.472222 (+/-0.084045).
+		P1: N=17, mean=0.539216 (+/-0.149614).
+		P2: N=14, mean=0.47619 (+/-0.163714).
+		P3: N=15, mean=0.555556 (+/-0.158328).
+		P4: N=14, mean=0.297619 (+/-0.188116).
+		Game Durations: N=60, mean=20.066667 (+/-2.803282).
+		P1: N=17, mean=22.117647 (+/-5.380402).
+		P2: N=14, mean=20.142857 (+/-5.569651).
+		P3: N=15, mean=20.466667 (+/-6.726885).
+		P4: N=14, mean=17.071429 (+/-4.705269).
+		=====================================================
+		=====================================================
+		Completed 70 games.
+
+		Agent 1 (Harold the AI)
+		Winning score (between 0 and 1) : N=70, mean=0.604762 (+/-0.057632).
+		P1: N=17, mean=0.705882 (+/-0.034641).
+		P2: N=18, mean=0.462963 (+/-0.141122).
+		P3: N=18, mean=0.666667 (+/-0.083512).
+		P4: N=17, mean=0.588235 (+/-0.137561).
+		Game Durations: N=70, mean=19.842857 (+/-2.562355).
+		P1: N=17, mean=20.352941 (+/-5.838762).
+		P2: N=18, mean=16.111111 (+/-3.546273).
+		P3: N=18, mean=23.944444 (+/-4.953974).
+		P4: N=17, mean=18.941176 (+/-5.715379).
+
+		Agent 2 (Random)
+		Winning score (between 0 and 1) : N=70, mean=0.435714 (+/-0.073509).
+		P1: N=17, mean=0.470588 (+/-0.156549).
+		P2: N=17, mean=0.352941 (+/-0.163047).
+		P3: N=18, mean=0.546296 (+/-0.12332).
+		P4: N=18, mean=0.37037 (+/-0.138629).
+		Game Durations: N=70, mean=19.842857 (+/-2.562355).
+		P1: N=17, mean=21.529412 (+/-4.954696).
+		P2: N=17, mean=20.294118 (+/-4.887677).
+		P3: N=18, mean=16.222222 (+/-4.905803).
+		P4: N=18, mean=21.444444 (+/-5.684971).
+
+		Agent 3 (Random)
+		Winning score (between 0 and 1) : N=70, mean=0.516667 (+/-0.06484).
+		P1: N=18, mean=0.583333 (+/-0.106458).
+		P2: N=18, mean=0.444444 (+/-0.139743).
+		P3: N=17, mean=0.578431 (+/-0.112455).
+		P4: N=17, mean=0.460784 (+/-0.152214).
+		Game Durations: N=70, mean=19.842857 (+/-2.562355).
+		P1: N=18, mean=15.111111 (+/-4.230702).
+		P2: N=18, mean=22.555556 (+/-6.434889).
+		P3: N=17, mean=19.882353 (+/-4.029649).
+		P4: N=17, mean=21.941176 (+/-5.001092).
+
+		Agent 4 (Random)
+		Winning score (between 0 and 1) : N=70, mean=0.442857 (+/-0.079457).
+		P1: N=18, mean=0.509259 (+/-0.152789).
+		P2: N=17, mean=0.431373 (+/-0.156106).
+		P3: N=17, mean=0.529412 (+/-0.154022).
+		P4: N=18, mean=0.305556 (+/-0.16333).
+		Game Durations: N=70, mean=19.842857 (+/-2.562355).
+		P1: N=18, mean=22.5 (+/-5.127748).
+		P2: N=17, mean=20.470588 (+/-5.139382).
+		P3: N=17, mean=19.294118 (+/-6.163124).
+		P4: N=18, mean=17.111111 (+/-4.082716).
+		=====================================================
+		=====================================================
+		Completed 80 games.
+
+		Agent 1 (Harold the AI)
+		Winning score (between 0 and 1) : N=80, mean=0.595833 (+/-0.054752).
+		P1: N=21, mean=0.698413 (+/-0.028682).
+		P2: N=18, mean=0.462963 (+/-0.141122).
+		P3: N=19, mean=0.666667 (+/-0.078995).
+		P4: N=22, mean=0.545455 (+/-0.129281).
+		Game Durations: N=80, mean=19.1625 (+/-2.31891).
+		P1: N=21, mean=19.52381 (+/-4.841914).
+		P2: N=18, mean=16.111111 (+/-3.546273).
+		P3: N=19, mean=23.736842 (+/-4.703622).
+		P4: N=22, mean=17.363636 (+/-4.714472).
+
+		Agent 2 (Random)
+		Winning score (between 0 and 1) : N=80, mean=0.439583 (+/-0.068571).
+		P1: N=19, mean=0.491228 (+/-0.142352).
+		P2: N=21, mean=0.380952 (+/-0.144588).
+		P3: N=20, mean=0.525 (+/-0.123766).
+		P4: N=20, mean=0.366667 (+/-0.133218).
+		Game Durations: N=80, mean=19.1625 (+/-2.31891).
+		P1: N=19, mean=20.789474 (+/-4.705382).
+		P2: N=21, mean=19.190476 (+/-4.159065).
+		P3: N=20, mean=15.55 (+/-4.499772).
+		P4: N=20, mean=21.2 (+/-5.114114).
+
+		Agent 3 (Random)
+		Winning score (between 0 and 1) : N=80, mean=0.510417 (+/-0.061592).
+		P1: N=19, mean=0.587719 (+/-0.101065).
+		P2: N=21, mean=0.444444 (+/-0.130144).
+		P3: N=21, mean=0.563492 (+/-0.106868).
+		P4: N=19, mean=0.447368 (+/-0.145772).
+		Game Durations: N=80, mean=19.1625 (+/-2.31891).
+		P1: N=19, mean=14.947368 (+/-4.014691).
+		P2: N=21, mean=21.095238 (+/-5.791965).
+		P3: N=21, mean=19.380952 (+/-3.446825).
+		P4: N=19, mean=21 (+/-4.696831).
+
+		Agent 4 (Random)
+		Winning score (between 0 and 1) : N=80, mean=0.454167 (+/-0.072806).
+		P1: N=21, mean=0.531746 (+/-0.132631).
+		P2: N=20, mean=0.433333 (+/-0.142978).
+		P3: N=20, mean=0.55 (+/-0.13216).
+		P4: N=19, mean=0.289474 (+/-0.157677).
+		Game Durations: N=80, mean=19.1625 (+/-2.31891).
+		P1: N=21, mean=21.142857 (+/-4.689661).
+		P2: N=20, mean=19.85 (+/-4.530668).
+		P3: N=20, mean=18.2 (+/-5.411836).
+		P4: N=19, mean=17.263158 (+/-3.873344).
+		=====================================================
+		=====================================================
+		Completed 90 games.
+
+		Agent 1 (Harold the AI)
+		Winning score (between 0 and 1) : N=90, mean=0.603704 (+/-0.048853).
+		P1: N=23, mean=0.695652 (+/-0.026398).
+		P2: N=22, mean=0.5 (+/-0.119666).
+		P3: N=22, mean=0.666667 (+/-0.067966).
+		P4: N=23, mean=0.550725 (+/-0.123963).
+		Game Durations: N=90, mean=19.188889 (+/-2.119126).
+		P1: N=23, mean=19.130435 (+/-4.551375).
+		P2: N=22, mean=16.318182 (+/-3.087912).
+		P3: N=22, mean=23.5 (+/-4.134138).
+		P4: N=23, mean=17.869565 (+/-4.612678).
+
+		Agent 2 (Random)
+		Winning score (between 0 and 1) : N=90, mean=0.435185 (+/-0.065024).
+		P1: N=21, mean=0.47619 (+/-0.137644).
+		P2: N=22, mean=0.393939 (+/-0.14019).
+		P3: N=24, mean=0.520833 (+/-0.113487).
+		P4: N=23, mean=0.347826 (+/-0.126453).
+		Game Durations: N=90, mean=19.188889 (+/-2.119126).
+		P1: N=21, mean=20.52381 (+/-4.513421).
+		P2: N=22, mean=19.090909 (+/-3.970311).
+		P3: N=24, mean=16.208333 (+/-4.00593).
+		P4: N=23, mean=21.173913 (+/-4.437095).
+
+		Agent 3 (Random)
+		Winning score (between 0 and 1) : N=90, mean=0.512963 (+/-0.057762).
+		P1: N=22, mean=0.537879 (+/-0.11359).
+		P2: N=23, mean=0.463768 (+/-0.121423).
+		P3: N=22, mean=0.568182 (+/-0.102308).
+		P4: N=23, mean=0.485507 (+/-0.124774).
+		Game Durations: N=90, mean=19.188889 (+/-2.119126).
+		P1: N=22, mean=16.090909 (+/-3.721688).
+		P2: N=23, mean=20.565217 (+/-5.415904).
+		P3: N=22, mean=19.409091 (+/-3.286881).
+		P4: N=23, mean=20.565217 (+/-4.11978).
+
+		Agent 4 (Random)
+		Winning score (between 0 and 1) : N=90, mean=0.448148 (+/-0.068603).
+		P1: N=24, mean=0.493056 (+/-0.131135).
+		P2: N=23, mean=0.463768 (+/-0.128182).
+		P3: N=22, mean=0.5 (+/-0.13762).
+		P4: N=21, mean=0.325397 (+/-0.150332).
+		Game Durations: N=90, mean=19.188889 (+/-2.119126).
+		P1: N=24, mean=20.916667 (+/-4.105346).
+		P2: N=23, mean=20.652174 (+/-4.071181).
+		P3: N=22, mean=17.909091 (+/-5.030783).
+		P4: N=21, mean=16.952381 (+/-3.645426).
+		=====================================================
+		=====================================================
+		Completed 96 games.
+
+		Agent 1 (Harold the AI)
+		Winning score (between 0 and 1) : N=96, mean=0.604167 (+/-0.047949).
+		P1: N=24, mean=0.701389 (+/-0.027662).
+		P2: N=24, mean=0.513889 (+/-0.111084).
+		P3: N=24, mean=0.645833 (+/-0.084142).
+		P4: N=24, mean=0.555556 (+/-0.119063).
+		Game Durations: N=96, mean=19.15625 (+/-2.082764).
+		P1: N=24, mean=19.958333 (+/-4.649919).
+		P2: N=24, mean=15.791667 (+/-2.935153).
+		P3: N=24, mean=23.5 (+/-3.912812).
+		P4: N=24, mean=17.375 (+/-4.52143).
+
+		Agent 2 (Random)
+		Winning score (between 0 and 1) : N=96, mean=0.4375 (+/-0.063304).
+		P1: N=24, mean=0.479167 (+/-0.130889).
+		P2: N=24, mean=0.388889 (+/-0.134321).
+		P3: N=24, mean=0.520833 (+/-0.113487).
+		P4: N=24, mean=0.361111 (+/-0.123838).
+		Game Durations: N=96, mean=19.15625 (+/-2.082764).
+		P1: N=24, mean=20.083333 (+/-4.271498).
+		P2: N=24, mean=19.75 (+/-3.999447).
+		P3: N=24, mean=16.208333 (+/-4.00593).
+		P4: N=24, mean=20.583333 (+/-4.403066).
+
+		Agent 3 (Random)
+		Winning score (between 0 and 1) : N=96, mean=0.515625 (+/-0.054746).
+		P1: N=24, mean=0.548611 (+/-0.104931).
+		P2: N=24, mean=0.458333 (+/-0.11674).
+		P3: N=24, mean=0.576389 (+/-0.094256).
+		P4: N=24, mean=0.479167 (+/-0.120107).
+		Game Durations: N=96, mean=19.15625 (+/-2.082764).
+		P1: N=24, mean=15.666667 (+/-3.485113).
+		P2: N=24, mean=21.041667 (+/-5.268748).
+		P3: N=24, mean=18.583333 (+/-3.235024).
+		P4: N=24, mean=21.333333 (+/-4.221927).
+
+		Agent 4 (Random)
+		Winning score (between 0 and 1) : N=96, mean=0.442708 (+/-0.066999).
+		P1: N=24, mean=0.493056 (+/-0.131135).
+		P2: N=24, mean=0.444444 (+/-0.128436).
+		P3: N=24, mean=0.493056 (+/-0.135486).
+		P4: N=24, mean=0.340278 (+/-0.1397).
+		Game Durations: N=96, mean=19.15625 (+/-2.082764).
+		P1: N=24, mean=20.916667 (+/-4.105346).
+		P2: N=24, mean=20.041667 (+/-4.077387).
+		P3: N=24, mean=18.333333 (+/-5.007603).
+		P4: N=24, mean=17.333333 (+/-3.43483).
+		=====================================================
+
+
+
+
+
+
+
+
+
+HAROLD V UCT V RANDOM 98
+
+
+Warming up...
+Finished warming up!
+=====================================================
+Completed 1 games.
+
+Agent 1 (Harold the AI)
+Winning score (between 0 and 1) : N=1, mean=0.833333 (+/-0).
+P1: N=0, mean=0 (+/-0).
+P2: N=0, mean=0 (+/-0).
+P3: N=0, mean=0 (+/-0).
+P4: N=1, mean=0.833333 (+/-0).
+Game Durations: N=1, mean=31 (+/-0).
+P1: N=0, mean=0 (+/-0).
+P2: N=0, mean=0 (+/-0).
+P3: N=0, mean=0 (+/-0).
+P4: N=1, mean=31 (+/-0).
+
+Agent 2 (UCT)
+Winning score (between 0 and 1) : N=1, mean=0.833333 (+/-0).
+P1: N=1, mean=0.833333 (+/-0).
+P2: N=0, mean=0 (+/-0).
+P3: N=0, mean=0 (+/-0).
+P4: N=0, mean=0 (+/-0).
+Game Durations: N=1, mean=31 (+/-0).
+P1: N=1, mean=31 (+/-0).
+P2: N=0, mean=0 (+/-0).
+P3: N=0, mean=0 (+/-0).
+P4: N=0, mean=0 (+/-0).
+
+Agent 3 (Random)
+Winning score (between 0 and 1) : N=1, mean=0.333333 (+/-0).
+P1: N=0, mean=0 (+/-0).
+P2: N=1, mean=0.333333 (+/-0).
+P3: N=0, mean=0 (+/-0).
+P4: N=0, mean=0 (+/-0).
+Game Durations: N=1, mean=31 (+/-0).
+P1: N=0, mean=0 (+/-0).
+P2: N=1, mean=31 (+/-0).
+P3: N=0, mean=0 (+/-0).
+P4: N=0, mean=0 (+/-0).
+
+Agent 4 (Random)
+Winning score (between 0 and 1) : N=1, mean=0 (+/-0).
+P1: N=0, mean=0 (+/-0).
+P2: N=0, mean=0 (+/-0).
+P3: N=1, mean=0 (+/-0).
+P4: N=0, mean=0 (+/-0).
+Game Durations: N=1, mean=31 (+/-0).
+P1: N=0, mean=0 (+/-0).
+P2: N=0, mean=0 (+/-0).
+P3: N=1, mean=31 (+/-0).
+P4: N=0, mean=0 (+/-0).
+=====================================================
+=====================================================
+Completed 2 games.
+
+Agent 1 (Harold the AI)
+Winning score (between 0 and 1) : N=2, mean=0.75 (+/-0.16333).
+P1: N=0, mean=0 (+/-0).
+P2: N=1, mean=0.666667 (+/-0).
+P3: N=0, mean=0 (+/-0).
+P4: N=1, mean=0.833333 (+/-0).
+Game Durations: N=2, mean=20 (+/-21.55956).
+P1: N=0, mean=0 (+/-0).
+P2: N=1, mean=9 (+/-0).
+P3: N=0, mean=0 (+/-0).
+P4: N=1, mean=31 (+/-0).
+
+Agent 2 (UCT)
+Winning score (between 0 and 1) : N=2, mean=0.75 (+/-0.16333).
+P1: N=1, mean=0.833333 (+/-0).
+P2: N=0, mean=0 (+/-0).
+P3: N=1, mean=0.666667 (+/-0).
+P4: N=0, mean=0 (+/-0).
+Game Durations: N=2, mean=20 (+/-21.55956).
+P1: N=1, mean=31 (+/-0).
+P2: N=0, mean=0 (+/-0).
+P3: N=1, mean=9 (+/-0).
+P4: N=0, mean=0 (+/-0).
+
+Agent 3 (Random)
+Winning score (between 0 and 1) : N=2, mean=0.166667 (+/-0.32666).
+P1: N=1, mean=0 (+/-0).
+P2: N=1, mean=0.333333 (+/-0).
+P3: N=0, mean=0 (+/-0).
+P4: N=0, mean=0 (+/-0).
+Game Durations: N=2, mean=20 (+/-21.55956).
+P1: N=1, mean=9 (+/-0).
+P2: N=1, mean=31 (+/-0).
+P3: N=0, mean=0 (+/-0).
+P4: N=0, mean=0 (+/-0).
+
+Agent 4 (Random)
+Winning score (between 0 and 1) : N=2, mean=0.333333 (+/-0.65332).
+P1: N=0, mean=0 (+/-0).
+P2: N=0, mean=0 (+/-0).
+P3: N=1, mean=0 (+/-0).
+P4: N=1, mean=0.666667 (+/-0).
+Game Durations: N=2, mean=20 (+/-21.55956).
+P1: N=0, mean=0 (+/-0).
+P2: N=0, mean=0 (+/-0).
+P3: N=1, mean=31 (+/-0).
+P4: N=1, mean=9 (+/-0).
+=====================================================
+=====================================================
+Completed 3 games.
+
+Agent 1 (Harold the AI)
+Winning score (between 0 and 1) : N=3, mean=0.722222 (+/-0.108887).
+P1: N=0, mean=0 (+/-0).
+P2: N=2, mean=0.666667 (+/-0).
+P3: N=0, mean=0 (+/-0).
+P4: N=1, mean=0.833333 (+/-0).
+Game Durations: N=3, mean=17.333333 (+/-13.50019).
+P1: N=0, mean=0 (+/-0).
+P2: N=2, mean=10.5 (+/-2.93994).
+P3: N=0, mean=0 (+/-0).
+P4: N=1, mean=31 (+/-0).
+
+Agent 2 (UCT)
+Winning score (between 0 and 1) : N=3, mean=0.722222 (+/-0.108887).
+P1: N=1, mean=0.833333 (+/-0).
+P2: N=0, mean=0 (+/-0).
+P3: N=2, mean=0.666667 (+/-0).
+P4: N=0, mean=0 (+/-0).
+Game Durations: N=3, mean=17.333333 (+/-13.50019).
+P1: N=1, mean=31 (+/-0).
+P2: N=0, mean=0 (+/-0).
+P3: N=2, mean=10.5 (+/-2.93994).
+P4: N=0, mean=0 (+/-0).
+
+Agent 3 (Random)
+Winning score (between 0 and 1) : N=3, mean=0.111111 (+/-0.217773).
+P1: N=1, mean=0 (+/-0).
+P2: N=1, mean=0.333333 (+/-0).
+P3: N=0, mean=0 (+/-0).
+P4: N=1, mean=0 (+/-0).
+Game Durations: N=3, mean=17.333333 (+/-13.50019).
+P1: N=1, mean=9 (+/-0).
+P2: N=1, mean=31 (+/-0).
+P3: N=0, mean=0 (+/-0).
+P4: N=1, mean=12 (+/-0).
+
+Agent 4 (Random)
+Winning score (between 0 and 1) : N=3, mean=0.444444 (+/-0.435547).
+P1: N=1, mean=0.666667 (+/-0).
+P2: N=0, mean=0 (+/-0).
+P3: N=1, mean=0 (+/-0).
+P4: N=1, mean=0.666667 (+/-0).
+Game Durations: N=3, mean=17.333333 (+/-13.50019).
+P1: N=1, mean=12 (+/-0).
+P2: N=0, mean=0 (+/-0).
+P3: N=1, mean=31 (+/-0).
+P4: N=1, mean=9 (+/-0).
+=====================================================
+=====================================================
+Completed 4 games.
+
+Agent 1 (Harold the AI)
+Winning score (between 0 and 1) : N=4, mean=0.708333 (+/-0.081665).
+P1: N=1, mean=0.666667 (+/-0).
+P2: N=2, mean=0.666667 (+/-0).
+P3: N=0, mean=0 (+/-0).
+P4: N=1, mean=0.833333 (+/-0).
+Game Durations: N=4, mean=15.75 (+/-10.037821).
+P1: N=1, mean=11 (+/-0).
+P2: N=2, mean=10.5 (+/-2.93994).
+P3: N=0, mean=0 (+/-0).
+P4: N=1, mean=31 (+/-0).
+
+Agent 2 (UCT)
+Winning score (between 0 and 1) : N=4, mean=0.708333 (+/-0.081665).
+P1: N=1, mean=0.833333 (+/-0).
+P2: N=1, mean=0.666667 (+/-0).
+P3: N=2, mean=0.666667 (+/-0).
+P4: N=0, mean=0 (+/-0).
+Game Durations: N=4, mean=15.75 (+/-10.037821).
+P1: N=1, mean=31 (+/-0).
+P2: N=1, mean=11 (+/-0).
+P3: N=2, mean=10.5 (+/-2.93994).
+P4: N=0, mean=0 (+/-0).
+
+Agent 3 (Random)
+Winning score (between 0 and 1) : N=4, mean=0.25 (+/-0.312753).
+P1: N=1, mean=0 (+/-0).
+P2: N=1, mean=0.333333 (+/-0).
+P3: N=0, mean=0 (+/-0).
+P4: N=2, mean=0.333333 (+/-0.65332).
+Game Durations: N=4, mean=15.75 (+/-10.037821).
+P1: N=1, mean=9 (+/-0).
+P2: N=1, mean=31 (+/-0).
+P3: N=0, mean=0 (+/-0).
+P4: N=2, mean=11.5 (+/-0.97998).
+
+Agent 4 (Random)
+Winning score (between 0 and 1) : N=4, mean=0.333333 (+/-0.377194).
+P1: N=1, mean=0.666667 (+/-0).
+P2: N=0, mean=0 (+/-0).
+P3: N=2, mean=0 (+/-0).
+P4: N=1, mean=0.666667 (+/-0).
+Game Durations: N=4, mean=15.75 (+/-10.037821).
+P1: N=1, mean=12 (+/-0).
+P2: N=0, mean=0 (+/-0).
+P3: N=2, mean=21 (+/-19.5996).
+P4: N=1, mean=9 (+/-0).
+=====================================================
+=====================================================
+Completed 5 games.
+
+Agent 1 (Harold the AI)
+Winning score (between 0 and 1) : N=5, mean=0.7 (+/-0.065332).
+P1: N=1, mean=0.666667 (+/-0).
+P2: N=2, mean=0.666667 (+/-0).
+P3: N=0, mean=0 (+/-0).
+P4: N=2, mean=0.75 (+/-0.16333).
+Game Durations: N=5, mean=16.4 (+/-7.878942).
+P1: N=1, mean=11 (+/-0).
+P2: N=2, mean=10.5 (+/-2.93994).
+P3: N=0, mean=0 (+/-0).
+P4: N=2, mean=25 (+/-11.75976).
+
+Agent 2 (UCT)
+Winning score (between 0 and 1) : N=5, mean=0.7 (+/-0.065332).
+P1: N=2, mean=0.75 (+/-0.16333).
+P2: N=1, mean=0.666667 (+/-0).
+P3: N=2, mean=0.666667 (+/-0).
+P4: N=0, mean=0 (+/-0).
+Game Durations: N=5, mean=16.4 (+/-7.878942).
+P1: N=2, mean=25 (+/-11.75976).
+P2: N=1, mean=11 (+/-0).
+P3: N=2, mean=10.5 (+/-2.93994).
+P4: N=0, mean=0 (+/-0).
+
+Agent 3 (Random)
+Winning score (between 0 and 1) : N=5, mean=0.2 (+/-0.261328).
+P1: N=1, mean=0 (+/-0).
+P2: N=1, mean=0.333333 (+/-0).
+P3: N=1, mean=0 (+/-0).
+P4: N=2, mean=0.333333 (+/-0.65332).
+Game Durations: N=5, mean=16.4 (+/-7.878942).
+P1: N=1, mean=9 (+/-0).
+P2: N=1, mean=31 (+/-0).
+P3: N=1, mean=19 (+/-0).
+P4: N=2, mean=11.5 (+/-0.97998).
+
+Agent 4 (Random)
+Winning score (between 0 and 1) : N=5, mean=0.4 (+/-0.32006).
+P1: N=1, mean=0.666667 (+/-0).
+P2: N=1, mean=0.666667 (+/-0).
+P3: N=2, mean=0 (+/-0).
+P4: N=1, mean=0.666667 (+/-0).
+Game Durations: N=5, mean=16.4 (+/-7.878942).
+P1: N=1, mean=12 (+/-0).
+P2: N=1, mean=19 (+/-0).
+P3: N=2, mean=21 (+/-19.5996).
+P4: N=1, mean=9 (+/-0).
+=====================================================
+MCTS error in game: 98
+java.lang.ArrayIndexOutOfBoundsException: Index 56 out of bounds for length 56
+	at other.action.hidden.ActionSetHiddenWhat.apply(ActionSetHiddenWhat.java:116)
+	at other.move.Move.apply(Move.java:507)
+	at other.move.Move.apply(Move.java:527)
+	at other.move.Move.apply(Move.java:527)
+	at other.move.Move.apply(Move.java:527)
+	at game.Game.applyInternal(Game.java:3036)
+	at game.Game.apply(Game.java:3003)
+	at game.Game.apply(Game.java:2947)
+	at other.model.AlternatingMove.playout(AlternatingMove.java:633)
+	at game.Game.playout(Game.java:3635)
+	at search.mcts.playout.RandomPlayout.runPlayout(RandomPlayout.java:48)
+	at search.mcts.MCTS.lambda$selectAction$0(MCTS.java:706)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:577)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1589)
+MCTS error in game: 98
+java.lang.ArrayIndexOutOfBoundsException
+=====================================================
+Completed 10 games.
+
+Agent 1 (Harold the AI)
+Winning score (between 0 and 1) : N=10, mean=0.666667 (+/-0.084343).
+P1: N=3, mean=0.722222 (+/-0.108887).
+P2: N=2, mean=0.666667 (+/-0).
+P3: N=2, mean=0.5 (+/-0.32666).
+P4: N=3, mean=0.722222 (+/-0.108887).
+Game Durations: N=10, mean=19.9 (+/-7.318642).
+P1: N=3, mean=18.666667 (+/-19.080971).
+P2: N=2, mean=10.5 (+/-2.93994).
+P3: N=2, mean=25.5 (+/-24.4995).
+P4: N=3, mean=23.666667 (+/-7.275064).
+
+Agent 2 (UCT)
+Winning score (between 0 and 1) : N=10, mean=0.716667 (+/-0.049898).
+P1: N=2, mean=0.75 (+/-0.16333).
+P2: N=2, mean=0.666667 (+/-0).
+P3: N=3, mean=0.666667 (+/-0).
+P4: N=3, mean=0.777778 (+/-0.108887).
+Game Durations: N=10, mean=19.9 (+/-7.318642).
+P1: N=2, mean=25 (+/-11.75976).
+P2: N=2, mean=9 (+/-3.91992).
+P3: N=3, mean=14 (+/-7.066736).
+P4: N=3, mean=29.666667 (+/-16.333).
+
+Agent 3 (Random)
+Winning score (between 0 and 1) : N=10, mean=0.1 (+/-0.139443).
+P1: N=3, mean=0 (+/-0).
+P2: N=3, mean=0.111111 (+/-0.217773).
+P3: N=2, mean=0 (+/-0).
+P4: N=2, mean=0.333333 (+/-0.65332).
+Game Durations: N=10, mean=19.9 (+/-7.318642).
+P1: N=3, mean=14.333333 (+/-6.914089).
+P2: N=3, mean=35.666667 (+/-4.57324).
+P3: N=2, mean=13 (+/-11.75976).
+P4: N=2, mean=11.5 (+/-0.97998).
+
+Agent 4 (Random)
+Winning score (between 0 and 1) : N=10, mean=0.516667 (+/-0.185107).
+P1: N=2, mean=0.75 (+/-0.16333).
+P2: N=3, mean=0.666667 (+/-0).
+P3: N=3, mean=0.111111 (+/-0.217773).
+P4: N=2, mean=0.666667 (+/-0).
+Game Durations: N=10, mean=19.9 (+/-7.318642).
+P1: N=2, mean=25 (+/-25.47948).
+P2: N=3, mean=17.666667 (+/-4.711158).
+P3: N=3, mean=26.666667 (+/-15.855634).
+P4: N=2, mean=8 (+/-1.95996).
+=====================================================
+=====================================================
+Completed 20 games.
+
+Agent 1 (Harold the AI)
+Winning score (between 0 and 1) : N=20, mean=0.633333 (+/-0.077156).
+P1: N=6, mean=0.694444 (+/-0.054443).
+P2: N=4, mean=0.666667 (+/-0).
+P3: N=5, mean=0.466667 (+/-0.261328).
+P4: N=5, mean=0.7 (+/-0.065332).
+Game Durations: N=20, mean=18.2 (+/-4.593434).
+P1: N=6, mean=21 (+/-10.395797).
+P2: N=4, mean=12.25 (+/-4.622556).
+P3: N=5, mean=15.6 (+/-11.404879).
+P4: N=5, mean=22.2 (+/-6.148154).
+
+Agent 2 (UCT)
+Winning score (between 0 and 1) : N=20, mean=0.691667 (+/-0.026759).
+P1: N=5, mean=0.7 (+/-0.065332).
+P2: N=5, mean=0.666667 (+/-0).
+P3: N=5, mean=0.666667 (+/-0).
+P4: N=5, mean=0.733333 (+/-0.080015).
+Game Durations: N=20, mean=18.2 (+/-4.593434).
+P1: N=5, mean=17.8 (+/-7.971039).
+P2: N=5, mean=13 (+/-7.227975).
+P3: N=5, mean=15.6 (+/-5.700755).
+P4: N=5, mean=26.4 (+/-12.466948).
+
+Agent 3 (Random)
+Winning score (between 0 and 1) : N=20, mean=0.216667 (+/-0.136343).
+P1: N=5, mean=0.133333 (+/-0.261328).
+P2: N=5, mean=0.2 (+/-0.261328).
+P3: N=6, mean=0.222222 (+/-0.275464).
+P4: N=4, mean=0.333333 (+/-0.377194).
+Game Durations: N=20, mean=18.2 (+/-4.593434).
+P1: N=5, mean=12.6 (+/-4.703904).
+P2: N=5, mean=26.6 (+/-11.1838).
+P3: N=6, mean=19.166667 (+/-8.260042).
+P4: N=4, mean=13.25 (+/-7.479373).
+
+Agent 4 (Random)
+Winning score (between 0 and 1) : N=20, mean=0.458333 (+/-0.139951).
+P1: N=4, mean=0.541667 (+/-0.362161).
+P2: N=6, mean=0.444444 (+/-0.275464).
+P3: N=4, mean=0.25 (+/-0.312753).
+P4: N=6, mean=0.555556 (+/-0.217773).
+Game Durations: N=20, mean=18.2 (+/-4.593434).
+P1: N=4, mean=21.5 (+/-13.256924).
+P2: N=6, mean=19.5 (+/-7.653888).
+P3: N=4, mean=23.25 (+/-13.059252).
+P4: N=6, mean=11.333333 (+/-3.741648).
+=====================================================
+=====================================================
+Completed 30 games.
+
+Agent 1 (Harold the AI)
+Winning score (between 0 and 1) : N=30, mean=0.588889 (+/-0.089608).
+P1: N=8, mean=0.6875 (+/-0.040832).
+P2: N=8, mean=0.5 (+/-0.213849).
+P3: N=6, mean=0.5 (+/-0.223151).
+P4: N=8, mean=0.645833 (+/-0.189647).
+Game Durations: N=30, mean=19.066667 (+/-3.707982).
+P1: N=8, mean=20.125 (+/-7.956547).
+P2: N=8, mean=13.625 (+/-4.954717).
+P3: N=6, mean=15.833333 (+/-9.323268).
+P4: N=8, mean=25.875 (+/-5.70746).
+
+Agent 2 (UCT)
+Winning score (between 0 and 1) : N=30, mean=0.694444 (+/-0.022606).
+P1: N=8, mean=0.708333 (+/-0.053462).
+P2: N=8, mean=0.666667 (+/-0).
+P3: N=8, mean=0.6875 (+/-0.040832).
+P4: N=6, mean=0.722222 (+/-0.068866).
+Game Durations: N=30, mean=19.066667 (+/-3.707982).
+P1: N=8, mean=19.25 (+/-7.34985).
+P2: N=8, mean=14.625 (+/-5.023464).
+P3: N=8, mean=19.875 (+/-6.599291).
+P4: N=6, mean=23.666667 (+/-11.502886).
+
+Agent 3 (Random)
+Winning score (between 0 and 1) : N=30, mean=0.255556 (+/-0.115872).
+P1: N=7, mean=0.285714 (+/-0.263981).
+P2: N=7, mean=0.142857 (+/-0.194285).
+P3: N=8, mean=0.25 (+/-0.239091).
+P4: N=8, mean=0.333333 (+/-0.246932).
+Game Durations: N=30, mean=19.066667 (+/-3.707982).
+P1: N=7, mean=14.428571 (+/-5.541247).
+P2: N=7, mean=29.285714 (+/-8.443271).
+P3: N=8, mean=20.25 (+/-6.206233).
+P4: N=8, mean=13 (+/-4.141171).
+
+Agent 4 (Random)
+Winning score (between 0 and 1) : N=30, mean=0.461111 (+/-0.108152).
+P1: N=7, mean=0.452381 (+/-0.254175).
+P2: N=7, mean=0.47619 (+/-0.240981).
+P3: N=8, mean=0.416667 (+/-0.204745).
+P4: N=8, mean=0.5 (+/-0.213849).
+Game Durations: N=30, mean=19.066667 (+/-3.707982).
+P1: N=7, mean=22.285714 (+/-8.741324).
+P2: N=7, mean=20.142857 (+/-6.590283).
+P3: N=8, mean=19.5 (+/-8.912663).
+P4: N=8, mean=14.875 (+/-5.385911).
+=====================================================
+=====================================================
+Completed 40 games.
+
+Agent 1 (Harold the AI)
+Winning score (between 0 and 1) : N=40, mean=0.604167 (+/-0.076419).
+P1: N=12, mean=0.652778 (+/-0.123661).
+P2: N=8, mean=0.5 (+/-0.213849).
+P3: N=9, mean=0.555556 (+/-0.153989).
+P4: N=11, mean=0.666667 (+/-0.139288).
+Game Durations: N=40, mean=19.275 (+/-3.162667).
+P1: N=12, mean=20.333333 (+/-6.393621).
+P2: N=8, mean=13.625 (+/-4.954717).
+P3: N=9, mean=16.777778 (+/-6.75624).
+P4: N=11, mean=24.272727 (+/-5.429613).
+
+Agent 2 (UCT)
+Winning score (between 0 and 1) : N=40, mean=0.6875 (+/-0.02664).
+P1: N=9, mean=0.703704 (+/-0.048015).
+P2: N=10, mean=0.633333 (+/-0.065332).
+P3: N=11, mean=0.69697 (+/-0.039842).
+P4: N=10, mean=0.716667 (+/-0.049898).
+Game Durations: N=40, mean=19.275 (+/-3.162667).
+P1: N=9, mean=18.666667 (+/-6.582017).
+P2: N=10, mean=15.5 (+/-5.413102).
+P3: N=11, mean=20.545455 (+/-5.379683).
+P4: N=10, mean=22.2 (+/-7.963003).
+
+Agent 3 (Random)
+Winning score (between 0 and 1) : N=40, mean=0.283333 (+/-0.100751).
+P1: N=10, mean=0.333333 (+/-0.217773).
+P2: N=11, mean=0.242424 (+/-0.178178).
+P3: N=10, mean=0.2 (+/-0.199593).
+P4: N=9, mean=0.37037 (+/-0.229553).
+Game Durations: N=40, mean=19.275 (+/-3.162667).
+P1: N=10, mean=15.9 (+/-5.222066).
+P2: N=11, mean=24.636364 (+/-7.344314).
+P3: N=10, mean=22.4 (+/-5.644322).
+P4: N=9, mean=13 (+/-3.65217).
+
+Agent 4 (Random)
+Winning score (between 0 and 1) : N=40, mean=0.425 (+/-0.09852).
+P1: N=9, mean=0.444444 (+/-0.237313).
+P2: N=11, mean=0.454545 (+/-0.182095).
+P3: N=10, mean=0.333333 (+/-0.194782).
+P4: N=10, mean=0.466667 (+/-0.199593).
+Game Durations: N=40, mean=19.275 (+/-3.162667).
+P1: N=9, mean=22.222222 (+/-7.295407).
+P2: N=11, mean=21.454545 (+/-4.967945).
+P3: N=10, mean=17 (+/-7.752241).
+P4: N=10, mean=16.5 (+/-5.428849).
+=====================================================
+MCTS error in game: 98
+java.lang.ArrayIndexOutOfBoundsException
+=====================================================
+Completed 50 games.
+
+Agent 1 (Harold the AI)
+Winning score (between 0 and 1) : N=50, mean=0.606667 (+/-0.066495).
+P1: N=12, mean=0.652778 (+/-0.123661).
+P2: N=13, mean=0.512821 (+/-0.158921).
+P3: N=12, mean=0.597222 (+/-0.123661).
+P4: N=13, mean=0.666667 (+/-0.116963).
+Game Durations: N=50, mean=19.26 (+/-2.823259).
+P1: N=12, mean=20.333333 (+/-6.393621).
+P2: N=13, mean=14.615385 (+/-3.99791).
+P3: N=12, mean=19.5 (+/-6.453273).
+P4: N=13, mean=22.692308 (+/-5.323277).
+
+Agent 2 (UCT)
+Winning score (between 0 and 1) : N=50, mean=0.686667 (+/-0.022165).
+P1: N=13, mean=0.705128 (+/-0.03973).
+P2: N=12, mean=0.638889 (+/-0.054443).
+P3: N=13, mean=0.692308 (+/-0.034023).
+P4: N=12, mean=0.708333 (+/-0.042648).
+Game Durations: N=50, mean=19.26 (+/-2.823259).
+P1: N=13, mean=19.846154 (+/-6.101219).
+P2: N=12, mean=16.333333 (+/-4.604948).
+P3: N=13, mean=19.461538 (+/-5.024533).
+P4: N=12, mean=21.333333 (+/-6.94768).
+
+Agent 3 (Random)
+Winning score (between 0 and 1) : N=50, mean=0.26 (+/-0.088128).
+P1: N=13, mean=0.25641 (+/-0.183507).
+P2: N=13, mean=0.205128 (+/-0.157592).
+P3: N=12, mean=0.277778 (+/-0.194228).
+P4: N=12, mean=0.305556 (+/-0.187881).
+Game Durations: N=50, mean=19.26 (+/-2.823259).
+P1: N=13, mean=17.384615 (+/-4.283369).
+P2: N=13, mean=23 (+/-6.774978).
+P3: N=12, mean=19.916667 (+/-5.711457).
+P4: N=12, mean=16.583333 (+/-5.487985).
+
+Agent 4 (Random)
+Winning score (between 0 and 1) : N=50, mean=0.446667 (+/-0.08627).
+P1: N=12, mean=0.444444 (+/-0.198347).
+P2: N=12, mean=0.416667 (+/-0.182054).
+P3: N=13, mean=0.410256 (+/-0.167936).
+P4: N=13, mean=0.512821 (+/-0.158921).
+Game Durations: N=50, mean=19.26 (+/-2.823259).
+P1: N=12, mean=19.583333 (+/-6.284009).
+P2: N=12, mean=23.166667 (+/-5.641606).
+P3: N=13, mean=18.230769 (+/-6.049776).
+P4: N=13, mean=16.384615 (+/-4.550957).
+=====================================================
+=====================================================
+Completed 60 games.
+
+Agent 1 (Harold the AI)
+Winning score (between 0 and 1) : N=60, mean=0.622222 (+/-0.056455).
+P1: N=16, mean=0.666667 (+/-0.094299).
+P2: N=14, mean=0.52381 (+/-0.148701).
+P3: N=14, mean=0.619048 (+/-0.110583).
+P4: N=16, mean=0.666667 (+/-0.094299).
+Game Durations: N=60, mean=19.233333 (+/-2.494607).
+P1: N=16, mean=20.1875 (+/-4.991228).
+P2: N=14, mean=15.357143 (+/-3.976624).
+P3: N=14, mean=19.785714 (+/-5.994278).
+P4: N=16, mean=21.1875 (+/-4.79496).
+
+Agent 2 (UCT)
+Winning score (between 0 and 1) : N=60, mean=0.688889 (+/-0.019745).
+P1: N=14, mean=0.702381 (+/-0.037175).
+P2: N=15, mean=0.644444 (+/-0.043555).
+P3: N=15, mean=0.688889 (+/-0.029678).
+P4: N=16, mean=0.71875 (+/-0.039094).
+Game Durations: N=60, mean=19.233333 (+/-2.494607).
+P1: N=14, mean=20.071429 (+/-5.665861).
+P2: N=15, mean=15.8 (+/-3.873918).
+P3: N=15, mean=19.466667 (+/-4.456554).
+P4: N=16, mean=21.5 (+/-5.711414).
+
+Agent 3 (Random)
+Winning score (between 0 and 1) : N=60, mean=0.283333 (+/-0.080428).
+P1: N=15, mean=0.311111 (+/-0.174219).
+P2: N=15, mean=0.244444 (+/-0.149071).
+P3: N=16, mean=0.229167 (+/-0.154589).
+P4: N=14, mean=0.357143 (+/-0.174127).
+Game Durations: N=60, mean=19.233333 (+/-2.494607).
+P1: N=15, mean=16.666667 (+/-3.833412).
+P2: N=15, mean=23.133333 (+/-6.09036).
+P3: N=16, mean=19.625 (+/-4.770383).
+P4: N=14, mean=17.357143 (+/-4.82549).
+
+Agent 4 (Random)
+Winning score (between 0 and 1) : N=60, mean=0.405556 (+/-0.081938).
+P1: N=15, mean=0.4 (+/-0.179769).
+P2: N=16, mean=0.354167 (+/-0.162989).
+P3: N=15, mean=0.355556 (+/-0.162133).
+P4: N=14, mean=0.52381 (+/-0.148701).
+Game Durations: N=60, mean=19.233333 (+/-2.494607).
+P1: N=15, mean=20 (+/-5.612471).
+P2: N=16, mean=22.1875 (+/-4.703968).
+P3: N=15, mean=18.066667 (+/-5.232856).
+P4: N=14, mean=16.285714 (+/-4.217824).
+=====================================================
+=====================================================
+Completed 70 games.
+
+Agent 1 (Harold the AI)
+Winning score (between 0 and 1) : N=70, mean=0.628571 (+/-0.04847).
+P1: N=18, mean=0.666667 (+/-0.083512).
+P2: N=16, mean=0.541667 (+/-0.131681).
+P3: N=18, mean=0.62963 (+/-0.085801).
+P4: N=18, mean=0.666667 (+/-0.083512).
+Game Durations: N=70, mean=18.371429 (+/-2.205563).
+P1: N=18, mean=19.722222 (+/-4.464353).
+P2: N=16, mean=14.9375 (+/-3.512782).
+P3: N=18, mean=18.5 (+/-4.772709).
+P4: N=18, mean=19.944444 (+/-4.588237).
+
+Agent 2 (UCT)
+Winning score (between 0 and 1) : N=70, mean=0.685714 (+/-0.017003).
+P1: N=17, mean=0.696078 (+/-0.031132).
+P2: N=18, mean=0.648148 (+/-0.036296).
+P3: N=18, mean=0.685185 (+/-0.024899).
+P4: N=17, mean=0.715686 (+/-0.03721).
+Game Durations: N=70, mean=18.371429 (+/-2.205563).
+P1: N=17, mean=18.823529 (+/-4.827993).
+P2: N=18, mean=15.111111 (+/-3.368351).
+P3: N=18, mean=18.722222 (+/-3.785695).
+P4: N=17, mean=21 (+/-5.453709).
+
+Agent 3 (Random)
+Winning score (between 0 and 1) : N=70, mean=0.3 (+/-0.07538).
+P1: N=17, mean=0.352941 (+/-0.163047).
+P2: N=18, mean=0.277778 (+/-0.142216).
+P3: N=18, mean=0.240741 (+/-0.147565).
+P4: N=17, mean=0.333333 (+/-0.158453).
+Game Durations: N=70, mean=18.371429 (+/-2.205563).
+P1: N=17, mean=15.823529 (+/-3.577994).
+P2: N=18, mean=21.666667 (+/-5.286267).
+P3: N=18, mean=18.777778 (+/-4.378464).
+P4: N=17, mean=17 (+/-3.97004).
+
+Agent 4 (Random)
+Winning score (between 0 and 1) : N=70, mean=0.385714 (+/-0.076815).
+P1: N=18, mean=0.37037 (+/-0.163981).
+P2: N=18, mean=0.351852 (+/-0.153737).
+P3: N=16, mean=0.333333 (+/-0.157792).
+P4: N=18, mean=0.481481 (+/-0.141944).
+Game Durations: N=70, mean=18.371429 (+/-2.205563).
+P1: N=18, mean=19 (+/-4.77731).
+P2: N=18, mean=21.388889 (+/-4.304974).
+P3: N=16, mean=17.375 (+/-5.079143).
+P4: N=18, mean=15.611111 (+/-3.33558).
+=====================================================
+=====================================================
+Completed 80 games.
+
+Agent 1 (Harold the AI)
+Winning score (between 0 and 1) : N=80, mean=0.627083 (+/-0.045476).
+P1: N=21, mean=0.666667 (+/-0.071283).
+P2: N=20, mean=0.533333 (+/-0.119906).
+P3: N=19, mean=0.631579 (+/-0.081249).
+P4: N=20, mean=0.675 (+/-0.0767).
+Game Durations: N=80, mean=18.2875 (+/-2.031589).
+P1: N=21, mean=18.47619 (+/-4.074641).
+P2: N=20, mean=16 (+/-3.310321).
+P3: N=19, mean=18.684211 (+/-4.528945).
+P4: N=20, mean=20 (+/-4.380297).
+
+Agent 2 (UCT)
+Winning score (between 0 and 1) : N=80, mean=0.6875 (+/-0.015781).
+P1: N=20, mean=0.708333 (+/-0.03245).
+P2: N=20, mean=0.65 (+/-0.032666).
+P3: N=20, mean=0.683333 (+/-0.022482).
+P4: N=20, mean=0.708333 (+/-0.03245).
+Game Durations: N=80, mean=18.2875 (+/-2.031589).
+P1: N=20, mean=19.55 (+/-4.486272).
+P2: N=20, mean=14.9 (+/-3.049314).
+P3: N=20, mean=18.95 (+/-3.411015).
+P4: N=20, mean=19.75 (+/-4.941757).
+
+Agent 3 (Random)
+Winning score (between 0 and 1) : N=80, mean=0.310417 (+/-0.071109).
+P1: N=19, mean=0.315789 (+/-0.153776).
+P2: N=21, mean=0.285714 (+/-0.129772).
+P3: N=20, mean=0.25 (+/-0.1412).
+P4: N=20, mean=0.391667 (+/-0.148517).
+Game Durations: N=80, mean=18.2875 (+/-2.031589).
+P1: N=19, mean=15.736842 (+/-3.317242).
+P2: N=21, mean=21.428571 (+/-4.807701).
+P3: N=20, mean=17.95 (+/-4.085285).
+P4: N=20, mean=17.75 (+/-3.616434).
+
+Agent 4 (Random)
+Winning score (between 0 and 1) : N=80, mean=0.375 (+/-0.071761).
+P1: N=20, mean=0.366667 (+/-0.154676).
+P2: N=19, mean=0.333333 (+/-0.149882).
+P3: N=21, mean=0.301587 (+/-0.134533).
+P4: N=20, mean=0.5 (+/-0.129802).
+Game Durations: N=80, mean=18.2875 (+/-2.031589).
+P1: N=20, mean=19.25 (+/-4.30082).
+P2: N=19, mean=20.789474 (+/-4.238184).
+P3: N=21, mean=17.619048 (+/-4.423063).
+P4: N=20, mean=15.65 (+/-3.076953).
+=====================================================
+MCTS error in game: 98
+java.lang.ArrayIndexOutOfBoundsException
+=====================================================
+Completed 90 games.
+
+Agent 1 (Harold the AI)
+Winning score (between 0 and 1) : N=90, mean=0.596296 (+/-0.050568).
+P1: N=24, mean=0.645833 (+/-0.084142).
+P2: N=20, mean=0.533333 (+/-0.119906).
+P3: N=23, mean=0.57971 (+/-0.100336).
+P4: N=23, mean=0.615942 (+/-0.103574).
+Game Durations: N=90, mean=18.377778 (+/-1.84646).
+P1: N=24, mean=19 (+/-3.710144).
+P2: N=20, mean=16 (+/-3.310321).
+P3: N=23, mean=18.391304 (+/-3.783404).
+P4: N=23, mean=19.782609 (+/-3.890676).
+
+Agent 2 (UCT)
+Winning score (between 0 and 1) : N=90, mean=0.687037 (+/-0.014442).
+P1: N=22, mean=0.704545 (+/-0.029873).
+P2: N=23, mean=0.652174 (+/-0.028405).
+P3: N=23, mean=0.681159 (+/-0.019624).
+P4: N=22, mean=0.712121 (+/-0.031747).
+Game Durations: N=90, mean=18.377778 (+/-1.84646).
+P1: N=22, mean=19.136364 (+/-4.109012).
+P2: N=23, mean=14.956522 (+/-2.700995).
+P3: N=23, mean=19.130435 (+/-3.003941).
+P4: N=22, mean=20.409091 (+/-4.59861).
+
+Agent 3 (Random)
+Winning score (between 0 and 1) : N=90, mean=0.32037 (+/-0.067346).
+P1: N=23, mean=0.376812 (+/-0.138098).
+P2: N=23, mean=0.289855 (+/-0.125288).
+P3: N=22, mean=0.227273 (+/-0.131695).
+P4: N=22, mean=0.386364 (+/-0.141568).
+Game Durations: N=90, mean=18.377778 (+/-1.84646).
+P1: N=23, mean=16.565217 (+/-2.894597).
+P2: N=23, mean=20.869565 (+/-4.446755).
+P3: N=22, mean=18.227273 (+/-3.940931).
+P4: N=22, mean=17.818182 (+/-3.296927).
+
+Agent 4 (Random)
+Winning score (between 0 and 1) : N=90, mean=0.396296 (+/-0.06662).
+P1: N=21, mean=0.380952 (+/-0.149767).
+P2: N=24, mean=0.388889 (+/-0.128436).
+P3: N=22, mean=0.318182 (+/-0.132331).
+P4: N=23, mean=0.492754 (+/-0.122325).
+Game Durations: N=90, mean=18.377778 (+/-1.84646).
+P1: N=21, mean=18.857143 (+/-4.162728).
+P2: N=24, mean=21.25 (+/-3.476283).
+P3: N=22, mean=17.727273 (+/-4.222556).
+P4: N=23, mean=15.565217 (+/-2.670887).
+=====================================================
+
+=====================================================
+Completed 96 games.
+
+Agent 1 (Harold the AI)
+Winning score (between 0 and 1) : N=96, mean=0.586806 (+/-0.050499).
+P1: N=24, mean=0.645833 (+/-0.084142).
+P2: N=24, mean=0.527778 (+/-0.110648).
+P3: N=24, mean=0.583333 (+/-0.096327).
+P4: N=24, mean=0.590278 (+/-0.111192).
+Game Durations: N=96, mean=18.15625 (+/-1.767716).
+P1: N=24, mean=19 (+/-3.710144).
+P2: N=24, mean=15.166667 (+/-2.910599).
+P3: N=24, mean=18.666667 (+/-3.662318).
+P4: N=24, mean=19.791667 (+/-3.725081).
+
+Agent 2 (UCT)
+Winning score (between 0 and 1) : N=96, mean=0.678819 (+/-0.019497).
+P1: N=24, mean=0.701389 (+/-0.027662).
+P2: N=24, mean=0.652778 (+/-0.027222).
+P3: N=24, mean=0.680556 (+/-0.018826).
+P4: N=24, mean=0.680556 (+/-0.064966).
+Game Durations: N=96, mean=18.15625 (+/-1.767716).
+P1: N=24, mean=18.416667 (+/-3.905543).
+P2: N=24, mean=15.375 (+/-2.712961).
+P3: N=24, mean=19.166667 (+/-2.876931).
+P4: N=24, mean=19.666667 (+/-4.345395).
+
+Agent 3 (Random)
+Winning score (between 0 and 1) : N=96, mean=0.335069 (+/-0.065349).
+P1: N=24, mean=0.388889 (+/-0.134321).
+P2: N=24, mean=0.305556 (+/-0.123838).
+P3: N=24, mean=0.236111 (+/-0.127302).
+P4: N=24, mean=0.409722 (+/-0.133328).
+Game Durations: N=96, mean=18.15625 (+/-1.767716).
+P1: N=24, mean=16.5 (+/-2.774312).
+P2: N=24, mean=20.833333 (+/-4.258036).
+P3: N=24, mean=17.333333 (+/-3.803993).
+P4: N=24, mean=17.958333 (+/-3.091052).
+
+Agent 4 (Random)
+Winning score (between 0 and 1) : N=96, mean=0.399306 (+/-0.064445).
+P1: N=24, mean=0.388889 (+/-0.138572).
+P2: N=24, mean=0.388889 (+/-0.128436).
+P3: N=24, mean=0.319444 (+/-0.127302).
+P4: N=24, mean=0.5 (+/-0.117976).
+Game Durations: N=96, mean=18.15625 (+/-1.767716).
+P1: N=24, mean=18.708333 (+/-3.777949).
+P2: N=24, mean=21.25 (+/-3.476283).
+P3: N=24, mean=17.458333 (+/-3.880629).
+P4: N=24, mean=15.208333 (+/-2.65112).
+=====================================================
+
+
+SIMPLE GOLF - HAROLD, UCT, RANDOM
+
+Warming up...
+Finished warming up!
+=====================================================
+Completed 1 games.
+
+Agent 1 (Harold the AI)
+Winning score (between 0 and 1) : N=1, mean=1 (+/-0).
+P1: N=1, mean=1 (+/-0).
+P2: N=0, mean=0 (+/-0).
+P3: N=0, mean=0 (+/-0).
+Game Durations: N=1, mean=62 (+/-0).
+P1: N=1, mean=62 (+/-0).
+P2: N=0, mean=0 (+/-0).
+P3: N=0, mean=0 (+/-0).
+
+Agent 2 (UCT)
+Winning score (between 0 and 1) : N=1, mean=0.5 (+/-0).
+P1: N=0, mean=0 (+/-0).
+P2: N=1, mean=0.5 (+/-0).
+P3: N=0, mean=0 (+/-0).
+Game Durations: N=1, mean=62 (+/-0).
+P1: N=0, mean=0 (+/-0).
+P2: N=1, mean=62 (+/-0).
+P3: N=0, mean=0 (+/-0).
+
+Agent 3 (Random)
+Winning score (between 0 and 1) : N=1, mean=0 (+/-0).
+P1: N=0, mean=0 (+/-0).
+P2: N=0, mean=0 (+/-0).
+P3: N=1, mean=0 (+/-0).
+Game Durations: N=1, mean=62 (+/-0).
+P1: N=0, mean=0 (+/-0).
+P2: N=0, mean=0 (+/-0).
+P3: N=1, mean=62 (+/-0).
+=====================================================
+=====================================================
+Completed 2 games.
+
+Agent 1 (Harold the AI)
+Winning score (between 0 and 1) : N=2, mean=0.75 (+/-0.48999).
+P1: N=1, mean=1 (+/-0).
+P2: N=1, mean=0.5 (+/-0).
+P3: N=0, mean=0 (+/-0).
+Game Durations: N=2, mean=62 (+/-0).
+P1: N=1, mean=62 (+/-0).
+P2: N=1, mean=62 (+/-0).
+P3: N=0, mean=0 (+/-0).
+
+Agent 2 (UCT)
+Winning score (between 0 and 1) : N=2, mean=0.75 (+/-0.48999).
+P1: N=0, mean=0 (+/-0).
+P2: N=1, mean=0.5 (+/-0).
+P3: N=1, mean=1 (+/-0).
+Game Durations: N=2, mean=62 (+/-0).
+P1: N=0, mean=0 (+/-0).
+P2: N=1, mean=62 (+/-0).
+P3: N=1, mean=62 (+/-0).
+
+Agent 3 (Random)
+Winning score (between 0 and 1) : N=2, mean=0 (+/-0).
+P1: N=1, mean=0 (+/-0).
+P2: N=0, mean=0 (+/-0).
+P3: N=1, mean=0 (+/-0).
+Game Durations: N=2, mean=62 (+/-0).
+P1: N=1, mean=62 (+/-0).
+P2: N=0, mean=0 (+/-0).
+P3: N=1, mean=62 (+/-0).
+=====================================================
+=====================================================
+Completed 3 games.
+
+Agent 1 (Harold the AI)
+Winning score (between 0 and 1) : N=3, mean=0.666667 (+/-0.32666).
+P1: N=1, mean=1 (+/-0).
+P2: N=1, mean=0.5 (+/-0).
+P3: N=1, mean=0.5 (+/-0).
+Game Durations: N=3, mean=62 (+/-0).
+P1: N=1, mean=62 (+/-0).
+P2: N=1, mean=62 (+/-0).
+P3: N=1, mean=62 (+/-0).
+
+Agent 2 (UCT)
+Winning score (between 0 and 1) : N=3, mean=0.833333 (+/-0.32666).
+P1: N=1, mean=1 (+/-0).
+P2: N=1, mean=0.5 (+/-0).
+P3: N=1, mean=1 (+/-0).
+Game Durations: N=3, mean=62 (+/-0).
+P1: N=1, mean=62 (+/-0).
+P2: N=1, mean=62 (+/-0).
+P3: N=1, mean=62 (+/-0).
+
+Agent 3 (Random)
+Winning score (between 0 and 1) : N=3, mean=0 (+/-0).
+P1: N=1, mean=0 (+/-0).
+P2: N=1, mean=0 (+/-0).
+P3: N=1, mean=0 (+/-0).
+Game Durations: N=3, mean=62 (+/-0).
+P1: N=1, mean=62 (+/-0).
+P2: N=1, mean=62 (+/-0).
+P3: N=1, mean=62 (+/-0).
+=====================================================
+=====================================================
+Completed 4 games.
+
+Agent 1 (Harold the AI)
+Winning score (between 0 and 1) : N=4, mean=0.625 (+/-0.244995).
+P1: N=1, mean=1 (+/-0).
+P2: N=2, mean=0.5 (+/-0).
+P3: N=1, mean=0.5 (+/-0).
+Game Durations: N=4, mean=62 (+/-0).
+P1: N=1, mean=62 (+/-0).
+P2: N=2, mean=62 (+/-0).
+P3: N=1, mean=62 (+/-0).
+
+Agent 2 (UCT)
+Winning score (between 0 and 1) : N=4, mean=0.875 (+/-0.244995).
+P1: N=2, mean=1 (+/-0).
+P2: N=1, mean=0.5 (+/-0).
+P3: N=1, mean=1 (+/-0).
+Game Durations: N=4, mean=62 (+/-0).
+P1: N=2, mean=62 (+/-0).
+P2: N=1, mean=62 (+/-0).
+P3: N=1, mean=62 (+/-0).
+
+Agent 3 (Random)
+Winning score (between 0 and 1) : N=4, mean=0 (+/-0).
+P1: N=1, mean=0 (+/-0).
+P2: N=1, mean=0 (+/-0).
+P3: N=2, mean=0 (+/-0).
+Game Durations: N=4, mean=62 (+/-0).
+P1: N=1, mean=62 (+/-0).
+P2: N=1, mean=62 (+/-0).
+P3: N=2, mean=62 (+/-0).
+=====================================================
+=====================================================
+Completed 5 games.
+
+Agent 1 (Harold the AI)
+Winning score (between 0 and 1) : N=5, mean=0.7 (+/-0.240045).
+P1: N=1, mean=1 (+/-0).
+P2: N=2, mean=0.5 (+/-0).
+P3: N=2, mean=0.75 (+/-0.48999).
+Game Durations: N=5, mean=62 (+/-0).
+P1: N=1, mean=62 (+/-0).
+P2: N=2, mean=62 (+/-0).
+P3: N=2, mean=62 (+/-0).
+
+Agent 2 (UCT)
+Winning score (between 0 and 1) : N=5, mean=0.8 (+/-0.240045).
+P1: N=2, mean=1 (+/-0).
+P2: N=2, mean=0.5 (+/-0).
+P3: N=1, mean=1 (+/-0).
+Game Durations: N=5, mean=62 (+/-0).
+P1: N=2, mean=62 (+/-0).
+P2: N=2, mean=62 (+/-0).
+P3: N=1, mean=62 (+/-0).
+
+Agent 3 (Random)
+Winning score (between 0 and 1) : N=5, mean=0 (+/-0).
+P1: N=2, mean=0 (+/-0).
+P2: N=1, mean=0 (+/-0).
+P3: N=2, mean=0 (+/-0).
+Game Durations: N=5, mean=62 (+/-0).
+P1: N=2, mean=62 (+/-0).
+P2: N=1, mean=62 (+/-0).
+P3: N=2, mean=62 (+/-0).
+=====================================================
+=====================================================
+Completed 10 games.
+
+Agent 1 (Harold the AI)
+Winning score (between 0 and 1) : N=10, mean=0.8 (+/-0.16003).
+P1: N=3, mean=1 (+/-0).
+P2: N=4, mean=0.625 (+/-0.244995).
+P3: N=3, mean=0.833333 (+/-0.32666).
+Game Durations: N=10, mean=62 (+/-0).
+P1: N=3, mean=62 (+/-0).
+P2: N=4, mean=62 (+/-0).
+P3: N=3, mean=62 (+/-0).
+
+Agent 2 (UCT)
+Winning score (between 0 and 1) : N=10, mean=0.7 (+/-0.16003).
+P1: N=4, mean=0.875 (+/-0.244995).
+P2: N=3, mean=0.5 (+/-0).
+P3: N=3, mean=0.666667 (+/-0.32666).
+Game Durations: N=10, mean=62 (+/-0).
+P1: N=4, mean=62 (+/-0).
+P2: N=3, mean=62 (+/-0).
+P3: N=3, mean=62 (+/-0).
+
+Agent 3 (Random)
+Winning score (between 0 and 1) : N=10, mean=0 (+/-0).
+P1: N=3, mean=0 (+/-0).
+P2: N=3, mean=0 (+/-0).
+P3: N=4, mean=0 (+/-0).
+Game Durations: N=10, mean=62 (+/-0).
+P1: N=3, mean=62 (+/-0).
+P2: N=3, mean=62 (+/-0).
+P3: N=4, mean=62 (+/-0).
+=====================================================
+=====================================================
+Completed 20 games.
+
+Agent 1 (Harold the AI)
+Winning score (between 0 and 1) : N=20, mean=0.75 (+/-0.133007).
+P1: N=7, mean=0.928571 (+/-0.139997).
+P2: N=7, mean=0.642857 (+/-0.180736).
+P3: N=6, mean=0.666667 (+/-0.32666).
+Game Durations: N=20, mean=62 (+/-0).
+P1: N=7, mean=62 (+/-0).
+P2: N=7, mean=62 (+/-0).
+P3: N=6, mean=62 (+/-0).
+
+Agent 2 (UCT)
+Winning score (between 0 and 1) : N=20, mean=0.7 (+/-0.131093).
+P1: N=6, mean=0.916667 (+/-0.16333).
+P2: N=7, mean=0.642857 (+/-0.180736).
+P3: N=7, mean=0.571429 (+/-0.255599).
+Game Durations: N=20, mean=62 (+/-0).
+P1: N=6, mean=62 (+/-0).
+P2: N=7, mean=62 (+/-0).
+P3: N=7, mean=62 (+/-0).
+
+Agent 3 (Random)
+Winning score (between 0 and 1) : N=20, mean=0.05 (+/-0.067447).
+P1: N=7, mean=0.071429 (+/-0.139997).
+P2: N=6, mean=0.083333 (+/-0.16333).
+P3: N=7, mean=0 (+/-0).
+Game Durations: N=20, mean=62 (+/-0).
+P1: N=7, mean=62 (+/-0).
+P2: N=6, mean=62 (+/-0).
+P3: N=7, mean=62 (+/-0).
+=====================================================
+=====================================================
+Completed 30 games.
+
+Agent 1 (Harold the AI)
+Winning score (between 0 and 1) : N=30, mean=0.733333 (+/-0.102225).
+P1: N=10, mean=0.85 (+/-0.149694).
+P2: N=10, mean=0.65 (+/-0.149694).
+P3: N=10, mean=0.7 (+/-0.216682).
+Game Durations: N=30, mean=62 (+/-0).
+P1: N=10, mean=62 (+/-0).
+P2: N=10, mean=62 (+/-0).
+P3: N=10, mean=62 (+/-0).
+
+Agent 2 (UCT)
+Winning score (between 0 and 1) : N=30, mean=0.733333 (+/-0.102225).
+P1: N=10, mean=0.8 (+/-0.16003).
+P2: N=10, mean=0.75 (+/-0.16333).
+P3: N=10, mean=0.65 (+/-0.209164).
+Game Durations: N=30, mean=62 (+/-0).
+P1: N=10, mean=62 (+/-0).
+P2: N=10, mean=62 (+/-0).
+P3: N=10, mean=62 (+/-0).
+
+Agent 3 (Random)
+Winning score (between 0 and 1) : N=30, mean=0.033333 (+/-0.045393).
+P1: N=10, mean=0.05 (+/-0.097998).
+P2: N=10, mean=0.05 (+/-0.097998).
+P3: N=10, mean=0 (+/-0).
+Game Durations: N=30, mean=62 (+/-0).
+P1: N=10, mean=62 (+/-0).
+P2: N=10, mean=62 (+/-0).
+P3: N=10, mean=62 (+/-0).
+=====================================================
+=====================================================
+Completed 40 games.
+
+Agent 1 (Harold the AI)
+Winning score (between 0 and 1) : N=40, mean=0.7375 (+/-0.08586).
+P1: N=13, mean=0.769231 (+/-0.141029).
+P2: N=14, mean=0.714286 (+/-0.134505).
+P3: N=13, mean=0.730769 (+/-0.179448).
+Game Durations: N=40, mean=62 (+/-0).
+P1: N=13, mean=62 (+/-0).
+P2: N=14, mean=62 (+/-0).
+P3: N=13, mean=62 (+/-0).
+
+Agent 2 (UCT)
+Winning score (between 0 and 1) : N=40, mean=0.70625 (+/-0.100613).
+P1: N=14, mean=0.732143 (+/-0.149438).
+P2: N=13, mean=0.807692 (+/-0.13763).
+P3: N=13, mean=0.576923 (+/-0.217612).
+Game Durations: N=40, mean=62 (+/-0).
+P1: N=14, mean=62 (+/-0).
+P2: N=13, mean=62 (+/-0).
+P3: N=13, mean=62 (+/-0).
+
+Agent 3 (Random)
+Winning score (between 0 and 1) : N=40, mean=0.05625 (+/-0.048007).
+P1: N=13, mean=0.115385 (+/-0.119191).
+P2: N=13, mean=0.057692 (+/-0.081423).
+P3: N=14, mean=0 (+/-0).
+Game Durations: N=40, mean=62 (+/-0).
+P1: N=13, mean=62 (+/-0).
+P2: N=13, mean=62 (+/-0).
+P3: N=14, mean=62 (+/-0).
+=====================================================
+=====================================================
+Completed 50 games.
+
+Agent 1 (Harold the AI)
+Winning score (between 0 and 1) : N=50, mean=0.725 (+/-0.07441).
+P1: N=17, mean=0.735294 (+/-0.122285).
+P2: N=17, mean=0.691176 (+/-0.115292).
+P3: N=16, mean=0.75 (+/-0.154948).
+Game Durations: N=50, mean=62 (+/-0).
+P1: N=17, mean=62 (+/-0).
+P2: N=17, mean=62 (+/-0).
+P3: N=16, mean=62 (+/-0).
+
+Agent 2 (UCT)
+Winning score (between 0 and 1) : N=50, mean=0.73 (+/-0.086118).
+P1: N=16, mean=0.71875 (+/-0.133254).
+P2: N=17, mean=0.823529 (+/-0.117079).
+P3: N=17, mean=0.647059 (+/-0.183428).
+Game Durations: N=50, mean=62 (+/-0).
+P1: N=16, mean=62 (+/-0).
+P2: N=17, mean=62 (+/-0).
+P3: N=17, mean=62 (+/-0).
+
+Agent 3 (Random)
+Winning score (between 0 and 1) : N=50, mean=0.045 (+/-0.038822).
+P1: N=17, mean=0.088235 (+/-0.093397).
+P2: N=16, mean=0.046875 (+/-0.066627).
+P3: N=17, mean=0 (+/-0).
+Game Durations: N=50, mean=62 (+/-0).
+P1: N=17, mean=62 (+/-0).
+P2: N=16, mean=62 (+/-0).
+P3: N=17, mean=62 (+/-0).
+=====================================================
+=====================================================
+Completed 60 games.
+
+Agent 1 (Harold the AI)
+Winning score (between 0 and 1) : N=60, mean=0.708333 (+/-0.066055).
+P1: N=20, mean=0.7 (+/-0.11014).
+P2: N=20, mean=0.6625 (+/-0.102257).
+P3: N=20, mean=0.7625 (+/-0.130489).
+Game Durations: N=60, mean=62 (+/-0).
+P1: N=20, mean=62 (+/-0).
+P2: N=20, mean=62 (+/-0).
+P3: N=20, mean=62 (+/-0).
+
+Agent 2 (UCT)
+Winning score (between 0 and 1) : N=60, mean=0.754167 (+/-0.075919).
+P1: N=20, mean=0.7375 (+/-0.11505).
+P2: N=20, mean=0.825 (+/-0.107234).
+P3: N=20, mean=0.7 (+/-0.16521).
+Game Durations: N=60, mean=62 (+/-0).
+P1: N=20, mean=62 (+/-0).
+P2: N=20, mean=62 (+/-0).
+P3: N=20, mean=62 (+/-0).
+
+Agent 3 (Random)
+Winning score (between 0 and 1) : N=60, mean=0.0375 (+/-0.032579).
+P1: N=20, mean=0.075 (+/-0.080278).
+P2: N=20, mean=0.0375 (+/-0.053617).
+P3: N=20, mean=0 (+/-0).
+Game Durations: N=60, mean=62 (+/-0).
+P1: N=20, mean=62 (+/-0).
+P2: N=20, mean=62 (+/-0).
+P3: N=20, mean=62 (+/-0).
+=====================================================
+=====================================================
+Completed 70 games.
+
+Agent 1 (Harold the AI)
+Winning score (between 0 and 1) : N=70, mean=0.714286 (+/-0.064066).
+P1: N=23, mean=0.695652 (+/-0.119136).
+P2: N=24, mean=0.697917 (+/-0.097728).
+P3: N=23, mean=0.75 (+/-0.119309).
+Game Durations: N=70, mean=62 (+/-0).
+P1: N=23, mean=62 (+/-0).
+P2: N=24, mean=62 (+/-0).
+P3: N=23, mean=62 (+/-0).
+
+Agent 2 (UCT)
+Winning score (between 0 and 1) : N=70, mean=0.742857 (+/-0.068335).
+P1: N=24, mean=0.760417 (+/-0.10419).
+P2: N=23, mean=0.793478 (+/-0.100542).
+P3: N=23, mean=0.673913 (+/-0.145911).
+Game Durations: N=70, mean=62 (+/-0).
+P1: N=24, mean=62 (+/-0).
+P2: N=23, mean=62 (+/-0).
+P3: N=23, mean=62 (+/-0).
+
+Agent 3 (Random)
+Winning score (between 0 and 1) : N=70, mean=0.042857 (+/-0.034499).
+P1: N=23, mean=0.065217 (+/-0.070365).
+P2: N=23, mean=0.032609 (+/-0.046763).
+P3: N=24, mean=0.03125 (+/-0.061249).
+Game Durations: N=70, mean=62 (+/-0).
+P1: N=23, mean=62 (+/-0).
+P2: N=23, mean=62 (+/-0).
+P3: N=24, mean=62 (+/-0).
+=====================================================
+=====================================================
+Completed 80 games.
+
+Agent 1 (Harold the AI)
+Winning score (between 0 and 1) : N=80, mean=0.73125 (+/-0.059614).
+P1: N=27, mean=0.703704 (+/-0.107952).
+P2: N=27, mean=0.712963 (+/-0.093218).
+P3: N=26, mean=0.778846 (+/-0.109824).
+Game Durations: N=80, mean=62 (+/-0).
+P1: N=27, mean=62 (+/-0).
+P2: N=27, mean=62 (+/-0).
+P3: N=26, mean=62 (+/-0).
+
+Agent 2 (UCT)
+Winning score (between 0 and 1) : N=80, mean=0.73125 (+/-0.06272).
+P1: N=26, mean=0.759615 (+/-0.099794).
+P2: N=27, mean=0.75 (+/-0.094299).
+P3: N=27, mean=0.685185 (+/-0.129699).
+Game Durations: N=80, mean=62 (+/-0).
+P1: N=26, mean=62 (+/-0).
+P2: N=27, mean=62 (+/-0).
+P3: N=27, mean=62 (+/-0).
+
+Agent 3 (Random)
+Winning score (between 0 and 1) : N=80, mean=0.0375 (+/-0.030321).
+P1: N=27, mean=0.055556 (+/-0.060399).
+P2: N=26, mean=0.028846 (+/-0.041461).
+P3: N=27, mean=0.027778 (+/-0.054443).
+Game Durations: N=80, mean=62 (+/-0).
+P1: N=27, mean=62 (+/-0).
+P2: N=26, mean=62 (+/-0).
+P3: N=27, mean=62 (+/-0).
+=====================================================
+=====================================================
+Completed 90 games.
+
+Agent 1 (Harold the AI)
+Winning score (between 0 and 1) : N=90, mean=0.730556 (+/-0.057539).
+P1: N=30, mean=0.691667 (+/-0.109397).
+P2: N=30, mean=0.725 (+/-0.088996).
+P3: N=30, mean=0.775 (+/-0.100638).
+Game Durations: N=90, mean=62 (+/-0).
+P1: N=30, mean=62 (+/-0).
+P2: N=30, mean=62 (+/-0).
+P3: N=30, mean=62 (+/-0).
+
+Agent 2 (UCT)
+Winning score (between 0 and 1) : N=90, mean=0.727778 (+/-0.058785).
+P1: N=30, mean=0.758333 (+/-0.092443).
+P2: N=30, mean=0.741667 (+/-0.092443).
+P3: N=30, mean=0.683333 (+/-0.119639).
+Game Durations: N=90, mean=62 (+/-0).
+P1: N=30, mean=62 (+/-0).
+P2: N=30, mean=62 (+/-0).
+P3: N=30, mean=62 (+/-0).
+
+Agent 3 (Random)
+Winning score (between 0 and 1) : N=90, mean=0.041667 (+/-0.029228).
+P1: N=30, mean=0.058333 (+/-0.056007).
+P2: N=30, mean=0.041667 (+/-0.047473).
+P3: N=30, mean=0.025 (+/-0.048999).
+Game Durations: N=90, mean=62 (+/-0).
+P1: N=30, mean=62 (+/-0).
+P2: N=30, mean=62 (+/-0).
+P3: N=30, mean=62 (+/-0).
+=====================================================
+
+=====================================================
+Completed 96 games.
+
+Agent 1 (Harold the AI)
+Winning score (between 0 and 1) : N=96, mean=0.742188 (+/-0.055476).
+P1: N=32, mean=0.710938 (+/-0.105765).
+P2: N=32, mean=0.726562 (+/-0.086225).
+P3: N=32, mean=0.789062 (+/-0.096177).
+Game Durations: N=96, mean=62 (+/-0).
+P1: N=32, mean=62 (+/-0).
+P2: N=32, mean=62 (+/-0).
+P3: N=32, mean=62 (+/-0).
+
+Agent 2 (UCT)
+Winning score (between 0 and 1) : N=96, mean=0.71875 (+/-0.056323).
+P1: N=32, mean=0.757812 (+/-0.089327).
+P2: N=32, mean=0.726562 (+/-0.088988).
+P3: N=32, mean=0.671875 (+/-0.113124).
+Game Durations: N=96, mean=62 (+/-0).
+P1: N=32, mean=62 (+/-0).
+P2: N=32, mean=62 (+/-0).
+P3: N=32, mean=62 (+/-0).
+
+Agent 3 (Random)
+Winning score (between 0 and 1) : N=96, mean=0.039062 (+/-0.027466).
+P1: N=32, mean=0.054688 (+/-0.052685).
+P2: N=32, mean=0.039062 (+/-0.0446).
+P3: N=32, mean=0.023438 (+/-0.045937).
+Game Durations: N=96, mean=62 (+/-0).
+P1: N=32, mean=62 (+/-0).
+P2: N=32, mean=62 (+/-0).
+P3: N=32, mean=62 (+/-0).
+=====================================================

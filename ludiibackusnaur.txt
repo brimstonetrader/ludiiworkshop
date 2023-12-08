@@ -2,120 +2,100 @@
 
   <toInt> ::= (toInt (<boolean> | <float>))
 
-  <int.%>   ::= (% <int> <int>)
-  <int.*>   ::= (* ({<int>} | <ints>)) | (* <int> <int>)
   <int.+>   ::= (+ ({<int>} | <ints>)) | (+ <int> <int>)
   <int.->   ::= (- [<int>] <int>)
+  <int.*>   ::= (* ({<int>} | <ints>)) | (* <int> <int>)
   <int./>   ::= (/ <int> <int>)
+  <int.%>   ::= (% <int> <int>)
   <int.^>   ::= (^ <int> <int>)
-  <int.abs> ::= (abs <int>)
-  <int.if>  ::= (if <boolean> <int> <int>)
   <int.max> ::= (max <ints>) | (max <int> <int>)
   <int.min> ::= (min <ints>) | (min <int> <int>)
+  <int.abs> ::= (abs <int>)
+  <int.if>  ::= (if <boolean> <int> <int>)
   
-  <state>       ::= (state [<siteType>] at:<int> [level:<int>])
-  <amount>      ::= (amount (<roleType> | <moves.player>))
   <mover>       ::= (mover)
   <next>        ::= (next)
   <prev>        ::= (prev)
+  <state>       ::= (state at:<int> [level:<int>])
+  <value>       ::= (value Piece at:<int> [level:<int>]) 
   <state.score> ::= (score (<moves.player> | <roleType>))
+  <what>        ::= (what at:<int> [level:<int>])
+  <who>         ::= (who at:<int> [level:<int>])
+
   <var>         ::= (var [<string>])
-  <what>        ::= (what [<siteType>] at:<int> [level:<int>])
-  <who>         ::= (who [<siteType>] at:<int> [level:<int>])
+  <arrayValue>  ::= (arrayValue <ints> index:<int>)
+  <random>      ::=	(value Random <range>)
+  <topLevel>    ::= (topLevel at:<int>)
+  <handSite>    ::= (handSite (<int> | <roleType>) [<int>])
   
+  
+  <size> ::= 
+  
+  (last To)
+  (last From)
+  (size Territory (<roleType> | <moves.player>) [<absoluteDirection>]) | 
+  (size Group at:<int> [<direction>] [if:<boolean>]) 
+  (size Stack [in:<sites> | at:<int>]) | 
+  (size Array <ints>)
+	
+	
+	
+  <ints.last>   ::= (last <lastType> [afterConsequence:<boolean>])
+      <lastType> ::= From | LevelFrom | LevelTo | To		
+	  
+	  
+  <directions> ::= 
+    (directions [<direction> | {<direction>}]) | 
+      <direction> ::= <relativeDirection> | <absoluteDirection>
+      <relativeDirection>     ::= BL | BR | Backward | Backwards | FL | FR | Forward | Forwards | Leftward | Leftwards | Rightward | Rightwards 
+      <absoluteDirection>     ::= Adjacent | Diagonal | Orthogonal 
   <count.count> ::= 
-    (count Liberties [<siteType>] [at:<int>] [<direction>] [if:<boolean>]) | 
-    (count Groups [<siteType>] [<direction>] [if:<boolean>] [min:<int>]) |
-    (count Pieces [<siteType>] [<roleType> of:<int>] [<string>] [in:<sites>] [if:<boolean>]) | 
-    (count [<countSiteType>] [<siteType>] [in:<sites> | at:<int> | <string>]) | 
-            <countSiteType> ::= Adjacent | Diagonal | Neighbours | Off | Orthogonal | Sites
-    (count <countSimpleType> [<siteType>]) | 
-           <countSimpleType> ::= LegalMoves | Players | Turns 
-    (count Stack [<stackDirection>] [<siteType>] (at:<int> | to:<sites>) [if:<boolean>] [stop:<boolean>]) | 
+    (count Liberties [at:<int>] [<directions>] [if:<boolean>]) | 
+    (count Groups [<directions>] [if:<boolean>] [min:<int>]) |
+	(count Pieces ([<roleType>] [of:<int>]) [<string>] [in:<sites>] [if:<boolean>]) | 
+	                             ^-player index     ^- name of piece to count 
+    (count Adjacent [in:<sites> | at:<int> | <string>]) | 
+    (count Diagonal [in:<sites> | at:<int> | <string>]) | 
+    (count Orthogonal [in:<sites> | at:<int>]) | 
+    (count Neighbors [in:<sites> | at:<int> | <string>]) | 
+    (count Sites [in:<sites> | at:<int>) | 
+    (count Players)   | 
+    (count Turns)   | 
+    (count LegalMoves) | 
+	    The amount of possible moves for the active player
+    (count Stack (at:<int> | to:<sites>) [if:<boolean>] [stop:<boolean>]) | 
+	    
     (count Value <int> in:<ints>) | 
-    (count StepsOnTrack [<roleType> | <moves.player> | <string>] [<int>] [<int>]) | 
-    (count Steps [<siteType>] [<relationType>] [<effect.step>] [newRotation:<int>] <int> (<int> | <sites>))		
+	    Instances of  x  in xs
+	
+    (count Steps [<relationType>] [<effect.step>] [newRotation:<int>] <int> (<int> | <sites>))		
+		For counting the number of steps between two sites.
 		
-  <value>    ::= 
-    (value) 
-    (value Player (<int> | <roleType>)) 
-    (value Piece [<siteType>] at:<int> [level:<int>]) 
-    (value <valueSimpleType>) | (value Random <range>)
-           <valueSimpleType> ::= MoveLimit | Pending | TurnLimit		   
 		
-  <ints.last> ::= (last <lastType> [afterConsequence:<boolean>])
-                        <lastType> ::= From | LevelFrom | LevelTo | To		
 		
-  <where> ::= 
-    (where Level <int> [<siteType>] at:<int> [fromTop:<boolean>]) | 
-    (where Level <string> (<int> | <roleType>) [state:<int>] [<siteType>] at:<int> [fromTop:<boolean>]) |
-    (where <string> (<int> | <roleType>) [state:<int>] [<siteType>]) | 
-    (where <int> [<siteType>])		
-		  
-  <arrayValue> ::= (arrayValue <ints> index:<int>)
-  <board.id>   ::= (id <string>) | (id [<string>] <roleType>)
-  <coord>      ::= (coord [<siteType>] row:<int> column:<int>) | (coord [<siteType>] <string>)
-  <handSite>   ::= (handSite (<int> | <roleType>) [<int>])
-  <layer>      ::= (layer of:<int> [<siteType>])
-  <mapEntry>   ::= (mapEntry [<string>] (<int> | <roleType>))
-  <regionSite> ::= (regionSite <sites> index:<int>)
-  <row>        ::= (row [<siteType>] of:<int>)
+		
+
 
   <iterator.between> ::= (between)
   <iterator.from>    ::= (from [at:<whenType>])
   <iterator.player>  ::= (player)
   <iterator.to>      ::= (to)
-  <iterator.track>   ::= (track)
-  <level>            ::= (level)
-  <site>             ::= (site)
+  <iterator.level>   ::= (level)
+  <iterator.site>    ::= (site)
+  <iterator.value>   ::= (value)
+  
 
-  <topLevel> ::= (topLevel [<siteType>] at:<int>)
+
   <dice.face> ::= (face <int>)
 
-  <size> ::= 
-    (size Territory [<siteType>] (<roleType> | <moves.player>) [<absoluteDirection>]) | 
-    (size Group [<siteType>] at:<int> [<direction>] [if:<boolean>]) 
-    (size Stack [<siteType>] [in:<sites> | at:<int>]) | 
-    (size Array <ints>)
+
 	
 	
 	
 <boolean>  ::= 
 
   <toBool>   ::= (toBool (<int> | <float>)) |
-  <booleans.all.all> ::= 
-    (all Passed) | 
-    (all <allSitesType> <sites> if:<boolean>) | 
-         <allSitesType> ::= Different | Sites
-    (all Values <ints> if:<boolean>) | 
-    (all Groups [<siteType>] [<direction>] [of:<boolean>] if:<boolean>)
-  <forAll> | 
-  
-  <booleans.is.is> ::= 
-    (is Cycle) |
-    (is Full) | 
-    (is Crossing <int> <int>) |
-    (is Visited [<int>]) | 
-    (is LastFrom <siteType>)
-    (is LastTo <siteType>)
-    (is <isComponentType> [<int>] [<siteType>] [at:<int> | in:<sites>] [<moves>]) | 
-        <isComponentType> ::= Threatened | Within
-    (is Hidden [<hiddenData>] [<siteType>] at:<int> [level:<int>] (to:<moves.player> | to:<roleType>)) | (is Repeat Positional) | 
-    (is Pattern {<stepType>} [<siteType>] [from:<int>] [what:<int> | whats:{<int>}]) | (is Triggered <string> (<int> | <roleType>)) | 
-    (is <isPlayerType> (<int> | <roleType>)) | 
-        <isPlayerType> ::= Active | Enemy | Friend | Mover | Next | Prev
-    (is <isSiteType> [<siteType>] <int>) | 
-        <isSiteType> ::= Empty | Occupied
-    (is In [<int> | {<int>}] (<sites> | <ints>)) | 
-    (is Related <relationType> [<siteType>] <int> (<int> | <sites>)) | (is Target [<int> | <string>] {<int>} [<int> | {<int>}]) | 
-    (is Loop [<siteType>] [surround:<roleType> | {<roleType>}] [<direction>] [<int>] [<int> | <sites>] [path:<boolean>]) | 
-    (is Line [<siteType>] <int> [<absoluteDirection>] [through:<int> | throughAny:<sites>] [<roleType> | what:<int> | whats:{<int>}] [exact:<boolean>] [contiguous:<boolean>] [if:<boolean>] [byLevel:<boolean>] [top:<boolean>]) |
-    (is <isConnectType> [<int>] [<siteType>] [at:<int>] [<direction>] ({<sites>} | <roleType> | <regionTypeStatic>))
-        <isConnectType> ::= Blocked | Connected
 
-  <was>              ::= (was Pass)
-  <can>              ::= (can Move <moves>)
-  <booleans.no.no>   ::= (no Pieces [<siteType>] [<roleType> | of:<int>] [<string>] [in:<sites>]) | (no Moves <roleType>)
   <!=>               ::= (!= <sites> <sites>) | (!= <int> (<int> | <roleType>))
   <<>                ::= (< <int> <int>)
   <<=>               ::= (<= <int> <int>)
@@ -128,23 +108,42 @@
   <not>              ::= (not <boolean>)
   <xor>              ::= (xor <boolean> <boolean>)
 
-<float>    ::= 
-  <cos>             ::= (cos <float>)
-  <exp>             ::= (exp <float>)
-  <floats.math.*>   ::= (* {<float>}) | (* <float> <float>)
-  <floats.math.+>   ::= (+ {<float>}) | (+ <float> <float>)
-  <floats.math.->   ::= (- <float> <float>)
-  <floats.math./>   ::= (/ <float> <float>)
-  <floats.math.^>   ::= (^ <float> <float>)
-  <floats.math.abs> ::= (abs <float>)
-  <floats.math.max> ::= (max {<float>}) | (max <float> <float>)
-  <floats.math.min> ::= (min {<float>}) | (min <float> <float>)
-  <log>             ::= (log <float>)
-  <log10>           ::= (log10 <float>)
-  <sin>             ::= (sin <float>)
-  <sqrt>            ::= (sqrt <float>)
-  <tan>             ::= (tan <float>)
-  <toFloat>  ::= (toFloat (<boolean> | <int>))
+  <was>              ::= (was Pass)
+  <can>              ::= (can Move <moves>)
+  <booleans.no.no>   ::= (no Pieces [<roleType> | of:<int>] [<string>] [in:<sites>]) | 
+                         (no Moves <roleType>)
+  
+  <booleans.all.all> ::= 
+    (all Passed) | 
+    (all <allSitesType> <sites> if:<boolean>) | 
+      <allSitesType> ::= Different | Sites
+    (all Values <ints> if:<boolean>) | 
+    (all Groups [<direction>] [of:<boolean>] if:<boolean>)
+  
+  <booleans.is.is> ::= 
+    (is Cycle) |
+    (is Full) | 
+    (is Crossing <int> <int>) |
+    (is Visited [<int>]) | 
+    (is LastFrom <siteType>)
+    (is LastTo <siteType>)
+    (is Threatened [<int>] [at:<int> | in:<sites>] [<moves>]) | 
+    (is Hidden [<hiddenData>] at:<int> [level:<int>] (to:<moves.player> | to:<roleType>)) | (is Repeat Positional) | 
+    (is Pattern {<stepType>} [from:<int>] [what:<int> | whats:{<int>}]) | (is Triggered <string> (<int> | <roleType>)) | 
+    (is <isPlayerType> (<int> | <roleType>)) | 
+      <isPlayerType> ::= Active | Enemy | Friend | Mover | Next | Prev
+    (is Empty <int>) | 
+    (is Occupied <int>) | 
+    (is In [<int> | {<int>}] (<sites> | <ints>)) | 
+    (is Related <relationType> <int> (<int> | <sites>)) | (is Target [<int> | <string>] {<int>} [<int> | {<int>}]) | 
+    (is Loop [surround:<roleType> | {<roleType>}] [<direction>] [<int>] [<int> | <sites>] [path:<boolean>]) | 
+    (is Line <int> [<absoluteDirection>] [through:<int> | throughAny:<sites>] [<roleType> | what:<int> | whats:{<int>}] [exact:<boolean>] [contiguous:<boolean>] [if:<boolean>] [byLevel:<boolean>] [top:<boolean>]) |
+    (is Connected [<int>] [at:<int>] [<direction>] ({<sites>} | <roleType> | <regionTypeStatic>))
+    (is Blocked [<int>] [at:<int>] [<direction>] ({<sites>} | <roleType> | <regionTypeStatic>)) 
+
+
+<hiddenData> ::= Count | Rotation | State | Value | What | Who
+
 
 <ints>     ::= 
   {<int>} | 
@@ -152,20 +151,18 @@
   <intArray.if>           ::= (if <boolean> <ints> [<ints>])
   <intArray.intersection> ::= (intersection {<ints>}) | (intersection <ints> <ints>)
   <intArray.union>        ::= (union {<ints>}) | (union <ints> <ints>)
-  <regions>  ::= (regions [<string>] [<roleType>] ({<int>} | <sites> | {<sites>} | <regionTypeStatic> | {<regionTypeStatic>}) [<string>])
+  <regions>               ::= (regions [<string>] [<roleType>] ({<int>} | <sites> | {<sites>} | <regionTypeStatic> | {<regionTypeStatic>}) [<string>])
   <results>               ::= (results (from:<int> | from:<sites>) (to:<int> | to:<sites>) <int>)
-  <array>    ::= (array {<int>}) | (array <sites>)
-  <values.values> ::= (values Remembered [<string>])
-  <sizes>         ::= (sizes Group [<siteType>] [<direction>] [<roleType> | of:<int> | if:<boolean>] [min:<int>])
-  <intArray.players.players> ::= (players <playersTeamType> [if:<boolean>]) | (players <playersManyType> [of:<int>] [if:<boolean>])
-  <playersManyType> ::= All | Ally | Enemy | Friend | NonMover
-  <playersTeamType> ::= Team1 | Team2 | Team3 ...
+  <array>                 ::= (array {<int>}) | (array <sites>)
+  <values>                ::= (values Remembered [<string>])
+  <sizes>                 ::= (sizes Group [<direction>] [<roleType> | of:<int> | if:<boolean>] [min:<int>])
+  <intArray.players>      ::= (players <playersTeamType> [if:<boolean>]) | (players <playersManyType> [of:<int>] [if:<boolean>])
+    <playersManyType> ::= All | Ally | Enemy | Friend | NonMover
+    <playersTeamType> ::= Team1 | Team2 | Team3 ...
   <team>     ::= (team)
-			   
-<range>    ::= (range <int> [<int>]) | <exact> | <range.math.max> | <range.math.min>
-  <exact>          ::= (exact <int>)
-  <range.math.max> ::= (max <int>)
-  <range.math.min> ::= (min <int>)
+  <range>    ::= (range <int> [<int>]) | (exact <int>) | (max <int>) | (min <int>)
+
+
 
 <math.pair> ::= 
   (pair <string> <string>) | 
@@ -175,32 +172,37 @@
   (pair <string> <roleType>) | 
   (pair <roleType> <string>) | 
   (pair <int> <string>)
+
+
   
 <direction> ::=
-  <directions> ::= 
-    (directions (<absoluteDirection> | {<absoluteDirection>})) |                
-    (directions [<relativeDirection> | {<relativeDirection>}] [of:<relationType>] [bySite:<boolean>]) | 
-    (directions <siteType> from:<int> to:<int>) | 
-    (directions Random <direction> num:<int>)
-  <relativeDirection>     ::= BL | BLL | BLLL | BR | BRR | BRRR | Backward | Backwards | FL | FLL | FLLL | FR | FRR | FRRR | Forward | Forwards | Leftward | Leftwards | OppositeDirection | Rightward | Rightwards | SameDirection
-  <absoluteDirection>     ::= Adjacent | All | Angled | Axial | Base | CCW | CW | D | DE | DN | DNE | DNW | DS | DSE | DSW | DW | Diagonal | Downward | E | ENE | ESE | In | N | NE | NNE | NNW | NW | OffDiagonal | Orthogonal | Out | Rotational | S | SE | SSE | SSW | SW | SameLayer | Support | U | UE | UN | UNE | UNW | US | USE | USW | UW | Upward | W | WNW | WSW
-  <directions.difference> ::= (difference <direction> <direction>)
-  <directions.if>         ::= (if <boolean> <direction> <direction>)
-  <directions.union>      ::= (union <direction> <direction>)
+
+
 
 <stepType> ::= F | L | R
+
 <relationType> ::= Adjacent | All | Diagonal | OffDiagonal | Orthogonal
+
 <regionTypeStatic> ::= AllDirections | AllSites | Corners | Diagonals | Regions | Rows | Sides | SidesNoCorners | Touching 
-<directionFacing> ::= <compassDirection> | <rotationalDirection> | <spatialDirection>
-  <compassDirection> ::= E | ENE | ESE | N | NE | NNE | NNW | NW | S | SE | SSE | SSW | SW | W | WNW | WSW
-  <rotationalDirection> ::= CCW | CW | In | Out
-  <spatialDirection> ::= D | DE | DN | DNE | DNW | DS | DSE | DSW | DW | U | UE | UN | UNE | UNW | US | USE | USW | UW
+
 <stackDirection> ::= FromBottom | FromTop
+
 <hiddenData> ::= Count | Rotation | State | Value | What | Who
+
 <roleType> ::= P1  P2 | P3 ... 
 			   All | Ally | Enemy | Neutral | Player | Shared 
 			   NonMover | Mover |  Next | Prev
                Team1 | Team2 | Team3 ...
+
+<shapeType>   ::= Diamond | Hexagon | Rectangle | Square | Star | Triangle
+<basis>       ::= 
+  <rectangle> ::= (rectangle <int> [<int>] )
+  <spiral>    ::= (spiral turns:<int> sites:<int> [clockwise:<boolean>])
+  <tri>       ::= (tri (<poly> | {<int>})) | (tri [<shapeType>] <int> [<int>])
+  <square>    ::= (square <int> [diagonals:<diagonalsType> | pyramidal:<boolean>])
+  <hex>       ::= (hex (<poly> | {<int>})) | (hex [<shapeType>] <int> [<int>])
+  <tiling>    ::= (tiling <tilingType> (<poly> | {<int>})) | (tiling <tilingType> <int> [<int>])
+    <tilingType> ::= T31212 | T333333_33434 | T33336 | T33344 | T33434 | T3464 | T3636 | T4612 | T488
 
 
 
@@ -215,44 +217,20 @@
       <regions>  ::= (regions [<string>] [<roleType>] ({<int>} | <sites> | {<sites>} | <regionTypeStatic> | {<regionTypeStatic>}) [<string>])
       <component.piece> ::= (piece <string> [<roleType>] [<directionFacing>] [<flips>] [<moves>] [maxState:<int>] [maxCount:<int>] [maxValue:<int>])
       <container> ::=
-        <container.board.board> ::= (board <basis>  [largeStack:<boolean>]) 
-      | <mancalaBoard> ::= (mancalaBoard <int> <int> [store:<storeType>] [numStores:<int>] [largeStack:<boolean>] [<board.track> | {<board.track>}])
-      | <dice>         ::= (dice [d:<int>] [faces:{<int>} | facesByDie:{{<int>}} | from:<int>] [<roleType>] num:<int> [biased:{<int>}])
-      | <other.hand>   ::= (hand <roleType> [size:<int>])
+        <container.board> ::= (board <basis>  [largeStack:<boolean>]) 
+        <mancalaBoard>    ::= (mancalaBoard <int> <int> [store:<storeType>] [numStores:<int>] [largeStack:<boolean>] [<board.track> | {<board.track>}])
+        <dice>            ::= (dice [d:<int>] [faces:{<int>} | facesByDie:{{<int>}} | from:<int>] [<roleType>] num:<int> [biased:{<int>}])
+        <other.hand>      ::= (hand <roleType> [size:<int>])
   <rules.rules> ::= (rules [<meta>] [<start>] [<play>] phases:{<phase.phase>} [<end>]) |
                     (rules [<meta>] [<start>] <play> <end>)
      <meta>      ::= (meta ({<metaRule>} | <metaRule>))
        <metaRule>  ::= <meta.no.no> | <passEnd> | <meta.swap>
          <meta.swap> ::= (swap)
          <passEnd>  ::= (passEnd <passEndType>)
-                                 <passEndType> ::= Draw | NoEnd
+           <passEndType> ::= Draw | NoEnd
          <meta.no.no> ::= (no Repeat Positional) | (no Suicide)
     <phase.phase> ::= (phase <string> [<roleType>] [<mode>] <play> [<end>] [<nextPhase> | {<nextPhase>}])
       <nextPhase> ::= (nextPhase [<roleType> | <moves.player>] [<boolean>] [<string>])
-
-
-<basis>    ::= 
-  <rectangle> ::= (rectangle <int> [<int>] )
-  <spiral>    ::= (spiral turns:<int> sites:<int> [clockwise:<boolean>])
-  <tri>      ::= (tri (<poly> | {<int>})) | (tri [<triShapeType>] <int> [<int>])
-                                                  <triShapeType> ::= Diamond | Hexagon | Rectangle | Square | Star | Triangle
-  <tiling>   ::= (tiling <tilingType> (<poly> | {<int>})) | (tiling <tilingType> <int> [<int>])
-                         <tilingType> ::= T31212 | T333333_33434 | T33336 | T33344 | T33434 | T3464 | T3636 | T4612 | T488
-  <square>   ::= (square (<poly> | {<int>}) [diagonals:<diagonalsType>]) | 
-                 (square [<squareShapeType>] <int> [diagonals:<diagonalsType> | pyramidal:<boolean>])
-                          <squareShapeType> ::= Diamond | Limping | NoShape | Rectangle | Square
-  <hex>      ::= (hex (<poly> | {<int>})) | (hex [<hexShapeType>] <int> [<int>])
-                                                <hexShapeType> ::= Diamond | Hexagon | Rectangle | Square | Star | Triangle
-
-
-<then>     ::= (then <nonDecision> [applyAfterAllMoves:<boolean>])
-
-<operator> ::= 
-  <logical.and> ::= (and {<moves>} [<then>]) | (and <moves> <moves> [<then>])
-  <logical.if>  ::= (if <boolean> <moves> [<moves>] [<then>])
-  <logical.or>  ::= (or {<moves>} [<then>]) | (or <moves> <moves> [<then>])
-
-<play>     ::= (play <moves>)
 
 <start>    ::= (start ({<startRule>} | <startRule>))
 <startRule> ::= 
@@ -262,66 +240,34 @@
     (forEach Value min:<int> max:<int> <startRule>) | 
     (forEach Player <startRule>) | 
     (forEach Site <sites> [if:<boolean>] <startRule>) | 
-    (forEach Team <startRule>)
 	
   <place>    ::= 
-    (place Random {<string>} [count:{<int>}] [state:<int>] [value:<int>] <int> [<siteType>]) 
-    (place Random [<sites>] {<string>} [count:<int>] [state:<int>] [value:<int>] [<siteType>]) 
-    (place Stack (<string> | items:{<string>}) [<string>] [<siteType>] [<int> | {<int>} | <sites> | coord:<string> | {<string>}] [count:<int> | counts:{<int>}] [state:<int>] [rotation:<int>] [value:<int>]) | 
-    (place <string> [<siteType>] [{<int>}] [<sites>] [{<string>}] [counts:{<int>}] [state:<int>] [rotation:<int>] [value:<int>]) 
-    (place <string> [<string>] [<siteType>] [<int>] [coord:<string>] [count:<int>] [state:<int>] [rotation:<int>] [value:<int>])
+    (place Random <sites> {<string>}) 
+    (place Stack items:{<string>} <int>) | 
+	(place <string> {<int>} [state:<int>] [value:<int>])  // fill region with item
+	(place <string> <int> [state:<int>] [value:<int>])    // place one item in one location
   
   <start.set.set> ::= 
-    (set <setStartPlayerType> [<roleType>] <int>)
-         <setStartPlayerType> ::= Amount | Score
-    (set <roleType> [<siteType>] [{<int>}] [<sites>] [{<string>}])
-    (set <roleType> [<siteType>] [<int>] [coord:<string>])
-    (set Hidden [<hiddenData> | {<hiddenData>}] [<siteType>] (at:<int> | <sites>) [level:<int>] [<boolean>] to:<roleType>)
+    (set Score [<roleType>] <int>)
+    (set <roleType> [{<int>}] [<sites>] [{<string>}])
+    (set Hidden <hiddenData> (at:<int> | <sites>) [level:<int>] [<boolean>] to:<roleType>)
     (set RememberValue [<string>] (<int> | <sites>) [unique:<boolean>]) 
 
-<moves> | <effect> ::=
+<operator> ::= 
+  <logical.and> ::= (and {<moves>} [<then>]) | (and <moves> <moves> [<then>])
+  <logical.if>  ::= (if <boolean> <moves> [<moves>] [<then>])
+  <logical.or>  ::= (or {<moves>} [<then>]) | (or <moves> <moves> [<then>])
 
-  <operators.foreach.forEach> ::= 
-    (forEach Site <sites> <moves> [noMoveYet:<moves>] [<then>])
-    (forEach Value <ints> <moves> [<then>]) | (forEach Value min:<int> max:<int> <moves> [<then>])
-    (forEach Level [<siteType>] <int> [<stackDirection>] <moves> [<then>]) 
-    (forEach Team <moves> [<then>]) | 
-    (forEach Group [<siteType>] [<direction>] [if:<boolean>] <moves> [<then>]) 
-    (forEach Die [<int>] [combined:<boolean>] [replayDouble:<boolean>] [if:<boolean>] <moves> [<then>]) 
-    (forEach      <ints> <moves> [<then>]) | 
-    (forEach Piece [on:<siteType>] [<string> | {<string>}] [container:<int> | <string>] [<moves>] [<moves.player> | <roleType>] [top:<boolean>] [<then>]) | 
-    (forEach Player <moves> [<then>])
 
-  <while>    ::= (while <boolean> <moves> [<then>])
-
-  <effect.add>     ::= (add [<moves.piece>] <moves.to> [count:<int>] [stack:<boolean>] [<then>])
-  <addScore>       ::= (addScore (<moves.player> | <roleType>) <int> [<then>])
-  <custodial>      ::= (custodial [<moves.from>] [<absoluteDirection>] [<moves.between>] [<moves.to>] [<then>])
-  <fromTo>         ::= (fromTo <moves.from> <moves.to> [count:<int>] [copy:<boolean>] [stack:<boolean>] [<roleType>] [<then>])
-  <hop>            ::= (hop [<moves.from>] [<direction>] [<moves.between>] <moves.to> [stack:<boolean>] [<then>])
-  <leap>           ::= (leap [<moves.from>] {{<stepType>}} [forward:<boolean>] [rotations:<boolean>] <moves.to> [<then>])
-  <promote>        ::= (promote [<siteType>] [<int>] <moves.piece> [<moves.player> | <roleType>] [<then>])
-  <push>           ::= (push [<moves.from>] <direction> [<then>])
-  <effect.remove>  ::= (remove [<siteType>] (<int> | <sites>) [level:<int>] [at:<whenType>] [count:<int>] [<then>])
-  <roll>           ::= (roll [<then>])
-  <effect.set.set> ::=   
-    (set Hidden [<hiddenData> | {<hiddenData>}] [<siteType>] (at:<int> | <sites>) [level:<int>] [<boolean>] (to:<moves.player> | to:<roleType>) [<then>]) 
-    (set NextPlayer (<moves.player> | <ints>) [<then>]) | 
-    (set <setSiteType> [<siteType>] at:<int> [level:<int>] <int> [<then>]) 
-         <setSiteType> ::= Count | State | Value
-    (set Var [<string>] [<int>] [<then>]) 
-  <select>   ::= (select <moves.from> [<moves.to>] [<roleType>] [<then>])
-  <shoot>    ::= (shoot <moves.piece> [<moves.from>] [<absoluteDirection>] [<moves.between>] [<moves.to>] [<then>])
-  <slide>    ::= (slide [<moves.from>] [<string>] [<direction>] [<moves.between>] [<moves.to>] [stack:<boolean>] [<then>])
-  <sow>      ::= (sow [<siteType>] [<int>] [count:<int>] [numPerHole:<int>] [<string>] [owner:<int>] [if:<boolean>] [sowEffect:<moves>] [apply:<nonDecision>] [includeSelf:<boolean>] [origin:<boolean>] [skipIf:<boolean>] [backtracking:<boolean> | forward:<boolean>] [<then>])
-  <effect.step> ::= (step [<moves.from>] [<direction>] <moves.to> [stack:<boolean>] [<then>])
-  <swap.swap> ::= (swap Pieces [<int> <int>] [<then>])
+<play>     ::= (play <moves>)
 
 <moves.between> ::= (between [before:<int>] [<range>] [after:<int>] [if:<boolean>] [trail:<int>] [<apply>])
-<moves.from> ::= (from [<siteType>] [<sites> | <int>] [level:<int>] [if:<boolean>])
+<moves.from> ::= (from [<sites> | <int>] [level:<int>] [if:<boolean>])
 <moves.piece> ::= (piece (<string> | <int> | {<string>} | {<int>}) [state:<int>])
 <moves.player> ::= (player <int>)
-<moves.to> ::= (to [<siteType>] [<sites> | <int>] [level:<int>] [<rotations>] [if:<boolean>] [<apply>])
+<moves.to> ::= (to [<sites> | <int>] [level:<int>] [<rotations>] [if:<boolean>] [<apply>])
+<then>     ::= (then <nonDecision> [applyAfterAllMoves:<boolean>])
+
 
 <moves>    ::= 
   <priority> ::= (priority <moves> <moves> [<then>]) | (priority {<moves>} [<then>])
@@ -331,58 +277,94 @@
     (move Shoot <moves.piece> [<moves.from>] [<absoluteDirection>] [<moves.between>] [<moves.to>] [<then>]) 
     (move Select <moves.from> [<moves.to>] [<roleType>] [<then>]) | 
     (move Swap Pieces [<int>] [<int>] [<then>])  
-    (move Remove [<siteType>] (<int> | <sites>) [level:<int>] [at:<whenType>] [count:<int>] [<then>]) 
+    (move Remove (<int> | <sites>) [level:<int>] [at:<whenType>] [count:<int>] [<then>]) 
     (move Add [<moves.piece>] <moves.to> [count:<int>] [stack:<boolean>] [<then>]) 
     (move       <moves.from> <moves.to> [count:<int>] [copy:<boolean>] [stack:<boolean>] [<roleType>] [<then>]) 
-    (move Promote [<siteType>] [<int>] <moves.piece> [<moves.player> | <roleType>] [<then>]) 
+    (move Promote [<int>] <moves.piece> [<moves.player> | <roleType>] [<then>]) 
 	(move Pass [<then>]) 
     (move Hop [<moves.from>] [<direction>] [<moves.between>] <moves.to> [stack:<boolean>] [<then>]) 
     (move Leap [<moves.from>] {{<stepType>}} [forward:<boolean>] [rotations:<boolean>] <moves.to> [<then>])
-  <random> 
-  <move> 
   <nonDecision> ::= <effect> | <operator>
   <pass>        ::= (pass [<then>])
   <remember>    ::= (remember Value [<string>] <int> [unique:<boolean>] [<then>])
   <while>
 
+<moves> | <effect> ::=
+
+  <operators.foreach.forEach> ::= 
+    (forEach Site <sites> <moves> [noMoveYet:<moves>] [<then>])
+    (forEach Value <ints> <moves> [<then>]) | 
+	(forEach Value min:<int> max:<int> <moves> [<then>])
+    (forEach Level <int> [<stackDirection>] <moves> [<then>]) 
+    (forEach Team <moves> [<then>]) | 
+    (forEach Group [<direction>] [if:<boolean>] <moves> [<then>]) 
+    (forEach Die [<int>] [combined:<boolean>] [replayDouble:<boolean>] [if:<boolean>] <moves> [<then>]) 
+    (forEach      <ints> <moves> [<then>]) | 
+    (forEach Piece [on:<siteType>] [<string> | {<string>}] [container:<int> | <string>] [<moves>] [<moves.player> | <roleType>] [top:<boolean>] [<then>]) | 
+    (forEach Player <moves> [<then>])
+
+  <while>    ::= (while <boolean> <moves> [<then>])
+
+  <add>     ::= (add [<moves.piece>] <moves.to> [count:<int>] [stack:<boolean>] [<then>])
+  <addScore>       ::= (addScore (<moves.player> | <roleType>) <int> [<then>])
+  <custodial>      ::= (custodial [<moves.from>] [<absoluteDirection>] [<moves.between>] [<moves.to>] [<then>])
+  <fromTo>         ::= (fromTo <moves.from> <moves.to> [count:<int>] [copy:<boolean>] [stack:<boolean>] [<roleType>] [<then>])
+  <hop>            ::= (hop [<moves.from>] [<direction>] [<moves.between>] <moves.to> [stack:<boolean>] [<then>])
+  <leap>           ::= (leap [<moves.from>] {{<stepType>}} [forward:<boolean>] [rotations:<boolean>] <moves.to> [<then>])
+  <promote>        ::= (promote [<int>] <moves.piece> [<moves.player> | <roleType>] [<then>])
+  <push>           ::= (push [<moves.from>] <direction> [<then>])
+  <remove>  ::= (remove (<int> | <sites>) [level:<int>] [at:<whenType>] [count:<int>] [<then>])
+  <roll>           ::= (roll [<then>])
+  <set> ::=   
+    (set Hidden [<hiddenData> | {<hiddenData>}] (at:<int> | <sites>) [level:<int>] [<boolean>] (to:<moves.player> | to:<roleType>) [<then>]) 
+    (set NextPlayer (<moves.player> | <ints>) [<then>]) | 
+    (set <setSiteType> at:<int> [level:<int>] <int> [<then>]) 
+         <setSiteType> ::= Count | State | Value
+    (set Var [<string>] [<int>] [<then>]) 
+  <select>   ::= (select <moves.from> [<moves.to>] [<roleType>] [<then>])
+  <shoot>    ::= (shoot <moves.piece> [<moves.from>] [<absoluteDirection>] [<moves.between>] [<moves.to>] [<then>])
+  <slide>    ::= (slide [<moves.from>] [<string>] [<direction>] [<moves.between>] [<moves.to>] [stack:<boolean>] [<then>])
+  <sow>      ::= (sow [<int>] [count:<int>] [numPerHole:<int>] [<string>] [owner:<int>] [if:<boolean>] [sowEffect:<moves>] [apply:<nonDecision>] [includeSelf:<boolean>] [origin:<boolean>] [skipIf:<boolean>] [backtracking:<boolean> | forward:<boolean>] [<then>])
+  <step> ::= (step [<moves.from>] [<direction>] <moves.to> [stack:<boolean>] [<then>])
+  <swap> ::= (swap Pieces [<int> <int>] [<then>])
 
 <effect> ::= 
   <forget>    ::= (forget Value [<string>] <int> [<then>]) | (forget Value [<string>] All [<then>])
   <moveAgain> ::= (moveAgain [<then>])
-  <remember> 
+
 
 								  
 <sites>    ::= 
   (sites <sitesEdgeType>) 
   (sites <sitesSimpleType> [<siteType>]) | 
-         <sitesSimpleType> ::= Board | Bottom | Centre | Corners | Inner | LastFrom | LastTo | Left | LineOfPlay | Outer | Perimeter | Playable | Right | Top
-  (sites [<siteType>] {<string>}) | 
-  (sites <sitesIndexType> [<siteType>] [<int>]) | 
-         <sitesIndexType> ::= Cell | Column | Edge | Empty | Layer | Phase | Row | State
-  (sites [<siteType>] [<int>] {{<stepType>}} [rotations:<boolean>]) 
+    <sitesSimpleType> ::= Board | Bottom | Centre | Corners | Inner | LastFrom | LastTo | Left | LineOfPlay | Outer | Perimeter | Playable | Right | Top
+  (sites {<string>}) | 
+  (sites <sitesIndexType> [<int>]) | 
+    <sitesIndexType> ::= Cell | Column | Edge | Empty | Layer | Phase | Row | State
+  (sites [<int>] {{<stepType>}} [rotations:<boolean>]) 
   (sites ({<int>} | <ints>)) 
   (sites <sitesMoveType> <moves>)
-         <sitesMoveType> ::= Between | From | To
-  (sites Between [<direction>] [<siteType>] from:<int> [fromIncluded:<boolean>] to:<int> [toIncluded:<boolean>] [cond:<boolean>]) 
-  (sites Hidden [<hiddenData>] [<siteType>] (to:<moves.player> | to:<roleType>))  
-  (sites Pattern {<stepType>} [<siteType>] [from:<int>] [what:<int> | whats:{<int>}]) | 
-  (sites Loop [inside:<boolean>] [<siteType>] [surround:<roleType> | {<roleType>}] [<direction>] [<int>] [<int> | <sites>]) | 
-  (sites Group [<siteType>] (at:<int> | from:<sites>) [<direction>] [if:<boolean>]) | 
+    <sitesMoveType> ::= Between | From | To
+  (sites Between [<direction>] from:<int> [fromIncluded:<boolean>] to:<int> [toIncluded:<boolean>] [cond:<boolean>]) 
+  (sites Hidden [<hiddenData>] (to:<moves.player> | to:<roleType>))  
+  (sites Pattern {<stepType>} [from:<int>] [what:<int> | whats:{<int>}]) | 
+  (sites Loop [inside:<boolean>] [surround:<roleType> | {<roleType>}] [<direction>] [<int>] [<int> | <sites>]) | 
+  (sites Group (at:<int> | from:<sites>) [<direction>] [if:<boolean>]) | 
   (sites Crossing at:<int> [<moves.player> | <roleType>]) | 
   (sites Random [<sites>] [num:<int>]) | 
   (sites Occupied (by:<moves.player> | by:<roleType>) [container:<int> | container:<string>] [component:<int> | component:<string> | components:{<string>}] [top:<boolean>] [on:<siteType>]) | 
-  (sites Around [<siteType>] (<int> | <sites>) [<regionTypeDynamic>] [distance:<int>] [<absoluteDirection>] [if:<boolean>] [includeSelf:<boolean>]) 
-                                                <regionTypeDynamic> ::= Empty | Enemy | NotEmpty | NotEnemy | NotOwn | Own
+  (sites Around (<int> | <sites>) [<regionTypeDynamic>] [distance:<int>] [<absoluteDirection>] [if:<boolean>] [includeSelf:<boolean>]) 
+    <regionTypeDynamic> ::= Empty | Enemy | NotEmpty | NotEnemy | NotOwn | Own
   (sites Direction (from:<int> | from:<sites>) [<direction>] [included:<boolean>] [stop:<boolean>] [stopIncluded:<boolean>] [distance:<int>] [<siteType>]) 
-  (sites LineOfSight [<lineOfSightType>] [<siteType>] [at:<int>] [<direction>]) 
-                      <lineOfSightType> ::= Empty | Farthest | Piece
+  (sites LineOfSight [<lineOfSightType>] [at:<int>] [<direction>]) 
+    <lineOfSightType> ::= Empty | Farthest | Piece
   (sites) 
-  (sites Side [<siteType>] [<moves.player> | <roleType> | <compassDirection>]) | 
-  (sites Distance [<siteType>] [<relationType>] [<effect.step>] [newRotation:<int>] from:<int> <range>) 
-  (sites [<moves.player> | <roleType>] [<siteType>] [<string>])
+  (sites Side [<moves.player> | <roleType> | <compassDirection>]) | 
+  (sites Distance [<relationType>] [<effect.step>] [newRotation:<int>] from:<int> <range>) 
+  (sites [<moves.player> | <roleType>] [<string>])
   (sites Start <moves.piece>)
-  (sites <sitesPlayerType> [<siteType>] [<moves.player> | <roleType>] [<nonDecision>] [<string>]) | 
-         <sitesPlayerType> ::= Hand | Winning
+  (sites <sitesPlayerType> [<moves.player> | <roleType>] [<nonDecision>] [<string>]) | 
+    <sitesPlayerType> ::= Hand | Winning
   (region <equipment.region>) | 
   (region) | 
   (region int) | 
@@ -395,7 +377,7 @@
     (forEach <sites> if:<boolean>) 
     (forEach of:<sites> <sites>) | 
     (forEach Team <sites>) | 
-    (forEach Level [<siteType>] at:<int> [<stackDirection>] [if:<boolean>] [startAt:<int>])
+    (forEach Level at:<int> [<stackDirection>] [if:<boolean>] [startAt:<int>])
   <region.math.if> ::= (if <boolean> <sites> [<sites>])
   <region.math.intersection> ::= (intersection {<sites>}) | (intersection <sites> <sites>)
   <region.math.union> ::= (union {<sites>}) | (union <sites> <sites>)
@@ -405,6 +387,27 @@
     <end.forEach> ::= (forEach Player if:<boolean> <result>)
     <end.if>   ::= (if <boolean> [<end.if> | {<end.if>}] [<result>])
       <result>   ::= (result <roleType> <resultType>) | <byScore>
-                                        <resultType> ::= Draw | Loss | Win
-        <byScore>  ::= (byScore [{<end.score>}] [misere:<boolean>])
-                                  <end.score> ::= (score <roleType> <int>)
+        <resultType> ::= Draw | Loss | Win
+        <byScore>    ::= (byScore [{<end.score>}] [misere:<boolean>])
+          <end.score> ::= (score <roleType> <int>)
+		  
+<float>    ::= 
+  <toFloat>   ::= (toFloat (<boolean> | <int>))
+
+  <float.*>   ::= (* {<float>}) | (* <float> <float>)
+  <float.+>   ::= (+ {<float>}) | (+ <float> <float>)
+  <float.->   ::= (- <float> <float>)
+  <float./>   ::= (/ <float> <float>)
+  <float.^>   ::= (^ <float> <float>)
+  <float.max> ::= (max {<float>}) | (max <float> <float>)
+  <float.min> ::= (min {<float>}) | (min <float> <float>)
+  <float.abs> ::= (abs <float>)
+  
+  <sin>       ::= (sin <float>)
+  <cos>       ::= (cos <float>)
+  <tan>       ::= (tan <float>)
+
+  <sqrt>      ::= (sqrt <float>)
+  <exp>       ::= (exp <float>)
+  <log>       ::= (log <float>)
+  <log10>     ::= (log10 <float>)

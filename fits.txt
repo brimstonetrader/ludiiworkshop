@@ -1,0 +1,505 @@
+fit rep:  000000000000010  int rep:  1 fibs involved:  [1]
+   bits flipped:  1 actions done:  1
+fit rep:  000000000000100  int rep:  2 fibs involved:  [2]
+   bits flipped:  2 actions done:  4
+fit rep:  000000000001000  int rep:  3 fibs involved:  [3]
+   bits flipped:  2 actions done:  4
+fit rep:  000000000001010  int rep:  4 fibs involved:  [3, 1]
+   bits flipped:  1 actions done:  1
+fit rep:  000000000010000  int rep:  5 fibs involved:  [5]
+   bits flipped:  3 actions done:  7
+fit rep:  000000000010010  int rep:  6 fibs involved:  [5, 1]
+   bits flipped:  1 actions done:  1
+fit rep:  000000000010100  int rep:  7 fibs involved:  [5, 2]
+   bits flipped:  2 actions done:  4
+fit rep:  000000000100000  int rep:  8 fibs involved:  [8]
+   bits flipped:  3 actions done:  7
+fit rep:  000000000100010  int rep:  9 fibs involved:  [8, 1]
+   bits flipped:  1 actions done:  1
+fit rep:  000000000100100  int rep:  10 fibs involved:  [8, 2]
+   bits flipped:  2 actions done:  4
+fit rep:  000000000101000  int rep:  11 fibs involved:  [8, 3]
+   bits flipped:  2 actions done:  4
+fit rep:  000000000101010  int rep:  12 fibs involved:  [8, 3, 1]
+   bits flipped:  1 actions done:  1
+fit rep:  000000001000000  int rep:  13 fibs involved:  [13]
+   bits flipped:  4 actions done:  10
+fit rep:  000000001000010  int rep:  14 fibs involved:  [13, 1]
+   bits flipped:  1 actions done:  1
+fit rep:  000000001000100  int rep:  15 fibs involved:  [13, 2]
+   bits flipped:  2 actions done:  4
+fit rep:  000000001001000  int rep:  16 fibs involved:  [13, 3]
+   bits flipped:  2 actions done:  4
+fit rep:  000000001001010  int rep:  17 fibs involved:  [13, 3, 1]
+   bits flipped:  1 actions done:  1
+fit rep:  000000001010000  int rep:  18 fibs involved:  [13, 5]
+   bits flipped:  3 actions done:  7
+fit rep:  000000001010010  int rep:  19 fibs involved:  [13, 5, 1]
+   bits flipped:  1 actions done:  1
+fit rep:  000000001010100  int rep:  20 fibs involved:  [13, 5, 2]
+   bits flipped:  2 actions done:  4
+fit rep:  000000010000000  int rep:  21 fibs involved:  [21]
+   bits flipped:  4 actions done:  10
+fit rep:  000000010000010  int rep:  22 fibs involved:  [21, 1]
+   bits flipped:  1 actions done:  1
+fit rep:  000000010000100  int rep:  23 fibs involved:  [21, 2]
+   bits flipped:  2 actions done:  4
+fit rep:  000000010001000  int rep:  24 fibs involved:  [21, 3]
+   bits flipped:  2 actions done:  4
+fit rep:  000000010001010  int rep:  25 fibs involved:  [21, 3, 1]
+   bits flipped:  1 actions done:  1
+fit rep:  000000010010000  int rep:  26 fibs involved:  [21, 5]
+   bits flipped:  3 actions done:  7
+fit rep:  000000010010010  int rep:  27 fibs involved:  [21, 5, 1]
+   bits flipped:  1 actions done:  1
+fit rep:  000000010010100  int rep:  28 fibs involved:  [21, 5, 2]
+   bits flipped:  2 actions done:  4
+fit rep:  000000010100000  int rep:  29 fibs involved:  [21, 8]
+   bits flipped:  3 actions done:  7
+fit rep:  000000010100010  int rep:  30 fibs involved:  [21, 8, 1]
+   bits flipped:  1 actions done:  1
+fit rep:  000000010100100  int rep:  31 fibs involved:  [21, 8, 2]
+   bits flipped:  2 actions done:  4
+fit rep:  000000010101000  int rep:  32 fibs involved:  [21, 8, 3]
+   bits flipped:  2 actions done:  4
+fit rep:  000000010101010  int rep:  33 fibs involved:  [21, 8, 3, 1]
+   bits flipped:  1 actions done:  1
+fit rep:  000000100000000  int rep:  34 fibs involved:  [34]
+   bits flipped:  5 actions done:  13
+fit rep:  000000100000010  int rep:  35 fibs involved:  [34, 1]
+   bits flipped:  1 actions done:  1
+fit rep:  000000100000100  int rep:  36 fibs involved:  [34, 2]
+   bits flipped:  2 actions done:  4
+fit rep:  000000100001000  int rep:  37 fibs involved:  [34, 3]
+   bits flipped:  2 actions done:  4
+fit rep:  000000100001010  int rep:  38 fibs involved:  [34, 3, 1]
+   bits flipped:  1 actions done:  1
+fit rep:  000000100010000  int rep:  39 fibs involved:  [34, 5]
+   bits flipped:  3 actions done:  7
+fit rep:  000000100010010  int rep:  40 fibs involved:  [34, 5, 1]
+   bits flipped:  1 actions done:  1
+fit rep:  000000100010100  int rep:  41 fibs involved:  [34, 5, 2]
+   bits flipped:  2 actions done:  4
+fit rep:  000000100100000  int rep:  42 fibs involved:  [34, 8]
+   bits flipped:  3 actions done:  7
+fit rep:  000000100100010  int rep:  43 fibs involved:  [34, 8, 1]
+   bits flipped:  1 actions done:  1
+fit rep:  000000100100100  int rep:  44 fibs involved:  [34, 8, 2]
+   bits flipped:  2 actions done:  4
+fit rep:  000000100101000  int rep:  45 fibs involved:  [34, 8, 3]
+   bits flipped:  2 actions done:  4
+fit rep:  000000100101010  int rep:  46 fibs involved:  [34, 8, 3, 1]
+   bits flipped:  1 actions done:  1
+fit rep:  000000101000000  int rep:  47 fibs involved:  [34, 13]
+   bits flipped:  4 actions done:  10
+fit rep:  000000101000010  int rep:  48 fibs involved:  [34, 13, 1]
+   bits flipped:  1 actions done:  1
+fit rep:  000000101000100  int rep:  49 fibs involved:  [34, 13, 2]
+   bits flipped:  2 actions done:  4
+fit rep:  000000101001000  int rep:  50 fibs involved:  [34, 13, 3]
+   bits flipped:  2 actions done:  4
+fit rep:  000000101001010  int rep:  51 fibs involved:  [34, 13, 3, 1]
+   bits flipped:  1 actions done:  1
+fit rep:  000000101010000  int rep:  52 fibs involved:  [34, 13, 5]
+   bits flipped:  3 actions done:  7
+fit rep:  000000101010010  int rep:  53 fibs involved:  [34, 13, 5, 1]
+   bits flipped:  1 actions done:  1
+fit rep:  000000101010100  int rep:  54 fibs involved:  [34, 13, 5, 2]
+   bits flipped:  2 actions done:  4
+fit rep:  000001000000000  int rep:  55 fibs involved:  [55]
+   bits flipped:  5 actions done:  13
+fit rep:  000001000000010  int rep:  56 fibs involved:  [55, 1]
+   bits flipped:  1 actions done:  1
+fit rep:  000001000000100  int rep:  57 fibs involved:  [55, 2]
+   bits flipped:  2 actions done:  4
+fit rep:  000001000001000  int rep:  58 fibs involved:  [55, 3]
+   bits flipped:  2 actions done:  4
+fit rep:  000001000001010  int rep:  59 fibs involved:  [55, 3, 1]
+   bits flipped:  1 actions done:  1
+fit rep:  000001000010000  int rep:  60 fibs involved:  [55, 5]
+   bits flipped:  3 actions done:  7
+fit rep:  000001000010010  int rep:  61 fibs involved:  [55, 5, 1]
+   bits flipped:  1 actions done:  1
+fit rep:  000001000010100  int rep:  62 fibs involved:  [55, 5, 2]
+   bits flipped:  2 actions done:  4
+fit rep:  000001000100000  int rep:  63 fibs involved:  [55, 8]
+   bits flipped:  3 actions done:  7
+fit rep:  000001000100010  int rep:  64 fibs involved:  [55, 8, 1]
+   bits flipped:  1 actions done:  1
+fit rep:  000001000100100  int rep:  65 fibs involved:  [55, 8, 2]
+   bits flipped:  2 actions done:  4
+fit rep:  000001000101000  int rep:  66 fibs involved:  [55, 8, 3]
+   bits flipped:  2 actions done:  4
+fit rep:  000001000101010  int rep:  67 fibs involved:  [55, 8, 3, 1]
+   bits flipped:  1 actions done:  1
+fit rep:  000001001000000  int rep:  68 fibs involved:  [55, 13]
+   bits flipped:  4 actions done:  10
+fit rep:  000001001000010  int rep:  69 fibs involved:  [55, 13, 1]
+   bits flipped:  1 actions done:  1
+fit rep:  000001001000100  int rep:  70 fibs involved:  [55, 13, 2]
+   bits flipped:  2 actions done:  4
+fit rep:  000001001001000  int rep:  71 fibs involved:  [55, 13, 3]
+   bits flipped:  2 actions done:  4
+fit rep:  000001001001010  int rep:  72 fibs involved:  [55, 13, 3, 1]
+   bits flipped:  1 actions done:  1
+fit rep:  000001001010000  int rep:  73 fibs involved:  [55, 13, 5]
+   bits flipped:  3 actions done:  7
+fit rep:  000001001010010  int rep:  74 fibs involved:  [55, 13, 5, 1]
+   bits flipped:  1 actions done:  1
+fit rep:  000001001010100  int rep:  75 fibs involved:  [55, 13, 5, 2]
+   bits flipped:  2 actions done:  4
+fit rep:  000001010000000  int rep:  76 fibs involved:  [55, 21]
+   bits flipped:  4 actions done:  10
+fit rep:  000001010000010  int rep:  77 fibs involved:  [55, 21, 1]
+   bits flipped:  1 actions done:  1
+fit rep:  000001010000100  int rep:  78 fibs involved:  [55, 21, 2]
+   bits flipped:  2 actions done:  4
+fit rep:  000001010001000  int rep:  79 fibs involved:  [55, 21, 3]
+   bits flipped:  2 actions done:  4
+fit rep:  000001010001010  int rep:  80 fibs involved:  [55, 21, 3, 1]
+   bits flipped:  1 actions done:  1
+fit rep:  000001010010000  int rep:  81 fibs involved:  [55, 21, 5]
+   bits flipped:  3 actions done:  7
+fit rep:  000001010010010  int rep:  82 fibs involved:  [55, 21, 5, 1]
+   bits flipped:  1 actions done:  1
+fit rep:  000001010010100  int rep:  83 fibs involved:  [55, 21, 5, 2]
+   bits flipped:  2 actions done:  4
+fit rep:  000001010100000  int rep:  84 fibs involved:  [55, 21, 8]
+   bits flipped:  3 actions done:  7
+fit rep:  000001010100010  int rep:  85 fibs involved:  [55, 21, 8, 1]
+   bits flipped:  1 actions done:  1
+fit rep:  000001010100100  int rep:  86 fibs involved:  [55, 21, 8, 2]
+   bits flipped:  2 actions done:  4
+fit rep:  000001010101000  int rep:  87 fibs involved:  [55, 21, 8, 3]
+   bits flipped:  2 actions done:  4
+fit rep:  000001010101010  int rep:  88 fibs involved:  [55, 21, 8, 3, 1]
+   bits flipped:  1 actions done:  1
+fit rep:  000010000000000  int rep:  89 fibs involved:  [89]
+   bits flipped:  6 actions done:  16
+fit rep:  000010000000010  int rep:  90 fibs involved:  [89, 1]
+   bits flipped:  1 actions done:  1
+fit rep:  000010000000100  int rep:  91 fibs involved:  [89, 2]
+   bits flipped:  2 actions done:  4
+fit rep:  000010000001000  int rep:  92 fibs involved:  [89, 3]
+   bits flipped:  2 actions done:  4
+fit rep:  000010000001010  int rep:  93 fibs involved:  [89, 3, 1]
+   bits flipped:  1 actions done:  1
+fit rep:  000010000010000  int rep:  94 fibs involved:  [89, 5]
+   bits flipped:  3 actions done:  7
+fit rep:  000010000010010  int rep:  95 fibs involved:  [89, 5, 1]
+   bits flipped:  1 actions done:  1
+fit rep:  000010000010100  int rep:  96 fibs involved:  [89, 5, 2]
+   bits flipped:  2 actions done:  4
+fit rep:  000010000100000  int rep:  97 fibs involved:  [89, 8]
+   bits flipped:  3 actions done:  7
+fit rep:  000010000100010  int rep:  98 fibs involved:  [89, 8, 1]
+   bits flipped:  1 actions done:  1
+fit rep:  000010000100100  int rep:  99 fibs involved:  [89, 8, 2]
+   bits flipped:  2 actions done:  4
+fit rep:  000010000101000  int rep:  100 fibs involved:  [89, 8, 3]
+   bits flipped:  2 actions done:  4
+fit rep:  000010000101010  int rep:  101 fibs involved:  [89, 8, 3, 1]
+   bits flipped:  1 actions done:  1
+fit rep:  000010001000000  int rep:  102 fibs involved:  [89, 13]
+   bits flipped:  4 actions done:  10
+fit rep:  000010001000010  int rep:  103 fibs involved:  [89, 13, 1]
+   bits flipped:  1 actions done:  1
+fit rep:  000010001000100  int rep:  104 fibs involved:  [89, 13, 2]
+   bits flipped:  2 actions done:  4
+fit rep:  000010001001000  int rep:  105 fibs involved:  [89, 13, 3]
+   bits flipped:  2 actions done:  4
+fit rep:  000010001001010  int rep:  106 fibs involved:  [89, 13, 3, 1]
+   bits flipped:  1 actions done:  1
+fit rep:  000010001010000  int rep:  107 fibs involved:  [89, 13, 5]
+   bits flipped:  3 actions done:  7
+fit rep:  000010001010010  int rep:  108 fibs involved:  [89, 13, 5, 1]
+   bits flipped:  1 actions done:  1
+fit rep:  000010001010100  int rep:  109 fibs involved:  [89, 13, 5, 2]
+   bits flipped:  2 actions done:  4
+fit rep:  000010010000000  int rep:  110 fibs involved:  [89, 21]
+   bits flipped:  4 actions done:  10
+fit rep:  000010010000010  int rep:  111 fibs involved:  [89, 21, 1]
+   bits flipped:  1 actions done:  1
+fit rep:  000010010000100  int rep:  112 fibs involved:  [89, 21, 2]
+   bits flipped:  2 actions done:  4
+fit rep:  000010010001000  int rep:  113 fibs involved:  [89, 21, 3]
+   bits flipped:  2 actions done:  4
+fit rep:  000010010001010  int rep:  114 fibs involved:  [89, 21, 3, 1]
+   bits flipped:  1 actions done:  1
+fit rep:  000010010010000  int rep:  115 fibs involved:  [89, 21, 5]
+   bits flipped:  3 actions done:  7
+fit rep:  000010010010010  int rep:  116 fibs involved:  [89, 21, 5, 1]
+   bits flipped:  1 actions done:  1
+fit rep:  000010010010100  int rep:  117 fibs involved:  [89, 21, 5, 2]
+   bits flipped:  2 actions done:  4
+fit rep:  000010010100000  int rep:  118 fibs involved:  [89, 21, 8]
+   bits flipped:  3 actions done:  7
+fit rep:  000010010100010  int rep:  119 fibs involved:  [89, 21, 8, 1]
+   bits flipped:  1 actions done:  1
+fit rep:  000010010100100  int rep:  120 fibs involved:  [89, 21, 8, 2]
+   bits flipped:  2 actions done:  4
+fit rep:  000010010101000  int rep:  121 fibs involved:  [89, 21, 8, 3]
+   bits flipped:  2 actions done:  4
+fit rep:  000010010101010  int rep:  122 fibs involved:  [89, 21, 8, 3, 1]
+   bits flipped:  1 actions done:  1
+fit rep:  000010100000000  int rep:  123 fibs involved:  [89, 34]
+   bits flipped:  5 actions done:  13
+fit rep:  000010100000010  int rep:  124 fibs involved:  [89, 34, 1]
+   bits flipped:  1 actions done:  1
+fit rep:  000010100000100  int rep:  125 fibs involved:  [89, 34, 2]
+   bits flipped:  2 actions done:  4
+fit rep:  000010100001000  int rep:  126 fibs involved:  [89, 34, 3]
+   bits flipped:  2 actions done:  4
+fit rep:  000010100001010  int rep:  127 fibs involved:  [89, 34, 3, 1]
+   bits flipped:  1 actions done:  1
+fit rep:  000010100010000  int rep:  128 fibs involved:  [89, 34, 5]
+   bits flipped:  3 actions done:  7
+fit rep:  000010100010010  int rep:  129 fibs involved:  [89, 34, 5, 1]
+   bits flipped:  1 actions done:  1
+fit rep:  000010100010100  int rep:  130 fibs involved:  [89, 34, 5, 2]
+   bits flipped:  2 actions done:  4
+fit rep:  000010100100000  int rep:  131 fibs involved:  [89, 34, 8]
+   bits flipped:  3 actions done:  7
+fit rep:  000010100100010  int rep:  132 fibs involved:  [89, 34, 8, 1]
+   bits flipped:  1 actions done:  1
+fit rep:  000010100100100  int rep:  133 fibs involved:  [89, 34, 8, 2]
+   bits flipped:  2 actions done:  4
+fit rep:  000010100101000  int rep:  134 fibs involved:  [89, 34, 8, 3]
+   bits flipped:  2 actions done:  4
+fit rep:  000010100101010  int rep:  135 fibs involved:  [89, 34, 8, 3, 1]
+   bits flipped:  1 actions done:  1
+fit rep:  000010101000000  int rep:  136 fibs involved:  [89, 34, 13]
+   bits flipped:  4 actions done:  10
+fit rep:  000010101000010  int rep:  137 fibs involved:  [89, 34, 13, 1]
+   bits flipped:  1 actions done:  1
+fit rep:  000010101000100  int rep:  138 fibs involved:  [89, 34, 13, 2]
+   bits flipped:  2 actions done:  4
+fit rep:  000010101001000  int rep:  139 fibs involved:  [89, 34, 13, 3]
+   bits flipped:  2 actions done:  4
+fit rep:  000010101001010  int rep:  140 fibs involved:  [89, 34, 13, 3, 1]
+   bits flipped:  1 actions done:  1
+fit rep:  000010101010000  int rep:  141 fibs involved:  [89, 34, 13, 5]
+   bits flipped:  3 actions done:  7
+fit rep:  000010101010010  int rep:  142 fibs involved:  [89, 34, 13, 5, 1]
+   bits flipped:  1 actions done:  1
+fit rep:  000010101010100  int rep:  143 fibs involved:  [89, 34, 13, 5, 2]
+   bits flipped:  2 actions done:  4
+fit rep:  000100000000000  int rep:  144 fibs involved:  [144]
+   bits flipped:  6 actions done:  16
+fit rep:  000100000000010  int rep:  145 fibs involved:  [144, 1]
+   bits flipped:  1 actions done:  1
+fit rep:  000100000000100  int rep:  146 fibs involved:  [144, 2]
+   bits flipped:  2 actions done:  4
+fit rep:  000100000001000  int rep:  147 fibs involved:  [144, 3]
+   bits flipped:  2 actions done:  4
+fit rep:  000100000001010  int rep:  148 fibs involved:  [144, 3, 1]
+   bits flipped:  1 actions done:  1
+fit rep:  000100000010000  int rep:  149 fibs involved:  [144, 5]
+   bits flipped:  3 actions done:  7
+fit rep:  000100000010010  int rep:  150 fibs involved:  [144, 5, 1]
+   bits flipped:  1 actions done:  1
+fit rep:  000100000010100  int rep:  151 fibs involved:  [144, 5, 2]
+   bits flipped:  2 actions done:  4
+fit rep:  000100000100000  int rep:  152 fibs involved:  [144, 8]
+   bits flipped:  3 actions done:  7
+fit rep:  000100000100010  int rep:  153 fibs involved:  [144, 8, 1]
+   bits flipped:  1 actions done:  1
+fit rep:  000100000100100  int rep:  154 fibs involved:  [144, 8, 2]
+   bits flipped:  2 actions done:  4
+fit rep:  000100000101000  int rep:  155 fibs involved:  [144, 8, 3]
+   bits flipped:  2 actions done:  4
+fit rep:  000100000101010  int rep:  156 fibs involved:  [144, 8, 3, 1]
+   bits flipped:  1 actions done:  1
+fit rep:  000100001000000  int rep:  157 fibs involved:  [144, 13]
+   bits flipped:  4 actions done:  10
+fit rep:  000100001000010  int rep:  158 fibs involved:  [144, 13, 1]
+   bits flipped:  1 actions done:  1
+fit rep:  000100001000100  int rep:  159 fibs involved:  [144, 13, 2]
+   bits flipped:  2 actions done:  4
+fit rep:  000100001001000  int rep:  160 fibs involved:  [144, 13, 3]
+   bits flipped:  2 actions done:  4
+fit rep:  000100001001010  int rep:  161 fibs involved:  [144, 13, 3, 1]
+   bits flipped:  1 actions done:  1
+fit rep:  000100001010000  int rep:  162 fibs involved:  [144, 13, 5]
+   bits flipped:  3 actions done:  7
+fit rep:  000100001010010  int rep:  163 fibs involved:  [144, 13, 5, 1]
+   bits flipped:  1 actions done:  1
+fit rep:  000100001010100  int rep:  164 fibs involved:  [144, 13, 5, 2]
+   bits flipped:  2 actions done:  4
+fit rep:  000100010000000  int rep:  165 fibs involved:  [144, 21]
+   bits flipped:  4 actions done:  10
+fit rep:  000100010000010  int rep:  166 fibs involved:  [144, 21, 1]
+   bits flipped:  1 actions done:  1
+fit rep:  000100010000100  int rep:  167 fibs involved:  [144, 21, 2]
+   bits flipped:  2 actions done:  4
+fit rep:  000100010001000  int rep:  168 fibs involved:  [144, 21, 3]
+   bits flipped:  2 actions done:  4
+fit rep:  000100010001010  int rep:  169 fibs involved:  [144, 21, 3, 1]
+   bits flipped:  1 actions done:  1
+fit rep:  000100010010000  int rep:  170 fibs involved:  [144, 21, 5]
+   bits flipped:  3 actions done:  7
+fit rep:  000100010010010  int rep:  171 fibs involved:  [144, 21, 5, 1]
+   bits flipped:  1 actions done:  1
+fit rep:  000100010010100  int rep:  172 fibs involved:  [144, 21, 5, 2]
+   bits flipped:  2 actions done:  4
+fit rep:  000100010100000  int rep:  173 fibs involved:  [144, 21, 8]
+   bits flipped:  3 actions done:  7
+fit rep:  000100010100010  int rep:  174 fibs involved:  [144, 21, 8, 1]
+   bits flipped:  1 actions done:  1
+fit rep:  000100010100100  int rep:  175 fibs involved:  [144, 21, 8, 2]
+   bits flipped:  2 actions done:  4
+fit rep:  000100010101000  int rep:  176 fibs involved:  [144, 21, 8, 3]
+   bits flipped:  2 actions done:  4
+fit rep:  000100010101010  int rep:  177 fibs involved:  [144, 21, 8, 3, 1]
+   bits flipped:  1 actions done:  1
+fit rep:  000100100000000  int rep:  178 fibs involved:  [144, 34]
+   bits flipped:  5 actions done:  13
+fit rep:  000100100000010  int rep:  179 fibs involved:  [144, 34, 1]
+   bits flipped:  1 actions done:  1
+fit rep:  000100100000100  int rep:  180 fibs involved:  [144, 34, 2]
+   bits flipped:  2 actions done:  4
+fit rep:  000100100001000  int rep:  181 fibs involved:  [144, 34, 3]
+   bits flipped:  2 actions done:  4
+fit rep:  000100100001010  int rep:  182 fibs involved:  [144, 34, 3, 1]
+   bits flipped:  1 actions done:  1
+fit rep:  000100100010000  int rep:  183 fibs involved:  [144, 34, 5]
+   bits flipped:  3 actions done:  7
+fit rep:  000100100010010  int rep:  184 fibs involved:  [144, 34, 5, 1]
+   bits flipped:  1 actions done:  1
+fit rep:  000100100010100  int rep:  185 fibs involved:  [144, 34, 5, 2]
+   bits flipped:  2 actions done:  4
+fit rep:  000100100100000  int rep:  186 fibs involved:  [144, 34, 8]
+   bits flipped:  3 actions done:  7
+fit rep:  000100100100010  int rep:  187 fibs involved:  [144, 34, 8, 1]
+   bits flipped:  1 actions done:  1
+fit rep:  000100100100100  int rep:  188 fibs involved:  [144, 34, 8, 2]
+   bits flipped:  2 actions done:  4
+fit rep:  000100100101000  int rep:  189 fibs involved:  [144, 34, 8, 3]
+   bits flipped:  2 actions done:  4
+fit rep:  000100100101010  int rep:  190 fibs involved:  [144, 34, 8, 3, 1]
+   bits flipped:  1 actions done:  1
+fit rep:  000100101000000  int rep:  191 fibs involved:  [144, 34, 13]
+   bits flipped:  4 actions done:  10
+fit rep:  000100101000010  int rep:  192 fibs involved:  [144, 34, 13, 1]
+   bits flipped:  1 actions done:  1
+fit rep:  000100101000100  int rep:  193 fibs involved:  [144, 34, 13, 2]
+   bits flipped:  2 actions done:  4
+fit rep:  000100101001000  int rep:  194 fibs involved:  [144, 34, 13, 3]
+   bits flipped:  2 actions done:  4
+fit rep:  000100101001010  int rep:  195 fibs involved:  [144, 34, 13, 3, 1]
+   bits flipped:  1 actions done:  1
+fit rep:  000100101010000  int rep:  196 fibs involved:  [144, 34, 13, 5]
+   bits flipped:  3 actions done:  7
+fit rep:  000100101010010  int rep:  197 fibs involved:  [144, 34, 13, 5, 1]
+   bits flipped:  1 actions done:  1
+fit rep:  000100101010100  int rep:  198 fibs involved:  [144, 34, 13, 5, 2]
+   bits flipped:  2 actions done:  4
+fit rep:  000101000000000  int rep:  199 fibs involved:  [144, 55]
+   bits flipped:  5 actions done:  13
+fit rep:  000101000000010  int rep:  200 fibs involved:  [144, 55, 1]
+   bits flipped:  1 actions done:  1
+fit rep:  000101000000100  int rep:  201 fibs involved:  [144, 55, 2]
+   bits flipped:  2 actions done:  4
+fit rep:  000101000001000  int rep:  202 fibs involved:  [144, 55, 3]
+   bits flipped:  2 actions done:  4
+fit rep:  000101000001010  int rep:  203 fibs involved:  [144, 55, 3, 1]
+   bits flipped:  1 actions done:  1
+fit rep:  000101000010000  int rep:  204 fibs involved:  [144, 55, 5]
+   bits flipped:  3 actions done:  7
+fit rep:  000101000010010  int rep:  205 fibs involved:  [144, 55, 5, 1]
+   bits flipped:  1 actions done:  1
+fit rep:  000101000010100  int rep:  206 fibs involved:  [144, 55, 5, 2]
+   bits flipped:  2 actions done:  4
+fit rep:  000101000100000  int rep:  207 fibs involved:  [144, 55, 8]
+   bits flipped:  3 actions done:  7
+fit rep:  000101000100010  int rep:  208 fibs involved:  [144, 55, 8, 1]
+   bits flipped:  1 actions done:  1
+fit rep:  000101000100100  int rep:  209 fibs involved:  [144, 55, 8, 2]
+   bits flipped:  2 actions done:  4
+fit rep:  000101000101000  int rep:  210 fibs involved:  [144, 55, 8, 3]
+   bits flipped:  2 actions done:  4
+fit rep:  000101000101010  int rep:  211 fibs involved:  [144, 55, 8, 3, 1]
+   bits flipped:  1 actions done:  1
+fit rep:  000101001000000  int rep:  212 fibs involved:  [144, 55, 13]
+   bits flipped:  4 actions done:  10
+fit rep:  000101001000010  int rep:  213 fibs involved:  [144, 55, 13, 1]
+   bits flipped:  1 actions done:  1
+fit rep:  000101001000100  int rep:  214 fibs involved:  [144, 55, 13, 2]
+   bits flipped:  2 actions done:  4
+fit rep:  000101001001000  int rep:  215 fibs involved:  [144, 55, 13, 3]
+   bits flipped:  2 actions done:  4
+fit rep:  000101001001010  int rep:  216 fibs involved:  [144, 55, 13, 3, 1]
+   bits flipped:  1 actions done:  1
+fit rep:  000101001010000  int rep:  217 fibs involved:  [144, 55, 13, 5]
+   bits flipped:  3 actions done:  7
+fit rep:  000101001010010  int rep:  218 fibs involved:  [144, 55, 13, 5, 1]
+   bits flipped:  1 actions done:  1
+fit rep:  000101001010100  int rep:  219 fibs involved:  [144, 55, 13, 5, 2]
+   bits flipped:  2 actions done:  4
+fit rep:  000101010000000  int rep:  220 fibs involved:  [144, 55, 21]
+   bits flipped:  4 actions done:  10
+fit rep:  000101010000010  int rep:  221 fibs involved:  [144, 55, 21, 1]
+   bits flipped:  1 actions done:  1
+fit rep:  000101010000100  int rep:  222 fibs involved:  [144, 55, 21, 2]
+   bits flipped:  2 actions done:  4
+fit rep:  000101010001000  int rep:  223 fibs involved:  [144, 55, 21, 3]
+   bits flipped:  2 actions done:  4
+fit rep:  000101010001010  int rep:  224 fibs involved:  [144, 55, 21, 3, 1]
+   bits flipped:  1 actions done:  1
+fit rep:  000101010010000  int rep:  225 fibs involved:  [144, 55, 21, 5]
+   bits flipped:  3 actions done:  7
+fit rep:  000101010010010  int rep:  226 fibs involved:  [144, 55, 21, 5, 1]
+   bits flipped:  1 actions done:  1
+fit rep:  000101010010100  int rep:  227 fibs involved:  [144, 55, 21, 5, 2]
+   bits flipped:  2 actions done:  4
+fit rep:  000101010100000  int rep:  228 fibs involved:  [144, 55, 21, 8]
+   bits flipped:  3 actions done:  7
+fit rep:  000101010100010  int rep:  229 fibs involved:  [144, 55, 21, 8, 1]
+   bits flipped:  1 actions done:  1
+fit rep:  000101010100100  int rep:  230 fibs involved:  [144, 55, 21, 8, 2]
+   bits flipped:  2 actions done:  4
+fit rep:  000101010101000  int rep:  231 fibs involved:  [144, 55, 21, 8, 3]
+   bits flipped:  2 actions done:  4
+fit rep:  000101010101010  int rep:  232 fibs involved:  [144, 55, 21, 8, 3, 1]
+   bits flipped:  1 actions done:  1
+fit rep:  001000000000000  int rep:  233 fibs involved:  [233]
+   bits flipped:  7 actions done:  19
+fit rep:  001000000000010  int rep:  234 fibs involved:  [233, 1]
+   bits flipped:  1 actions done:  1
+fit rep:  001000000000100  int rep:  235 fibs involved:  [233, 2]
+   bits flipped:  2 actions done:  4
+fit rep:  001000000001000  int rep:  236 fibs involved:  [233, 3]
+   bits flipped:  2 actions done:  4
+fit rep:  001000000001010  int rep:  237 fibs involved:  [233, 3, 1]
+   bits flipped:  1 actions done:  1
+fit rep:  001000000010000  int rep:  238 fibs involved:  [233, 5]
+   bits flipped:  3 actions done:  7
+fit rep:  001000000010010  int rep:  239 fibs involved:  [233, 5, 1]
+   bits flipped:  1 actions done:  1
+fit rep:  001000000010100  int rep:  240 fibs involved:  [233, 5, 2]
+   bits flipped:  2 actions done:  4
+fit rep:  001000000100000  int rep:  241 fibs involved:  [233, 8]
+   bits flipped:  3 actions done:  7
+fit rep:  001000000100010  int rep:  242 fibs involved:  [233, 8, 1]
+   bits flipped:  1 actions done:  1
+fit rep:  001000000100100  int rep:  243 fibs involved:  [233, 8, 2]
+   bits flipped:  2 actions done:  4
+fit rep:  001000000101000  int rep:  244 fibs involved:  [233, 8, 3]
+   bits flipped:  2 actions done:  4
+fit rep:  001000000101010  int rep:  245 fibs involved:  [233, 8, 3, 1]
+   bits flipped:  1 actions done:  1
+fit rep:  001000001000000  int rep:  246 fibs involved:  [233, 13]
+   bits flipped:  4 actions done:  10
+fit rep:  001000001000010  int rep:  247 fibs involved:  [233, 13, 1]
+   bits flipped:  1 actions done:  1
+fit rep:  001000001000100  int rep:  248 fibs involved:  [233, 13, 2]
+   bits flipped:  2 actions done:  4
+fit rep:  001000001001000  int rep:  249 fibs involved:  [233, 13, 3]
+   bits flipped:  2 actions done:  4
+fit rep:  001000001001010  int rep:  250 fibs involved:  [233, 13, 3, 1]
+   bits flipped:  1 actions done:  1
+496 988
+1998 3994 {1: 382, 4: 382, 7: 146, 10: 56, 13: 21, 16: 8, 19: 3, 22: 2}
+199991 399973 {1: 38197, 4: 38197, 7: 14590, 10: 5573, 13: 2128, 16: 813, 19: 311, 22: 118, 25: 45, 28: 18, 31: 7, 34: 2, 37: 1}
+
+               2-φ       2-φ       (2-φ)^2   (2-φ)^3   (2-φ)^4 ...

@@ -1,0 +1,463 @@
+(game 
+  (setup
+  )
+
+)
+
+
+Base Types: 
+String (all caps)
+  (cardatt [String] [Card])
+Integer (non-negative)
+  (+, -, *, //, mod, ^)
+  (score [Card] using [PointMap])
+  (sum [Collection<Card>] using [PointMap])
+  (size [Collection<Card>])
+  ([Game | Player | Team] sto [String])  // variables can be stored to the global situation, or a particular player.
+  (random x y), (random x) //0 implied min
+  (tri x)                  //1,3,6,10,15: factorialites
+  (fib x)                  //1,1,2,3,5,8: fibonaccis
+  
+ 
+Card (created at startup, never directly called)
+  (top       [Collection<Card>])
+  (bottom    [Collection<Card>])
+  ([Integer] [Collection<Card>])
+  (actual (min [Collection<Card>] using [PointMap]))
+  (actual (max [Collection<Card>] using [PointMap]))
+Boolean
+  (and [Boolean] [Boolean]+)
+  (or [Boolean] [Boolean]+)
+  (not [Boolean])
+  
+  (> [Integer] [Integer])
+  (< [Integer] [Integer])
+  (>= [Integer] [Integer])
+  (<= [Integer] [Integer])
+  (== [Integer] [Integer])
+  (!= [Integer] [Integer])
+  
+  (== [Card] [Card])
+  (!= [Card] [Card])
+  
+  (== [String] [String])
+  (!= [String] [String])
+  
+  (== [Player] [Player])
+  (!= [Player] [Player])
+  
+  (== [Team] [Team])
+  (!= [Team] [Team])
+  
+  (all [Collection] [Variable] [Boolean])
+  (any [Collection] [Variable] [Boolean])
+            
+            
+Owners: Game (how you save a global variable)
+          (game)
+        Player 
+          ([Integer] player)
+          (current   player)
+          (next      player)
+          (previous  player)
+          (owner [Card])
+        Team 
+          ([Integer] team)
+          (current   team)
+          (next      team)
+          (previous  team)
+          (team  [Player])  
+         
+
+Collection<String> := (String, String, ...)
+  ex. (YELLOW, GREEN, BLUE, BROWN, RED, WHITE)
+
+Collection<Integer> := (range [Integer] .. [Integer])
+  ex. (range 1 .. 5)
+
+Collection<Card> := ([Owner] (vloc | iloc | hloc | mem) [String])
+  ex. 
+  (filter [CardCollection] [Variable] [Boolean])
+  (union [CardCollection]*)
+  (top       [Collection<Collection<Card>>])
+  (bottom    [Collection<Collection<Card>>])
+  ([Integer] [Collection<Collection<Card>>])
+
+Collection<Collection<Card>> := (tuples [Integer] [CardCollection] 'using' [PointMap])
+                    (all [Collection] [Variable] [CardCollection])
+
+Collection<Player> := (player)       //all players    |
+                (other player)                  |
+                (filter [Collection<Player>] [Variable] [Boolean])
+                
+Collection<Team> := (team)      //all teams           |
+              (other team)                      |
+              (filter [Collection<Team>] [Variable] [Boolean])
+                
+
+Collection<A>       := (intersection [Collection<A>] [Collection<A>])
+                 (disjunction  [Collection<A>] [Collection<A>])
+
+Collection<Collection<A>> := (partition [Collection<A>] )
+
+
+
+  vloc: visible to everyone
+  iloc: visible to owner, invisible to others
+  hloc: invisible to everyone, including owner
+
+
+         
+         
+         
+PointMap := (set (game points [String]))
+
+Variable := string w apostrophe first.
+            ex. 'C, 'P, 'SUIT
+            
+   (declare [Type] [Variable]) // only at beginning of program; global
+   (let [Type] [Variable] [Expression]) // anywhere; local
+      
+   
+Action := (shuffle [CardCollection])
+          (move [Card] [Card])
+          (remember [Card] [Card])
+          (forget [Card])
+          
+          (all [Collection] [Variable] [MultiAction])
+          (any [Collection] [Variable] [MultiAction])
+          ([Boolean] [Action])
+          
+          (cycle next (owner [Card]))
+          (cycle next current)
+          (cycle next previous)
+          
+          (cycle current (owner [Card]))
+          (cycle current next)
+          (cycle current previous)
+          
+          (turn pass)
+          
+          (repeat [Integer] [Action])
+          
+          (repeat all [MoveAction])
+      
+          (set [IntegerStorage] [Integer])
+          (inc [IntegerStorage] [Integer])
+          (dec [IntegerStorage] [Integer])
+          
+          
+Block := (do     ([ConditionalAction | Action | Do]*))
+         (choice ([ConditionalAction | Action | Do]*))
+          
+Setup := (create teams [Integer]*)
+         (create players [Integer])
+         (create deck [Collection<Card>] [Deck])
+
+Stage := (stage player [Boolean] [Do | Choice | Stage]*)
+         (stage team [Boolean] [Do | Choice | Stage]*)         
+         
+Scoring := (scoring max [Integer])
+           (scoring min [Integer])
+
+
+EX:
+
+;; Coup
+;;
+;; http://boardgame.bg/coup%20rules%20pdf.pdf
+
+(game
+ (declare 4 'NUMP)
+ (setup  
+  (create players 'NUMP)
+  (create teams (0) (1) (2) (3))
+  
+  ;; Create the deck source
+  (repeat 3 (create deck (game iloc STOCK) (deck 
+   (INFLUENCE (AMBASSADOR, ASSASSIN, CAPTAIN, CONTESSA, DUKE))))))
+ 
+ ;; Assign points for cards, remove 5 cards from game
+ (do 
+     (
+      (set (game points BASIC)
+   (((INFLUENCE (AMBASSADOR)) 1)
+   (( INFLUENCE   (CONTESSA)) 1)
+   (( INFLUENCE       (DUKE)) 1)
+   (( INFLUENCE   (ASSASSIN)) 1)
+   (( INFLUENCE    (CAPTAIN)) 1)))
+
+  (set (game points STEALABLE)
+   (((INFLUENCE (AMBASSADOR)) 0)
+   (( INFLUENCE   (CONTESSA)) 1)
+   (( INFLUENCE       (DUKE)) 1)
+   (( INFLUENCE   (ASSASSIN)) 1)
+   (( INFLUENCE    (CAPTAIN)) 0)))
+
+  (set (game points ASSASSINATABLE)
+   (((INFLUENCE (AMBASSADOR)) 1)
+   (( INFLUENCE   (CONTESSA)) 0)
+   (( INFLUENCE       (DUKE)) 1)
+   (( INFLUENCE   (ASSASSIN)) 1)
+   (( INFLUENCE    (CAPTAIN)) 1)))
+      
+      (shuffle (game iloc STOCK))
+      
+      (all player 'P     
+           (do( 
+           (set ('P sto FOREIGNAID) 1)      
+           (repeat 2
+                   (move (top (game iloc STOCK))
+                         (top ('P iloc HAND)))))))))
+
+ (stage player
+ 
+  ;; The game ends when there is one survivor.
+ 
+  (end (any player 'P 
+    (== ('P sto WON) 1)))    
+ 
+   (choice (
+
+    ;; Accuse 	
+    
+    (any player 'P (do (
+     ((== ('P sto LIED) 1) 
+  	  (any ('P iloc HAND) 'C 
+      (move 'C (bottom (game vloc DISCARD)))))
+     ((== ('P sto LIED) 0) 
+   	  (any ((current player) iloc HAND) 'C 
+      (move 'C (bottom (game vloc DISCARD))))))))
+
+    ;; Block Foreign Aid
+   
+    (do (
+     ((== (size (filter ((current player) iloc HAND) 'H (== (cardatt INFLUENCE 'H) DUKE))) 0)
+      (set ((current player) sto LIED) 1))
+     ((>= (size (filter ((current player) iloc HAND) 'H (== (cardatt INFLUENCE 'H) DUKE))) 1)
+      (set ((current player) sto LIED) 0))
+     (all player 'P (do (    
+      (set ('P sto FOREIGNAID) 0))))))
+
+    ;; Income
+  	
+    (inc ((current player) sto HUNDREDMILLIONDOLLARS) 1)	
+  
+    ;; Foreign Aid
+    
+    (do (  
+     ((== ((current player) sto FOREIGNAID) 0)
+      (set ((current player) sto LIED) 1))
+     ((>= ((current player) sto FOREIGNAID) 1)
+      (set ((current player) sto LIED) 0))	 
+     (inc ((current player) sto HUNDREDMILLIONDOLLARS) 2)))
+  	
+    ;; Standard Coup 
+  
+    (do ( 
+     ((> ((current player) sto HUNDREDMILLIONDOLLARS) 6) 
+      (do (
+       (any player 'P 
+        (any ('P iloc HAND) 'C
+         (move 'C (bottom (game vloc DISCARD)))))
+  	   (dec ((current player) sto HUNDREDMILLIONDOLLARS) 7))))))
+
+    ;; Win (if you're the last one left)
+     
+     ((== (sum         ((current player) iloc HAND)   using (game points BASIC)) 
+          (sum (union (all player 'P ('P iloc HAND))) using (game points BASIC))) 
+      (do ( 
+       (inc ((current player) sto WON) 1))))
+
+    ;; Ambassador swap (Draw two cards (four total now in hand) then discard any two)
+  		  
+    (do (
+     ((== (size (filter ((current player) iloc HAND) 'H (== (cardatt INFLUENCE 'H) AMBASSADOR))) 0)
+      (set ((current player) sto LIED) 1))
+     ((>= (size (filter ((current player) iloc HAND) 'H (== (cardatt INFLUENCE 'H) AMBASSADOR))) 1)
+      (set ((current player) sto LIED) 0))
+     ((> (size (game iloc STOCK)) 1) 
+      (do (
+      (repeat 2
+       (move (top (game iloc STOCK))
+        (top ((current player) iloc HAND))))
+      (any ((current player) iloc HAND) 'C 
+       (move 'C (top (game vloc DISCARD))))
+      (any ((current player) iloc HAND) 'C 
+       (move 'C (top (game vloc DISCARD)))))))))
+ 
+    ;; Duke tax (Take $300,000,000)
+        
+    (do (
+     ((== (size (filter ((current player) iloc HAND) 'H (== (cardatt INFLUENCE 'H) DUKE))) 0)
+      (set ((current player) sto LIED) 1))
+     ((>= (size (filter ((current player) iloc HAND) 'H (== (cardatt INFLUENCE 'H) DUKE))) 1)
+       (set ((current player) sto LIED) 0))
+     (inc ((current player) sto HUNDREDMILLIONDOLLARS) 3)))
+    
+    ;; "Americans are so spoiled. They think you always have to have a car, whereas I got away on my own two feet."
+
+    (do (
+     ((== (size (filter ((current player) iloc HAND) 'H (== (cardatt INFLUENCE 'H) ASSASSIN))) 0)
+      (set ((current player) sto LIED) 1))
+     ((>= (size (filter ((current player) iloc HAND) 'H (== (cardatt INFLUENCE 'H) ASSASSIN))) 1)
+      (set ((current player) sto LIED) 0))	
+     ((> ((current player) sto HUNDREDMILLIONDOLLARS) 2)
+      (do (   
+       (dec ((current player) sto HUNDREDMILLIONDOLLARS) 3)
+       (any player 'P 
+        ((< (sum ('P iloc HAND) using (game points ASSASSINATABLE)) 1)
+     	   (any ('P iloc HAND) 'C  
+          (move 'C (top (game vloc DISCARD)))))))))))  	
+
+    ;; Captain steal
+  	
+    (do (
+     ((== (size (filter ((current player) iloc HAND) 'H (== (cardatt INFLUENCE 'H) CAPTAIN))) 0)
+      (set ((current player) sto LIED) 1))
+     ((>= (size (filter ((current player) iloc HAND) 'H (== (cardatt INFLUENCE 'H) CAPTAIN))) 1)
+      (set ((current player) sto LIED) 0))	
+     (any player 'P (
+      (and (>= ('P sto HUNDREDMILLIONDOLLARS) 2) (< (sum ('P iloc HAND) using (game points STEALABLE)) 1))
+      (do (   
+        (inc ((current player) sto HUNDREDMILLIONDOLLARS) 2)
+  	  (dec ('P sto HUNDREDMILLIONDOLLARS) 2))))))))))
+    
+ 
+ ;; Player with the smallest hand size wins
+ (scoring max ((current player) sto WON)))
+
+;; Pairs
+;;
+;; https://cheapass.com/wp-content/uploads/2018/02/PairsCompanionBookWebFeb2018.pdf
+
+(game
+ (declare 3 'NUMP)
+ (setup  
+  (create players 'NUMP)
+  
+  ;; Create the deck source
+  (repeat 1 (create deck (game iloc STOCK) (deck (VALUE (ONE))))) 
+  (repeat 2 (create deck (game iloc STOCK) (deck (VALUE (TWO)))))        
+  (repeat 3 (create deck (game iloc STOCK) (deck (VALUE (THREE)))))         
+  (repeat 4 (create deck (game iloc STOCK) (deck (VALUE (FOUR)))))       
+  (repeat 5 (create deck (game iloc STOCK) (deck (VALUE (FIVE)))))        
+  (repeat 6 (create deck (game iloc STOCK) (deck (VALUE (SIX)))))       
+  (repeat 7 (create deck (game iloc STOCK) (deck (VALUE (SEVEN)))))         
+  (repeat 8 (create deck (game iloc STOCK) (deck (VALUE (EIGHT)))))         
+  (repeat 9 (create deck (game iloc STOCK) (deck (VALUE (NINE)))))       
+  (repeat 10 (create deck (game iloc STOCK) (deck (VALUE (TEN))))))        
+ 
+ ;; Assign points for cards, remove 5 cards from game
+ (do 
+     (
+      (set (game points POINTS)
+           (
+            ((VALUE (TEN)) 10)
+            ((VALUE (NINE)) 9)
+            ((VALUE (EIGHT)) 8)
+            ((VALUE (SEVEN)) 7)
+            ((VALUE (SIX)) 6)
+            ((VALUE (FIVE)) 5)
+            ((VALUE (FOUR)) 4)
+            ((VALUE (THREE)) 3)
+            ((VALUE (TWO)) 2)
+            ((VALUE (ONE)) 1)))
+      
+      (shuffle (game iloc STOCK))
+      (repeat 5 
+              (move (top (game iloc STOCK))
+                    (top (game iloc THROWOUT))))))
+ 
+ ;; Play the game until one player has enough points to lose
+ (stage player
+        (end 
+         (any player 'P 
+              (>= (sum ('P vloc SCORING) using (game points POINTS)) (+ (// 60 'NUMP) 1))))
+        
+        (do 
+            (
+             
+             ;; Reset the deck if not enough cards
+             ((< (size (game iloc STOCK)) 'NUMP)
+              (do 
+                  (
+                   (repeat all
+                           (move (top (game iloc THROWOUT))
+                                 (top (game iloc STOCK))))
+                   (repeat all
+                           (move (top (game vloc DISCARD))
+                                 (top (game iloc STOCK))))
+                   (shuffle (game iloc STOCK))
+                   (repeat 5 
+                           (move (top (game iloc STOCK))
+                                 (top (game iloc THROWOUT)))))))
+             
+             ;; Give each player a card
+             (all player 'P 
+                  (move (top (game iloc STOCK))
+                        (top ('P vloc HAND))))
+             
+             ;; TODO Stage here, find the player with smallest card
+             ;; if tied, deal new card and try again
+             ;; Stage, for tied players if dealt a pair, then discard and do it again
+             (cycle current (owner (min (union (all player 'P 
+                                                    ('P vloc HAND))) using (game points POINTS))))))
+        
+        ;; Players take turns pressing their luck until one has pair or stops
+        (stage player
+               (end 
+                (== (game sto FINISHED) 1))
+               
+               (do   
+                   (
+                    
+                    ;; Reset the deck if not enough cards
+                    ((== (size (game iloc STOCK)) 0)
+                     (do 
+                         (
+                          (repeat all
+                                  (move (top (game iloc THROWOUT))
+                                        (top (game iloc STOCK))))
+                          (repeat all
+                                  (move (top (game vloc DISCARD))
+                                        (top (game iloc STOCK))))
+                          (shuffle (game iloc STOCK))
+                          (repeat 5 
+                                  (move (top (game iloc STOCK))
+                                        (top (game iloc THROWOUT)))))))))
+               
+               ;; players flip a card or bow out
+               (choice 
+                (
+                 (do 
+                     (
+                      (move (actual (min (union (all player 'P ('P vloc HAND))) using (game points POINTS)))
+                            (top ((current player) vloc SCORING)))
+                      (set (game sto FINISHED) 1)))
+                 
+                 (move (top (game iloc STOCK))
+                       (top ((current player) vloc HAND)))))
+               
+               ;; if pair, end the round
+               ;; current player is similar to how all players was used previously, is this ok?
+               (do 
+                   (
+                    ((> (size (tuples 2 ((current player) vloc HAND) using (game points POINTS))) 0)
+                     (do 
+                         (
+                          (set (game sto FINISHED) 1)
+                          (move (actual (top (top (tuples 2 ((current player) vloc HAND) using (game points POINTS)))))
+                                (top ((current player) vloc SCORING)))))))))
+        
+        ;; Move all cards back to the discard pile
+        (do 
+            (
+             (all player 'P
+                  (repeat all
+                          (move (top ('P vloc HAND))
+                                (top (game vloc DISCARD)))))
+             (set (game sto FINISHED) 0))))
+ 
+ ;; Player with the lowest sum of points in their scoring pile wins
+ (scoring min (sum ((current player) vloc SCORING) using (game points POINTS))))

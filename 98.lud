@@ -110,7 +110,7 @@
                                                 (addScore P3 (% (what at:(mapEntry "Loc" Mover)) 13)) 
                                                 (addScore P4 (% (what at:(mapEntry "Loc" Mover)) 13))}) 
                                   ))))))))))))))
-        )     (end (if (and (= (var) 0) (> (score P1) 98)) (result Mover Loss)))
+        )     (end (if (or (= (count Turns) 30) (and (= (var) 0) (> (score P1) 98))) (result Mover Loss)))
    )
 )
         
@@ -209,6 +209,8 @@
         "98_ai"
     )
 )
+
+
 
 
 

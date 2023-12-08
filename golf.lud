@@ -100,7 +100,7 @@
 
                     (play
                         (priority 
-                            (if (= (mover) (prev))  
+                            (if (= (mover) (prev))
                                  (move Select (from (sites Hand Mover))
                                  (then (remove (last From) 
                                  (then (if (!= (last From) (mapEntry "Stock" Mover)) 

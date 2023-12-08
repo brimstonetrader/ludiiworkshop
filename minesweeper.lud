@@ -13,9 +13,10 @@
     (players 1) 
     (equipment { 
         (board (square <Version:size>)) 
-        (piece "Flag"   P1)
+        (piece "Flag"   P1) 
         (piece "Bomb"   P1)
-        (piece "Square" P1)
+        (piece "Square1"   P1)
+        (piece "Square2" P1)
         (hand P1 size:1)
     }) 
     
@@ -52,34 +53,14 @@
 //------------------------------------------------------------------------------
 
 (option "Grid Size" <Version> args:{<size>} {
-
-  (item "7x7" 
-    <7>
-    ""
-  )
-  
-  (item "10x10" 
-    <10>
-    ""
-  )
-  
-  (item "15x15" 
-    <15>
-    ""
-  )
-  
-  (item "25x25" 
-    <25>
-    ""
-  )
+  (item "7x7" <7> "" )
+  (item "10x10" <10> "")
+  (item "15x15" <15> "")
+  (item "25x25" <25> "")
 })
 
 (option "Bomb Density" <Board> args:{<rate>} {
-  
-  (item "10%"
-  <2>
-  ""
-  )
+  (item "10%" <2> "")
 
   (item "15%"
   <3>
